@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "NervOS Web",
   "main": "index.js",
+  "homepage": "http://keith-cy.github.io/react-gh-pages",
   "repository": "https://github.com/NervosFoundation/nervos-web",
   "author": "Keith <keithwhisper@gmail.com>",
   "license": "MIT",
@@ -16,7 +17,9 @@
     "build:prod":
       "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js && cp -r lib dist",
     "dll": "rimraf lib && webpack --config ./config/webpack.config.dll.js",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d dist"
   },
   "lint-staged": {
     "src/**/*.tsx": ["eslint --fix", "git add"]
@@ -43,6 +46,7 @@
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
     "eslint-plugin-typescript": "^0.8.1",
     "extract-text-webpack-plugin": "^3.0.2",
