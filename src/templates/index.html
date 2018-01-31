@@ -14,6 +14,13 @@
   <main id="root"></main>
   <script src="<%= htmlWebpackPlugin.options.react %>"></script>
   <script src="<%= htmlWebpackPlugin.options.styledComponents%>"></script>
+  <script type="text/javascript">
+    (function () {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./service-worker.js')
+      }
+    })()
+  </script>
 </body>
 
 </html>
