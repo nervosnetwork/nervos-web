@@ -11,7 +11,7 @@
     "experimentalDecorators": true,
     "noImplicitReturns": true,
     "noImplicitThis": false,
-    "noImplicitAny": true,
+    // "noImplicitAny": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true
   },

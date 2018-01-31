@@ -7,8 +7,17 @@ const ExtractPlugin = require('extract-text-webpack-plugin')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const SWPrecachePlugin = require('sw-precache-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const AutoprefixerPlugin = require('autoprefixer')
 
+/* eslint-disable import/no-dynamic-require */
 const baseConfig = require(path.resolve(__dirname, './webpack.config.base'))
+const reactManifest = require(path.resolve(__dirname, '../lib/react_manifest'))
+const styledComponentsManifest = require(path.resolve(
+  __dirname,
+  '../lib/styledComponents_manifest',
+))
+/* eslint-enable import/no-dynamic-require */
+
 const manifest = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, '../lib/manifest.json')),
 )
@@ -16,11 +25,6 @@ const prodConfig = {
   entry: {
     app: path.resolve(__dirname, '../src/index.tsx'),
   },
-  // output: {
-  //   path: path.resolve(__dirname, '../dist'),
-  //   filename: 'scripts/[name]-[hash:5].js',
-  //   chunkFilename: 'scripts/[name]-[hash:5].js',
-  // },
   module: {
     rules: [
       {
@@ -42,14 +46,17 @@ const prodConfig = {
               options: {
                 ident: 'postcss',
                 sourceMap: false,
-                plugins: () => [require('autoprefixer')],
+                plugins: () => [AutoprefixerPlugin],
               },
             },
             'resolve-url-loader',
             'sass-loader',
           ],
         }),
-        include: /src/,
+        include: [
+          path.resolve(__dirname, '../src/'),
+          path.resolve(__dirname, '../node_modules/normalize.css'),
+        ],
       },
     ],
   },
@@ -64,14 +71,11 @@ const prodConfig = {
     new UglifyJSPlugin(),
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require(path.resolve(__dirname, '../lib/react_manifest')),
+      manifest: reactManifest,
     }),
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require(path.resolve(
-        __dirname,
-        '../lib/styledComponents_manifest',
-      )),
+      manifest: styledComponentsManifest,
     }),
     new CopyPlugin([
       {
