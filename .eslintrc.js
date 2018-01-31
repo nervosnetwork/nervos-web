@@ -179,7 +179,17 @@ module.exports = {
     'import/resolver': {
       node: {
         paths: [path.resolve(__dirname, 'src')],
-        extensions: ['.ts', '.tsx', '.js', '.jsx', '.d.ts', '.scss'],
+        extensions: [
+          '.ts',
+          '.tsx',
+          '.js',
+          '.jsx',
+          '.d.ts',
+          '.scss',
+          '.svg',
+          '.png',
+          '.jpg',
+        ],
       },
     },
   },

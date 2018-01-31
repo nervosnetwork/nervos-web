@@ -30,9 +30,18 @@ module.exports = {
         },
         include: /src/,
       },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 50000,
+          mimetype: 'application/font-woff',
+          name: 'fonts/[name].[ext]',
+        },
+      },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.svg', '.png', '.jpg'],
   },
 }

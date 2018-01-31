@@ -4,11 +4,20 @@ const merge = require('webpack-merge')
 const webpack = require('webpack')
 const HtmlPlugin = require('html-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin')
+
 const baseConfig = require('./webpack.config.base')
 
 const manifest = JSON.parse(
   fs.readFileSync(path.resolve(__dirname, '../lib/manifest.json')),
 )
+
+/* eslint-disable import/no-dynamic-require */
+const reactManifest = require(path.resolve(__dirname, '../lib/react_manifest'))
+const styledComponentsManifest = require(path.resolve(
+  __dirname,
+  '../lib/styledComponents_manifest',
+))
+/* eslint-enable import/no-dynamic-require */
 
 const devConfig = {
   entry: {
@@ -55,14 +64,11 @@ const devConfig = {
     new DashboardPlugin(),
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require(path.resolve(__dirname, '../lib/react_manifest')),
+      manifest: reactManifest,
     }),
     new webpack.DllReferencePlugin({
       context: __dirname,
-      manifest: require(path.resolve(
-        __dirname,
-        '../lib/styledComponents_manifest',
-      )),
+      manifest: styledComponentsManifest,
     }),
     new HtmlPlugin({
       title: '开发',

@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Futura';
+  src: url('/fonts/futura.woff2') format('woff2'),
+    url('/fonts/futura.woff') format('woff');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'PingFang-SC Light';
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
