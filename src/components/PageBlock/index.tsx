@@ -25,6 +25,19 @@ export default class PageBlock extends React.Component<
       }))
     }, 0)
   }
+  navTo = (url) => {
+    this.props.history.push(url)
+  }
+  handleNavClick = (url) => (e) => {
+    if (this.props.location.pathname === url) return
+
+    this.setState({
+      loaded: false
+    })
+    setTimeout(() => {
+      this.navTo(url)
+    }, 400)
+  }
   container: any
   render () {
     const { props } = this
@@ -34,9 +47,9 @@ export default class PageBlock extends React.Component<
         <CenterBlock>
           <CenterBlockTitles>
             {props.blocks.map((block, index) => (
-              <CenterBlockTitle key={block.title}>
+              <CenterBlockTitle key={block.title} onClick={this.handleNavClick(block.path)}>
                 <CenterBlockIndex>
-                  {`00${index + 1}`.slice(-2)}.
+                  {`00${(props.index || index) + 1}`.slice(-2)}.
                 </CenterBlockIndex>
                 {props.blocks.length > 1 ? null : <br />}
                 {block.title}

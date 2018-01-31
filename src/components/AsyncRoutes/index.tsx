@@ -10,7 +10,11 @@ const AsyncRender = mod => routerProps => {
   const Component = require(`bundle-loader?lazy!../../containers/${mod}`)
   return (
     <AsyncLoader load={Component}>
-      {Comp => (Comp ? <Comp {...routerProps} /> : <div>Loading</div>)}
+      {Comp => (Comp
+        ? <Comp
+          {...routerProps}
+        />
+        : <Loading />)}
     </AsyncLoader>
   )
 }

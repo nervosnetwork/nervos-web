@@ -1,13 +1,17 @@
 export interface IPageBlock {
   title: string
-  children: any
-  marginBottom: string
+  key: string
+  path: string
+  module: string
+  index?: number
 }
 export interface PageBlockProps {
   blocks: IPageBlock[]
+  history: any
+  location: any
+  match: any
   index?: number
   children: React.ReactChild
-  marginBottom?: string
 }
 
 export interface PageBlockState {

@@ -69,12 +69,16 @@ export const CenterBlockTitles = styled.div`
 `
 
 // Center Block Title
+interface ICenterBlockTitle {
+  onClick: React.MouseEventHandler<MouseEvent>
+}
 export const CenterBlockTitle = styled.h5`
   font-size: ${props => props.theme.sizes.blockTitleHeight};
   color: ${props => props.theme.colors.white};
   text-transform: uppercase;
   margin: 0;
   margin-bottom: ${props => props.theme.sizes.centerBlockTitleVSpan};
+  cursor: pointer;
 `
 
 // Center Block Title Index
@@ -135,3 +139,29 @@ export const ColorizedDiv = ColorizedDivWithCons`
   `};
 `
 /* eslint-enable no-use-before-define */
+
+export const RippleInput = styled.input`
+  background-color: transparent;
+  background-image: ${props => `linear-gradient(to top, ${props.theme.colors.white}, ${props.theme.colors.white}), linear-gradient(to top, ${props.theme.colors.primary}, ${props.theme.colors.primary})`};
+  background-repeat: no-repeat;
+  background-size: 0 2px, 100% 2px;
+  background-position: center bottom;
+  transition: background 0.3s;
+  border: none;
+  color: ${props => props.theme.colors.white};
+  &:focus{
+    background-size: 100% 2px, 100% 2px;
+  }
+  &:placeholder {
+    color: ${props => props.theme.colors.white};
+  }
+`
+
+export const HighlightButton = styled.button`
+  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.highlight};
+  border: none;
+  border-radius; 2px;
+  padding: 10px 25px;
+  font-size: ${props => props.theme.sizes.subscribeBtnFontSize};
+`
