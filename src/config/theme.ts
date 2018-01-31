@@ -20,6 +20,7 @@ export interface ThemeInterface {
     navItemHeight: SIZES
     blockTitleHeight: SIZES
     slogan: SIZES
+    subscribeBtnFontSize: SIZES
   }
 }
 

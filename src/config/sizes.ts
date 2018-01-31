@@ -24,4 +24,5 @@ export default {
   navItemHeight: SIZES.F7,
   centerBlockMaxWidth: '1514px',
   centerBlockWidth: '78.8%',
+  subscribeBtnFontSize: SIZES.F3,
 }
