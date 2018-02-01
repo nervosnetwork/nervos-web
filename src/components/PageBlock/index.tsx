@@ -54,13 +54,14 @@ export default class PageBlock extends React.Component<
     return (
       <FadeInDiv fadeIn={loaded}>
         <CenterBlock>
-          <Navigator
-            fadeIn={loaded}
-            // location={props.location}
-            currentPath={props.location.pathname}
-            onNav={this.handleNavClick}
-            blocks={props.blocks}
-          />
+          {props.location.pathname === '/' ? null : (
+            <Navigator
+              fadeIn={loaded}
+              currentPath={props.location.pathname}
+              onNav={this.handleNavClick}
+              blocks={props.blocks}
+            />
+          )}
           <CenterBlockTitles>
             {this.blockFilter(props.blocks, props.displayName).map(
               (block, index) => (
