@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Slogan } from '../../styled/Common'
 import PageBlock from '../../components/PageBlock'
 import { homepageBlocks as blocks } from '../../routes'
+import RotatingRect from '../../components/RotatingRect'
 
 const slogan = (
   <Slogan>
@@ -17,3 +18,4 @@ export default props => (
     {slogan}
   </PageBlock>
 )
+// <RotatingRect />
