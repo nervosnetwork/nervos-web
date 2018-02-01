@@ -78,7 +78,13 @@ export default class PageBlock extends React.Component<
               ),
             )}
           </CenterBlockTitles>
-          <CenterBlockContent>{props.children}</CenterBlockContent>
+          <CenterBlockContent>{
+            // React.cloneElement(props.children as React.ReactElement<any>, {
+            //   fadeIn: loaded
+            // })
+            props.children
+          }
+          </CenterBlockContent>
         </CenterBlock>
       </FadeInDiv>
     )

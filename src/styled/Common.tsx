@@ -6,7 +6,6 @@ import theme from '../config/theme'
 injectGlobal`
   html, body {
     background-color: ${theme.colors.background};
-    font-size: ${theme.sizes.root};
     min-height: 100vh;
     overflow: auto;
   }
@@ -152,7 +151,6 @@ export const HighlightButton = styled.button`
   background-color: ${props => props.theme.colors.highlight};
   border: none;
   border-radius; 2px;
-  /* padding: 10px 25px; */
   font-size: ${props => props.theme.sizes.subscribeBtnFontSize};
   width: ${props => props.theme.sizes.highlightBtnWidth};
   height: ${props => props.theme.sizes.highlightBtnHeight};
@@ -224,8 +222,8 @@ export const HistoryCol = styled.div`
     `${props.theme.sizes.historyColBorderBottomWidth} solid ${
       props.theme.colors.primary
     }`};
-  padding-top: 40px;
-  padding-left: 15px;
+  padding-top: ${props => props.theme.sizes.HistoryColPaddingTop};
+  padding-left: ${props => props.theme.sizes.HistoryColPaddingLeft};
   &:after {
     box-sizing: border-box;
     z-index: 2;
@@ -254,14 +252,14 @@ export const HistoryYearLabel = styled.span`
   position: absolute;
   bottom: 100%;
   right: 0;
-  padding-bottom: 28px;
+  padding-bottom: ${props => props.theme.sizes.HistoryYearLabelPaddingBottom};
   color: ${props => props.theme.colors.plain};
 `
 
 export const HistoryItem = styled.p`
   margin: 1rem 0;
   position: relative;
-  padding: 0 10px;
+  padding: ${props => `0 ${props.theme.sizes.HistoryItemHPadding}`}
   text-align: justify;
   text-align-last: left;
   font-size: 1rem;
@@ -295,7 +293,7 @@ export const MemberBlockAvatar = styled.img`
   border-radius: 50%;
 `
 export const MemberBlockName = styled.div`
-  font-size: 46px;
+  font-size: ${props => props.theme.sizes.memberNameFontSize};
   color: ${props => props.theme.colors.plain};
   position: absolute;
   top: 50%;
@@ -315,7 +313,7 @@ export const MemberBlockDesc = styled.div`
 export const ChartBlock = styled.div`
   display: inline-block;
   width: 33%;
-  padding-right: 116px;
+  padding-right: ${props => props.theme.sizes.chartBlockPaddingRight};
 `
 
 interface IChartTitle {
@@ -327,7 +325,7 @@ const ChartTitleCons: StyledFunction<
   > =
   styled.h1
 export const ChartTitle = ChartTitleCons`
-  font-size: 32px;
+  font-size: ${props => props.theme.sizes.ChartTitleFontSize};
   line-height: 1;
   display:block;
   height: 2em;
@@ -355,15 +353,15 @@ export const ChartDesc = styled.div`
 `
 
 export const ChartIcon = styled.img`
-  width: 184px;
-  height: 184px;
-  margin-bottom: 100px;
+  width: ${props => props.theme.sizes.chartIconSize};
+  height: ${props => props.theme.sizes.chartIconSize};
+  margin-bottom: ${props => props.theme.sizes.chartIconMarginBottom};
 `
 
 export const SlideNavs = styled.div`
   position: fixed;
-  top: 50%;
-  left: 100px;
+  top: ${props => props.theme.sizes.slideNavTopMargin};
+  left: ${props => props.theme.sizes.slideNavLeftMargin};
 `
 
 interface ISlideNav {
@@ -386,4 +384,19 @@ export const SlideNav = SlideNavCons`
   margin: 10px 0;
   cursor: ${props => (props.active ? 'default' : 'pointer')};
 
+`
+
+interface IRect {
+  deg: number
+}
+const RectCons: StyledFunction<IRect & React.HTMLProps<HTMLDivElement>> = styled.div
+
+export const Rect = RectCons`
+  position: absolute;
+  display: inline-block;
+  width: ${props => props.theme.sizes.rectWidth};
+  height: ${props => props.theme.sizes.rectHeight};
+  background-color: ${props => props.theme.colors.highlight};
+  transform: ${props => `rotate(${props.deg}deg)`};
+  transform-origin: center 180%;
 `

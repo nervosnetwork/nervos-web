@@ -23,7 +23,7 @@ export default ({ displayName, blocks, members }) => routerProps => (
       </ColorizedTitle>
       <Desc>
         {members.map(member => (
-          <MemberBlock>
+          <MemberBlock key={member.key}>
             <MemberBlockAvatar src={member.avatar} alt={member.name} />
             <MemberBlockName>{member.name}</MemberBlockName>
             <MemberBlockDesc>{member.desc}</MemberBlockDesc>
