@@ -84,7 +84,7 @@ const prodConfig = {
       },
     ]),
     new HtmlPlugin({
-      title: '生产',
+      title: 'NervOS',
       template: path.resolve(__dirname, '../src/templates/index.html'),
       react: `./lib/${manifest['react.js']}`,
       styledComponents: `./lib/${manifest['styledComponents.js']}`,
