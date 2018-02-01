@@ -1,10 +1,14 @@
 // / <reference path="../../typings/custom.d.ts" />
 import * as React from 'react'
 import PageBlock from '../../components/PageBlock'
-import { IPageBlock } from '../../components/PageBlock/type.d'
 import ColorizedBlock from '../../components/ColorizedBlock'
-import { ColorizedTitle, Desc } from '../../styled/Common'
-import { TechSlide } from '../../App'
+import {
+  ChartTitle,
+  ChartDesc,
+  ChartBlock,
+  ChartIcon,
+} from '../../styled/Common'
+import { TechSlide, homepageBlocks as blocks } from '../../routes'
 
 /* eslint-disable global-require */
 const highEffeciencyImg = require('../../images/high_efficiency.svg') as string
@@ -12,22 +16,39 @@ const identityImg = require('../../images/identity.svg') as string
 const scalableImg = require('../../images/scalable.svg') as string
 /* eslint-enable global-require */
 
-const TechChild = () => (
-  <div>
+const chartbBlocks = [
+  {
+    title: 'run high effiency',
+    key: 'efficiency',
+    desc: 'loremloremloremloremloremloremloremloremloremlorem',
+    img: highEffeciencyImg,
+  },
+  {
+    title: 'identity',
+    key: 'identity',
+    desc: 'loremloremloremloremloremloremloremloremloremlorem',
+    img: identityImg,
+  },
+  {
+    title: 'scalable',
+    key: 'scalability',
+    desc: 'loremloremloremloremloremloremloremloremloremlorem',
+    img: scalableImg,
+  },
+]
+
+const Chart = ({ img, title, desc, key }) => (
+  <ChartBlock key={key}>
+    <ChartIcon src={img} alt="High Efficiency" />
     <ColorizedBlock>
-      <ColorizedTitle primary h1>
-        Title
-      </ColorizedTitle>
-      <Desc>test</Desc>
+      <ChartTitle primary>{title}</ChartTitle>
+      <ChartDesc>{desc}</ChartDesc>
     </ColorizedBlock>
-    <img src={highEffeciencyImg} alt="High Efficiency" />
-    <img src={identityImg} alt="identity" />
-    <img src={scalableImg} alt="scalable" />
-  </div>
+  </ChartBlock>
 )
 
 export default props => (
-  <PageBlock blocks={[TechSlide]} key={TechSlide.title} {...props}>
-    <TechChild />
+  <PageBlock blocks={blocks} displayName="Technology" {...props}>
+    {chartbBlocks.map(block => Chart(block))}
   </PageBlock>
 )

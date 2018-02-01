@@ -80,7 +80,7 @@ const prodConfig = {
     new CopyPlugin([
       {
         from: path.resolve(__dirname, '../lib'),
-        to: path.resolve(__dirname, '../dist'),
+        to: path.resolve(__dirname, '../dist/lib'),
       },
     ]),
     new HtmlPlugin({

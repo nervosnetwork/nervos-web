@@ -1,9 +1,7 @@
 import * as React from 'react'
-import { Header, Logo, Slogan } from '../../styled/Common'
+import { Slogan } from '../../styled/Common'
 import PageBlock from '../../components/PageBlock'
-import { IPageBlock } from '../../components/PageBlock/type.d'
-import ColorizedBlock from '../../components/ColorizedBlock'
-import {pageBlocks} from '../../App'
+import { homepageBlocks as blocks } from '../../routes'
 
 const slogan = (
   <Slogan>
@@ -14,8 +12,8 @@ const slogan = (
   </Slogan>
 )
 
-export default (props) => (
-  <PageBlock blocks={pageBlocks} {...props}>
+export default props => (
+  <PageBlock blocks={blocks} displayName="homepage" {...props}>
     {slogan}
   </PageBlock>
 )

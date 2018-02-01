@@ -6,11 +6,13 @@ export interface IPageBlock {
   index?: number
 }
 export interface PageBlockProps {
+  displayName: string
   blocks: IPageBlock[]
+
   history: any
   location: any
   match: any
-  index?: number
+  // index?: number
   children: React.ReactChild
 }
 

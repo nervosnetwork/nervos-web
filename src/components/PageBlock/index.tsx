@@ -10,6 +10,7 @@ import {
 } from '../../styled/Common'
 import { FadeInDiv } from '../../styled/Animation'
 import { PageBlockProps, PageBlockState, IPageBlock } from './type.d'
+import Navigator from '../Navigator'
 
 export default class PageBlock extends React.Component<
   PageBlockProps,
@@ -25,14 +26,22 @@ export default class PageBlock extends React.Component<
       }))
     }, 0)
   }
-  navTo = (url) => {
+  navTo = url => {
     this.props.history.push(url)
   }
-  handleNavClick = (url) => (e) => {
+  blockFilter = (blocks, displayName) => {
+    if (displayName === 'homepage') return blocks
+    const index = blocks.findIndex(block => block.title === displayName)
+    if (index > -1) {
+      return [{ ...blocks[index], index }]
+    }
+    throw new Error('block not found')
+  }
+  handleNavClick = url => e => {
     if (this.props.location.pathname === url) return
 
     this.setState({
-      loaded: false
+      loaded: false,
     })
     setTimeout(() => {
       this.navTo(url)
@@ -45,16 +54,28 @@ export default class PageBlock extends React.Component<
     return (
       <FadeInDiv fadeIn={loaded}>
         <CenterBlock>
+          <Navigator
+            fadeIn={loaded}
+            // location={props.location}
+            currentPath={props.location.pathname}
+            onNav={this.handleNavClick}
+            blocks={props.blocks}
+          />
           <CenterBlockTitles>
-            {props.blocks.map((block, index) => (
-              <CenterBlockTitle key={block.title} onClick={this.handleNavClick(block.path)}>
-                <CenterBlockIndex>
-                  {`00${(props.index || index) + 1}`.slice(-2)}.
-                </CenterBlockIndex>
-                {props.blocks.length > 1 ? null : <br />}
-                {block.title}
-              </CenterBlockTitle>
-            ))}
+            {this.blockFilter(props.blocks, props.displayName).map(
+              (block, index) => (
+                <CenterBlockTitle
+                  key={block.title}
+                  onClick={this.handleNavClick(block.path)}
+                >
+                  <CenterBlockIndex>
+                    {`00${(block.index || index) + 1}`.slice(-2)}.
+                  </CenterBlockIndex>
+                  {props.blocks.length > 1 ? null : <br />}
+                  {block.title}
+                </CenterBlockTitle>
+              ),
+            )}
           </CenterBlockTitles>
           <CenterBlockContent>{props.children}</CenterBlockContent>
         </CenterBlock>
