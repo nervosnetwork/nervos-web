@@ -5,20 +5,36 @@ import { HashRouter as Router } from 'react-router-dom'
 import AsyncRoutes from './components/AsyncRoutes'
 import { ThemeProvider } from './styled/styledComponents'
 import theme from './config/theme'
-import { IPageBlock} from './components/PageBlock/type.d'
+import { IPageBlock } from './components/PageBlock/type.d'
 
-const TechChild = () => (
-  <div>
-    techchild
-  </div>
-)
+const TechChild = () => <div>techchild</div>
 
-export const TechBlock = { title: 'Technology', path: '/tech', key: 'technology', module: 'Technology', index: 1 }
-export const ContactMeBlock = { title: 'Contact Me', path: '/contract-me', key: 'contractMe', module: 'ContactMe', index: 2 }
+export const TechBlock = {
+  title: 'Technology',
+  path: '/tech',
+  key: 'technology',
+  module: 'Technology',
+  index: 1,
+}
+export const ContactMeBlock = {
+  title: 'Contact Me',
+  path: '/contract-me',
+  key: 'contractMe',
+  module: 'ContactMe',
+  index: 2,
+}
 
+export const FeaturesBlock = {
+  title: 'Features',
+  path: '/features',
+  key: 'features',
+  module: 'Features',
+  index: 3,
+}
 export const pageBlocks: IPageBlock[] = [
   TechBlock,
   ContactMeBlock,
+  FeaturesBlock,
 ]
 
 const routes = [

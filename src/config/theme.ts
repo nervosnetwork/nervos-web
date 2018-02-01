@@ -6,7 +6,7 @@ export interface ThemeInterface {
     primary: COLORS
     highlight: COLORS
     background: COLORS
-    white: COLORS
+    plain: COLORS
   }
   sizes: {
     root: string
@@ -21,6 +21,21 @@ export interface ThemeInterface {
     blockTitleHeight: SIZES
     slogan: SIZES
     subscribeBtnFontSize: SIZES
+    descFontSize: SIZES
+    primaryTitleFontSize: string
+    secondaryTitleFontSize: SIZES
+    titleColorBlockWidth: string
+    titleColorBlockRightSpan: string
+    descLeftPadding: string
+    descTopPadding: string
+    subscribeFormLineHeight: string
+    subscribeFormLineWidth: string
+    highlightBtnWidth: string
+    highlightBtnHeight: string
+    historyCircleDiameter: string
+    historyCircleBandWidth: string
+    historyColBorderBottomWidth: string
+    historyItemIconDiameter: string
   }
 }
 

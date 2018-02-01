@@ -3,7 +3,8 @@ import * as React from 'react'
 import PageBlock from '../../components/PageBlock'
 import { IPageBlock } from '../../components/PageBlock/type.d'
 import ColorizedBlock from '../../components/ColorizedBlock'
-import {TechBlock} from '../../App'
+import { ColorizedTitle, Desc } from '../../styled/Common'
+import { TechBlock } from '../../App'
 
 /* eslint-disable global-require */
 const highEffeciencyImg = require('../../images/high_efficiency.svg') as string
@@ -13,19 +14,20 @@ const scalableImg = require('../../images/scalable.svg') as string
 
 const TechChild = () => (
   <div>
-    <ColorizedBlock />
+    <ColorizedBlock>
+      <ColorizedTitle primary h1>
+        Title
+      </ColorizedTitle>
+      <Desc>test</Desc>
+    </ColorizedBlock>
     <img src={highEffeciencyImg} alt="High Efficiency" />
     <img src={identityImg} alt="identity" />
     <img src={scalableImg} alt="scalable" />
   </div>
 )
 
-export default (props) => (
-  <PageBlock
-    blocks={[TechBlock]}
-    key={TechBlock.title}
-    {...props}
-  >
+export default props => (
+  <PageBlock blocks={[TechBlock]} key={TechBlock.title} {...props}>
     <TechChild />
   </PageBlock>
 )

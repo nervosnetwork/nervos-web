@@ -9,5 +9,5 @@ export default {
   background: COLORS.BLUE,
   primary: COLORS.GREEN,
   highlight: COLORS.RED,
-  white: COLORS.WHITE,
+  plain: COLORS.WHITE,
 }
