@@ -2,7 +2,7 @@
 import * as React from 'react'
 import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
-import { ContactMeBlock } from '../../App'
+import { ContactMeSlide } from '../../App'
 import {
   RippleInput,
   HighlightButton,
@@ -13,7 +13,7 @@ import {
 } from '../../styled/Common'
 
 export default props => (
-  <PageBlock blocks={[ContactMeBlock]} key={ContactMeBlock.title} {...props}>
+  <PageBlock blocks={[ContactMeSlide]} key={ContactMeSlide.title} {...props}>
     <ColorizedBlock>
       <ColorizedTitle primary h1>
         Subscribe To Our NewsLetter

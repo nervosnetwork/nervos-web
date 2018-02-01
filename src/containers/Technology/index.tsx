@@ -4,7 +4,7 @@ import PageBlock from '../../components/PageBlock'
 import { IPageBlock } from '../../components/PageBlock/type.d'
 import ColorizedBlock from '../../components/ColorizedBlock'
 import { ColorizedTitle, Desc } from '../../styled/Common'
-import { TechBlock } from '../../App'
+import { TechSlide } from '../../App'
 
 /* eslint-disable global-require */
 const highEffeciencyImg = require('../../images/high_efficiency.svg') as string
@@ -27,7 +27,7 @@ const TechChild = () => (
 )
 
 export default props => (
-  <PageBlock blocks={[TechBlock]} key={TechBlock.title} {...props}>
+  <PageBlock blocks={[TechSlide]} key={TechSlide.title} {...props}>
     <TechChild />
   </PageBlock>
 )

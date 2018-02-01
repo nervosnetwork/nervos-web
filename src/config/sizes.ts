@@ -31,7 +31,7 @@ export default {
   titleColorBlockWidth: '20px',
   titleColorBlockRightSpan: '2rem',
   descLeftPadding: '3rem',
-  descTopPadding: '3.75rem',
+  descTopPadding: '7.5rem',
   subscribeFormLineHeight: '5.4rem',
   subscribeFormLineWidth: '30.18rem',
   highlightBtnWidth: '12.5rem',
@@ -40,4 +40,6 @@ export default {
   historyCircleBandWidth: '5px',
   historyColBorderBottomWidth: '5px',
   historyItemIconDiameter: '5px',
+  memberBlockHeight: '200px',
+  memberBlockDescPaddingLeft: '35px',
 }
