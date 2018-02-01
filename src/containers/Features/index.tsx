@@ -1,7 +1,7 @@
 import * as React from 'react'
 import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
-import { ContactMeBlock } from '../../App'
+import { FeaturesSlide } from '../../App'
 import {
   RippleInput,
   HighlightButton,
@@ -65,9 +65,9 @@ const historys = [
 ]
 
 export default props => (
-  <PageBlock blocks={[ContactMeBlock]} key={ContactMeBlock.title} {...props}>
-    <ColorizedBlock>
-      <ColorizedTitle primary h1>
+  <PageBlock blocks={[FeaturesSlide]} key={FeaturesSlide.title} {...props}>
+    <ColorizedBlock primary={false}>
+      <ColorizedTitle primary={false} h1>
         Features
       </ColorizedTitle>
       <Desc>

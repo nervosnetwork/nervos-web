@@ -36,6 +36,8 @@ export interface ThemeInterface {
     historyCircleBandWidth: string
     historyColBorderBottomWidth: string
     historyItemIconDiameter: string
+    memberBlockHeight: string
+    memberBlockDescPaddingLeft: string
   }
 }
 

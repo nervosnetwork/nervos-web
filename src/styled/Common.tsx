@@ -79,10 +79,12 @@ export const CenterBlockTitle = styled.h5`
   margin: 0;
   margin-bottom: ${props => props.theme.sizes.centerBlockTitleVSpan};
   cursor: pointer;
+  font-weight: 100;
 `
 
 // Center Block Title Index
 export const CenterBlockIndex = styled.span`
+  font-weight: inherit;
   color: ${props => props.theme.colors.primary};
 `
 
@@ -272,4 +274,37 @@ export const HistoryItem = styled.p`
     box-sizing: border-box;
     transform: translateY(-50%);
   }
+`
+export const MemberBlock = styled.div`
+  position: relative;
+  width: 50%;
+  display: inline-block;
+  padding-left: ${props => props.theme.sizes.memberBlockHeight};
+  height: ${props => props.theme.sizes.memberBlockHeight};
+`
+export const MemberBlockAvatar = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: ${props => props.theme.sizes.memberBlockHeight};
+  height: ${props => props.theme.sizes.memberBlockHeight};
+  border-radius: 50%;
+`
+export const MemberBlockName = styled.div`
+  font-size: 46px;
+  color: ${props => props.theme.colors.plain};
+  position: absolute;
+  top: 50%;
+  margin-top: -1em;
+  left: ${props => props.theme.sizes.memberBlockHeight};
+  padding-left: ${props => props.theme.sizes.memberBlockDescPaddingLeft};
+  font-weight: 100;
+`
+export const MemberBlockDesc = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: ${props => props.theme.sizes.memberBlockHeight};
+  color: ${props => props.theme.colors.primary};
+  padding-left: ${props => props.theme.sizes.memberBlockDescPaddingLeft};
+  font-size: 20px;
 `

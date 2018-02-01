@@ -9,14 +9,14 @@ import { IPageBlock } from './components/PageBlock/type.d'
 
 const TechChild = () => <div>techchild</div>
 
-export const TechBlock = {
+export const TechSlide = {
   title: 'Technology',
   path: '/tech',
   key: 'technology',
   module: 'Technology',
   index: 1,
 }
-export const ContactMeBlock = {
+export const ContactMeSlide = {
   title: 'Contact Me',
   path: '/contract-me',
   key: 'contractMe',
@@ -24,17 +24,42 @@ export const ContactMeBlock = {
   index: 2,
 }
 
-export const FeaturesBlock = {
+export const FeaturesSlide = {
   title: 'Features',
   path: '/features',
   key: 'features',
   module: 'Features',
   index: 3,
 }
+
+export const TeamMembersSlide = {
+  title: 'Team Members',
+  path: '/team-members',
+  key: 'teamMembers',
+  module: 'TeamMembers',
+  index: 4,
+}
+export const AdvisorsSlide = {
+  title: 'Advisors',
+  path: '/advisors',
+  key: 'advisors',
+  module: 'Advisors',
+  index: 5,
+}
+export const SupportersSlide = {
+  title: 'Supporters',
+  path: '/supporters',
+  key: 'advisors',
+  module: 'Supporters',
+  index: 5,
+}
 export const pageBlocks: IPageBlock[] = [
-  TechBlock,
-  ContactMeBlock,
-  FeaturesBlock,
+  TechSlide,
+  ContactMeSlide,
+  FeaturesSlide,
+  TeamMembersSlide,
+  AdvisorsSlide,
+  SupportersSlide,
 ]
 
 const routes = [
