@@ -15,8 +15,8 @@ import {
   MemberBlockDesc,
 } from '../../styled/Common'
 
-export default ({ block, members }) => routerProps => (
-  <PageBlock blocks={[block]} key={block.title} {...routerProps}>
+export default ({ displayName, blocks, members }) => routerProps => (
+  <PageBlock blocks={blocks} displayName={displayName} {...routerProps}>
     <ColorizedBlock primary>
       <ColorizedTitle primary h1>
         Features

@@ -38,6 +38,9 @@ export interface ThemeInterface {
     historyItemIconDiameter: string
     memberBlockHeight: string
     memberBlockDescPaddingLeft: string
+    pageBlockMarginTop: string
+    centerBlockTitleWidth: string
+    chartDescPaddingTop: string
   }
 }
 

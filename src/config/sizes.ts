@@ -42,4 +42,7 @@ export default {
   historyItemIconDiameter: '5px',
   memberBlockHeight: '200px',
   memberBlockDescPaddingLeft: '35px',
+  pageBlockMarginTop: '112px',
+  centerBlockTitleWidth: '300px',
+  chartDescPaddingTop: '60px',
 }

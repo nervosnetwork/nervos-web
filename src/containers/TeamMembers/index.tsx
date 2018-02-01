@@ -1,21 +1,6 @@
 import * as React from 'react'
-import PageBlock from '../../components/PageBlock'
-import ColorizedBlock from '../../components/ColorizedBlock'
-import { ContactMeSlide } from '../../App'
+import { homepageBlocks as blocks } from '../../routes'
 import TeamBlock from '../../components/TeamBlock'
-import {
-  RippleInput,
-  HighlightButton,
-  ColorizedTitle,
-  Desc,
-  HistoryCol,
-  HistoryYearLabel,
-  HistoryItem,
-  MemberBlock,
-  MemberBlockAvatar,
-  MemberBlockName,
-  MemberBlockDesc,
-} from '../../styled/Common'
 
 const members = [
   {
@@ -41,6 +26,7 @@ const members = [
 ]
 
 export default TeamBlock({
-  block: ContactMeSlide,
+  blocks,
+  displayName: 'Team Members',
   members,
 })

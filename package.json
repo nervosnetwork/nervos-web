@@ -8,21 +8,21 @@
   "author": "Keith <keithwhisper@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start-1": "clear && webpack-dashboard -- webpack-dev-server --config config/webpack.config.dev.js",
+    "start-1":
+      "clear && webpack-dashboard -- webpack-dev-server --config config/webpack.config.dev.js",
     "start": "webpack-dev-server --config config/webpack.config.dev.js",
     "build": "yarn run build:test",
-    "build:test": "rimraf dist && webpack --config config/webpack.config.prod.js && cp -r lib dist",
-    "build:prod": "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js && cp -r lib dist",
+    "build:test":
+      "rimraf dist && webpack --config config/webpack.config.prod.js",
+    "build:prod":
+      "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
     "dll": "rimraf lib && webpack --config ./config/webpack.config.dll.js",
     "precommit": "lint-staged",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d dist"
   },
   "lint-staged": {
-    "src/**/*.tsx": [
-      "eslint --fix",
-      "git add"
-    ]
+    "src/**/*.tsx": ["eslint --fix", "git add"]
   },
   "dependencies": {
     "normalize.css": "^7.0.0",

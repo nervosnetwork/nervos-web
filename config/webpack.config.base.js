@@ -3,8 +3,8 @@ const path = require('path')
 module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: 'scripts/[name]-[hash].js',
-    chunkFilename: 'scripts/[name]-[hash].js',
+    filename: 'scripts/[name]-[hash:5].js',
+    chunkFilename: 'scripts/[name]-[hash:5].js',
   },
   module: {
     rules: [
@@ -26,7 +26,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 8192,
-          name: '[name]-[hash].[ext]',
+          name: 'images/[name]-[hash].[ext]',
         },
         include: /src/,
       },
@@ -34,7 +34,6 @@ module.exports = {
         test: /\.(woff|woff2)$/,
         loader: 'url-loader',
         options: {
-          limit: 50000,
           mimetype: 'application/font-woff',
           name: 'fonts/[name].[ext]',
         },

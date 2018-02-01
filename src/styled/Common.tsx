@@ -59,12 +59,13 @@ export const CenterBlock = styled.div`
   max-width: ${props => props.theme.sizes.centerBlockMaxWidth};
   width: ${props => props.theme.sizes.centerBlockWidth};
   margin: 0 auto;
+  margin-top: ${props => props.theme.sizes.pageBlockMarginTop};
 `
 
 // Center Block Title Container
 export const CenterBlockTitles = styled.div`
   display: inline-block;
-  width: 357px;
+  width: ${props => props.theme.sizes.centerBlockTitleWidth};
   font-size: ${props => props.theme.sizes.blockTitleHeight};
 `
 
@@ -163,6 +164,9 @@ export const Desc = styled.div`
   font-size: ${props => props.theme.sizes.descFontSize};
   padding-left: ${props => props.theme.sizes.descLeftPadding};
   padding-top: ${props => props.theme.sizes.descTopPadding};
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
 `
 
 interface IColorizedTitle {
@@ -307,4 +311,79 @@ export const MemberBlockDesc = styled.div`
   color: ${props => props.theme.colors.primary};
   padding-left: ${props => props.theme.sizes.memberBlockDescPaddingLeft};
   font-size: 20px;
+`
+export const ChartBlock = styled.div`
+  display: inline-block;
+  width: 33%;
+  padding-right: 116px;
+`
+
+interface IChartTitle {
+  primary?: boolean
+}
+
+const ChartTitleCons: StyledFunction<
+  IChartTitle & React.HTMLProps<HTMLElement>
+  > =
+  styled.h1
+export const ChartTitle = ChartTitleCons`
+  font-size: 32px;
+  line-height: 1;
+  display:block;
+  height: 2em;
+  color: ${props => props.theme.colors.plain};
+  border-left-width: ${props => props.theme.sizes.titleColorBlockWidth};
+  border-left-style: solid;
+  border-left-color: ${props =>
+    `${
+      props.primary ? props.theme.colors.primary : props.theme.colors.highlight
+    }`};
+  margin: 0;
+  margin-left: ${props => `-${props.theme.sizes.dashLineWidth}`};
+  padding-left: ${props => `${props.theme.sizes.titleColorBlockRightSpan}`};
+  text-transform: uppercase;
+  letter-spacing: 3px;
+`
+export const ChartDesc = styled.div`
+  color: ${props => props.theme.colors.primary};
+  font-size: ${props => props.theme.sizes.descFontSize};
+  padding-left: ${props => props.theme.sizes.descLeftPadding};
+  padding-top: ${props => props.theme.sizes.chartDescPaddingTop};
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+`
+
+export const ChartIcon = styled.img`
+  width: 184px;
+  height: 184px;
+  margin-bottom: 100px;
+`
+
+export const SlideNavs = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 100px;
+`
+
+interface ISlideNav {
+  active?: boolean
+}
+
+const SlideNavCons: StyledFunction<
+  ISlideNav & React.HTMLProps<HTMLDivElement>
+  > =
+  styled.div
+
+export const SlideNav = SlideNavCons`
+  width: 10px;
+  height: 10px;
+  background-color: ${props =>
+    `${
+      props.active ? props.theme.colors.highlight : 'rgba(255, 255, 255, 0.8)'
+    }`};
+  border-radius: 50%;
+  margin: 10px 0;
+  cursor: ${props => (props.active ? 'default' : 'pointer')};
+
 `
