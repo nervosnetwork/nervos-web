@@ -41,6 +41,20 @@ export interface ThemeInterface {
     pageBlockMarginTop: string
     centerBlockTitleWidth: string
     chartDescPaddingTop: string
+    memberNameFontSize: string
+    slideNavTopMargin: string
+    slideNavLeftMargin: string
+    chartIconMarginBottom: string
+    chartIconSize: string
+    chartBlockPaddingRight: string
+    HistoryColPaddingTop: string
+    HistoryColPaddingLeft: string
+    HistoryYearLabelPaddingBottom: string
+    HistoryItemHPadding: string
+    ChartTitleFontSize: string
+    rectWidth: string
+    rectHeight: string
+    rectOffset: string
   }
 }
 

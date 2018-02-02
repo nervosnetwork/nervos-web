@@ -17,18 +17,18 @@ const Navigator: React.SFC<NavigatorProps> = ({
   currentPath,
   fadeIn,
 }) => (
-  <FadeOutDiv fadeOut={!fadeIn}>
-    <SlideNavs>
-      {blocks.map(block => (
+  <SlideNavs>
+    {blocks.map((block, index) => (
+      <FadeOutDiv fadeOut={!fadeIn} index={index} key={block.path}>
         <SlideNav
           onClick={e => {
             onNav(block.path)(e)
           }}
           active={currentPath === block.path}
         />
-      ))}
-    </SlideNavs>
-  </FadeOutDiv>
+      </FadeOutDiv>
+    ))}
+  </SlideNavs>
 )
 
 export default Navigator
