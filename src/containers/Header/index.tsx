@@ -1,5 +1,7 @@
 import * as React from 'react'
+import { createPortal } from 'react-dom'
 import { Header, Logo, Navs, NavItem } from '../../styled/Common'
+import { FadeIn } from '../../styled/Animation'
 
 /* eslint-disable global-require */
 const LogoImg = require('../../images/nerveos.svg') as string
@@ -24,15 +26,47 @@ const navs = [
   },
 ]
 
-export default () => (
-  <Header>
-    <Logo src={LogoImg} alt="NervOS" />
-    <Navs>
-      {navs.map(item => (
-        <NavItem key={item.path}>
-          <a href={item.path}>{item.label}</a>
-        </NavItem>
-      ))}
-    </Navs>
-  </Header>
-)
+/* eslint-disable no-restricted-globals */
+interface HeaderProps {
+  // history: History
+  history: any
+  location: Location
+}
+interface HeaderState {
+  loaded: boolean
+}
+/* eslint-enable no-restricted-globals */
+
+export default class extends React.Component<HeaderProps, HeaderState> {
+  state = {
+    loaded: false,
+  }
+  componentDidMount () {
+    setTimeout(() => {
+      this.setState(() => ({ loaded: true }))
+    }, 0)
+  }
+  render () {
+    const { props } = this
+    const { loaded } = this.state
+    return createPortal(
+      <Header>
+        <Logo
+          src={LogoImg}
+          alt="NervOS"
+          onClick={() => props.location.pathname !== '/' && props.history.push('/')}
+        />
+        <Navs>
+          {navs.map((item, index) => (
+            <NavItem key={item.path}>
+              <FadeIn.horizontal fadeIn={loaded} index={index}>
+                <a href={item.path}>{item.label}</a>
+              </FadeIn.horizontal>
+            </NavItem>
+          ))}
+        </Navs>
+      </Header>,
+      document.getElementById('header') as HTMLElement,
+    )
+  }
+}

@@ -22,7 +22,17 @@ input::placeholder {
   color: #fff;
 }
 
-html, body{
+header {
+  position: relative;
+  padding-top: 100px;
+  z-index: 999;
+}
+main {
+  position: relative;
+  z-index: 1;
+}
+html,
+body {
   font-size: 16px;
   @media (max-width: 1500px) {
     font-size: 14px;

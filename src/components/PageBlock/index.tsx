@@ -8,9 +8,13 @@ import {
   CenterBlockIndex,
   CenterBlockContent,
 } from '../../styled/Common'
-import { FadeInDiv } from '../../styled/Animation'
+import { FadeIn } from '../../styled/Animation'
 import { PageBlockProps, PageBlockState, IPageBlock } from './type.d'
 import Navigator from '../Navigator'
+
+export interface PageBlockChildProps {
+  loaded: boolean
+}
 
 export default class PageBlock extends React.Component<
   PageBlockProps,
@@ -52,7 +56,7 @@ export default class PageBlock extends React.Component<
     const { props } = this
     const { loaded } = this.state
     return (
-      <FadeInDiv fadeIn={loaded}>
+      <FadeIn.vertical fadeIn={loaded}>
         <CenterBlock>
           {props.location.pathname === '/' ? null : (
             <Navigator
@@ -78,15 +82,14 @@ export default class PageBlock extends React.Component<
               ),
             )}
           </CenterBlockTitles>
-          <CenterBlockContent>{
-            // React.cloneElement(props.children as React.ReactElement<any>, {
-            //   fadeIn: loaded
-            // })
-            props.children
-          }
+          <CenterBlockContent>
+            {props.children &&
+              React.cloneElement(props.children as React.ReactElement<any>, {
+                loaded,
+              })}
           </CenterBlockContent>
         </CenterBlock>
-      </FadeInDiv>
+      </FadeIn.vertical>
     )
   }
 }
