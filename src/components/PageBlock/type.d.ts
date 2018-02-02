@@ -11,7 +11,7 @@ export interface PageBlockProps {
 
   history: any
   location: any
-  match: any
+  // match: any
   // index?: number
   children: React.ReactChild
 }

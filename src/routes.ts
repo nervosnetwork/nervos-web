@@ -6,11 +6,11 @@ export const TechSlide = {
   key: 'technology',
   module: 'Technology',
 }
-export const ContactMeSlide = {
-  title: 'Contact Me',
-  path: '/contract-me',
-  key: 'contractMe',
-  module: 'ContactMe',
+export const ContactUsSlide = {
+  title: 'Contact Us',
+  path: '/contract-us',
+  key: 'contractUs',
+  module: 'ContactUs',
 }
 
 export const FeaturesSlide = {
@@ -40,7 +40,7 @@ export const SupportersSlide = {
 }
 export const homepageBlocks: IPageBlock[] = [
   TechSlide,
-  ContactMeSlide,
+  ContactUsSlide,
   FeaturesSlide,
   TeamMembersSlide,
   AdvisorsSlide,

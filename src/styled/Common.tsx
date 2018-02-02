@@ -1,5 +1,9 @@
 import * as React from 'react'
-import styled, { injectGlobal, StyledFunction } from './styledComponents'
+import styled, {
+  injectGlobal,
+  StyledFunction,
+  keyframes,
+} from './styledComponents'
 import theme from '../config/theme'
 
 /* eslint-disable no-unused-expressions */
@@ -13,7 +17,7 @@ injectGlobal`
 /* eslint-enable no-unused-expressions */
 
 // Header
-export const Header = styled.header`
+export const Header = styled.div`
   height: ${props => props.theme.sizes.headerHeight};
   line-height: ${props => props.theme.sizes.headerHeight};
   max-width: ${props => props.theme.sizes.centerBlockMaxWidth};
@@ -26,6 +30,7 @@ export const Logo = styled.img`
   margin-left: ${props =>
     `${-props.theme.sizes.headerHeight.slice(0, -3) / 2}rem`};
   transform: ${props => `translateX(${props.theme.sizes.logoHOffset})`};
+  cursor: pointer;
 `
 export const Navs = styled.ul`
   height: 100%;
@@ -54,6 +59,7 @@ export const ScreenDiv = styled.div`
 
 // Center Block
 export const CenterBlock = styled.div`
+  position: relative;
   display: flex;
   max-width: ${props => props.theme.sizes.centerBlockMaxWidth};
   width: ${props => props.theme.sizes.centerBlockWidth};
@@ -389,14 +395,61 @@ export const SlideNav = SlideNavCons`
 interface IRect {
   deg: number
 }
-const RectCons: StyledFunction<IRect & React.HTMLProps<HTMLDivElement>> = styled.div
+const RectCons: StyledFunction<IRect & React.HTMLProps<HTMLDivElement>> =
+  styled.div
 
 export const Rect = RectCons`
-  position: absolute;
-  display: inline-block;
-  width: ${props => props.theme.sizes.rectWidth};
-  height: ${props => props.theme.sizes.rectHeight};
+position: absolute;
+  display: block;
+  width: ${props => `${props.theme.sizes.rectWidth}px`};
+  height: ${props => `${4 * props.theme.sizes.rectWidth}px`};
   background-color: ${props => props.theme.colors.highlight};
   transform: ${props => `rotate(${props.deg}deg)`};
-  transform-origin: center 180%;
+  transform-origin: ${props => ` center ${props.theme.sizes.rectOffset}`};
+`
+
+interface IWidget {
+  transform?: string
+  children: React.ReactChild
+}
+
+const WidgetsCons: StyledFunction<IWidget> = styled.div
+
+interface IHomepageWidget {
+  primary?: boolean
+  children: React.ReactChild
+}
+const HomepageWidgetCons: StyledFunction<IHomepageWidget> = styled.div
+export const HomepageWidget = HomepageWidgetCons`
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transform: ${props =>
+    props.primary
+      ? 'none'
+      : `translate(${2 * 4 * props.theme.sizes.rectWidth}px, 0)`}
+`
+
+export const HomepageWidgets = styled.div`
+  position: absolute;
+  top: -210px;
+  right: -194px;
+  transform: scale(0.8);
+  & > div {
+    transform: rotate(60deg);
+  }
+  @media (max-width: 1500px) {
+    top: -190px;
+    right: -232px;
+  }
+  @media (max-width: 1200px) {
+    top: -165px;
+    right: -269px;
+  }
+  @media (max-width: 1000px) {
+    top: -159px;
+    right: -206px;
+    transform: scale(0.6);
+  }
 `

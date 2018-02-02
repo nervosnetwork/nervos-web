@@ -53,7 +53,6 @@ export interface ThemeInterface {
     HistoryItemHPadding: string
     ChartTitleFontSize: string
     rectWidth: string
-    rectHeight: string
     rectOffset: string
   }
 }
