@@ -56,7 +56,6 @@ export default {
   HistoryYearLabelPaddingBottom: '1.75rem',
   HistoryItemHPadding: '0.625rem',
   ChartTitleFontSize: '2rem',
-  rectWidth: '2rem',
-  rectHeight: '5rem',
-  rectOffset: '1rem',
+  rectWidth: '78',
+  rectOffset: '150%',
 }

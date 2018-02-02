@@ -47,8 +47,12 @@ const Chart = ({ img, title, desc, key }) => (
   </ChartBlock>
 )
 
+const Tech = props => (
+  <React.Fragment>{chartbBlocks.map(block => Chart(block))}</React.Fragment>
+)
+
 export default props => (
   <PageBlock blocks={blocks} displayName="Technology" {...props}>
-    {chartbBlocks.map(block => Chart(block))}
+    <Tech />
   </PageBlock>
 )

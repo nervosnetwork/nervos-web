@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Slogan } from '../../styled/Common'
 import PageBlock from '../../components/PageBlock'
 import { homepageBlocks as blocks } from '../../routes'
-import RotatingRect from '../../components/RotatingRect'
+import HomepageWidgets from '../../components/HomepageWidgets'
 
 const slogan = (
   <Slogan>
@@ -14,8 +14,10 @@ const slogan = (
 )
 
 export default props => (
-  <PageBlock blocks={blocks} displayName="homepage" {...props}>
-    {slogan}
-  </PageBlock>
+  <React.Fragment>
+    <HomepageWidgets />
+    <PageBlock blocks={blocks} displayName="homepage" {...props}>
+      {slogan}
+    </PageBlock>
+  </React.Fragment>
 )
-// <RotatingRect />
