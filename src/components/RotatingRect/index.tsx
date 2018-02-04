@@ -5,8 +5,6 @@ const degs = [0, 60, 120, 180, 240, 300]
 
 export default props => (
   <React.Fragment>
-    <div style={props.style}>
-      {degs.map(deg => <Rect deg={deg} key={deg} />)}
-    </div>
+    {degs.map(deg => <Rect deg={deg + 30} key={deg} />)}
   </React.Fragment>
 )

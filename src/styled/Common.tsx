@@ -10,8 +10,9 @@ import theme from '../config/theme'
 injectGlobal`
   html, body {
     background-color: ${theme.colors.background};
-    min-height: 100vh;
-    overflow: auto;
+    *::selection{
+      background-color: ${theme.colors.highlight};
+    }
   }
 `
 /* eslint-enable no-unused-expressions */
@@ -106,10 +107,11 @@ export const Slogan = styled.h1`
   color: ${props => props.theme.colors.plain};
   font-family: Futura;
   font-size: ${props => props.theme.sizes.slogan};
-  font-weight: 100;
+  font-weight: 900;
   margin: 0;
-  /* margin-top: -1.125rem; */
   margin-top: ${props => `-${props.theme.sizes.blockTitleHeight}`};
+  margin-left: ${props => props.theme.sizes.dashLineWidth};
+  padding-left: ${props => `${props.theme.sizes.descPaddingLeft}`};
 `
 
 // Colorized Block
@@ -161,13 +163,14 @@ export const HighlightButton = styled.button`
   width: ${props => props.theme.sizes.highlightBtnWidth};
   height: ${props => props.theme.sizes.highlightBtnHeight};
   line-height: ${props => props.theme.sizes.highlightBtnHeight};
+  cursor: pointer;
 `
 
 export const Desc = styled.div`
   color: ${props => props.theme.colors.primary};
   font-size: ${props => props.theme.sizes.descFontSize};
-  padding-left: ${props => props.theme.sizes.descLeftPadding};
-  padding-top: ${props => props.theme.sizes.descTopPadding};
+  padding-left: ${props => props.theme.sizes.descPaddingLeft};
+  padding-top: ${props => props.theme.sizes.descPaddingTop};
   word-wrap: break-word;
   word-break: break-all;
   white-space: pre-wrap;
@@ -202,6 +205,7 @@ export const ColorizedTitle = ColorizedTitleCons`
   margin: 0;
   margin-left: ${props => `-${props.theme.sizes.dashLineWidth}`};
   padding-left: ${props => `${props.theme.sizes.titleColorBlockRightSpan}`};
+  font-weight: 900;
 `
 export const SubscribeFormLine = styled.div`
   position: relative;
@@ -257,7 +261,7 @@ export const HistoryCol = styled.div`
 export const HistoryYearLabel = styled.span`
   position: absolute;
   bottom: 100%;
-  right: 0;
+  right: ${props => `-${props.theme.sizes.dashLineWidth}`};
   padding-bottom: ${props => props.theme.sizes.HistoryYearLabelPaddingBottom};
   color: ${props => props.theme.colors.plain};
 `
@@ -265,7 +269,7 @@ export const HistoryYearLabel = styled.span`
 export const HistoryItem = styled.p`
   margin: 1rem 0;
   position: relative;
-  padding: ${props => `0 ${props.theme.sizes.HistoryItemHPadding}`}
+  padding: ${props => `0 ${props.theme.sizes.HistoryItemHPadding}`};
   text-align: justify;
   text-align-last: left;
   font-size: 1rem;
@@ -319,7 +323,13 @@ export const MemberBlockDesc = styled.div`
 export const ChartBlock = styled.div`
   display: inline-block;
   width: 33%;
-  padding-right: ${props => props.theme.sizes.chartBlockPaddingRight};
+  padding: ${props => `0 ${props.theme.sizes.chartBlockHPadding}`};
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
 `
 
 interface IChartTitle {
@@ -346,12 +356,12 @@ export const ChartTitle = ChartTitleCons`
   margin-left: ${props => `-${props.theme.sizes.dashLineWidth}`};
   padding-left: ${props => `${props.theme.sizes.titleColorBlockRightSpan}`};
   text-transform: uppercase;
-  letter-spacing: 3px;
+  font-weight: 900;
 `
 export const ChartDesc = styled.div`
   color: ${props => props.theme.colors.primary};
   font-size: ${props => props.theme.sizes.descFontSize};
-  padding-left: ${props => props.theme.sizes.descLeftPadding};
+  padding-left: ${props => props.theme.sizes.descPaddingLeft};
   padding-top: ${props => props.theme.sizes.chartDescPaddingTop};
   word-wrap: break-word;
   word-break: break-all;
@@ -362,6 +372,8 @@ export const ChartIcon = styled.img`
   width: ${props => props.theme.sizes.chartIconSize};
   height: ${props => props.theme.sizes.chartIconSize};
   margin-bottom: ${props => props.theme.sizes.chartIconMarginBottom};
+  margin-left: ${props => props.theme.sizes.dashLineWidth};
+  padding-left: ${props => `${props.theme.sizes.descPaddingLeft}`};
 `
 
 export const SlideNavs = styled.div`
@@ -399,13 +411,16 @@ const RectCons: StyledFunction<IRect & React.HTMLProps<HTMLDivElement>> =
   styled.div
 
 export const Rect = RectCons`
-position: absolute;
+  position: absolute;
+  top:0;
+  left:0;
   display: block;
   width: ${props => `${props.theme.sizes.rectWidth}px`};
   height: ${props => `${4 * props.theme.sizes.rectWidth}px`};
   background-color: ${props => props.theme.colors.highlight};
-  transform: ${props => `rotate(${props.deg}deg)`};
-  transform-origin: ${props => ` center ${props.theme.sizes.rectOffset}`};
+  transform: ${props => `rotate(${props.deg}deg) `};
+  transform-origin: ${props =>
+    `center ${100 + +props.theme.sizes.rectOffset}%`};
 `
 
 interface IWidget {
@@ -422,34 +437,69 @@ interface IHomepageWidget {
 const HomepageWidgetCons: StyledFunction<IHomepageWidget> = styled.div
 export const HomepageWidget = HomepageWidgetCons`
   position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
+  width: ${props => `${4 * props.theme.sizes.rectWidth * 2.82}px`};
+  height: ${props =>
+    `${4 *
+      props.theme.sizes.rectWidth *
+      (+props.theme.sizes.rectOffset + 100) /
+      100 *
+      Math.sqrt(3) +
+      props.theme.sizes.rectWidth / 2}px`};
   transform: ${props =>
     props.primary
       ? 'none'
-      : `translate(${2 * 4 * props.theme.sizes.rectWidth}px, 0)`}
+      : `translateX(${4 *
+          props.theme.sizes.rectWidth *
+          (2 * +props.theme.sizes.rectOffset + 100) /
+          100}px)`};
+  &>div{
+    top: ${props => `-${props.theme.sizes.rectWidth / 2}px`};
+    left: ${props =>
+    `${(4 *
+        props.theme.sizes.rectWidth *
+        (+props.theme.sizes.rectOffset + 100) /
+        100 *
+        Math.sqrt(3) +
+        props.theme.sizes.rectWidth / 2) /
+        2}px`};
+  }
 `
 
 export const HomepageWidgets = styled.div`
   position: absolute;
-  top: -210px;
-  right: -194px;
-  transform: scale(0.8);
+  top: 0;
+  left: 0;
+  transform: translate(48vw, -335px);
   & > div {
     transform: rotate(60deg);
+    width: ${props =>
+    `${4 *
+        +props.theme.sizes.rectWidth *
+        (3 + +props.theme.sizes.rectOffset / 100 * 4)}px`};
+    height: ${props =>
+    `${4 *
+        +props.theme.sizes.rectWidth *
+        (+props.theme.sizes.rectOffset + 100) /
+        100 *
+        Math.sqrt(3) +
+        +props.theme.sizes.rectWidth / 2}px`};
   }
   @media (max-width: 1500px) {
-    top: -190px;
-    right: -232px;
+    transform: translate(34.8vw, -362px);
+    & > div {
+      transform: rotate(60deg) scale(0.8);
+    }
   }
   @media (max-width: 1200px) {
-    top: -165px;
-    right: -269px;
+    transform: translate(22.1vw, -366px);
+    & > div {
+      transform: rotate(60deg) scale(0.7);
+    }
   }
   @media (max-width: 1000px) {
-    top: -159px;
-    right: -206px;
-    transform: scale(0.6);
+    transform: translate(7.8vw, -390px);
+    & > div {
+      transform: rotate(60deg) scale(0.6);
+    }
   }
 `

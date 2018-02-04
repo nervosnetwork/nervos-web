@@ -15,18 +15,12 @@ const historys = [
   {
     time: '2018',
     key: '2018',
-    items: [
-      'lorem1',
-      'loremLorem ipsum dolor sit amet, consectetur adipisicing elit2',
-      'loremLorem ipsum dolor sit amet, consectetur adipisicing elit3',
-    ],
+    items: ['loremLorem ipsum dolor sit amet, consectetur adipisicing elit3'],
   },
   {
     time: '2019',
     key: '2019',
     items: [
-      'lorem1',
-      'loremLorem ipsum dolor sit amet, consectetur adipisicing elit2',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit3',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit4',
     ],
@@ -35,8 +29,6 @@ const historys = [
     time: '2020',
     key: '2020',
     items: [
-      'lorem1',
-      'loremLorem ipsum dolor sit amet, consectetur adipisicing elit2',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit3',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit4',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit5',
@@ -46,8 +38,6 @@ const historys = [
     time: '2021',
     key: '2021',
     items: [
-      'lorem1',
-      'loremLorem ipsum dolor sit amet, consectetur adipisicing elit2',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit3',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit4',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit5',
@@ -58,8 +48,6 @@ const historys = [
     time: '2022',
     key: '2022',
     items: [
-      'lorem1',
-      'loremLorem ipsum dolor sit amet, consectetur adipisicing elit2',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit3',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit4',
       'loremLorem ipsum dolor sit amet, consectetur adipisicing elit5',

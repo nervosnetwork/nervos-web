@@ -8,6 +8,7 @@
   box-sizing: border-box;
   font-family: Futura, 'PingFang-SC Light', 'Microsoft YaHei';
   outline: none;
+  letter-spacing: 3px;
 }
 ul {
   margin: 0;
@@ -34,6 +35,8 @@ main {
 html,
 body {
   font-size: 16px;
+  min-height: 100vh;
+  overflow-x: hidden;
   @media (max-width: 1500px) {
     font-size: 14px;
   }
