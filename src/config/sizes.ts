@@ -24,7 +24,7 @@ export default {
   navItemHeight: SIZES.F7,
   centerBlockMaxWidth: '94.625rem', // 1514
   centerBlockWidth: '78.8%',
-  subscribeBtnFontSize: SIZES.F3,
+  subscribeBtnFontSize: SIZES.F4,
   descFontSize: SIZES.F6,
   primaryTitleFontSize: '3.875rem',
   secondaryTitleFontSize: SIZES.F9,
@@ -40,17 +40,14 @@ export default {
   historyCircleBandWidth: '0.3125rem', // 5
   historyColBorderBottomWidth: '0.3125rem', // 5
   historyItemIconDiameter: '0.3125rem', // 5
-  memberBlockHeight: '12.5rem', // 200
-  memberBlockDescPaddingLeft: '2.1875rem', // 35
   pageBlockMarginTop: '7rem', // 112
   centerBlockTitleWidth: '15rem', // 240
   chartDescPaddingTop: '3.75rem', // 60
-  memberNameFontSize: '2.875rem',
   slideNavTopMargin: '6.25rem',
   slideNavLeftMargin: '6.25rem',
   chartIconMarginBottom: '6.25rem',
   chartIconSize: '11.5rem',
-  chartBlockHPadding: '3.625rem',
+  chartBlockHPadding: '7.5rem',
   HistoryColPaddingTop: '2.5rem',
   HistoryColPaddingLeft: '0.93rem',
   HistoryYearLabelPaddingBottom: '1.75rem',
@@ -58,4 +55,10 @@ export default {
   ChartTitleFontSize: '2rem',
   rectWidth: '78',
   rectOffset: '42',
+  inputFontSize: '1.875rem',
+  memberBlockHeight: '12.5rem', // 200
+  memberBlockDescPaddingLeft: '2.1875rem', // 35
+  memberNameFontSize: '2.875rem',
+  memberHPadding: '5.84rem',
+  memberVPadding: '2.65rem',
 }

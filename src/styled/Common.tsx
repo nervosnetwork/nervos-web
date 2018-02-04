@@ -133,6 +133,8 @@ export const ColorizedDiv = ColorizedDivWithCons`
 /* eslint-enable no-use-before-define */
 
 export const RippleInput = styled.input`
+  font-size: ${props => props.theme.sizes.inputFontSize};
+  line-height: 1.6;
   background-color: transparent;
   background-image: ${props =>
     `linear-gradient(to top, ${props.theme.colors.plain}, ${
@@ -293,6 +295,22 @@ export const MemberBlock = styled.div`
   display: inline-block;
   padding-left: ${props => props.theme.sizes.memberBlockHeight};
   height: ${props => props.theme.sizes.memberBlockHeight};
+  /* &:first-of-type {
+    padding-right: ${props => props.theme.sizes.memberHPadding};
+    padding-bottom: ${props => props.theme.sizes.memberVPadding};
+  }
+  &:nth-of-type(2) {
+    padding-left: ${props => props.theme.sizes.memberHPadding};
+    padding-bottom: ${props => props.theme.sizes.memberVPadding};
+  }
+  &:nth-of-type(3) {
+    padding-top: ${props => props.theme.sizes.memberHPadding};
+    padding-right: ${props => props.theme.sizes.memberHPadding};
+  }
+  &:last-of-type {
+    padding-top: ${props => props.theme.sizes.memberHPadding};
+    padding-left: ${props => props.theme.sizes.memberHPadding};
+  } */
 `
 export const MemberBlockAvatar = styled.img`
   position: absolute;
@@ -322,13 +340,17 @@ export const MemberBlockDesc = styled.div`
 `
 export const ChartBlock = styled.div`
   display: inline-block;
+  /* overflow: hidden; */
   width: 33%;
-  padding: ${props => `0 ${props.theme.sizes.chartBlockHPadding}`};
+  padding: ${props =>
+    `0 ${+props.theme.sizes.chartBlockHPadding.slice(0, -3) / 3}rem`};
   &:first-child {
-    padding-left: 0;
+    padding: ${props =>
+    `0 ${2 * +props.theme.sizes.chartBlockHPadding.slice(0, -3) / 3}rem 0 0`};
   }
   &:last-child {
-    padding-right: 0;
+    padding: ${props =>
+    `0 0 0 ${2 * +props.theme.sizes.chartBlockHPadding.slice(0, -3) / 3}rem`};
   }
 `
 
@@ -366,6 +388,8 @@ export const ChartDesc = styled.div`
   word-wrap: break-word;
   word-break: break-all;
   white-space: pre-wrap;
+  text-align: justify;
+  text-align-last: left;
 `
 
 export const ChartIcon = styled.img`
@@ -406,10 +430,23 @@ export const SlideNav = SlideNavCons`
 
 interface IRect {
   deg: number
+  index?: number
 }
 const RectCons: StyledFunction<IRect & React.HTMLProps<HTMLDivElement>> =
   styled.div
 
+const fadeIn = keyframes`{
+  from {
+    opacity: 0;
+  }
+  80%{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+`
 export const Rect = RectCons`
   position: absolute;
   top:0;
@@ -417,10 +454,13 @@ export const Rect = RectCons`
   display: block;
   width: ${props => `${props.theme.sizes.rectWidth}px`};
   height: ${props => `${4 * props.theme.sizes.rectWidth}px`};
+  opacity: ${props => (props.index ? 0 : 1)};
   background-color: ${props => props.theme.colors.highlight};
   transform: ${props => `rotate(${props.deg}deg) `};
   transform-origin: ${props =>
     `center ${100 + +props.theme.sizes.rectOffset}%`};
+    animation:${props => (props.index ? `${fadeIn} 0.1s forwards` : 'none')};
+    animation-delay: ${props => `${1 + (props.index || 0) * 0.1}s`}
 `
 
 interface IWidget {
@@ -445,13 +485,14 @@ export const HomepageWidget = HomepageWidgetCons`
       100 *
       Math.sqrt(3) +
       props.theme.sizes.rectWidth / 2}px`};
+  transform-origin: center center;
   transform: ${props =>
     props.primary
-      ? 'none'
+      ? 'rotate(60deg)'
       : `translateX(${4 *
           props.theme.sizes.rectWidth *
           (2 * +props.theme.sizes.rectOffset + 100) /
-          100}px)`};
+          100}px) rotate(-120deg) `};
   &>div{
     top: ${props => `-${props.theme.sizes.rectWidth / 2}px`};
     left: ${props =>

@@ -9,6 +9,7 @@ import {
   ChartIcon,
 } from '../../styled/Common'
 import { TechSlide, homepageBlocks as blocks } from '../../routes'
+import { SlideIn } from '../../styled/Animation'
 
 /* eslint-disable global-require */
 const highEffeciencyImg = require('../../images/high_efficiency.svg') as string
@@ -37,18 +38,24 @@ const chartbBlocks = [
   },
 ]
 
-const Chart = ({ img, title, desc, key }) => (
+const Chart = ({ img, title, desc, key, index, loaded }) => (
   <ChartBlock key={key}>
-    <ChartIcon src={img} alt="High Efficiency" />
-    <ColorizedBlock>
-      <ChartTitle primary>{title}</ChartTitle>
-      <ChartDesc>{desc}</ChartDesc>
-    </ColorizedBlock>
+    <SlideIn.vertical slideIn={loaded} index={5 * index + 6}>
+      <ChartIcon src={img} alt="High Efficiency" />
+      <ColorizedBlock>
+        <ChartTitle primary>{title}</ChartTitle>
+        <ChartDesc>{desc}</ChartDesc>
+      </ColorizedBlock>
+    </SlideIn.vertical>
   </ChartBlock>
 )
 
 const Tech = props => (
-  <React.Fragment>{chartbBlocks.map(block => Chart(block))}</React.Fragment>
+  <React.Fragment>
+    {chartbBlocks.map((block, index) =>
+      Chart({ ...block, index, loaded: props.loaded }),
+    )}
+  </React.Fragment>
 )
 
 export default props => (

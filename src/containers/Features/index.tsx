@@ -2,7 +2,7 @@ import * as React from 'react'
 import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
 import { homepageBlocks as blocks } from '../../routes'
-import { FadeIn } from '../../styled/Animation'
+import { SlideIn } from '../../styled/Animation'
 import {
   ColorizedTitle,
   Desc,
@@ -62,12 +62,28 @@ const Features = props => (
       Features
     </ColorizedTitle>
     <Desc>
-      {historys.map(history => (
+      {historys.map((history, colIndex) => (
         <HistoryCol key={history.key}>
-          <HistoryYearLabel>{history.time}</HistoryYearLabel>
-          {history.items.map(item => (
-            <HistoryItem key={item}>{item}</HistoryItem>
-          ))}
+          <HistoryYearLabel>
+            <SlideIn.vertical
+              slideIn={props.loaded}
+              fromTop
+              index={8 + colIndex}
+            >
+              {history.time}
+            </SlideIn.vertical>
+          </HistoryYearLabel>
+          <SlideIn.horizontal slideIn={props.loaded} index={colIndex}>
+            {history.items.map((item, itemIndex) => (
+              <SlideIn.horizontal
+                slideIn={props.loaded}
+                // index={30 + itemIndex * 5 - colIndex * 5}
+                index={8 * itemIndex + 3 * colIndex}
+              >
+                <HistoryItem key={item}>{item}</HistoryItem>
+              </SlideIn.horizontal>
+            ))}
+          </SlideIn.horizontal>
         </HistoryCol>
       ))}
     </Desc>

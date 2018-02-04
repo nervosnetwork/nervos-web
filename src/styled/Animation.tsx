@@ -5,90 +5,112 @@ import theme from '../config/theme'
 // const Animation
 
 // fade in
-interface IVerticalFadeInDiv {
+
+interface IFadeInDiv {
   fadeIn: boolean
+  index?: number
+}
+const FadeInDivCons: StyledFunction<
+  IFadeInDiv & React.HTMLProps<HTMLDivElement>
+  > =
+  styled.div
+
+export const FadeInDiv = FadeInDivCons`
+  opacity: ${props => `${props.fadeIn ? 1 : 0}`};
+  transition: opacity 0.8s;
+  transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
+  height: 100%;
+`
+
+// slide in
+interface IVerticalSlideInDiv {
+  slideIn: boolean
   fromTop?: boolean
   index?: number
 }
-const VerticalFadeInDivCons: StyledFunction<
-  IVerticalFadeInDiv & React.HTMLProps<HTMLDivElement>
+const VerticalSlideInDivCons: StyledFunction<
+  IVerticalSlideInDiv & React.HTMLProps<HTMLDivElement>
   > =
   styled.div
 
-export const VerticalFadeInDiv = VerticalFadeInDivCons`
+export const VerticalSlideInDiv = VerticalSlideInDivCons`
   transform: ${props =>
     `translateY(${
-      props.fadeIn ? '0' : `${props.fromTop ? '-100vh' : '100vh'}`
+      props.slideIn ? '0' : `${props.fromTop ? '-100vh' : '100vh'}`
     })`};
-  opacity: ${props => `${props.fadeIn ? 1 : 0}`};
+  opacity: ${props => `${props.slideIn ? 1 : 0}`};
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   height: 100%;
-  display: inherit;
+  // display: inherit;
 `
-interface IHorizontalFadeInDiv {
-  fadeIn: boolean
+interface IHorizontalSlideInDiv {
+  slideIn: boolean
   fromLeft?: boolean
   index?: number
 }
-const HorizontalFadeInDivCons: StyledFunction<
-  IHorizontalFadeInDiv & React.HTMLProps<HTMLDivElement>
+const HorizontalSlideInDivCons: StyledFunction<
+  IHorizontalSlideInDiv & React.HTMLProps<HTMLDivElement>
   > =
   styled.div
 
-export const HorizontalFadeInDiv = HorizontalFadeInDivCons`
+export const HorizontalSlideInDiv = HorizontalSlideInDivCons`
   transform: ${props =>
     `translateX(${
-      props.fadeIn ? '0' : `${props.fromLeft ? '-100vh' : '100vh'}`
+      props.slideIn ? '0' : `${props.fromLeft ? '-100vh' : '100vh'}`
     })`};
-  opacity: ${props => `${props.fadeIn ? 1 : 0}`};
+  opacity: ${props => `${props.slideIn ? 1 : 0}`};
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   height: 100%;
-  display: inherit;
+  // display: inherit;
 `
 
 // fade out
-interface IVerticalFadeOutDiv {
-  fadeOut: boolean
+interface IVerticalSlideOutDiv {
+  slideOut: boolean
   index?: number
 }
-const VerticalFadeOutDivCons: StyledFunction<
-  IVerticalFadeOutDiv & React.HTMLProps<HTMLDivElement>
+const VerticalSlideOutDivCons: StyledFunction<
+  IVerticalSlideOutDiv & React.HTMLProps<HTMLDivElement>
   > =
   styled.div
 
-export const VerticalFadeOutDiv = VerticalFadeOutDivCons`
-  transform: ${props => `translateY(${props.fadeOut ? '100vh' : '0'})`};
-  opacity: ${props => `${props.fadeOut ? 1 : 1}`};
+export const VerticalSlideOutDiv = VerticalSlideOutDivCons`
+  transform: ${props => `translateY(${props.slideOut ? '100vh' : '0'})`};
+  opacity: ${props => `${props.slideOut ? 1 : 1}`};
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   height: 100%;
   display: inherit;
 `
-interface IHorizontalFadeOutDiv {
-  fadeOut: boolean
+interface IHorizontalSlideOutDiv {
+  slideOut: boolean
   index?: number
 }
-const HorizontalFadeOutDivCons: StyledFunction<
-  IHorizontalFadeOutDiv & React.HTMLProps<HTMLDivElement>
+const HorizontalSlideOutDivCons: StyledFunction<
+  IHorizontalSlideOutDiv & React.HTMLProps<HTMLDivElement>
   > =
   styled.div
 
-export const HorizontalFadeOutDiv = HorizontalFadeOutDivCons`
-  transform: ${props => `translateY(${props.fadeOut ? '100vh' : '0'})`};
-  opacity: ${props => `${props.fadeOut ? 1 : 1}`};
+export const HorizontalSlideOutDiv = HorizontalSlideOutDivCons`
+  transform: ${props => `translateY(${props.slideOut ? '100vh' : '0'})`};
+  opacity: ${props => `${props.slideOut ? 1 : 1}`};
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   height: 100%;
   display: inherit;
 `
 
-export const FadeIn = {
-  vertical: VerticalFadeInDiv,
-  horizontal: HorizontalFadeInDiv,
+export const SlideIn = {
+  vertical: VerticalSlideInDiv,
+  horizontal: HorizontalSlideInDiv,
 }
-export const FadeOut = {
-  vertical: VerticalFadeOutDiv,
-  horizontal: HorizontalFadeOutDiv,
+export const SlideOut = {
+  vertical: VerticalSlideOutDiv,
+  horizontal: HorizontalSlideOutDiv,
+}
+
+export const Fade = {
+  in: FadeInDiv,
 }

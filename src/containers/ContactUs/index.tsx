@@ -11,6 +11,7 @@ import {
   SubscribeFormLine,
   SubscribeButtonContainer,
 } from '../../styled/Common'
+import { SlideIn } from '../../styled/Animation'
 
 const ContactUs = props => (
   <ColorizedBlock>
@@ -18,15 +19,21 @@ const ContactUs = props => (
       Subscribe To Our NewsLetter
     </ColorizedTitle>
     <Desc>
-      <SubscribeFormLine>
-        <RippleInput placeholder="Your Name" />
-      </SubscribeFormLine>
-      <SubscribeFormLine>
-        <RippleInput placeholder="E-Mail" />
-        <SubscribeButtonContainer>
-          <HighlightButton>Subscribe</HighlightButton>
-        </SubscribeButtonContainer>
-      </SubscribeFormLine>
+      <SlideIn.horizontal slideIn={props.loaded} index={6}>
+        <SubscribeFormLine>
+          <RippleInput placeholder="Your Name" />
+        </SubscribeFormLine>
+      </SlideIn.horizontal>
+      <SlideIn.horizontal slideIn={props.loaded} index={10}>
+        <SubscribeFormLine>
+          <RippleInput placeholder="E-Mail" />
+          <SubscribeButtonContainer>
+            <SlideIn.horizontal slideIn={props.loaded} index={14}>
+              <HighlightButton>Subscribe</HighlightButton>
+            </SlideIn.horizontal>
+          </SubscribeButtonContainer>
+        </SubscribeFormLine>
+      </SlideIn.horizontal>
     </Desc>
   </ColorizedBlock>
 )

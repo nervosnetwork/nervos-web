@@ -54,6 +54,9 @@ export interface ThemeInterface {
     ChartTitleFontSize: string
     rectWidth: string
     rectOffset: string
+    inputFontSize: string
+    memberHPadding: string
+    memberVPadding: string
   }
 }
 
