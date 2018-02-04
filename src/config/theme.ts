@@ -26,8 +26,8 @@ export interface ThemeInterface {
     secondaryTitleFontSize: SIZES
     titleColorBlockWidth: string
     titleColorBlockRightSpan: string
-    descLeftPadding: string
-    descTopPadding: string
+    descPaddingLeft: string
+    descPaddingTop: string
     subscribeFormLineHeight: string
     subscribeFormLineWidth: string
     highlightBtnWidth: string
@@ -46,7 +46,7 @@ export interface ThemeInterface {
     slideNavLeftMargin: string
     chartIconMarginBottom: string
     chartIconSize: string
-    chartBlockPaddingRight: string
+    chartBlockHPadding: string
     HistoryColPaddingTop: string
     HistoryColPaddingLeft: string
     HistoryYearLabelPaddingBottom: string

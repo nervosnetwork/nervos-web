@@ -19,7 +19,7 @@ export default ({ displayName, blocks, members }) => routerProps => (
   <PageBlock blocks={blocks} displayName={displayName} {...routerProps}>
     <ColorizedBlock primary>
       <ColorizedTitle primary h1>
-        Features
+        {displayName}
       </ColorizedTitle>
       <Desc>
         {members.map(member => (
