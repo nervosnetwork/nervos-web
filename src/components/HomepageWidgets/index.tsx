@@ -4,7 +4,7 @@ import {
   HomepageWidget,
   HomepageWidgets,
 } from '../../styled/Common'
-import { FadeIn } from '../../styled/Animation'
+import { SlideIn } from '../../styled/Animation'
 
 import RotatingRect from '../RotatingRect'
 
@@ -27,7 +27,7 @@ export default class extends React.Component {
   }
   render () {
     return (
-      <FadeIn.vertical fadeIn={this.state.loaded} fromTop>
+      <SlideIn.vertical slideIn={this.state.loaded} fromTop>
         <HomepageWidgets>
           <div>
             <HomepageWidget primary>
@@ -38,7 +38,7 @@ export default class extends React.Component {
             </HomepageWidget>
           </div>
         </HomepageWidgets>
-      </FadeIn.vertical>
+      </SlideIn.vertical>
     )
   }
 }

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { createPortal } from 'react-dom'
 import { Header, Logo, Navs, NavItem } from '../../styled/Common'
-import { FadeIn } from '../../styled/Animation'
+import { SlideIn } from '../../styled/Animation'
 
 /* eslint-disable global-require */
 const LogoImg = require('../../images/nerveos.svg') as string
@@ -54,14 +54,16 @@ export default class extends React.Component<HeaderProps, HeaderState> {
         <Logo
           src={LogoImg}
           alt="NervOS"
-          onClick={() => props.location.pathname !== '/' && props.history.push('/')}
+          onClick={() =>
+            props.location.pathname !== '/' && props.history.push('/')
+          }
         />
         <Navs>
           {navs.map((item, index) => (
             <NavItem key={item.path}>
-              <FadeIn.horizontal fadeIn={loaded} index={index}>
+              <SlideIn.horizontal slideIn={loaded} index={index}>
                 <a href={item.path}>{item.label}</a>
-              </FadeIn.horizontal>
+              </SlideIn.horizontal>
             </NavItem>
           ))}
         </Navs>
