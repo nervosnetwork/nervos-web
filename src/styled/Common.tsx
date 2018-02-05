@@ -1,15 +1,24 @@
 import * as React from 'react'
-import styled, {
-  injectGlobal,
-  StyledFunction,
-  keyframes,
-} from './styledComponents'
+import styled, { injectGlobal, StyledFunction, keyframes } from './styleUtils'
 import theme from '../config/theme'
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`
   html, body {
     background-color: ${theme.colors.background};
+    font-size: ${theme.sizes.root};
+
+    @media (max-width: 1500px) {
+      font-size: 14px;
+    }
+    @media (max-width: 1200px) {
+      font-size: 12px;
+    }
+    @media (max-width: 992px) {
+      font-size: 10px;
+    }
+    @media (max-width: 768px) {
+    }
     *::selection{
       background-color: ${theme.colors.highlight};
     }
@@ -24,6 +33,10 @@ export const Header = styled.div`
   max-width: ${props => props.theme.sizes.centerBlockMaxWidth};
   width: ${props => props.theme.sizes.centerBlockWidth};
   margin: 0 auto;
+  @media (max-width: 600px) {
+    max-width: auto;
+    width: 100vw;
+  }
 `
 
 export const Logo = styled.img`
@@ -32,6 +45,10 @@ export const Logo = styled.img`
     `${-props.theme.sizes.headerHeight.slice(0, -3) / 2}rem`};
   transform: ${props => `translateX(${props.theme.sizes.logoHOffset})`};
   cursor: pointer;
+  @media (max-width: 600px) {
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 `
 export const Navs = styled.ul`
   height: 100%;
@@ -41,11 +58,23 @@ export const Navs = styled.ul`
   margin-right: ${props =>
     `${-props.theme.sizes.headerHeight.slice(0, -3) / 2}rem`};
   transform: ${props => `translateX(${props.theme.sizes.logoHOffset})`};
+  @media (max-width: 600px) {
+    width: 100vw;
+    line-height: 1.4;
+  }
 `
 export const NavItem = styled.li`
   float: left;
   margin-left: ${props => props.theme.sizes.navSpan};
   font-size: ${props => props.theme.sizes.navItemHeight};
+  @media (max-width: 750px) {
+    margin-left: 1.125rem;
+  }
+  @media (max-width: 600px) {
+    margin: 0;
+    width: 25vw;
+    text-align: center;
+  }
 `
 // Screen Div
 export const ScreenDiv = styled.div`
@@ -295,22 +324,22 @@ export const MemberBlock = styled.div`
   display: inline-block;
   padding-left: ${props => props.theme.sizes.memberBlockHeight};
   height: ${props => props.theme.sizes.memberBlockHeight};
-  /* &:first-of-type {
-    padding-right: ${props => props.theme.sizes.memberHPadding};
-    padding-bottom: ${props => props.theme.sizes.memberVPadding};
+  &:first-of-type {
+    /* padding-right: ${props => props.theme.sizes.memberHPadding}; */
+    margin-bottom: ${props => props.theme.sizes.memberVPadding};
   }
   &:nth-of-type(2) {
-    padding-left: ${props => props.theme.sizes.memberHPadding};
-    padding-bottom: ${props => props.theme.sizes.memberVPadding};
+    /* padding-left: ${props => props.theme.sizes.memberHPadding}; */
+    margin-bottom: ${props => props.theme.sizes.memberVPadding};
   }
   &:nth-of-type(3) {
-    padding-top: ${props => props.theme.sizes.memberHPadding};
-    padding-right: ${props => props.theme.sizes.memberHPadding};
+    margin-top: ${props => props.theme.sizes.memberHPadding};
+    /* padding-right: ${props => props.theme.sizes.memberHPadding}; */
   }
   &:last-of-type {
-    padding-top: ${props => props.theme.sizes.memberHPadding};
-    padding-left: ${props => props.theme.sizes.memberHPadding};
-  } */
+    margin-top: ${props => props.theme.sizes.memberHPadding};
+    /* padding-left: ${props => props.theme.sizes.memberHPadding}; */
+  }
 `
 export const MemberBlockAvatar = styled.img`
   position: absolute;
@@ -321,14 +350,16 @@ export const MemberBlockAvatar = styled.img`
   border-radius: 50%;
 `
 export const MemberBlockName = styled.div`
-  font-size: ${props => props.theme.sizes.memberNameFontSize};
-  color: ${props => props.theme.colors.plain};
   position: absolute;
   top: 50%;
-  margin-top: -1em;
   left: ${props => props.theme.sizes.memberBlockHeight};
+  right: 0;
+  margin-top: -1em;
   padding-left: ${props => props.theme.sizes.memberBlockDescPaddingLeft};
+  padding-right: ${props => props.theme.sizes.memberHPadding};
+  font-size: ${props => props.theme.sizes.memberNameFontSize};
   font-weight: 100;
+  color: ${props => props.theme.colors.plain};
 `
 export const MemberBlockDesc = styled.div`
   position: absolute;
@@ -336,6 +367,7 @@ export const MemberBlockDesc = styled.div`
   left: ${props => props.theme.sizes.memberBlockHeight};
   color: ${props => props.theme.colors.primary};
   padding-left: ${props => props.theme.sizes.memberBlockDescPaddingLeft};
+  padding-right: ${props => props.theme.sizes.memberHPadding};
   font-size: 20px;
 `
 export const ChartBlock = styled.div`
@@ -439,7 +471,7 @@ const fadeIn = keyframes`{
   from {
     opacity: 0;
   }
-  80%{
+  50% {
     opacity: 0;
   }
   to{
@@ -459,7 +491,7 @@ export const Rect = RectCons`
   transform: ${props => `rotate(${props.deg}deg) `};
   transform-origin: ${props =>
     `center ${100 + +props.theme.sizes.rectOffset}%`};
-    animation:${props => (props.index ? `${fadeIn} 0.1s forwards` : 'none')};
+    animation:${props => (props.index ? `${fadeIn} 0.5s forwards` : 'none')};
     animation-delay: ${props => `${1 + (props.index || 0) * 0.1}s`}
 `
 

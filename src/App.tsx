@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types'
 import 'normalize.css'
 import { HashRouter as Router } from 'react-router-dom'
 import AsyncRoutes from './components/AsyncRoutes'
-import { ThemeProvider } from './styled/styledComponents'
+import { ThemeProvider } from './styled/styleUtils'
 import theme from './config/theme'
 import routes from './routes'
 

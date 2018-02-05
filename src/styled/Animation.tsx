@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled, { StyledFunction, keyframes } from './styledComponents'
+import styled, { StyledFunction, keyframes } from './styleUtils'
 import theme from '../config/theme'
 
 // const Animation
