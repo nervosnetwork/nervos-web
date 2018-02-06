@@ -1,5 +1,4 @@
 import * as React from 'react'
-// import { IPageBlock } from '../../components/PageBlock/type.d'
 import { SlideNavs, SlideNav } from '../../styled/Common'
 import { SlideOut } from '../../styled/Animation'
 import { IPage } from '../../routes'
@@ -24,10 +23,12 @@ const Navigator: React.SFC<NavigatorProps> = ({
             onNav(block.path)(e)
           }}
           active={currentPath === block.path}
+          title={block.title}
         />
       </SlideOut.vertical>
     ))}
   </SlideNavs>
 )
+// TODO: Add hover tip
 
 export default Navigator
