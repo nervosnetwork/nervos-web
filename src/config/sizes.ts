@@ -26,6 +26,7 @@ export default {
       paddingBottom: 14.625,
       borderWidth: 0.5,
       borderLength: 32.5,
+      paddingRight: 8.5,
     },
     fontSize: SIZES.F_MAX,
     lineHeight: 1.4,

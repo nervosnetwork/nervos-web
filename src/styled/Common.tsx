@@ -24,7 +24,10 @@ injectGlobal`
     }
   }
   header {
-    padding-top: ${`${theme.sizes.header.paddingTop}rem`}
+    padding-top: ${`${theme.sizes.header.paddingTop}rem`};
+    @media (max-width: 768px) {
+      padding-top: 0;
+    }
   }
 `
 
@@ -39,18 +42,20 @@ export const Header = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    display:flex;
+    flex-direction: column;
     max-width: auto;
     width: 100vw;
   }
 `
 
 export const Logo = styled.img`
-  height: 100%;
-  cursor: pointer;
-  @media (max-width: 600px) {
-    margin-left: 50%;
-    transform: translateX(-50%);
+    height: 100%;
+    cursor: pointer;
+  @media (max-width: 768px) {
+    height: 50%;
+    transform: scale(0.8);
   }
 `
 export const Navs = styled.ul`
@@ -58,20 +63,24 @@ export const Navs = styled.ul`
   color: ${props => props.theme.colors.plain};
   list-style: none;
   float: right;
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     width: 100vw;
     line-height: 1.4;
+    flex:1;
+    display: flex;
+    justify-content: space-around;
   }
 `
 export const NavItem = styled.li`
   float: left;
   margin-left: ${props => props.theme.sizes.navSpan};
   font-size: ${props => props.theme.sizes.navItemHeight};
-  & > a,
-  & > span {
+  &  a,
+  &  span {
     cursor: pointer;
+    text-transform: uppercase;
   }
-  @media (max-width: 750px) {
+  @media (max-width: 768px) {
     margin-left: 1.125rem;
   }
   @media (max-width: 600px) {
@@ -263,12 +272,20 @@ export const SubscribeFormLine = styled.div`
   justify-content: flex-end;
   height: ${props => props.theme.sizes.subscribeFormLineHeight};
   width: ${props => props.theme.sizes.subscribeFormLineWidth};
+  @media (max-width: 600px){
+    width: 100%;
+  }
 `
 
 export const SubscribeButtonContainer = styled.div`
   position: absolute;
   bottom: 0;
   left: 120%;
+  @media (max-width: 600px) {
+    position: relative;
+    left:0;
+    bottom:0;
+  }
 `
 
 export const HistoryCol = styled.div`
@@ -400,6 +417,10 @@ export const SlideNavs = styled.div`
   top: 50vh;
   transform: translateY(-50%);
   left: ${props => `${props.theme.sizes.slideNav.left}rem`};
+  @media (max-width: 768px) {
+    left: 15px;
+
+  }
 `
 
 interface ISlideNav {
@@ -525,4 +546,19 @@ export const HomepageWidgets = styled.div`
       100 *
       Math.sqrt(3) +
       +props.theme.sizes.rect.width / 2}px`};
+  @media (max-width: 1920px) {
+    transform: translate(29vw, -230px) rotate(60deg);
+  }
+  @media (max-width: 1920px) {
+    transform: translate(29vw, -230px) rotate(60deg);
+  }
+  @media (max-width: 1200px) {
+    transform: translate(12.3vw, -260px) rotate(60deg) scale(0.7);
+  }
+  @media (max-width: 768px) {
+    transform: translate(12.3vw, -260px) rotate(60deg) scale(0.7);
+  }
+  @media (max-width: 992px) {
+    transform: translate(12.3vw, -260px) rotate(60deg) scale(0.7);
+  }
 `

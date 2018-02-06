@@ -13,11 +13,18 @@ export const ScreenDiv = styled.div`
     `${props.theme.sizes.header.height +
       props.theme.sizes.header.paddingTop +
       props.theme.sizes.screen.desc.paddingTop}rem`};
+  @media(max-width: 768px) {
+          
+    padding-top: ${props =>
+    `${props.theme.sizes.header.height +
+        props.theme.sizes.screen.desc.paddingTop}rem`};
+  }
 `
 
 export const SloganContainer = styled.div`
   position: relative;
   padding-left: ${props => `${props.theme.sizes.screen.desc.paddingLeft}rem`};
+  padding-right: ${props => `${props.theme.sizes.slogan.container.paddingRight}rem`};
   padding-top: ${props =>
     `${props.theme.sizes.slogan.container.paddingTop -
       props.theme.sizes.screen.desc.paddingTop}rem`};
@@ -33,6 +40,17 @@ export const SloganContainer = styled.div`
     width: ${props => `${props.theme.sizes.slogan.container.borderLength}rem`};
     background-color: ${props => props.theme.colors.plain};
   }
+  @media (max-width: 1920px) {
+    padding-top: ${props =>
+    `${(props.theme.sizes.slogan.container.paddingTop -
+        props.theme.sizes.screen.desc.paddingTop) * 0.14}rem`};
+  }
+  @media (max-width: 768px) {
+    padding: 0;
+    &:after{
+      display: none;
+    }
+  }
 `
 
 export const ScreenTitleContainer = styled.div`
@@ -40,6 +58,13 @@ export const ScreenTitleContainer = styled.div`
     `${props.theme.sizes.screen.titleContainer.marginTop}rem`};
   margin-bottom: ${props =>
     `${props.theme.sizes.screen.titleContainer.marginBottom}rem`};
+  @media (max-width: 1920px) {
+  margin-top: ${props =>
+    `${(props.theme.sizes.screen.titleContainer.marginTop) / 2}rem`};
+  margin-bottom: ${props =>
+    `${(props.theme.sizes.screen.titleContainer.marginBottom) / 2}rem`};
+    
+  }
 `
 
 export const ChartsContainer = styled.div`
