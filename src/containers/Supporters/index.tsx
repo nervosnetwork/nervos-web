@@ -1,12 +1,12 @@
 import * as React from 'react'
 import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
-import { RouterProps, homepageBlocks as blocks } from '../../routes'
+import { RouterProps } from '../../routes'
 import TeamBlock from '../../components/TeamBlock'
 import ScreenBlock from '../../components/ScreenBlock/'
 
 const screenInfo: { title: string; subtitle: string } = {
-  title: 'ADVISORS',
+  title: 'Supporters',
   subtitle: '',
 }
 

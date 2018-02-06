@@ -1,4 +1,4 @@
-export interface Chart {
+export interface IChart {
   title: string
   key: string
   desc: string

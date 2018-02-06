@@ -3,13 +3,27 @@ import styled, { injectGlobal, StyledFunction, keyframes } from './styleUtils'
 import theme from '../config/theme'
 
 export const Slogan = styled.h1`
-  color: ${props => props.theme.colors.plain};
+  color: ${props => props.theme.colors.primary};
   font-family: Futura;
   font-size: ${props => `${props.theme.sizes.slogan.fontSize}rem`};
   font-weight: 900;
   margin: 0;
   line-height: ${props => props.theme.sizes.slogan.lineHeight};
   padding-bottom: ${props => `${props.theme.sizes.slogan.paddingBottom}rem`};
+`
+
+export const HomepageDesc = styled.div`
+  font-size: ${props => `${props.theme.sizes.homepageDesc.fontSize}rem`};
+  color: ${props => props.theme.colors.plain};
+  line-height: ${props => props.theme.sizes.homepageDesc.lineHeight};
+  text-shadow: ${props =>
+    `0 0 5px ${props.theme.colors.highlight}, 0 0 5px ${
+      props.theme.colors.primary
+    }`};
+  padding-bottom: ${props =>
+    `${props.theme.sizes.homepageDesc.paddingBottom}rem`};
+  text-align: justify;
+  text-align-last: left;
 `
 
 export const Desc = styled.div`

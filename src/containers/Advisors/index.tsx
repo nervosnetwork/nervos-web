@@ -4,7 +4,7 @@ import TeamBlock from '../../components/TeamBlock'
 import ScreenBlock from '../../components/ScreenBlock/'
 
 const screenInfo: { title: string; subtitle: string } = {
-  title: 'ADVISORS',
+  title: 'Advisors',
   subtitle: '',
 }
 

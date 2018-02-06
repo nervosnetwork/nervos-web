@@ -67,6 +67,10 @@ export const NavItem = styled.li`
   float: left;
   margin-left: ${props => props.theme.sizes.navSpan};
   font-size: ${props => props.theme.sizes.navItemHeight};
+  & > a,
+  & > span {
+    cursor: pointer;
+  }
   @media (max-width: 750px) {
     margin-left: 1.125rem;
   }
@@ -384,17 +388,18 @@ export const MemberDesc = styled.div`
 export const ChartIcon = styled.img`
   width: ${props => `${props.theme.sizes.chart.icon.size}rem`};
   height: ${props => `${props.theme.sizes.chart.icon.size}rem`};
-  margin-bottom: ${props => `${props.theme.sizes.chart.icon.marginBottom}rem`};
-  margin-left: ${props => `${props.theme.sizes.dashLineWidth}rem`};
-  padding-left: ${props =>
-    `${props.theme.sizes.chart.title.paddingLeft +
-      props.theme.sizes.colorizedBlock.color.width}rem`};
 `
+// margin-bottom: ${props => `${props.theme.sizes.chart.icon.marginBottom}rem`};
+// margin-left: ${props => `${props.theme.sizes.dashLineWidth}rem`};
+// padding-left: ${props =>
+//   `${props.theme.sizes.chart.title.paddingLeft +
+//     props.theme.sizes.colorizedBlock.color.width}rem`};
 
 export const SlideNavs = styled.div`
   position: fixed;
-  top: ${props => props.theme.sizes.slideNavTopMargin};
-  left: ${props => props.theme.sizes.slideNavLeftMargin};
+  top: 50vh;
+  transform: translateY(-50%);
+  left: ${props => `${props.theme.sizes.slideNav.left}rem`};
 `
 
 interface ISlideNav {
@@ -445,14 +450,16 @@ export const Rect = RectCons`
   display: block;
   width: ${props => `${props.theme.sizes.rect.width}px`};
   height: ${props => `${4 * props.theme.sizes.rect.width}px`};
-  opacity: ${props => (props.index ? 0 : 1)};
+  opacity: 0;
   background-color: ${props => props.theme.colors.highlight};
   transform: ${props => `rotate(${props.deg}deg) `};
   transform-origin: ${props =>
     `center ${100 + +props.theme.sizes.rect.offset}%`};
-    animation:${props => (props.index ? `${fadeIn} 0.5s forwards` : 'none')};
+    animation:${props => `${fadeIn} 0.5s forwards`};
     animation-delay: ${props => `${1 + (props.index || 0) * 0.1}s`}
 `
+// opacity: ${props => (props.index ? 0 : 1)};
+//   animation:${props => (props.index ? `${fadeIn} 0.5s forwards` : 'none')};
 
 interface IWidget {
   transform?: string

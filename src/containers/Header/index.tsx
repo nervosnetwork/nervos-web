@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { createPortal } from 'react-dom'
+import { I18n } from 'react-i18next'
 import { Header, Logo, Navs, NavItem } from '../../styled/Common'
 import { SlideIn } from '../../styled/Animation'
 
@@ -9,12 +10,12 @@ const LogoImg = require('../../images/nerveos.svg') as string
 
 const navs = [
   {
-    label: 'WHITE PAPER',
-    path: 'white-paper',
+    label: 'whitepaper',
+    path: '/white-paper',
   },
   {
     label: 'FAQ',
-    path: 'faq',
+    path: '/faq',
   },
   {
     label: 'EN',
@@ -22,7 +23,7 @@ const navs = [
   },
   {
     label: 'CN',
-    path: 'cn',
+    path: 'zh',
   },
 ]
 
@@ -50,24 +51,34 @@ export default class extends React.Component<HeaderProps, HeaderState> {
     const { props } = this
     const { loaded } = this.state
     return createPortal(
-      <Header>
-        <Logo
-          src={LogoImg}
-          alt="NervOS"
-          onClick={() =>
-            props.location.pathname !== '/' && props.history.push('/')
-          }
-        />
-        <Navs>
-          {navs.map((item, index) => (
-            <NavItem key={item.path}>
-              <SlideIn.horizontal slideIn={loaded} index={index}>
-                <a href={item.path}>{item.label}</a>
-              </SlideIn.horizontal>
-            </NavItem>
-          ))}
-        </Navs>
-      </Header>,
+      <I18n>
+        {(t, { i18n }) => (
+          <Header>
+            <Logo
+              src={LogoImg}
+              alt="NervOS"
+              onClick={() =>
+                props.location.pathname !== '/' && props.history.push('/')
+              }
+            />
+            <Navs>
+              {navs.map((item, index) => (
+                <NavItem key={item.path}>
+                  <SlideIn.horizontal slideIn={loaded} index={index}>
+                    {item.path.startsWith('/') ? (
+                      <a href={item.path}>{t(item.label)}</a>
+                    ) : (
+                      <span onClick={() => i18n.changeLanguage(item.path)}>
+                        {t(item.label)}
+                      </span>
+                    )}
+                  </SlideIn.horizontal>
+                </NavItem>
+              ))}
+            </Navs>
+          </Header>
+        )}
+      </I18n>,
       document.getElementById('header') as HTMLElement,
     )
   }

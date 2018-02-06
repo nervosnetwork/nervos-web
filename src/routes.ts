@@ -1,16 +1,28 @@
-import { IPageBlock } from './components/PageBlock/type.d'
+import { IScreenBlock } from './components/ScreenBlock/type'
 
+export const HomeSlide = {
+  title: '',
+  path: '/',
+  key: 'homepage',
+  module: 'Homepage',
+  navable: true,
+  exact: true,
+}
 export const TechSlide = {
   title: 'Technology',
   path: '/tech',
   key: 'technology',
   module: 'Technology',
+  navable: true,
+  exact: true,
 }
 export const ContactUsSlide = {
   title: 'Contact Us',
   path: '/contact-us',
   key: 'contactUs',
   module: 'ContactUs',
+  navable: true,
+  exact: true,
 }
 
 export const FeaturesSlide = {
@@ -18,6 +30,8 @@ export const FeaturesSlide = {
   path: '/features',
   key: 'features',
   module: 'Features',
+  navable: true,
+  exact: true,
 }
 
 export const TeamMembersSlide = {
@@ -25,20 +39,27 @@ export const TeamMembersSlide = {
   path: '/team-members',
   key: 'teamMembers',
   module: 'TeamMembers',
+  navable: true,
+  exact: true,
 }
 export const AdvisorsSlide = {
   title: 'Advisors',
   path: '/advisors',
   key: 'advisors',
   module: 'Advisors',
+  navable: true,
+  exact: true,
 }
 export const SupportersSlide = {
   title: 'Supporters',
   path: '/supporters',
   key: 'supporters',
   module: 'Supporters',
+  navable: true,
+  exact: true,
 }
-export const homepageBlocks: IPageBlock[] = [
+export const screenBlocks: IScreenBlock[] = [
+  HomeSlide,
   TechSlide,
   ContactUsSlide,
   FeaturesSlide,
@@ -47,16 +68,18 @@ export const homepageBlocks: IPageBlock[] = [
   SupportersSlide,
 ]
 
+export interface IPage extends IScreenBlock {}
+
 export interface RouterProps {
   history: any
   match: any
   location: any
+  routes: IPage[]
 }
 
-const routes = [
+const routes: IPage[] = [
   { path: '/', key: 'Header', module: 'Header' },
-  { path: '/', key: 'Homepage', module: 'Homepage', exact: true },
-  ...homepageBlocks,
+  ...screenBlocks,
   { path: '/faq', key: 'FAQ', module: 'FAQ' },
 ]
 

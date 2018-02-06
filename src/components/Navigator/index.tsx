@@ -1,23 +1,23 @@
 import * as React from 'react'
-import { homepageBlocks } from '../../routes'
-import { IPageBlock } from '../../components/PageBlock/type.d'
+// import { IPageBlock } from '../../components/PageBlock/type.d'
 import { SlideNavs, SlideNav } from '../../styled/Common'
 import { SlideOut } from '../../styled/Animation'
+import { IPage } from '../../routes'
 
 interface NavigatorProps {
   slideIn: boolean
-  blocks: IPageBlock[]
+  navs: IPage[]
   currentPath: string
   onNav: (url) => React.MouseEventHandler<HTMLElement>
 }
 const Navigator: React.SFC<NavigatorProps> = ({
-  blocks,
+  navs,
   onNav,
   currentPath,
   slideIn,
 }) => (
   <SlideNavs>
-    {blocks.map((block, index) => (
+    {navs.map((block, index) => (
       <SlideOut.vertical slideOut={!slideIn} index={index} key={block.path}>
         <SlideNav
           onClick={e => {

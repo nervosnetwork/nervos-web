@@ -31,6 +31,11 @@ export default {
     lineHeight: 1.4,
     paddingBottom: 3.4375,
   },
+  homepageDesc: {
+    fontSize: 1.6,
+    lineHeight: 1.4,
+    paddingBottom: 3.4375,
+  },
   dashLineWidth: 0.125, //2
   centerBlockTitleVSpan: '3rem', // 48
   navSpan: '4.125rem', // 66
@@ -66,8 +71,10 @@ export default {
     },
     blockHPadding: 9.25,
   },
-  slideNavTopMargin: '6.25rem',
-  slideNavLeftMargin: '6.25rem',
+  slideNav: {
+    top: 50,
+    left: 6.25,
+  },
   HistoryColPaddingTop: '2.5rem',
   HistoryColPaddingLeft: '0.93rem',
   HistoryYearLabelPaddingBottom: '1.75rem',
