@@ -13,7 +13,7 @@ import { Desc } from '../../styled/Text'
 import ScreenBlock from '../../components/ScreenBlock'
 
 const screenInfo: { title: string; subtitle: string } = {
-  title: 'FEATURES',
+  title: 'Features',
   subtitle: '',
 }
 

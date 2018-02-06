@@ -32,6 +32,7 @@ export default (Comp: React.ReactElement<any>) =>
       this.props.history.push(url)
     }
     handleNavClick = url => e => {
+      console.log(url)
       if (this.props.location.pathname === url) return
 
       this.setState({
@@ -48,25 +49,15 @@ export default (Comp: React.ReactElement<any>) =>
       return (
         <SlideIn.vertical slideIn={loaded}>
           <CenterBlock>
-            {props.location.pathname === '/' ? null : (
-              <Navigator
-                slideIn={loaded}
-                currentPath={props.location.pathname}
-                onNav={this.handleNavClick}
-                blocks={props.blocks}
-              />
-            )}
             <CenterBlockTitles>
-              {this.blockFilter(props.blocks, props.displayName).map(
-                (block, index) => (
-                  <CenterBlockTitle
-                    key={block.title}
-                    onClick={this.handleNavClick(block.path)}
-                  >
-                    {block.title}
-                  </CenterBlockTitle>
-                ),
-              )}
+              {props.blocks.map((block, index) => (
+                <CenterBlockTitle
+                  key={block.title}
+                  onClick={this.handleNavClick(block.path)}
+                >
+                  {block.title}
+                </CenterBlockTitle>
+              ))}
             </CenterBlockTitles>
             <CenterBlockContent>
               {Comp &&

@@ -11,9 +11,8 @@ export const ScreenDiv = styled.div`
   margin: 0 auto;
   padding-top: ${props =>
     `${props.theme.sizes.header.height +
-    props.theme.sizes.header.paddingTop +
-    props.theme.sizes.screen.desc.paddingTop
-    }rem`};
+      props.theme.sizes.header.paddingTop +
+      props.theme.sizes.screen.desc.paddingTop}rem`};
 `
 
 export const SloganContainer = styled.div`
@@ -21,8 +20,7 @@ export const SloganContainer = styled.div`
   padding-left: ${props => `${props.theme.sizes.screen.desc.paddingLeft}rem`};
   padding-top: ${props =>
     `${props.theme.sizes.slogan.container.paddingTop -
-    props.theme.sizes.screen.desc.paddingTop
-    }rem`};
+      props.theme.sizes.screen.desc.paddingTop}rem`};
   padding-bottom: ${props =>
     `${props.theme.sizes.slogan.container.paddingBottom}rem`};
   &:after {
@@ -48,25 +46,33 @@ export const ChartsContainer = styled.div`
   display: block;
   margin-left: ${props =>
     `${props.theme.sizes.screen.desc.paddingLeft -
-    props.theme.sizes.chart.blockHPadding / 2
-    }rem`};
+      props.theme.sizes.chart.blockHPadding / 2}rem`};
   margin-right: ${props =>
     `${props.theme.sizes.screen.desc.paddingLeft -
-    props.theme.sizes.chart.blockHPadding / 2
-    }rem`};
+      props.theme.sizes.chart.blockHPadding / 2}rem`};
 `
-export const ChartBlock = styled.div`
-  display: inline-block;
-  /* overflow: hidden; */
-  width: 33%;
-  padding: ${props => `0 ${props.theme.sizes.chart.blockHPadding / 2}rem`}
-  /* padding: ${props => `0 ${+props.theme.sizes.chart.blockHPadding / 3}rem`};
-  &:first-child {
-    padding: ${props =>
-    `0 ${2 * +props.theme.sizes.chart.blockHPadding / 3}rem 0 0`};
+
+interface IChartBlock {
+  index: number
+}
+
+const ChartBlockCons: StyledFunction<IChartBlock> = styled.div
+export const ChartBlock = ChartBlockCons`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 3vw;
+  grid-row-gap: 3vh;
+  & > img {
+    grid-column: ${props => (props.index % 2 ? '4/5' : '1/2')};
+    grid-row: 1/2;
+    justify-self: ${props => (props.index % 2 ? 'right' : 'left')}
   }
-  &:last-child {
-    padding: ${props =>
-    `0 0 0 ${2 * +props.theme.sizes.chart.blockHPadding / 3}rem`};
-  } */
+  & > div {
+    grid-column: ${props => (props.index % 2 ? '1/4' : '2/5')};
+    grid-row: 1/2;
+    justify-self: ${props => (props.index % 2 ? 'left' : 'right')}
+  }
 `
+// display: inline-block;
+// width: 33%;
+// padding: ${props => `0 ${props.theme.sizes.chart.blockHPadding / 2}rem`};

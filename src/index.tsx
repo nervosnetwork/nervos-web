@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { render } from 'react-dom'
 import 'normalize.css'
+import './config/i18n'
 import './styles/common'
 import App from './App'
 

@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { RouterProps, homepageBlocks as blocks } from '../../routes'
+import { RouterProps } from '../../routes'
 import TeamBlock from '../../components/TeamBlock'
 import ScreenBlock from '../../components/ScreenBlock'
 
 const screenInfo: { title: string; subtitle: string } = {
-  title: 'TEAM MEMBERS',
+  title: 'Team Members',
   subtitle: 'Who is On Board?',
 }
 const members = [

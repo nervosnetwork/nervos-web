@@ -27,6 +27,11 @@ export interface ThemeInterface {
       lineHeight: number
       paddingBottom: number
     }
+    homepageDesc: {
+      fontSize: number
+      lineHeight: number
+      paddingBottom: number
+    }
     centerBlockMaxWidth: string
     centerBlockWidth: string
     navSpan: string
@@ -51,8 +56,10 @@ export interface ThemeInterface {
     pageBlockMarginTop: string
     centerBlockTitleWidth: string
     memberNameFontSize: string
-    slideNavTopMargin: string
-    slideNavLeftMargin: string
+    slideNav: {
+      top: number
+      left: number
+    }
     HistoryColPaddingTop: string
     HistoryColPaddingLeft: string
     HistoryYearLabelPaddingBottom: string
