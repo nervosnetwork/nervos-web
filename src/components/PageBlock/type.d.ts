@@ -13,7 +13,6 @@ export interface PageBlockProps {
   location: any
   // match: any
   // index?: number
-  children: React.ReactChild
 }
 
 export interface PageBlockState {

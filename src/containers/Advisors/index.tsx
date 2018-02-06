@@ -1,6 +1,12 @@
 import * as React from 'react'
-import { homepageBlocks as blocks } from '../../routes'
+import { RouterProps } from '../../routes'
 import TeamBlock from '../../components/TeamBlock'
+import ScreenBlock from '../../components/ScreenBlock/'
+
+const screenInfo: { title: string; subtitle: string } = {
+  title: 'ADVISORS',
+  subtitle: '',
+}
 
 const members = [
   {
@@ -28,9 +34,8 @@ const members = [
     desc: 'Chinese actors, directors, screenwriters.',
   },
 ]
+const ScreenBlocked = ScreenBlock({ members, screenInfo, primary: false })(
+  TeamBlock,
+)
 
-export default TeamBlock({
-  blocks,
-  displayName: 'Advisors',
-  members,
-})
+export default (props: RouterProps) => <ScreenBlocked {...props} />
