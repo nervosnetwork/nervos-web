@@ -22,6 +22,7 @@ export interface ThemeInterface {
         paddingBottom: number
         borderWidth: number
         borderLength: number
+        paddingRight: number
       }
       fontSize: SIZES
       lineHeight: number

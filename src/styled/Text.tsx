@@ -10,16 +10,15 @@ export const Slogan = styled.h1`
   margin: 0;
   line-height: ${props => props.theme.sizes.slogan.lineHeight};
   padding-bottom: ${props => `${props.theme.sizes.slogan.paddingBottom}rem`};
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
 `
 
 export const HomepageDesc = styled.div`
   font-size: ${props => `${props.theme.sizes.homepageDesc.fontSize}rem`};
   color: ${props => props.theme.colors.plain};
   line-height: ${props => props.theme.sizes.homepageDesc.lineHeight};
-  text-shadow: ${props =>
-    `0 0 5px ${props.theme.colors.highlight}, 0 0 5px ${
-      props.theme.colors.primary
-    }`};
   padding-bottom: ${props =>
     `${props.theme.sizes.homepageDesc.paddingBottom}rem`};
   text-align: justify;
@@ -34,6 +33,18 @@ export const Desc = styled.div`
   word-wrap: break-word;
   word-break: break-all;
   white-space: pre-wrap;
+  @media (max-width: 768px){
+    padding-left: 0;
+  }
+`
+
+const titleColorExpand = keyframes`
+  from {
+    transform: scale3d(0,1,1);
+  }
+  to {
+    transform: scale3d(1,1,1);
+  }
 `
 
 export const ScreenTitle = styled.h1`
@@ -53,6 +64,9 @@ export const ScreenTitle = styled.h1`
     width: 55%;
     height: ${props => `${props.theme.sizes.screen.title.borderWidth}rem`};
     background-color: ${props => props.theme.colors.highlight};
+    transform: scale3d(0,1,1);
+    animation: ${titleColorExpand} 1s ease-out 1s forwards;
+    transform-origin: left top;
   }
 `
 
