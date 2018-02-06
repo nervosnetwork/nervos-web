@@ -8,8 +8,8 @@ export const TechSlide = {
 }
 export const ContactUsSlide = {
   title: 'Contact Us',
-  path: '/contract-us',
-  key: 'contractUs',
+  path: '/contact-us',
+  key: 'contactUs',
   module: 'ContactUs',
 }
 
@@ -46,6 +46,12 @@ export const homepageBlocks: IPageBlock[] = [
   AdvisorsSlide,
   SupportersSlide,
 ]
+
+export interface RouterProps {
+  history: any
+  match: any
+  location: any
+}
 
 const routes = [
   { path: '/', key: 'Header', module: 'Header' },

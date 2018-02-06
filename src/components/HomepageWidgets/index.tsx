@@ -26,19 +26,18 @@ export default class extends React.Component {
     })
   }
   render () {
+    console.log(this.state.loaded)
     return (
-      <SlideIn.vertical slideIn={this.state.loaded} fromTop>
-        <HomepageWidgets>
-          <div>
-            <HomepageWidget primary>
-              <RotatingRect />
-            </HomepageWidget>
-            <HomepageWidget>
-              <RotatingRect />
-            </HomepageWidget>
-          </div>
-        </HomepageWidgets>
-      </SlideIn.vertical>
+      <HomepageWidgets>
+        <HomepageWidget primary>
+          <RotatingRect />
+        </HomepageWidget>
+        <HomepageWidget>
+          <RotatingRect />
+        </HomepageWidget>
+      </HomepageWidgets>
     )
   }
 }
+// <SlideIn.vertical slideIn={this.state.loaded} fromTop>
+// </SlideIn.vertical>

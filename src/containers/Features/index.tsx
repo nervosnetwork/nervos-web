@@ -1,15 +1,21 @@
 import * as React from 'react'
 import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
-import { homepageBlocks as blocks } from '../../routes'
+import { RouterProps } from '../../routes'
 import { SlideIn } from '../../styled/Animation'
 import {
   ColorizedTitle,
-  Desc,
   HistoryCol,
   HistoryYearLabel,
   HistoryItem,
 } from '../../styled/Common'
+import { Desc } from '../../styled/Text'
+import ScreenBlock from '../../components/ScreenBlock'
+
+const screenInfo: { title: string; subtitle: string } = {
+  title: 'FEATURES',
+  subtitle: '',
+}
 
 const historys = [
   {
@@ -57,11 +63,8 @@ const historys = [
 ]
 
 const Features = props => (
-  <ColorizedBlock primary={false}>
-    <ColorizedTitle primary={false} h1>
-      Features
-    </ColorizedTitle>
-    <Desc>
+  <Desc>
+    <ColorizedBlock primary={false} colorBlockHeight={3.5}>
       {historys.map((history, colIndex) => (
         <HistoryCol key={history.key}>
           <HistoryYearLabel>
@@ -79,6 +82,7 @@ const Features = props => (
                 slideIn={props.loaded}
                 // index={30 + itemIndex * 5 - colIndex * 5}
                 index={8 * itemIndex + 3 * colIndex}
+                key={item}
               >
                 <HistoryItem key={item}>{item}</HistoryItem>
               </SlideIn.horizontal>
@@ -86,12 +90,9 @@ const Features = props => (
           </SlideIn.horizontal>
         </HistoryCol>
       ))}
-    </Desc>
-  </ColorizedBlock>
+    </ColorizedBlock>
+  </Desc>
 )
 
-export default props => (
-  <PageBlock blocks={blocks} displayName="Features" {...props}>
-    <Features />
-  </PageBlock>
-)
+const ScreenBlocked = ScreenBlock({ historys, screenInfo })(Features)
+export default (props: RouterProps) => <ScreenBlocked {...props} />

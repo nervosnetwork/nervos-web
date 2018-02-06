@@ -7,27 +7,37 @@ export interface ThemeInterface {
     highlight: COLORS
     background: COLORS
     plain: COLORS
+    assist: COLORS
   }
   sizes: {
     root: string
-    headerHeight: string
+    header: {
+      height: number
+      paddingTop: number
+      paddingBottom: number
+    }
+    slogan: {
+      container: {
+        paddingTop: number
+        paddingBottom: number
+        borderWidth: number
+        borderLength: number
+      }
+      fontSize: SIZES
+      lineHeight: number
+      paddingBottom: number
+    }
     centerBlockMaxWidth: string
     centerBlockWidth: string
-    logoHOffset: string
     navSpan: string
-    dashLineWidth: string
+    dashLineWidth: number
     centerBlockTitleVSpan: string
     navItemHeight: SIZES
     blockTitleHeight: SIZES
-    slogan: SIZES
     subscribeBtnFontSize: SIZES
-    descFontSize: SIZES
+    // descFontSize: SIZES
     primaryTitleFontSize: string
     secondaryTitleFontSize: SIZES
-    titleColorBlockWidth: string
-    titleColorBlockRightSpan: string
-    descPaddingLeft: string
-    descPaddingTop: string
     subscribeFormLineHeight: string
     subscribeFormLineWidth: string
     highlightBtnWidth: string
@@ -40,23 +50,65 @@ export interface ThemeInterface {
     memberBlockDescPaddingLeft: string
     pageBlockMarginTop: string
     centerBlockTitleWidth: string
-    chartDescPaddingTop: string
     memberNameFontSize: string
     slideNavTopMargin: string
     slideNavLeftMargin: string
-    chartIconMarginBottom: string
-    chartIconSize: string
-    chartBlockHPadding: string
     HistoryColPaddingTop: string
     HistoryColPaddingLeft: string
     HistoryYearLabelPaddingBottom: string
     HistoryItemHPadding: string
-    ChartTitleFontSize: string
-    rectWidth: string
-    rectOffset: string
+    chart: {
+      title: {
+        fontSize: number
+        borderWidth: number // 20
+        paddingLeft: number
+      }
+      desc: {
+        fontSize: number
+        paddingTop: number
+      }
+      icon: {
+        marginBottom: number
+        size: number
+      }
+      blockHPadding: number
+    }
+    rect: {
+      width: number
+      offset: number
+    }
     inputFontSize: string
     memberHPadding: string
     memberVPadding: string
+    screen: {
+      title: {
+        fontSize: number
+        lineHeight: number
+        borderWidth: number
+      }
+      subtitle: {
+        fontSize: number
+      }
+      titleContainer: {
+        marginTop: number
+        marginBottom: number
+      }
+      blockMaxWidth: number // 1514
+      blockWidthPercent: string
+      desc: {
+        paddingLeft: number
+        paddingTop: number
+        fontSize: SIZES
+      }
+    }
+
+    colorizedBlock: {
+      color: {
+        width: number
+        height: number
+      }
+      paddingLeft: number
+    }
   }
 }
 

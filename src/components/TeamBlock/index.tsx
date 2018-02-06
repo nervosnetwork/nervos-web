@@ -2,34 +2,29 @@ import * as React from 'react'
 import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
 import {
-  RippleInput,
-  HighlightButton,
-  ColorizedTitle,
-  Desc,
-  HistoryCol,
-  HistoryYearLabel,
-  HistoryItem,
   MemberBlock,
-  MemberBlockAvatar,
-  MemberBlockName,
-  MemberBlockDesc,
+  MemberAvatar,
+  MemberName,
+  MemberDesc,
+  Members,
+  MemberInfo,
 } from '../../styled/Common'
+import { Desc } from '../../styled/Text'
 
-export default ({ displayName, blocks, members }) => routerProps => (
-  <PageBlock blocks={blocks} displayName={displayName} {...routerProps}>
-    <ColorizedBlock primary>
-      <ColorizedTitle primary h1>
-        {displayName}
-      </ColorizedTitle>
-      <Desc>
+export default ({ members, primary }) => (
+  <Desc>
+    <ColorizedBlock primary={primary} colorBlockHeight={3.125}>
+      <Members>
         {members.map(member => (
           <MemberBlock key={member.key}>
-            <MemberBlockAvatar src={member.avatar} alt={member.name} />
-            <MemberBlockName>{member.name}</MemberBlockName>
-            <MemberBlockDesc>{member.desc}</MemberBlockDesc>
+            <MemberAvatar src={member.avatar} alt={member.name} />
+            <MemberInfo>
+              <MemberName>{member.name}</MemberName>
+              <MemberDesc>{member.desc}</MemberDesc>
+            </MemberInfo>
           </MemberBlock>
         ))}
-      </Desc>
+      </Members>
     </ColorizedBlock>
-  </PageBlock>
+  </Desc>
 )

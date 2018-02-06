@@ -24,7 +24,8 @@ input::placeholder {
 }
 
 header {
-  position: relative;
+  position: fixed;
+  width: 100%;
   padding-top: 100px;
   z-index: 999;
   @media (max-width: 600px) {
