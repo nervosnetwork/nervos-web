@@ -10,6 +10,7 @@ export const Slogan = styled.h1`
   margin: 0;
   line-height: ${props => props.theme.sizes.slogan.lineHeight};
   padding-bottom: ${props => `${props.theme.sizes.slogan.paddingBottom}rem`};
+  mix-blend-mode: color-dodge;
   @media (max-width: 1280px) {
     font-size: ${props => `${+props.theme.sizes.slogan.fontSize * 3 / 4}rem`};
   }

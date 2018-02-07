@@ -13,7 +13,7 @@ import { Desc } from '../../styled/Text'
 import ScreenBlock from '../../components/ScreenBlock'
 
 const screenInfo: { title: string; subtitle: string } = {
-  title: 'Features',
+  title: 'Milestone',
   subtitle: '',
 }
 
@@ -62,7 +62,7 @@ const historys = [
   },
 ]
 
-const Features = props => (
+const Milestone = props => (
   <Desc>
     <ColorizedBlock primary={false} colorBlockHeight={3.5}>
       {historys.map((history, colIndex) => (
@@ -94,5 +94,5 @@ const Features = props => (
   </Desc>
 )
 
-const ScreenBlocked = ScreenBlock({ historys, screenInfo })(Features)
+const ScreenBlocked = ScreenBlock({ historys, screenInfo })(Milestone)
 export default (props: RouterProps) => <ScreenBlocked {...props} />

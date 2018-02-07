@@ -17,7 +17,7 @@ export const TechSlide = {
   exact: true,
 }
 export const ContactUsSlide = {
-  title: 'Contact Us',
+  title: 'Keep You Update',
   path: '/contact-us',
   key: 'contactUs',
   module: 'ContactUs',
@@ -25,11 +25,11 @@ export const ContactUsSlide = {
   exact: true,
 }
 
-export const FeaturesSlide = {
-  title: 'Features',
-  path: '/features',
-  key: 'features',
-  module: 'Features',
+export const MilestoneSlide = {
+  title: 'Milestone',
+  path: '/milestone',
+  key: 'milestone',
+  module: 'Milestone',
   navable: true,
   exact: true,
 }
@@ -61,8 +61,8 @@ export const SupportersSlide = {
 export const screenBlocks: IScreenBlock[] = [
   HomeSlide,
   TechSlide,
+  MilestoneSlide,
   ContactUsSlide,
-  FeaturesSlide,
   TeamMembersSlide,
   AdvisorsSlide,
   SupportersSlide,

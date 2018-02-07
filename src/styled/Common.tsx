@@ -371,18 +371,20 @@ export const Members = styled.div`
   display: flex;
   flex-wrap: wrap;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  /* grid-template-rows: repeat(1fr, 2); */
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 4vh 5%;
-  @media (max-width: 1200px) {
+  @media (max-width: 992px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `
 export const MemberBlock = styled.div`
-  /* width: 50%; */
-  height: ${props => props.theme.sizes.memberBlockHeight};
+  // height: ${props => props.theme.sizes.memberBlockHeight};
   display: flex;
-  flex-wrap: wrap;
+  text-align: center;
+  flex-direction: column;
+  @media (max-width: 992px) {
+    flex-direction: row;
+  }
   @media (max-width: 750px) {
     flex-direction: column;
   }
@@ -395,12 +397,19 @@ export const MemberAvatar = styled.img`
   width: ${props => props.theme.sizes.memberBlockHeight};
   height: ${props => props.theme.sizes.memberBlockHeight};
   border-radius: 50%;
+  @media (max-width: 750px) {
+    float:left;
+  }
 `
 export const MemberInfo = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding-left: 3.6rem;
+  text-align: justify;
+  text-align-last: left;
+  @media (max-width: 992px) {
+    padding-left:3.5rem;
+  }
   @media (max-width: 750px) {
     padding-left: 0;
     padding-bottom: 20px;
