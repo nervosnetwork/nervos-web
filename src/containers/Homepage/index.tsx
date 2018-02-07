@@ -23,10 +23,14 @@ const HomeSlogan: React.SFC<ISloganProps> = props => (
         <HomepageWidgets />
         <SloganContainer>
           <Slogan>{t(props.slogan)}</Slogan>
-          <HomepageDesc>{t(props.description)}</HomepageDesc>
-          <Download>
-            {t(props.download)} {t(props.whitepaper)}
-          </Download>
+          <SlideIn.vertical index={0} slideIn={props.loaded}>
+            <HomepageDesc>{t(props.description)}</HomepageDesc>
+          </SlideIn.vertical>
+          <SlideIn.vertical index={2} slideIn={props.loaded}>
+            <Download>
+              {t(props.download)} {t(props.whitepaper)}
+            </Download>
+          </SlideIn.vertical>
         </SloganContainer>
       </React.Fragment>
     )}

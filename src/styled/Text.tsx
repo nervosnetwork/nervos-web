@@ -10,6 +10,9 @@ export const Slogan = styled.h1`
   margin: 0;
   line-height: ${props => props.theme.sizes.slogan.lineHeight};
   padding-bottom: ${props => `${props.theme.sizes.slogan.paddingBottom}rem`};
+  @media (max-width: 1280px) {
+    font-size: ${props => `${+props.theme.sizes.slogan.fontSize * 3 / 4}rem`};
+  }
   @media (max-width: 768px) {
     font-size: 2.5rem;
   }
@@ -33,7 +36,7 @@ export const Desc = styled.div`
   word-wrap: break-word;
   word-break: break-all;
   white-space: pre-wrap;
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
     padding-left: 0;
   }
 `
@@ -64,7 +67,7 @@ export const ScreenTitle = styled.h1`
     width: 55%;
     height: ${props => `${props.theme.sizes.screen.title.borderWidth}rem`};
     background-color: ${props => props.theme.colors.highlight};
-    transform: scale3d(0,1,1);
+    transform: scale3d(0, 1, 1);
     animation: ${titleColorExpand} 1s ease-out 1s forwards;
     transform-origin: left top;
   }

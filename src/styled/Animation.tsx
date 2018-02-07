@@ -102,6 +102,33 @@ export const HorizontalSlideOutDiv = HorizontalSlideOutDivCons`
   display: inherit;
 `
 
+export const dissolveIn = keyframes`
+  from {
+    filter: blur(100px);
+    letter-spacing: 4px;
+  }
+  to {
+    filter: blur(0px);
+    letter-spacing:3px;
+  }
+`
+
+interface IDissolveInDiv {
+  duration?: number
+  delay?: number
+}
+
+const DissolveInDivCons: StyledFunction<IDissolveInDiv> = styled.div
+
+export const DissolveInDiv = DissolveInDivCons`
+  height: 100%;
+  filter: blur(100px);
+  letter-spacing: 4px;
+  animation: ${props =>
+    `${dissolveIn} ${props.duration || 2}s ease-in ${(props.delay || 0) *
+      0.2}s forwards`}
+`
+
 export const SlideIn = {
   vertical: VerticalSlideInDiv,
   horizontal: HorizontalSlideInDiv,
@@ -113,4 +140,8 @@ export const SlideOut = {
 
 export const Fade = {
   in: FadeInDiv,
+}
+
+export const Dissolve = {
+  in: DissolveInDiv,
 }

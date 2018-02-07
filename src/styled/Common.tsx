@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled, { injectGlobal, StyledFunction, keyframes } from './styleUtils'
+import { dissolveIn } from './Animation'
 import theme from '../config/theme'
 
 /* eslint-disable no-unused-expressions */
@@ -25,6 +26,9 @@ injectGlobal`
   }
   header {
     padding-top: ${`${theme.sizes.header.paddingTop}rem`};
+    @media (max-width: 1280px) {
+      padding-top: 1rem;
+    }
     @media (max-width: 768px) {
       padding-top: 0;
     }
@@ -42,8 +46,9 @@ export const Header = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  animation: ${dissolveIn} 0.5s ease-in 0s forwards;
   @media (max-width: 768px) {
-    display:flex;
+    display: flex;
     flex-direction: column;
     max-width: auto;
     width: 100vw;
@@ -51,8 +56,8 @@ export const Header = styled.div`
 `
 
 export const Logo = styled.img`
-    height: 100%;
-    cursor: pointer;
+  height: 100%;
+  cursor: pointer;
   @media (max-width: 768px) {
     height: 50%;
     transform: scale(0.8);
@@ -66,7 +71,7 @@ export const Navs = styled.ul`
   @media (max-width: 768px) {
     width: 100vw;
     line-height: 1.4;
-    flex:1;
+    flex: 1;
     display: flex;
     justify-content: space-around;
   }
@@ -75,8 +80,9 @@ export const NavItem = styled.li`
   float: left;
   margin-left: ${props => props.theme.sizes.navSpan};
   font-size: ${props => props.theme.sizes.navItemHeight};
-  &  a,
-  &  span {
+  & a,
+  & span {
+    position: relative;
     cursor: pointer;
     text-transform: uppercase;
   }
@@ -272,7 +278,7 @@ export const SubscribeFormLine = styled.div`
   justify-content: flex-end;
   height: ${props => props.theme.sizes.subscribeFormLineHeight};
   width: ${props => props.theme.sizes.subscribeFormLineWidth};
-  @media (max-width: 600px){
+  @media (max-width: 600px) {
     width: 100%;
   }
 `
@@ -283,8 +289,8 @@ export const SubscribeButtonContainer = styled.div`
   left: 120%;
   @media (max-width: 600px) {
     position: relative;
-    left:0;
-    bottom:0;
+    left: 0;
+    bottom: 0;
   }
 `
 
@@ -323,6 +329,11 @@ export const HistoryCol = styled.div`
     `0 0 0 ${props.theme.sizes.historyCircleBandWidth} ${
       props.theme.colors.background
     }`};
+  }
+  @media (max-width: 750px) {
+    display: block;
+    margin-bottom: 100px;
+    width: 100%;
   }
 `
 
@@ -372,6 +383,13 @@ export const MemberBlock = styled.div`
   height: ${props => props.theme.sizes.memberBlockHeight};
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
+  @media (max-width: 750px) {
+    height: auto;
+    text-align: center;
+  }
 `
 export const MemberAvatar = styled.img`
   width: ${props => props.theme.sizes.memberBlockHeight};
@@ -383,6 +401,10 @@ export const MemberInfo = styled.div`
   flex: 1;
   flex-direction: column;
   padding-left: 3.6rem;
+  @media (max-width: 750px) {
+    padding-left: 0;
+    padding-bottom: 20px;
+  }
 `
 export const MemberName = styled.div`
   flex: 1;
@@ -406,11 +428,6 @@ export const ChartIcon = styled.img`
   width: ${props => `${props.theme.sizes.chart.icon.size}rem`};
   height: ${props => `${props.theme.sizes.chart.icon.size}rem`};
 `
-// margin-bottom: ${props => `${props.theme.sizes.chart.icon.marginBottom}rem`};
-// margin-left: ${props => `${props.theme.sizes.dashLineWidth}rem`};
-// padding-left: ${props =>
-//   `${props.theme.sizes.chart.title.paddingLeft +
-//     props.theme.sizes.colorizedBlock.color.width}rem`};
 
 export const SlideNavs = styled.div`
   position: fixed;
@@ -419,7 +436,6 @@ export const SlideNavs = styled.div`
   left: ${props => `${props.theme.sizes.slideNav.left}rem`};
   @media (max-width: 768px) {
     left: 15px;
-
   }
 `
 
@@ -433,6 +449,7 @@ const SlideNavCons: StyledFunction<
   styled.div
 
 export const SlideNav = SlideNavCons`
+  position:relative;
   width: 10px;
   height: 10px;
   background-color: ${props =>
@@ -442,7 +459,23 @@ export const SlideNav = SlideNavCons`
   border-radius: 50%;
   margin: 10px 0;
   cursor: ${props => (props.active ? 'default' : 'pointer')};
-
+  &:after {
+    position: absolute;
+    display: block;
+    content: attr(title);
+    top: 50%;
+    left: 100%;
+    transform: translateY(-50%);
+    color: #fff;
+    padding: 3px 5px;
+    white-space: pre;
+    opacity: 0;
+    transition: opacity 0.4s;
+    cursor: ${props => (props.active ? 'default' : 'pointer')};
+  }
+  &:hover:after{
+    opacity: 1
+  }
 `
 
 interface IRect {
@@ -530,7 +563,7 @@ export const HomepageWidgets = styled.div`
   z-index: -1;
   top: 0;
   left: 0;
-  transform: translate(39vw, -210px) rotate(60deg);
+  transform: translate(30.3vw, -210px) rotate(60deg);
   transform-origin: ${props =>
     `${100 *
       (100 + props.theme.sizes.rect.offset) /
@@ -547,18 +580,24 @@ export const HomepageWidgets = styled.div`
       Math.sqrt(3) +
       +props.theme.sizes.rect.width / 2}px`};
   @media (max-width: 1920px) {
-    transform: translate(29vw, -230px) rotate(60deg);
+    transform: translate(40.3vw, -210px) rotate(60deg);
   }
-  @media (max-width: 1920px) {
-    transform: translate(29vw, -230px) rotate(60deg);
+  @media (max-width: 1440px) {
+    transform: translate(30vw, -230px) scale(0.9) rotate(60deg);
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
+    transform: translate(24vw, -310px) scale(0.9) rotate(60deg);
+  }
+  @media (max-width: 1024px) {
+    transform: translate(21vw, -323px) scale(0.7) rotate(60deg);
+  }
+  @media (max-width: 992px) {
     transform: translate(12.3vw, -260px) rotate(60deg) scale(0.7);
   }
   @media (max-width: 768px) {
     transform: translate(12.3vw, -260px) rotate(60deg) scale(0.7);
   }
-  @media (max-width: 992px) {
-    transform: translate(12.3vw, -260px) rotate(60deg) scale(0.7);
+  @media (max-width: 750px) {
+    display: none;
   }
 `
