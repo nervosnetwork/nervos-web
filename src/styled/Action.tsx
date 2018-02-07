@@ -6,26 +6,41 @@ import theme from '../config/theme'
 const downloadIcon = require('../images/download.svg') as string
 /* eslint-enable global-require */
 
+const jump = keyframes`
+  from, to {
+    transform: scale(1, 1) translateY(0);
+  }
+  20%, 80% {
+    transform: scale(0.8, 1.2) translateY(-20%);
+  }
+  30%, 70% {
+    transform: scale(0.85, 1.15) translateY(-30%);
+  }
+
+  50% {
+    transform: scale(0.9, 1.1) translateY(-40%);
+  }
+
+`
 export const Download = styled.a`
   position: relative;
   color: ${props => props.theme.colors.plain};
   font-size: 1rem;
   cursor: pointer;
-  padding: 5px 15px;
   color: ${props => props.theme.colors.plain};
-  background-color: ${props => props.theme.colors.primary};
-  box-shadow: ${props => `5px 5px 0 0px ${props.theme.colors.highlight}`};
   transition: all 0.3s;
-  &:hover {
-    box-shadow: ${props => `3px 3px 0 0px ${props.theme.colors.highlight}`};
-  }
-  /* &:after {
+  &:after {
     display: block;
     position: absolute;
     top: 0;
     left: 120%;
     content: ${`url(${downloadIcon})`};
-  } */
+    transform-origin: center bottom;
+  }
+  &:hover:after{
+    // filter: drop-shadow(-3px 0 0)
+    animation: ${jump} 1s infinite;
+  }
 `
 
 export const remain = false

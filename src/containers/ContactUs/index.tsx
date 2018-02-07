@@ -16,7 +16,7 @@ import { SlideIn } from '../../styled/Animation'
 import ScreenBlock from '../../components/ScreenBlock'
 
 const screenInfo: { title: string; subtitle: string } = {
-  title: 'Contact Us',
+  title: 'Keep You Update',
   subtitle: 'Subscribe To Our Newsletter',
 }
 const ContactUs = props => (

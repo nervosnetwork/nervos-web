@@ -64,7 +64,8 @@ export default {
     },
     desc: {
       fontSize: 1.375,
-      paddingTop: 3.125,
+      // paddingTop: 3.125,
+      paddingTop: 0,
     },
     icon: {
       marginBottom: 6.25,

@@ -95,17 +95,22 @@ interface IChartBlock {
 const ChartBlockCons: StyledFunction<IChartBlock> = styled.div
 export const ChartBlock = ChartBlockCons`
   display: grid;
+  margin-bottom: 30px;
   grid-template-columns: 20% auto 20%;
+  grid-template-rows: repeat(2 1fr);
   grid-column-gap: 3vw;
-  grid-row-gap: 3vh;
   & > img {
     grid-column: ${props => (props.index % 2 ? '2/4' : '1/3')};
-    grid-row: 1/2;
+    grid-row: 1/3;
     justify-self: ${props => (props.index % 2 ? 'right' : 'left')}
+  }
+  &>h1{
+    grid-column: ${props => (props.index % 2 ? '1/3' : '2/4')};
+    grid-row: 1/2;
   }
   & > div {
     grid-column: ${props => (props.index % 2 ? '1/3' : '2/4')};
-    grid-row: 1/2;
+    grid-row: 2/3;
     justify-self: ${props => (props.index % 2 ? 'left' : 'right')}
   }
   @media (max-width: 750px) {

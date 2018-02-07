@@ -54,6 +54,7 @@ const Chart = ({ img, title, desc, key, index, primary, loaded }) => (
       <SlideIn.vertical slideIn={loaded} index={5 * index + 6}>
         <ChartBlock key={key} index={index}>
           <ChartIcon src={img} alt={title} />
+          <ChartTitle>{t(title)}</ChartTitle>
           <ChartDesc>{t(desc)}</ChartDesc>
         </ChartBlock>
       </SlideIn.vertical>
