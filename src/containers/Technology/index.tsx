@@ -13,7 +13,7 @@ import { IChart } from './type'
 /* eslint-disable global-require */
 const highEffeciencyImg = require('../../images/high_efficiency.svg') as string
 const identityImg = require('../../images/identity.svg') as string
-const scalableImg = require('../../images/scalable.svg') as string
+const commonKnowledgeImg = require('../../images/commonKnowledge.svg') as string
 /* eslint-enable global-require */
 
 const screenInfo: { title: string; subtitle: string } = {
@@ -24,9 +24,10 @@ const screenInfo: { title: string; subtitle: string } = {
 const charts: IChart[] = [
   {
     title: 'Common Knowledge Base',
-    key: 'efficiency',
-    desc: 'loremloremloremloremloremloremloremloremloremlorem',
-    img: highEffeciencyImg,
+    key: 'Common Knowledge Base',
+    desc:
+      'NERVOS 针对共同知识做了更泛化的抽象，比特币的 UTXO 模型 和 以太坊 Account 模型， 都可以在此泛化抽象之上轻松实现出来。 NERVOS 不在只是 『共享账本』， 而是真正意义上的 『共同知识库』。',
+    img: commonKnowledgeImg,
     primary: false,
   },
   {
@@ -42,7 +43,7 @@ const charts: IChart[] = [
     key: 'scalability',
     desc:
       'To reach NERVOS’ goal of serving real people and businesses, we have to make practical choices to integrate with today’s financial and commercial infrastructure. We provide protocol layer stable currency for price certainty and KYC & AML solutions for businesses to meet compliance requirements.',
-    img: scalableImg,
+    img: highEffeciencyImg,
     primary: true,
   },
 ]
@@ -50,15 +51,6 @@ const charts: IChart[] = [
 const Chart = ({ img, title, desc, key, index, primary, loaded }) => (
   <I18n ns="translations">
     {(t, { i18n }) => (
-      // <ChartBlock key={key}>
-      //   <SlideIn.vertical slideIn={loaded} index={5 * index + 6}>
-      //     <ChartIcon src={img} alt="tech" />
-      //     <ColorizedBlock primary={primary} chart colorBlockHeight={4}>
-      //       <ChartTitle>{t(title)}</ChartTitle>
-      //       <ChartDesc>{t(desc)}</ChartDesc>
-      //     </ColorizedBlock>
-      //   </SlideIn.vertical>
-      // </ChartBlock>
       <SlideIn.vertical slideIn={loaded} index={5 * index + 6}>
         <ChartBlock key={key} index={index}>
           <ChartIcon src={img} alt={title} />
@@ -68,7 +60,6 @@ const Chart = ({ img, title, desc, key, index, primary, loaded }) => (
     )}
   </I18n>
 )
-// <div style={{ gridColumnStart: 2 }}>{desc}</div>
 
 const Tech = (props: { charts: IChart[]; loaded: boolean }) => (
   <React.Fragment>

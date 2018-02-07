@@ -13,8 +13,12 @@ export const ScreenDiv = styled.div`
     `${props.theme.sizes.header.height +
       props.theme.sizes.header.paddingTop +
       props.theme.sizes.screen.desc.paddingTop}rem`};
-  @media(max-width: 768px) {
-          
+  @media (max-width: 1280px) {
+    padding-top: ${props =>
+    `${props.theme.sizes.header.height +
+        props.theme.sizes.screen.desc.paddingTop / 2}rem`};
+  }
+  @media (max-width: 768px) {
     padding-top: ${props =>
     `${props.theme.sizes.header.height +
         props.theme.sizes.screen.desc.paddingTop}rem`};
@@ -24,7 +28,8 @@ export const ScreenDiv = styled.div`
 export const SloganContainer = styled.div`
   position: relative;
   padding-left: ${props => `${props.theme.sizes.screen.desc.paddingLeft}rem`};
-  padding-right: ${props => `${props.theme.sizes.slogan.container.paddingRight}rem`};
+  padding-right: ${props =>
+    `${props.theme.sizes.slogan.container.paddingRight}rem`};
   padding-top: ${props =>
     `${props.theme.sizes.slogan.container.paddingTop -
       props.theme.sizes.screen.desc.paddingTop}rem`};
@@ -43,13 +48,17 @@ export const SloganContainer = styled.div`
   @media (max-width: 1920px) {
     padding-top: ${props =>
     `${(props.theme.sizes.slogan.container.paddingTop -
-        props.theme.sizes.screen.desc.paddingTop) * 0.14}rem`};
+        props.theme.sizes.screen.desc.paddingTop) *
+        0.14}rem`};
   }
   @media (max-width: 768px) {
     padding: 0;
-    &:after{
+    &:after {
       display: none;
     }
+  }
+  @media (max-width: 750px) {
+    text-align: center;
   }
 `
 
@@ -59,11 +68,10 @@ export const ScreenTitleContainer = styled.div`
   margin-bottom: ${props =>
     `${props.theme.sizes.screen.titleContainer.marginBottom}rem`};
   @media (max-width: 1920px) {
-  margin-top: ${props =>
-    `${(props.theme.sizes.screen.titleContainer.marginTop) / 2}rem`};
-  margin-bottom: ${props =>
-    `${(props.theme.sizes.screen.titleContainer.marginBottom) / 2}rem`};
-    
+    margin-top: ${props =>
+    `${props.theme.sizes.screen.titleContainer.marginTop / 2}rem`};
+    margin-bottom: ${props =>
+    `${props.theme.sizes.screen.titleContainer.marginBottom / 2}rem`};
   }
 `
 
@@ -75,6 +83,9 @@ export const ChartsContainer = styled.div`
   margin-right: ${props =>
     `${props.theme.sizes.screen.desc.paddingLeft -
       props.theme.sizes.chart.blockHPadding / 2}rem`};
+  @media (max-width: 750px) {
+    margin: 0;
+  }
 `
 
 interface IChartBlock {
@@ -84,18 +95,23 @@ interface IChartBlock {
 const ChartBlockCons: StyledFunction<IChartBlock> = styled.div
 export const ChartBlock = ChartBlockCons`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 20% auto 20%;
   grid-column-gap: 3vw;
   grid-row-gap: 3vh;
   & > img {
-    grid-column: ${props => (props.index % 2 ? '4/5' : '1/2')};
+    grid-column: ${props => (props.index % 2 ? '2/4' : '1/3')};
     grid-row: 1/2;
     justify-self: ${props => (props.index % 2 ? 'right' : 'left')}
   }
   & > div {
-    grid-column: ${props => (props.index % 2 ? '1/4' : '2/5')};
+    grid-column: ${props => (props.index % 2 ? '1/3' : '2/4')};
     grid-row: 1/2;
     justify-self: ${props => (props.index % 2 ? 'left' : 'right')}
+  }
+  @media (max-width: 750px) {
+    display: block;
+    text-align: center;
+    margin-bottom: 25px;
   }
 `
 // display: inline-block;

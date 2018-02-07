@@ -2,7 +2,7 @@ import * as React from 'react'
 import { createPortal } from 'react-dom'
 import { I18n } from 'react-i18next'
 import { Header, Logo, Navs, NavItem } from '../../styled/Common'
-import { SlideIn } from '../../styled/Animation'
+import { SlideIn, Dissolve } from '../../styled/Animation'
 
 /* eslint-disable global-require */
 const LogoImg = require('../../images/nerveos.svg') as string

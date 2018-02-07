@@ -4,7 +4,7 @@ import { ScreenDiv, ScreenTitleContainer } from '../../styled/Layout'
 import { ScreenTitle, ScreenSubTitle } from '../../styled/Text'
 import { ScreenBlockProps, ScreenBlockState } from './type'
 import Navigator from '../Navigator'
-import { SlideIn } from '../../styled/Animation'
+import { SlideIn, Dissolve } from '../../styled/Animation'
 
 export default originalProps => Comp =>
   class Screened extends React.Component<ScreenBlockProps, ScreenBlockState> {
@@ -53,7 +53,6 @@ export default originalProps => Comp =>
                     <ScreenSubTitle>{t(screenInfo.subtitle)}</ScreenSubTitle>
                   </ScreenTitleContainer>
                 )}
-
                 <Comp {...originalProps} loaded={loaded} />
               </ScreenDiv>
             </SlideIn.vertical>
