@@ -24,9 +24,12 @@ injectGlobal`
     }
   }
   body{
+    position: relative;
     padding-bottom: ${theme.sizes.footer.logo.height +
       theme.sizes.footer.paddingTop +
-      theme.sizes.footer.paddingBottom} + 'rem'
+      theme.sizes.footer.paddingBottom +
+      theme.sizes.footer.marginTop +
+      'rem'}
   }
   header {
     padding-top: ${`${theme.sizes.header.paddingTop}rem`};
