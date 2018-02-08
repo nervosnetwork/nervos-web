@@ -8,6 +8,7 @@ export interface ThemeInterface {
     background: COLORS
     plain: COLORS
     assist: COLORS
+    darkBackgroud: COLORS
   }
   sizes: {
     root: string
@@ -15,6 +16,17 @@ export interface ThemeInterface {
       height: number
       paddingTop: number
       paddingBottom: number
+    }
+    footer: {
+      paddingTop: number
+      paddingBottom: number
+      marginTop: number
+      logo: {
+        height: number
+      }
+      nav: {
+        fontSize: number
+      }
     }
     slogan: {
       container: {

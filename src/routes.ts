@@ -80,7 +80,7 @@ export interface RouterProps {
 const routes: IPage[] = [
   { path: '/', key: 'Header', module: 'Header' },
   ...screenBlocks,
-  { path: '/faq', key: 'FAQ', module: 'FAQ' },
+  { path: '/', key: 'Footer', module: 'Footer' },
 ]
 
 export default routes

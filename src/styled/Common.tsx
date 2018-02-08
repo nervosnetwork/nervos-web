@@ -33,6 +33,10 @@ injectGlobal`
       padding-top: 0;
     }
   }
+  footer {
+    margin-top: ${theme.sizes.footer.marginTop + 'rem'};
+    background-color: ${theme.colors.darkBackgroud};
+  }
 `
 
 /* eslint-enable no-unused-expressions */
@@ -393,6 +397,7 @@ export const MemberInfo = styled.div`
   flex-direction: column;
   text-align: justify;
   text-align-last: left;
+  padding-top: 15px;
   @media (max-width: 992px) {
     padding-left: 3.5rem;
   }
@@ -559,7 +564,8 @@ export const HomepageWidgets = styled.div`
   top: 0;
   left: 100%;
   transform: ${props =>
-    `translate(-${props.theme.sizes.navSpan * 11}rem, -310px) rotate(60deg)`};
+    `translate(-${props.theme.sizes.navSpan * 11 +
+      0.5}rem, -310px) rotate(60deg)`};
   transform-origin: ${props =>
     `${100 *
       (100 + props.theme.sizes.rect.offset) /
@@ -575,25 +581,62 @@ export const HomepageWidgets = styled.div`
       100 *
       Math.sqrt(3) +
       +props.theme.sizes.rect.width / 2}px`};
-  @media (max-width: 1920px) {
-    transform: translate(40.3vw, -210px) rotate(60deg);
-  }
   @media (max-width: 1440px) {
-    transform: translate(30vw, -230px) scale(0.9) rotate(60deg);
-  }
-  @media (max-width: 1280px) {
-    transform: translate(24vw, -310px) scale(0.9) rotate(60deg);
+    transform: ${props =>
+      `translate(-${props.theme.sizes.navSpan * 11 +
+        0.5}rem, -320px) scale(0.9) rotate(60deg)`};
   }
   @media (max-width: 1024px) {
-    transform: translate(21vw, -323px) scale(0.7) rotate(60deg);
-  }
-  @media (max-width: 992px) {
-    transform: translate(12.3vw, -260px) rotate(60deg) scale(0.7);
-  }
-  @media (max-width: 768px) {
-    transform: translate(12.3vw, -260px) rotate(60deg) scale(0.7);
+    transform: ${props =>
+      `translate(-${props.theme.sizes.navSpan * 11 +
+        0.5}rem, -320px) scale(0.6) rotate(60deg)`};
   }
   @media (max-width: 750px) {
     display: none;
+  }
+`
+// Footer
+export const Footer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-top: ${props => props.theme.sizes.footer.paddingTop + 'rem'};
+  padding-bottom: ${props => props.theme.sizes.footer.paddingBottom + 'rem'};
+  max-width: ${props => `${props.theme.sizes.screen.blockMaxWidth}rem`};
+  width: ${props => props.theme.sizes.screen.blockWidthPercent};
+  margin: 0 auto;
+`
+
+export const FooterLogo = styled.img`
+  height: ${props => props.theme.sizes.footer.logo.height + 'rem'};
+`
+export const FooterNavs = styled.div`
+  padding: ${props => `${props.theme.sizes.footer.logo.height / 4}rem 0`};
+  display: flex;
+  width: 80%;
+`
+
+export const FooterNav = styled.div`
+  font-size: ${props => props.theme.sizes.footer.nav.fontSize + 'rem'};
+  flex: 1;
+  text-align: right;
+  & > a,
+  & > span {
+    position: relative;
+    color: ${props => props.theme.colors.plain};
+    cursor: pointer;
+    &:before {
+      position: absolute;
+      top: 50%;
+      right: 120%;
+      transform: translateY(-50%);
+      content: '';
+      display: block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: ${props => props.theme.colors.highlight};
+    }
   }
 `

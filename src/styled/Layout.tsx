@@ -10,16 +10,13 @@ export const ScreenDiv = styled.div`
   width: ${props => props.theme.sizes.screen.blockWidthPercent};
   margin: 0 auto;
   margin-bottom: ${props => props.theme.sizes.screen.marginBottom + 'rem'};
-  padding-top: ${props =>
-    `${
-      /* props.theme.sizes.header.height + */
-      /* props.theme.sizes.header.paddingTop + */
-      props.theme.sizes.screen.desc.paddingTop
-    }rem`};
+  padding-top: ${props => `${props.theme.sizes.screen.desc.paddingTop}rem`};
+  &:last-of-type {
+    margin-bottom: 0;
+  }
   @media (max-width: 1280px) {
     padding-top: ${props =>
-      `${props.theme.sizes.header.height +
-        props.theme.sizes.screen.desc.paddingTop / 2}rem`};
+      `${props.theme.sizes.screen.desc.paddingTop / 2}rem`};
   }
   @media (max-width: 768px) {
     padding-top: ${props =>
@@ -34,7 +31,8 @@ export const SloganContainer = styled.div`
   padding-right: ${props =>
     `${props.theme.sizes.slogan.container.paddingRight}rem`};
   padding-top: ${props =>
-    `${props.theme.sizes.slogan.container.paddingTop}rem`};
+    `${props.theme.sizes.slogan.container.paddingTop -
+      props.theme.sizes.screen.desc.paddingTop}rem`};
   padding-bottom: ${props =>
     `${props.theme.sizes.slogan.container.paddingBottom}rem`};
   &:after {
@@ -55,6 +53,9 @@ export const SloganContainer = styled.div`
   }
   @media (max-width: 1440px) {
     padding-bottom: 10rem;
+  }
+  @media (max-width: 1280px) {
+    padding-bottom: 5rem;
   }
   @media (max-width: 768px) {
     padding: 0;
@@ -88,7 +89,7 @@ export const ChartsContainer = styled.div`
   margin-right: ${props =>
     `${props.theme.sizes.screen.desc.paddingLeft -
       props.theme.sizes.chart.blockHPadding / 2}rem`};
-  @media (max-width: 750px) {
+  @media (max-width: 800px) {
     margin: 0;
   }
 `
