@@ -13,7 +13,6 @@ i18n
     fallbackLng: 'en',
     defaultNS: 'translations',
     keySeparator: false,
-    debug: true,
     resources: {
       zh,
       en,

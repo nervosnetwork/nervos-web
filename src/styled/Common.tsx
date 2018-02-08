@@ -8,7 +8,6 @@ injectGlobal`
   html, body {
     background-color: ${theme.colors.background};
     font-size: ${theme.sizes.root};
-
     @media (max-width: 1500px) {
       font-size: 14px;
     }
@@ -24,6 +23,11 @@ injectGlobal`
       background-color: ${theme.colors.highlight};
     }
   }
+  body{
+    padding-bottom: ${theme.sizes.footer.logo.height +
+      theme.sizes.footer.paddingTop +
+      theme.sizes.footer.paddingBottom} + 'rem'
+  }
   header {
     padding-top: ${`${theme.sizes.header.paddingTop}rem`};
     @media (max-width: 1280px) {
@@ -34,6 +38,10 @@ injectGlobal`
     }
   }
   footer {
+    position: absolute;
+    left:0;
+    bottom: 0;
+    width: 100%;
     margin-top: ${theme.sizes.footer.marginTop + 'rem'};
     background-color: ${theme.colors.darkBackgroud};
   }
