@@ -22,7 +22,8 @@ export default {
   },
   slogan: {
     container: {
-      paddingTop: 12.875,
+      // paddingTop: 12.875,
+      paddingTop: 3,
       paddingBottom: 14.625,
       borderWidth: 0.5,
       borderLength: 32.5,
@@ -39,7 +40,7 @@ export default {
   },
   dashLineWidth: 0.125, //2
   centerBlockTitleVSpan: '3rem', // 48
-  navSpan: '4.125rem', // 66
+  navSpan: 4.125, // 66
   navItemHeight: SIZES.F7,
   centerBlockMaxWidth: '94.625rem', // 1514
   centerBlockWidth: '78.8%',
@@ -104,6 +105,7 @@ export default {
       marginTop: 5,
       marginBottom: 10.25,
     },
+    marginBottom: 20,
     blockMaxWidth: 94.625, // 1514
     blockWidthPercent: '78.8%',
     desc: {

@@ -14,3 +14,34 @@ export default () => (
     </Router>
   </ThemeProvider>
 )
+
+// import { scrollObservable } from './utils/observables'
+// import { getScrollTop } from './utils/getDomAttr'
+
+// export default class extends React.Component {
+//   state = {
+//     scrollTop: 0,
+//   }
+//   componentDidMount() {
+//     scrollObservable.subscribe(() =>
+//       this.setState({ scrollTop: getScrollTop() }),
+//     )
+//   }
+//   static childContextTypes: PropTypes.ProviderContext = {
+//     scrollTop: PropTypes.string,
+//   }
+//   getChildContext() {
+//     return {
+//       scrollTop: this.state.scrollTop,
+//     }
+//   }
+//   render() {
+//     return (
+//       <ThemeProvider theme={theme}>
+//         <Router>
+//           <React.Fragment>{AsyncRoutes(routes)}</React.Fragment>
+//         </Router>
+//       </ThemeProvider>
+//     )
+//   }
+// }

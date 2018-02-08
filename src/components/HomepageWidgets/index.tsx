@@ -13,20 +13,19 @@ export default class extends React.Component {
     loaded: false,
   }
 
-  componentDidMount () {
+  componentDidMount() {
     setTimeout(() => {
       this.setState({
         loaded: true,
       })
     }, 0)
   }
-  componentWillUnmount () {
+  componentWillUnmount() {
     this.setState({
       loaded: false,
     })
   }
-  render () {
-    console.log(this.state.loaded)
+  render() {
     return (
       <HomepageWidgets>
         <HomepageWidget primary>
@@ -39,5 +38,3 @@ export default class extends React.Component {
     )
   }
 }
-// <SlideIn.vertical slideIn={this.state.loaded} fromTop>
-// </SlideIn.vertical>

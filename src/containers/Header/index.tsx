@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { I18n } from 'react-i18next'
 import { Header, Logo, Navs, NavItem } from '../../styled/Common'
 import { SlideIn, Dissolve } from '../../styled/Animation'
+import HomepageWidgets from '../../components/HomepageWidgets'
 
 /* eslint-disable global-require */
 const LogoImg = require('../../images/nerveos.svg') as string
@@ -42,18 +43,19 @@ export default class extends React.Component<HeaderProps, HeaderState> {
   state = {
     loaded: false,
   }
-  componentDidMount () {
+  componentDidMount() {
     setTimeout(() => {
       this.setState(() => ({ loaded: true }))
     }, 0)
   }
-  render () {
+  render() {
     const { props } = this
     const { loaded } = this.state
     return createPortal(
       <I18n>
         {(t, { i18n }) => (
           <Header>
+            <HomepageWidgets />
             <Logo
               src={LogoImg}
               alt="NervOS"

@@ -35,7 +35,7 @@ export interface ThemeInterface {
     }
     centerBlockMaxWidth: string
     centerBlockWidth: string
-    navSpan: string
+    navSpan: number
     dashLineWidth: number
     centerBlockTitleVSpan: string
     navItemHeight: SIZES
@@ -101,6 +101,7 @@ export interface ThemeInterface {
         marginTop: number
         marginBottom: number
       }
+      marginBottom: number
       blockMaxWidth: number // 1514
       blockWidthPercent: string
       desc: {

@@ -10,7 +10,7 @@ export const HomeSlide = {
 }
 export const TechSlide = {
   title: 'Technology',
-  path: '/tech',
+  path: '/',
   key: 'technology',
   module: 'Technology',
   navable: true,
@@ -18,7 +18,7 @@ export const TechSlide = {
 }
 export const ContactUsSlide = {
   title: 'Keep You Update',
-  path: '/contact-us',
+  path: '/',
   key: 'contactUs',
   module: 'ContactUs',
   navable: true,
@@ -27,7 +27,7 @@ export const ContactUsSlide = {
 
 export const MilestoneSlide = {
   title: 'Milestone',
-  path: '/milestone',
+  path: '/',
   key: 'milestone',
   module: 'Milestone',
   navable: true,
@@ -36,7 +36,7 @@ export const MilestoneSlide = {
 
 export const TeamMembersSlide = {
   title: 'Team Members',
-  path: '/team-members',
+  path: '/',
   key: 'teamMembers',
   module: 'TeamMembers',
   navable: true,
@@ -44,7 +44,7 @@ export const TeamMembersSlide = {
 }
 export const AdvisorsSlide = {
   title: 'Advisors',
-  path: '/advisors',
+  path: '/',
   key: 'advisors',
   module: 'Advisors',
   navable: true,
@@ -52,7 +52,7 @@ export const AdvisorsSlide = {
 }
 export const SupportersSlide = {
   title: 'Supporters',
-  path: '/supporters',
+  path: '/',
   key: 'supporters',
   module: 'Supporters',
   navable: true,

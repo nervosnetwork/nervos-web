@@ -5,22 +5,25 @@ import theme from '../config/theme'
 export const ScreenDiv = styled.div`
   position: relative;
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   max-width: ${props => `${props.theme.sizes.screen.blockMaxWidth}rem`};
   width: ${props => props.theme.sizes.screen.blockWidthPercent};
   margin: 0 auto;
+  margin-bottom: ${props => props.theme.sizes.screen.marginBottom + 'rem'};
   padding-top: ${props =>
-    `${props.theme.sizes.header.height +
-      props.theme.sizes.header.paddingTop +
-      props.theme.sizes.screen.desc.paddingTop}rem`};
+    `${
+      /* props.theme.sizes.header.height + */
+      /* props.theme.sizes.header.paddingTop + */
+      props.theme.sizes.screen.desc.paddingTop
+    }rem`};
   @media (max-width: 1280px) {
     padding-top: ${props =>
-    `${props.theme.sizes.header.height +
+      `${props.theme.sizes.header.height +
         props.theme.sizes.screen.desc.paddingTop / 2}rem`};
   }
   @media (max-width: 768px) {
     padding-top: ${props =>
-    `${props.theme.sizes.header.height +
+      `${props.theme.sizes.header.height +
         props.theme.sizes.screen.desc.paddingTop}rem`};
   }
 `
@@ -31,8 +34,7 @@ export const SloganContainer = styled.div`
   padding-right: ${props =>
     `${props.theme.sizes.slogan.container.paddingRight}rem`};
   padding-top: ${props =>
-    `${props.theme.sizes.slogan.container.paddingTop -
-      props.theme.sizes.screen.desc.paddingTop}rem`};
+    `${props.theme.sizes.slogan.container.paddingTop}rem`};
   padding-bottom: ${props =>
     `${props.theme.sizes.slogan.container.paddingBottom}rem`};
   &:after {
@@ -47,9 +49,12 @@ export const SloganContainer = styled.div`
   }
   @media (max-width: 1920px) {
     padding-top: ${props =>
-    `${(props.theme.sizes.slogan.container.paddingTop -
+      `${(props.theme.sizes.slogan.container.paddingTop -
         props.theme.sizes.screen.desc.paddingTop) *
         0.14}rem`};
+  }
+  @media (max-width: 1440px) {
+    padding-bottom: 10rem;
   }
   @media (max-width: 768px) {
     padding: 0;
@@ -69,9 +74,9 @@ export const ScreenTitleContainer = styled.div`
     `${props.theme.sizes.screen.titleContainer.marginBottom}rem`};
   @media (max-width: 1920px) {
     margin-top: ${props =>
-    `${props.theme.sizes.screen.titleContainer.marginTop / 2}rem`};
+      `${props.theme.sizes.screen.titleContainer.marginTop / 2}rem`};
     margin-bottom: ${props =>
-    `${props.theme.sizes.screen.titleContainer.marginBottom / 2}rem`};
+      `${props.theme.sizes.screen.titleContainer.marginBottom / 2}rem`};
   }
 `
 
