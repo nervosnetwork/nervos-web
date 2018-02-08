@@ -3,26 +3,27 @@
   "version": "0.1.0",
   "description": "NervOS Web",
   "main": "index.js",
-  "homepage": "https://keith-cy.github.io/react-gh-pages",
+  "homepage": "https://nervosfoundation.github.io/nervos-web",
   "repository": "https://github.com/NervosFoundation/nervos-web",
   "author": "Keith <keithwhisper@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "clear && webpack-dev-server --config config/webpack.config.dev.js",
-    "start:d": "clear && webpack-dashboard -- webpack-dev-server --config config/webpack.config.dev.js",
+    "start":
+      "clear && webpack-dev-server --config config/webpack.config.dev.js",
+    "start:d":
+      "clear && webpack-dashboard -- webpack-dev-server --config config/webpack.config.dev.js",
     "build": "yarn run build:test",
-    "build:test": "rimraf dist && webpack --config config/webpack.config.prod.js",
-    "build:prod": "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
+    "build:test":
+      "rimraf dist && webpack --config config/webpack.config.prod.js",
+    "build:prod":
+      "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
     "dll": "rimraf lib && webpack --config ./config/webpack.config.dll.js",
     "precommit": "lint-staged",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d dist"
   },
   "lint-staged": {
-    "src/**/*.tsx": [
-      "eslint --fix",
-      "git add"
-    ]
+    "src/**/*.tsx": ["eslint --fix", "git add"]
   },
   "dependencies": {
     "i18next": "^10.3.0",

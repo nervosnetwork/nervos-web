@@ -20,6 +20,17 @@ export default {
     paddingTop: 6.25,
     paddingBottom: 0,
   },
+  footer: {
+    paddingTop: 5.25,
+    paddingBottom: 5.25,
+    marginTop: 6,
+    logo: {
+      height: 9.875,
+    },
+    nav: {
+      fontSize: 1.125,
+    },
+  },
   slogan: {
     container: {
       // paddingTop: 12.875,

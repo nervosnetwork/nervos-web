@@ -59,6 +59,7 @@ export const ScreenTitle = styled.h1`
   color: ${props => props.theme.colors.plain};
   margin: 0;
   font-weight: 900;
+  margin-top: 10rem;
   &:before {
     content: '';
     display: block;
@@ -98,4 +99,5 @@ export const ChartDesc = styled.div`
   white-space: pre-wrap;
   text-align: justify;
   text-align-last: left;
+  mix-blend-mode: exclusion;
 `

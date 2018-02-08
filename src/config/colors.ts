@@ -1,4 +1,5 @@
 export enum COLORS {
+  BLACK_BLUE = '#181C3A',
   DARKBLUE = '#1F2346',
   BLUE = '#4799FC',
   WHITE = '#FFF',
@@ -12,4 +13,5 @@ export default {
   highlight: COLORS.RED,
   plain: COLORS.WHITE,
   assist: COLORS.BLUE,
+  darkBackgroud: COLORS.BLACK_BLUE,
 }
