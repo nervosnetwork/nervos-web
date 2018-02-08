@@ -18,19 +18,19 @@ export default ({ members, primary, loaded }) => (
       <Members>
         {members.map((member, index) => (
           <MemberBlock key={member.key}>
-            <SlideIn.vertical slideIn={loaded} index={index}>
+            <SlideIn.horizontal slideIn={loaded} index={index}>
               <MemberAvatar src={member.avatar} alt={member.name} />
-            </SlideIn.vertical>
+            </SlideIn.horizontal>
             <MemberInfo>
               <MemberName>
-                <SlideIn.vertical slideIn={loaded} index={index + 2}>
+                <SlideIn.horizontal slideIn={loaded} index={index + 2}>
                   {member.name}
-                </SlideIn.vertical>
+                </SlideIn.horizontal>
               </MemberName>
               <MemberDesc>
-                <SlideIn.vertical slideIn={loaded} index={index + 3}>
+                <SlideIn.horizontal slideIn={loaded} index={index + 3}>
                   {member.desc}
-                </SlideIn.vertical>
+                </SlideIn.horizontal>
               </MemberDesc>
             </MemberInfo>
           </MemberBlock>

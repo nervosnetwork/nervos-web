@@ -41,6 +41,8 @@ i18n
           'Your Name': '姓名',
           'E-mail': '邮件地址',
           Subscribe: '订阅',
+          'Who is On Board?': 'Who is On Board?',
+          'Subscribe To Our Newsletter': 'Subscribe To Our Newsletter',
         },
       },
       en: {
@@ -71,6 +73,8 @@ i18n
           'Your Name': 'Your Name',
           'E-mail': 'E-mail',
           Subscribe: 'Subscribe',
+          'Who is On Board?': 'Who is On Board?',
+          'Subscribe To Our Newsletter': 'Subscribe To Our Newsletter',
         },
       },
     },

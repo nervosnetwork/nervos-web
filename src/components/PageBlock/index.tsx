@@ -21,7 +21,7 @@ export default (Comp: React.ReactElement<any>) =>
     state = {
       loaded: false,
     }
-    componentDidMount () {
+    componentDidMount() {
       setTimeout(() => {
         this.setState(() => ({
           loaded: true,
@@ -32,7 +32,6 @@ export default (Comp: React.ReactElement<any>) =>
       this.props.history.push(url)
     }
     handleNavClick = url => e => {
-      console.log(url)
       if (this.props.location.pathname === url) return
 
       this.setState({
@@ -43,7 +42,7 @@ export default (Comp: React.ReactElement<any>) =>
       }, 400)
     }
     container: any
-    render () {
+    render() {
       const { props } = this
       const { loaded } = this.state
       return (

@@ -20,17 +20,16 @@ const HomeSlogan: React.SFC<ISloganProps> = props => (
   <I18n ns="translations">
     {(t, { i18n }) => (
       <React.Fragment>
-        <HomepageWidgets />
         <SloganContainer>
           <Slogan>{t(props.slogan)}</Slogan>
-          <SlideIn.vertical index={0} slideIn={props.loaded}>
+          <SlideIn.horizontal index={0} slideIn={props.loaded}>
             <HomepageDesc>{t(props.description)}</HomepageDesc>
-          </SlideIn.vertical>
-          <SlideIn.vertical index={2} slideIn={props.loaded}>
+          </SlideIn.horizontal>
+          <SlideIn.horizontal index={2} slideIn={props.loaded}>
             <Download>
               {t(props.download)} {t(props.whitepaper)}
             </Download>
-          </SlideIn.vertical>
+          </SlideIn.horizontal>
         </SloganContainer>
       </React.Fragment>
     )}

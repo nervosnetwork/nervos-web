@@ -8,22 +8,21 @@
   "author": "Keith <keithwhisper@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start":
-      "clear && webpack-dev-server --config config/webpack.config.dev.js",
-    "start:d":
-      "clear && webpack-dashboard -- webpack-dev-server --config config/webpack.config.dev.js",
+    "start": "clear && webpack-dev-server --config config/webpack.config.dev.js",
+    "start:d": "clear && webpack-dashboard -- webpack-dev-server --config config/webpack.config.dev.js",
     "build": "yarn run build:test",
-    "build:test":
-      "rimraf dist && webpack --config config/webpack.config.prod.js",
-    "build:prod":
-      "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
+    "build:test": "rimraf dist && webpack --config config/webpack.config.prod.js",
+    "build:prod": "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
     "dll": "rimraf lib && webpack --config ./config/webpack.config.dll.js",
     "precommit": "lint-staged",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d dist"
   },
   "lint-staged": {
-    "src/**/*.tsx": ["eslint --fix", "git add"]
+    "src/**/*.tsx": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "i18next": "^10.3.0",
@@ -34,6 +33,7 @@
     "react-dom": "^16.2.0",
     "react-i18next": "^7.3.4",
     "react-router-dom": "^4.2.2",
+    "rxjs": "alpha",
     "styled-components": "^3.1.4"
   },
   "devDependencies": {

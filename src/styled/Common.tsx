@@ -39,6 +39,7 @@ injectGlobal`
 
 // Header
 export const Header = styled.div`
+  position: relative;
   height: ${props => `${props.theme.sizes.header.height}rem`};
   line-height: ${props => `${props.theme.sizes.header.height}rem`};
   max-width: ${props => `${props.theme.sizes.screen.blockMaxWidth}rem`};
@@ -46,7 +47,6 @@ export const Header = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  animation: ${dissolveIn} 0.5s ease-in 0s forwards;
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -58,6 +58,7 @@ export const Header = styled.div`
 export const Logo = styled.img`
   height: 100%;
   cursor: pointer;
+  z-index: 1;
   @media (max-width: 768px) {
     height: 50%;
     transform: scale(0.8);
@@ -68,6 +69,7 @@ export const Navs = styled.ul`
   color: ${props => props.theme.colors.plain};
   list-style: none;
   float: right;
+  z-index: 1;
   @media (max-width: 768px) {
     width: 100vw;
     line-height: 1.4;
@@ -78,7 +80,7 @@ export const Navs = styled.ul`
 `
 export const NavItem = styled.li`
   float: left;
-  margin-left: ${props => props.theme.sizes.navSpan};
+  margin-left: ${props => props.theme.sizes.navSpan + 'rem'};
   font-size: ${props => props.theme.sizes.navItemHeight};
   & a,
   & span {
@@ -98,9 +100,6 @@ export const NavItem = styled.li`
 // Screen Div
 export const ScreenDiv = styled.div`
   display: flex;
-  /* max-width: ${props => props.theme.sizes.centerBlockMaxWidth};
-  width: ${props => props.theme.sizes.centerBlockWidth}; */
-  /* margin: 0 auto; */
   width: 100%;
   height: 100vh;
   background-color: ${props => props.theme.colors.background};
@@ -149,19 +148,6 @@ export const CenterBlockContent = styled.div`
   flex: 1;
 `
 
-// Slogan
-
-export const Slogan = styled.h1`
-  color: ${props => props.theme.colors.plain};
-  font-family: Futura;
-  font-size: ${props => props.theme.sizes.slogan};
-  font-weight: 900;
-  margin: 0;
-  margin-top: ${props => `-${props.theme.sizes.blockTitleHeight}`};
-  margin-left: ${props => `${props.theme.sizes.dashLineWidth}rem`};
-  padding-left: ${props => `${props.theme.sizes.screen.desc.paddingLeft}`};
-`
-
 // Colorized Block
 /* eslint-disable no-use-before-define */
 interface ColorizedDiv {
@@ -172,7 +158,7 @@ interface ColorizedDiv {
 }
 const ColorizedDivWithCons: StyledFunction<
   ColorizedDiv & React.HTMLProps<HTMLDivElement>
-  > =
+> =
   styled.div
 
 export const ColorizedDiv = ColorizedDivWithCons`
@@ -191,15 +177,15 @@ export const ColorizedDiv = ColorizedDivWithCons`
     content: '';
     width: ${props => `${props.theme.sizes.colorizedBlock.color.width}rem`};
     height: ${props =>
-    `${props.theme.sizes.colorizedBlock.color.height *
+      `${props.theme.sizes.colorizedBlock.color.height *
         (props.colorBlockHeight || 1)}rem`};
     position: absolute;
     top: 0;
     left: ${props => `-${props.theme.sizes.dashLineWidth}rem`};
     background-color: ${props =>
-    props.primary
-      ? props.theme.colors.primary
-      : props.theme.colors.highlight};
+      props.primary
+        ? props.theme.colors.primary
+        : props.theme.colors.highlight};
   }
 `
 /* eslint-enable no-use-before-define */
@@ -247,7 +233,7 @@ interface IColorizedTitle {
 
 const ColorizedTitleCons: StyledFunction<
   IColorizedTitle & React.HTMLProps<HTMLElement>
-  > =
+> =
   styled.h1
 
 export const ColorizedTitle = ColorizedTitleCons`
@@ -317,18 +303,18 @@ export const HistoryCol = styled.div`
     width: ${props => props.theme.sizes.historyCircleDiameter};
     height: ${props => props.theme.sizes.historyCircleDiameter};
     border: ${props =>
-    `${props.theme.sizes.historyCircleBandWidth} solid ${
-      props.theme.colors.primary
-    }`};
+      `${props.theme.sizes.historyCircleBandWidth} solid ${
+        props.theme.colors.primary
+      }`};
     border-radius: 50%;
     bottom: -2.5px;
     right: -1px;
     transform: translate(50%, 50%);
     background-color: ${props => props.theme.colors.background};
     box-shadow: ${props =>
-    `0 0 0 ${props.theme.sizes.historyCircleBandWidth} ${
-      props.theme.colors.background
-    }`};
+      `0 0 0 ${props.theme.sizes.historyCircleBandWidth} ${
+        props.theme.colors.background
+      }`};
   }
   @media (max-width: 750px) {
     display: block;
@@ -398,7 +384,7 @@ export const MemberAvatar = styled.img`
   height: ${props => props.theme.sizes.memberBlockHeight};
   border-radius: 50%;
   @media (max-width: 750px) {
-    float:left;
+    float: left;
   }
 `
 export const MemberInfo = styled.div`
@@ -408,7 +394,7 @@ export const MemberInfo = styled.div`
   text-align: justify;
   text-align-last: left;
   @media (max-width: 992px) {
-    padding-left:3.5rem;
+    padding-left: 3.5rem;
   }
   @media (max-width: 750px) {
     padding-left: 0;
@@ -454,7 +440,7 @@ interface ISlideNav {
 
 const SlideNavCons: StyledFunction<
   ISlideNav & React.HTMLProps<HTMLDivElement>
-  > =
+> =
   styled.div
 
 export const SlideNav = SlideNavCons`
@@ -557,7 +543,7 @@ export const HomepageWidget = HomepageWidgetCons`
   &>div{
     top: ${props => `-${props.theme.sizes.rect.width / 2}px`};
     left: ${props =>
-    `${(4 *
+      `${(4 *
         props.theme.sizes.rect.width *
         (+props.theme.sizes.rect.offset + 100) /
         100 *
@@ -569,10 +555,11 @@ export const HomepageWidget = HomepageWidgetCons`
 
 export const HomepageWidgets = styled.div`
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   top: 0;
-  left: 0;
-  transform: translate(30.3vw, -210px) rotate(60deg);
+  left: 100%;
+  transform: ${props =>
+    `translate(-${props.theme.sizes.navSpan * 11}rem, -310px) rotate(60deg)`};
   transform-origin: ${props =>
     `${100 *
       (100 + props.theme.sizes.rect.offset) /

@@ -1,63 +1,60 @@
 import * as React from 'react'
+// import * as PropTypes from 'prop-types'
 import { I18n } from 'react-i18next'
 import { ScreenDiv, ScreenTitleContainer } from '../../styled/Layout'
 import { ScreenTitle, ScreenSubTitle } from '../../styled/Text'
 import { ScreenBlockProps, ScreenBlockState } from './type'
 import Navigator from '../Navigator'
 import { SlideIn, Dissolve } from '../../styled/Animation'
+import { scrollObservable } from '../../utils/observables'
 
 export default originalProps => Comp =>
   class Screened extends React.Component<ScreenBlockProps, ScreenBlockState> {
+    displayName = 'screened'
     state = {
       loaded: false,
-      navs: this.props.routes.filter(route => route.navable),
     }
-    componentDidMount () {
-      setTimeout(() => {
-        this.setState(() => ({
-          loaded: true,
-        }))
-      }, 0)
+    componentDidMount() {
+      this.checkVisibility()
+      scrollObservable.subscribe(this.checkVisibility)
     }
-    navTo = url => {
-      this.props.history.push(url)
+    checkVisibility = () => {
+      if (
+        this.container &&
+        this.container.getBoundingClientRect().top < 0.9 * window.innerHeight
+        // && this.container.getBoundingClientRect().bottom > 0
+      ) {
+        this.setState({ loaded: true })
+      } else {
+        /**
+         *  Hiden block when outside of screen
+         */
+        // this.setState({ loaded: false })
+      }
     }
-    handleNavClick = url => e => {
-      if (this.props.location.pathname === url) return
-
-      this.setState({
-        loaded: false,
-      })
-      setTimeout(() => {
-        this.navTo(url)
-      }, 400)
-    }
-    render (): JSX.Element {
+    public container: HTMLElement | null
+    render(): JSX.Element {
       const { loaded } = this.state
       const { props } = this
       const { screenInfo } = originalProps
       return (
-        <I18n ns="translations">
-          {(t, { i18n }) => (
-            <SlideIn.vertical slideIn={loaded}>
-              <ScreenDiv>
-                <Navigator
-                  slideIn={loaded}
-                  currentPath={props.location.pathname}
-                  onNav={this.handleNavClick}
-                  navs={this.state.navs}
-                />
-                {screenInfo && (
-                  <ScreenTitleContainer>
-                    <ScreenTitle>{t(screenInfo.title)}</ScreenTitle>
-                    <ScreenSubTitle>{t(screenInfo.subtitle)}</ScreenSubTitle>
-                  </ScreenTitleContainer>
-                )}
-                <Comp {...originalProps} loaded={loaded} />
-              </ScreenDiv>
-            </SlideIn.vertical>
-          )}
-        </I18n>
+        <div ref={el => (this.container = el)}>
+          <I18n ns="translations">
+            {(t, { i18n }) => (
+              <SlideIn.horizontal slideIn={loaded}>
+                <ScreenDiv>
+                  {screenInfo && (
+                    <ScreenTitleContainer>
+                      <ScreenTitle>{t(screenInfo.title)}</ScreenTitle>
+                      <ScreenSubTitle>{t(screenInfo.subtitle)}</ScreenSubTitle>
+                    </ScreenTitleContainer>
+                  )}
+                  <Comp {...originalProps} loaded={loaded} />
+                </ScreenDiv>
+              </SlideIn.horizontal>
+            )}
+          </I18n>
+        </div>
       )
     }
   }

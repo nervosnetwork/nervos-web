@@ -6209,6 +6209,10 @@ rxjs@^5.4.2:
   dependencies:
     symbol-observable "1.0.1"
 
+rxjs@alpha:
+  version "6.0.0-alpha.2"
+  resolved "https://registry.npmjs.org/rxjs/-/rxjs-6.0.0-alpha.2.tgz#6c8dc76801002ee0abedf5ab56587229ee0b3787"
+
 safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
