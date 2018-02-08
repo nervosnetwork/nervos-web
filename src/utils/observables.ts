@@ -13,4 +13,4 @@ export const rangeObservable = range(1, 10).pipe(
   map(x => x + x),
 )
 
-export const scrollObservable = fromEvent(document, 'scroll').throttleTime(100)
+export const scrollObservable = fromEvent(document, 'scroll').throttleTime(10)

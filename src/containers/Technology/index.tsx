@@ -49,7 +49,7 @@ const charts: IChart[] = [
 ]
 
 const Chart = ({ img, title, desc, key, index, primary, loaded }) => (
-  <I18n ns="translations">
+  <I18n ns="translations" key={key}>
     {(t, { i18n }) => (
       <SlideIn.vertical slideIn={loaded} index={5 * index + 6}>
         <ChartBlock key={key} index={index}>

@@ -33,11 +33,11 @@ export const Download = styled.a`
     display: block;
     position: absolute;
     top: 0;
-    left: 120%;
+    left: 105%;
     content: ${`url(${downloadIcon})`};
     transform-origin: center bottom;
   }
-  &:hover:after{
+  &:hover:after {
     // filter: drop-shadow(-3px 0 0)
     animation: ${jump} 1s infinite;
   }
