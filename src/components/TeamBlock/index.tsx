@@ -1,5 +1,4 @@
 import * as React from 'react'
-import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
 import {
   MemberBlock,

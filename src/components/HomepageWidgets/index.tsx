@@ -1,9 +1,5 @@
 import * as React from 'react'
-import {
-  CenterBlock,
-  HomepageWidget,
-  HomepageWidgets,
-} from '../../styled/Common'
+import { HomepageWidget, HomepageWidgets } from '../../styled/Common'
 import { SlideIn } from '../../styled/Animation'
 
 import RotatingRect from '../RotatingRect'

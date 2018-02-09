@@ -7,7 +7,7 @@ import theme from '../config/theme'
 injectGlobal`
   html, body {
     background-color: ${theme.colors.background};
-    font-size: ${theme.sizes.root};
+    font-size: ${theme.sizes.root + 'px'};
     @media (max-width: 1500px) {
       font-size: 14px;
     }
@@ -96,7 +96,7 @@ export const Navs = styled.ul`
 export const NavItem = styled.li`
   float: left;
   margin-left: ${props => props.theme.sizes.navSpan + 'rem'};
-  font-size: ${props => props.theme.sizes.navItemHeight};
+  font-size: ${props => props.theme.sizes.navItemHeight + 'rem'};
   & a,
   & span {
     position: relative;
@@ -118,49 +118,6 @@ export const ScreenDiv = styled.div`
   width: 100%;
   height: 100vh;
   background-color: ${props => props.theme.colors.background};
-`
-
-// Center Block
-export const CenterBlock = styled.div`
-  position: relative;
-  display: flex;
-  max-width: ${props => props.theme.sizes.centerBlockMaxWidth};
-  width: ${props => props.theme.sizes.centerBlockWidth};
-  margin: 0 auto;
-  margin-top: ${props => props.theme.sizes.pageBlockMarginTop};
-`
-
-// Center Block Title Container
-export const CenterBlockTitles = styled.div`
-  display: inline-block;
-  width: ${props => props.theme.sizes.centerBlockTitleWidth};
-  font-size: ${props => props.theme.sizes.blockTitleHeight};
-`
-
-// Center Block Title
-interface ICenterBlockTitle {
-  onClick: React.MouseEventHandler<MouseEvent>
-}
-export const CenterBlockTitle = styled.h5`
-  font-size: ${props => props.theme.sizes.blockTitleHeight};
-  color: ${props => props.theme.colors.plain};
-  text-transform: uppercase;
-  margin: 0;
-  margin-bottom: ${props => props.theme.sizes.centerBlockTitleVSpan};
-  cursor: pointer;
-  font-weight: 100;
-`
-
-// Center Block Title Index
-export const CenterBlockIndex = styled.span`
-  font-weight: inherit;
-  color: ${props => props.theme.colors.primary};
-`
-
-// Center Block Main Content
-
-export const CenterBlockContent = styled.div`
-  flex: 1;
 `
 
 // Colorized Block
@@ -206,7 +163,7 @@ export const ColorizedDiv = ColorizedDivWithCons`
 /* eslint-enable no-use-before-define */
 
 export const RippleInput = styled.input`
-  font-size: ${props => props.theme.sizes.inputFontSize};
+  font-size: ${props => props.theme.sizes.inputFontSize + 'rem'};
   line-height: 1.6;
   background-color: transparent;
   background-image: ${props =>
@@ -235,50 +192,19 @@ export const HighlightButton = styled.button`
   border: none;
   border-radius; 2px;
   font-size: ${props => props.theme.sizes.subscribeBtnFontSize};
-  width: ${props => props.theme.sizes.highlightBtnWidth};
-  height: ${props => props.theme.sizes.highlightBtnHeight};
-  line-height: ${props => props.theme.sizes.highlightBtnHeight};
+  width: ${props => props.theme.sizes.highlightBtnWidth + 'rem'};
+  height: ${props => props.theme.sizes.highlightBtnHeight + 'rem'};
+  line-height: ${props => props.theme.sizes.highlightBtnHeight + 'rem'};
   cursor: pointer;
 `
 
-interface IColorizedTitle {
-  primary?: boolean
-  h1?: boolean
-}
-
-const ColorizedTitleCons: StyledFunction<
-  IColorizedTitle & React.HTMLProps<HTMLElement>
-> =
-  styled.h1
-
-export const ColorizedTitle = ColorizedTitleCons`
-  line-height: 0.8;
-  font-size: ${props =>
-    `${
-      props.h1
-        ? props.theme.sizes.primaryTitleFontSize
-        : props.theme.sizes.secondaryTitleFontSize
-    }`};
-  color: ${props => props.theme.colors.plain};
-  
-  border-left-width: ${props => props.theme.sizes.titleColorBlockWidth};
-  border-left-style: solid;
-  border-left-color: ${props =>
-    `${
-      props.primary ? props.theme.colors.primary : props.theme.colors.highlight
-    }`};
-  margin: 0;
-  margin-left: ${props => `-${`${props.theme.sizes.dashLineWidth}rem`}`};
-  padding-left: ${props => `${props.theme.sizes.titleColorBlockRightSpan}`};
-  font-weight: 900;
-`
 export const SubscribeFormLine = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: ${props => props.theme.sizes.subscribeFormLineHeight};
-  width: ${props => props.theme.sizes.subscribeFormLineWidth};
+  height: ${props => props.theme.sizes.subscribeFormLineHeight + 'rem'};
+  width: ${props => props.theme.sizes.subscribeFormLineWidth + 'rem'};
   @media (max-width: 600px) {
     width: 100%;
   }
@@ -304,21 +230,21 @@ export const HistoryCol = styled.div`
       props.theme.colors.primary
     }`};
   border-bottom: ${props =>
-    `${props.theme.sizes.historyColBorderBottomWidth} solid ${
+    `${props.theme.sizes.historyColBorderBottomWidth + 'rem'} solid ${
       props.theme.colors.primary
     }`};
-  padding-top: ${props => props.theme.sizes.HistoryColPaddingTop};
-  padding-left: ${props => props.theme.sizes.HistoryColPaddingLeft};
+  padding-top: ${props => props.theme.sizes.HistoryColPaddingTop + 'rem'};
+  padding-left: ${props => props.theme.sizes.HistoryColPaddingLeft + 'rem'};
   &:after {
     box-sizing: border-box;
     z-index: 2;
     content: '';
     position: absolute;
     display: block;
-    width: ${props => props.theme.sizes.historyCircleDiameter};
-    height: ${props => props.theme.sizes.historyCircleDiameter};
+    width: ${props => props.theme.sizes.historyCircleDiameter + 'rem'};
+    height: ${props => props.theme.sizes.historyCircleDiameter + 'rem'};
     border: ${props =>
-      `${props.theme.sizes.historyCircleBandWidth} solid ${
+      `${props.theme.sizes.historyCircleBandWidth + 'rem'} solid ${
         props.theme.colors.primary
       }`};
     border-radius: 50%;
@@ -327,7 +253,7 @@ export const HistoryCol = styled.div`
     transform: translate(50%, 50%);
     background-color: ${props => props.theme.colors.background};
     box-shadow: ${props =>
-      `0 0 0 ${props.theme.sizes.historyCircleBandWidth} ${
+      `0 0 0 ${props.theme.sizes.historyCircleBandWidth + 'rem'} ${
         props.theme.colors.background
       }`};
   }
@@ -342,23 +268,25 @@ export const HistoryYearLabel = styled.span`
   position: absolute;
   bottom: 100%;
   right: ${props => `-${`${props.theme.sizes.dashLineWidth}rem`}`};
-  padding-bottom: ${props => props.theme.sizes.HistoryYearLabelPaddingBottom};
-  color: ${props => props.theme.colors.plain};
+  padding-bottom: ${props =>
+    props.theme.sizes.HistoryYearLabelPaddingBottom + 'rem'};
+  color: ${props => props.theme.colors.primary};
 `
 
 export const HistoryItem = styled.p`
-  margin: 1rem 0;
+  margin: ${props => `${props.theme.sizes.HistoryItemMarginBottom}rem 0`};
   position: relative;
-  padding: ${props => `0 ${props.theme.sizes.HistoryItemHPadding}`};
+  padding: ${props => `0 ${props.theme.sizes.HistoryItemHPadding + 'rem'}`};
   text-align: justify;
   text-align-last: left;
   font-size: 1rem;
+  color: ${props => props.theme.colors.plain};
   &:before {
     content: '';
     position: absolute;
     display: block;
-    width: ${props => props.theme.sizes.historyItemIconDiameter};
-    height: ${props => props.theme.sizes.historyItemIconDiameter};
+    width: ${props => props.theme.sizes.historyItemIconDiameter + 'rem'};
+    height: ${props => props.theme.sizes.historyItemIconDiameter + 'rem'};
     border-radius: 50%;
     background-color: ${props => props.theme.colors.assist};
     top: 0.5rem;
@@ -379,8 +307,9 @@ export const Members = styled.div`
   }
 `
 export const MemberBlock = styled.div`
-  // height: ${props => props.theme.sizes.memberBlockHeight};
   display: flex;
+  min-width: 30%;
+  flex: 1;
   text-align: center;
   flex-direction: column;
   @media (max-width: 992px) {
@@ -395,8 +324,8 @@ export const MemberBlock = styled.div`
   }
 `
 export const MemberAvatar = styled.img`
-  width: ${props => props.theme.sizes.memberBlockHeight};
-  height: ${props => props.theme.sizes.memberBlockHeight};
+  width: ${props => props.theme.sizes.memberBlockHeight + 'rem'};
+  height: ${props => props.theme.sizes.memberBlockHeight + 'rem'};
   border-radius: 50%;
   @media (max-width: 750px) {
     float: left;
@@ -419,7 +348,7 @@ export const MemberInfo = styled.div`
 `
 export const MemberName = styled.div`
   flex: 1;
-  font-size: ${props => props.theme.sizes.memberNameFontSize};
+  font-size: ${props => props.theme.sizes.memberNameFontSize + 'rem'};
   font-weight: 100;
   color: ${props => props.theme.colors.plain};
   display: flex;
