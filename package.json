@@ -20,6 +20,7 @@
     "build:prod":
       "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
     "dll": "rimraf lib && webpack --config ./config/webpack.config.dll.js",
+    "precommit": "lint-staged",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d dist"
   },
