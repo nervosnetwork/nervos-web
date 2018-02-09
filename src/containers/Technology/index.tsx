@@ -50,13 +50,13 @@ const charts: IChart[] = [
 const Chart = ({ img, title, desc, key, index, primary, loaded }) => (
   <I18n ns="translations" key={key}>
     {(t, { i18n }) => (
-      <SlideIn.vertical slideIn={loaded} index={5 * index + 6}>
+      <SlideIn.horizontal slideIn={loaded} index={5 * index}>
         <ChartBlock key={key} index={index}>
           <ChartIcon src={img} alt={title} />
           <ChartTitle>{t(title)}</ChartTitle>
           <ChartDesc>{t(desc)}</ChartDesc>
         </ChartBlock>
-      </SlideIn.vertical>
+      </SlideIn.horizontal>
     )}
   </I18n>
 )

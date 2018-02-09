@@ -8,10 +8,10 @@ injectGlobal`
   html, body {
     background-color: ${theme.colors.background};
     font-size: ${theme.sizes.root + 'px'};
-    @media (max-width: 1500px) {
-      font-size: 14px;
+    @media (max-width: 1440px) {
+      font-size: ${theme.sizes.root - 2 + 'px'};
     }
-    @media (max-width: 1200px) {
+    @media (max-width: 1280px) {
       font-size: 12px;
     }
     @media (max-width: 992px) {
@@ -95,8 +95,8 @@ export const Navs = styled.ul`
 `
 export const NavItem = styled.li`
   float: left;
-  margin-left: ${props => props.theme.sizes.navSpan + 'rem'};
-  font-size: ${props => props.theme.sizes.navItemHeight + 'rem'};
+  margin-left: ${props => props.theme.sizes.header.navs.nav.marginLeft + 'rem'};
+  font-size: ${props => props.theme.sizes.header.navs.nav.height + 'rem'};
   & a,
   & span {
     position: relative;
@@ -163,7 +163,7 @@ export const ColorizedDiv = ColorizedDivWithCons`
 /* eslint-enable no-use-before-define */
 
 export const RippleInput = styled.input`
-  font-size: ${props => props.theme.sizes.inputFontSize + 'rem'};
+  font-size: ${props => props.theme.sizes.input.fontSize + 'rem'};
   line-height: 1.6;
   background-color: transparent;
   background-image: ${props =>
@@ -189,12 +189,14 @@ export const RippleInput = styled.input`
 export const HighlightButton = styled.button`
   color: ${props => props.theme.colors.plain};
   background-color: ${props => props.theme.colors.highlight};
+  font-size: ${props =>
+    props.theme.sizes.subscribe.form.button.fontSize + 'rem'};
+  width: ${props => props.theme.sizes.subscribe.form.button.width + 'rem'};
+  height: ${props => props.theme.sizes.subscribe.form.button.height + 'rem'};
+  line-height: ${props =>
+    props.theme.sizes.subscribe.form.button.height + 'rem'};
   border: none;
-  border-radius; 2px;
-  font-size: ${props => props.theme.sizes.subscribeBtnFontSize};
-  width: ${props => props.theme.sizes.highlightBtnWidth + 'rem'};
-  height: ${props => props.theme.sizes.highlightBtnHeight + 'rem'};
-  line-height: ${props => props.theme.sizes.highlightBtnHeight + 'rem'};
+  border-radius: 2px;
   cursor: pointer;
 `
 
@@ -203,8 +205,8 @@ export const SubscribeFormLine = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: ${props => props.theme.sizes.subscribeFormLineHeight + 'rem'};
-  width: ${props => props.theme.sizes.subscribeFormLineWidth + 'rem'};
+  height: ${props => props.theme.sizes.subscribe.form.lineHeight + 'rem'};
+  width: ${props => props.theme.sizes.subscribe.form.lineWidth + 'rem'};
   @media (max-width: 600px) {
     width: 100%;
   }
@@ -230,21 +232,21 @@ export const HistoryCol = styled.div`
       props.theme.colors.primary
     }`};
   border-bottom: ${props =>
-    `${props.theme.sizes.historyColBorderBottomWidth + 'rem'} solid ${
+    `${props.theme.sizes.history.col.borderBottomWidth + 'rem'} solid ${
       props.theme.colors.primary
     }`};
-  padding-top: ${props => props.theme.sizes.HistoryColPaddingTop + 'rem'};
-  padding-left: ${props => props.theme.sizes.HistoryColPaddingLeft + 'rem'};
+  padding-top: ${props => props.theme.sizes.history.col.paddingTop + 'rem'};
+  padding-left: ${props => props.theme.sizes.history.col.paddingLeft + 'rem'};
   &:after {
     box-sizing: border-box;
     z-index: 2;
     content: '';
     position: absolute;
     display: block;
-    width: ${props => props.theme.sizes.historyCircleDiameter + 'rem'};
-    height: ${props => props.theme.sizes.historyCircleDiameter + 'rem'};
+    width: ${props => props.theme.sizes.history.borderCircle.diameter + 'rem'};
+    height: ${props => props.theme.sizes.history.borderCircle.diameter + 'rem'};
     border: ${props =>
-      `${props.theme.sizes.historyCircleBandWidth + 'rem'} solid ${
+      `${props.theme.sizes.history.borderCircle.bandWidth + 'rem'} solid ${
         props.theme.colors.primary
       }`};
     border-radius: 50%;
@@ -253,7 +255,7 @@ export const HistoryCol = styled.div`
     transform: translate(50%, 50%);
     background-color: ${props => props.theme.colors.background};
     box-shadow: ${props =>
-      `0 0 0 ${props.theme.sizes.historyCircleBandWidth + 'rem'} ${
+      `0 0 0 ${props.theme.sizes.history.borderCircle.bandWidth + 'rem'} ${
         props.theme.colors.background
       }`};
   }
@@ -269,14 +271,14 @@ export const HistoryYearLabel = styled.span`
   bottom: 100%;
   right: ${props => `-${`${props.theme.sizes.dashLineWidth}rem`}`};
   padding-bottom: ${props =>
-    props.theme.sizes.HistoryYearLabelPaddingBottom + 'rem'};
+    props.theme.sizes.history.yearLabel.paddingBottom + 'rem'};
   color: ${props => props.theme.colors.primary};
 `
 
 export const HistoryItem = styled.p`
-  margin: ${props => `${props.theme.sizes.HistoryItemMarginBottom}rem 0`};
+  margin: ${props => `${props.theme.sizes.history.item.marginBottom}rem 0`};
   position: relative;
-  padding: ${props => `0 ${props.theme.sizes.HistoryItemHPadding + 'rem'}`};
+  padding: ${props => `0 ${props.theme.sizes.history.item.HPadding + 'rem'}`};
   text-align: justify;
   text-align-last: left;
   font-size: 1rem;
@@ -285,8 +287,8 @@ export const HistoryItem = styled.p`
     content: '';
     position: absolute;
     display: block;
-    width: ${props => props.theme.sizes.historyItemIconDiameter + 'rem'};
-    height: ${props => props.theme.sizes.historyItemIconDiameter + 'rem'};
+    width: ${props => props.theme.sizes.history.index.diameter + 'rem'};
+    height: ${props => props.theme.sizes.history.index.diameter + 'rem'};
     border-radius: 50%;
     background-color: ${props => props.theme.colors.assist};
     top: 0.5rem;
@@ -324,8 +326,8 @@ export const MemberBlock = styled.div`
   }
 `
 export const MemberAvatar = styled.img`
-  width: ${props => props.theme.sizes.memberBlockHeight + 'rem'};
-  height: ${props => props.theme.sizes.memberBlockHeight + 'rem'};
+  width: ${props => props.theme.sizes.members.block.height + 'rem'};
+  height: ${props => props.theme.sizes.members.block.height + 'rem'};
   border-radius: 50%;
   @media (max-width: 750px) {
     float: left;
@@ -348,7 +350,7 @@ export const MemberInfo = styled.div`
 `
 export const MemberName = styled.div`
   flex: 1;
-  font-size: ${props => props.theme.sizes.memberNameFontSize + 'rem'};
+  font-size: ${props => props.theme.sizes.members.name.fontSize + 'rem'};
   font-weight: 100;
   color: ${props => props.theme.colors.plain};
   display: flex;
@@ -504,7 +506,7 @@ export const HomepageWidgets = styled.div`
   top: 0;
   left: 100%;
   transform: ${props =>
-    `translate(-${props.theme.sizes.navSpan * 11 +
+    `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 11 +
       0.5}rem, -310px) rotate(60deg)`};
   transform-origin: ${props =>
     `${100 *
@@ -523,13 +525,18 @@ export const HomepageWidgets = styled.div`
       +props.theme.sizes.rect.width / 2}px`};
   @media (max-width: 1440px) {
     transform: ${props =>
-      `translate(-${props.theme.sizes.navSpan * 11 +
+      `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 11 +
         0.5}rem, -320px) scale(0.9) rotate(60deg)`};
   }
-  @media (max-width: 1024px) {
+  @media (max-width: 1280px) {
     transform: ${props =>
-      `translate(-${props.theme.sizes.navSpan * 11 +
-        0.5}rem, -320px) scale(0.6) rotate(60deg)`};
+      `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 11 +
+        0.5}rem, -332px) scale(0.6) rotate(60deg)`};
+  }
+  @media (max-width: 992px) {
+    transform: ${props =>
+      `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 11 +
+        0.5}rem, -337px) scale(0.5) rotate(60deg)`};
   }
   @media (max-width: 750px) {
     display: none;
@@ -558,11 +565,11 @@ export const FooterNavs = styled.div`
 `
 
 export const FooterNav = styled.div`
-  font-size: ${props => props.theme.sizes.footer.nav.fontSize + 'rem'};
+  font-size: ${props => props.theme.sizes.footer.navs.nav.fontSize + 'rem'};
   flex: 1;
   text-align: right;
-  & > a,
-  & > span {
+  & a,
+  & span {
     position: relative;
     color: ${props => props.theme.colors.plain};
     cursor: pointer;

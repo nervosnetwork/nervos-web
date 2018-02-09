@@ -58,7 +58,7 @@ export const HorizontalSlideInDiv = HorizontalSlideInDivCons`
       props.slideIn ? '0' : `${props.fromLeft ? '-100vh' : '100vh'}`
     })`};
   opacity: ${props => `${props.slideIn ? 1 : 0}`};
-  transition: transform 1.2s, opacity 0.8s;
+  transition: transform 1.2s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
 `
 
