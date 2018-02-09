@@ -1,16 +1,14 @@
-const { Observable, Subject, ReplaySubject } = require('rxjs')
-const { from, of, range, fromEvent } = require('rxjs/create')
-const {
-  map,
-  filter,
-  switchMap,
-  throttleTime,
-  debounceTime,
-} = require('rxjs/operators')
+import { Observable } from 'rxjs'
+import throttleTime from 'rxjs/add/operator/throttleTime'
 
-export const rangeObservable = range(1, 10).pipe(
-  filter(x => x % 2 === 1),
-  map(x => x + x),
-)
+// const { fromEvent } = require('rxjs/create')
+// const { throttleTime } = require('rxjs/operators')
 
-export const scrollObservable = fromEvent(document, 'scroll').throttleTime(10)
+export const scrollObservable = Observable.fromEvent(
+  document,
+  'scroll',
+).throttleTime(10)
+
+export default {
+  scrollObservable,
+}

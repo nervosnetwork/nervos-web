@@ -42,4 +42,6 @@ export const Download = styled.a`
   }
 `
 
-export const remain = false
+export default {
+  Download,
+}
