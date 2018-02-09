@@ -19,9 +19,7 @@ export const ScreenDiv = styled.div`
       `${props.theme.sizes.screen.desc.paddingTop / 2}rem`};
   }
   @media (max-width: 768px) {
-    padding-top: ${props =>
-      `${props.theme.sizes.header.height +
-        props.theme.sizes.screen.desc.paddingTop}rem`};
+    padding-top: 0;
   }
 `
 
@@ -103,7 +101,7 @@ export const ChartBlock = ChartBlockCons`
   display: grid;
   margin-bottom: 30px;
   grid-template-columns: 20% auto 20%;
-  grid-template-rows: repeat(2 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 3vw;
   & > img {
     grid-column: ${props => (props.index % 2 ? '2/4' : '1/3')};
@@ -125,6 +123,17 @@ export const ChartBlock = ChartBlockCons`
     margin-bottom: 25px;
   }
 `
-// display: inline-block;
-// width: 33%;
-// padding: ${props => `0 ${props.theme.sizes.chart.blockHPadding / 2}rem`};
+export const SubscribeButtonContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 120%;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    width: 3.2rem;
+    top: 0;
+    left: 100%;
+    transform: translateX(-100%);
+  }
+`

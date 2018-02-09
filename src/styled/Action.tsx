@@ -38,7 +38,6 @@ export const Download = styled.a`
     transform-origin: center bottom;
   }
   &:hover:after {
-    // filter: drop-shadow(-3px 0 0)
     animation: ${jump} 1s infinite;
   }
 `

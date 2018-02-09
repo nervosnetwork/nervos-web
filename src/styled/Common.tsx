@@ -2,6 +2,9 @@ import * as React from 'react'
 import styled, { injectGlobal, StyledFunction, keyframes } from './styleUtils'
 import { dissolveIn } from './Animation'
 import theme from '../config/theme'
+/* eslint-disable global-require */
+const sendIcon = require('../images/send') as string
+/* eslint-enable global-require */
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`
@@ -178,6 +181,10 @@ export const RippleInput = styled.input`
   transition: background 0.3s;
   border: none;
   color: ${props => props.theme.colors.plain};
+  width: 100%;
+  @media (max-width: 768px) {
+    padding-right: 3.3rem;
+  }
   &:focus {
     background-size: 100% 3px, 100% 3px;
   }
@@ -186,7 +193,7 @@ export const RippleInput = styled.input`
   }
 `
 
-export const HighlightButton = styled.button`
+export const SubscribeButton = styled.button`
   color: ${props => props.theme.colors.plain};
   background-color: ${props => props.theme.colors.highlight};
   font-size: ${props =>
@@ -198,6 +205,12 @@ export const HighlightButton = styled.button`
   border: none;
   border-radius: 2px;
   cursor: pointer;
+  @media (max-width: 768px) {
+    color: transparent;
+    width: 100%;
+    background: ${`url(${sendIcon}) no-repeat`};
+    background-size: contain;
+  }
 `
 
 export const SubscribeFormLine = styled.div`
@@ -207,19 +220,8 @@ export const SubscribeFormLine = styled.div`
   justify-content: flex-end;
   height: ${props => props.theme.sizes.subscribe.form.lineHeight + 'rem'};
   width: ${props => props.theme.sizes.subscribe.form.lineWidth + 'rem'};
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     width: 100%;
-  }
-`
-
-export const SubscribeButtonContainer = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 120%;
-  @media (max-width: 600px) {
-    position: relative;
-    left: 0;
-    bottom: 0;
   }
 `
 
