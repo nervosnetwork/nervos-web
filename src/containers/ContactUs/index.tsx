@@ -5,10 +5,10 @@ import ColorizedBlock from '../../components/ColorizedBlock'
 import { RouterProps } from '../../routes'
 import {
   RippleInput,
-  HighlightButton,
+  SubscribeButton,
   SubscribeFormLine,
-  SubscribeButtonContainer,
 } from '../../styled/Common'
+import { SubscribeButtonContainer } from '../../styled/Layout'
 import { Desc } from '../../styled/Text'
 import { SlideIn } from '../../styled/Animation'
 import ScreenBlock from '../../components/ScreenBlock'
@@ -32,7 +32,7 @@ const ContactUs = props => (
               <RippleInput placeholder={t('E-mail')} />
               <SubscribeButtonContainer>
                 <SlideIn.horizontal slideIn={props.loaded} index={14}>
-                  <HighlightButton>{t('Subscribe')}</HighlightButton>
+                  <SubscribeButton>{t('Subscribe')}</SubscribeButton>
                 </SlideIn.horizontal>
               </SubscribeButtonContainer>
             </SubscribeFormLine>

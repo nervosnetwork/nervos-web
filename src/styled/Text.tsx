@@ -73,6 +73,9 @@ export const ScreenTitle = styled.h1`
     animation: ${titleColorExpand} 1s ease-out 1s forwards;
     transform-origin: left top;
   }
+  @media (max-width: 768px) {
+    margin-top: 3rem;
+  }
 `
 
 export const ScreenSubTitle = styled.h1`
@@ -84,11 +87,13 @@ export const ChartTitle = styled.h1`
   font-size: ${props => `${props.theme.sizes.chart.title.fontSize}rem`};
   line-height: 1;
   display: block;
-  height: 2em;
   color: ${props => props.theme.colors.plain};
   margin: 0;
   text-transform: uppercase;
   font-weight: 900;
+  @media (max-width: 768px) {
+    padding: 1em 0;
+  }
 `
 export const ChartDesc = styled.div`
   color: ${props => props.theme.colors.plain};

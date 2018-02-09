@@ -12,9 +12,11 @@
       "clear && webpack-dev-server --config config/webpack.config.dev.js",
     "start:d":
       "clear && webpack-dashboard -- webpack-dev-server --config config/webpack.config.dev.js",
-    "build": "yarn run build:test",
-    "build:test":
+    "build": "yarn run build:local",
+    "build:local":
       "rimraf dist && webpack --config config/webpack.config.prod.js",
+    "build:test":
+      "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
     "build:prod":
       "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
     "dll": "rimraf lib && webpack --config ./config/webpack.config.dll.js",
