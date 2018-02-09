@@ -1,5 +1,5 @@
 import colors, { COLORS } from './colors'
-import sizes, { SIZES } from './sizes'
+import sizes from './sizes'
 
 export interface ThemeInterface {
   colors: {
@@ -11,7 +11,7 @@ export interface ThemeInterface {
     darkBackgroud: COLORS
   }
   sizes: {
-    root: string
+    root: number
     header: {
       height: number
       paddingTop: number
@@ -36,7 +36,7 @@ export interface ThemeInterface {
         borderLength: number
         paddingRight: number
       }
-      fontSize: SIZES
+      fontSize: number
       lineHeight: number
       paddingBottom: number
     }
@@ -45,38 +45,36 @@ export interface ThemeInterface {
       lineHeight: number
       paddingBottom: number
     }
-    centerBlockMaxWidth: string
-    centerBlockWidth: string
+    centerBlockMaxWidth: number
+    centerBlockWidth: string // use '%'
     navSpan: number
     dashLineWidth: number
-    centerBlockTitleVSpan: string
-    navItemHeight: SIZES
-    blockTitleHeight: SIZES
-    subscribeBtnFontSize: SIZES
-    // descFontSize: SIZES
-    primaryTitleFontSize: string
-    secondaryTitleFontSize: SIZES
-    subscribeFormLineHeight: string
-    subscribeFormLineWidth: string
-    highlightBtnWidth: string
-    highlightBtnHeight: string
-    historyCircleDiameter: string
-    historyCircleBandWidth: string
-    historyColBorderBottomWidth: string
-    historyItemIconDiameter: string
-    memberBlockHeight: string
-    memberBlockDescPaddingLeft: string
-    pageBlockMarginTop: string
-    centerBlockTitleWidth: string
-    memberNameFontSize: string
+    centerBlockTitleVSpan: number
+    navItemHeight: number
+    blockTitleHeight: number
+    subscribeBtnFontSize: number
+    secondaryTitleFontSize: number
+    subscribeFormLineHeight: number
+    subscribeFormLineWidth: number
+    highlightBtnWidth: number
+    highlightBtnHeight: number
+    memberBlockHeight: number
+    pageBlockMarginTop: number
+    centerBlockTitleWidth: number
+    memberNameFontSize: number
     slideNav: {
       top: number
       left: number
     }
-    HistoryColPaddingTop: string
-    HistoryColPaddingLeft: string
-    HistoryYearLabelPaddingBottom: string
-    HistoryItemHPadding: string
+    historyCircleDiameter: number
+    historyCircleBandWidth: number
+    historyColBorderBottomWidth: number
+    historyItemIconDiameter: number
+    HistoryColPaddingTop: number
+    HistoryColPaddingLeft: number
+    HistoryYearLabelPaddingBottom: number
+    HistoryItemHPadding: number
+    HistoryItemMarginBottom: number
     chart: {
       title: {
         fontSize: number
@@ -97,9 +95,7 @@ export interface ThemeInterface {
       width: number
       offset: number
     }
-    inputFontSize: string
-    memberHPadding: string
-    memberVPadding: string
+    inputFontSize: number
     screen: {
       title: {
         fontSize: number
@@ -115,11 +111,11 @@ export interface ThemeInterface {
       }
       marginBottom: number
       blockMaxWidth: number // 1514
-      blockWidthPercent: string
+      blockWidthPercent: string // use '%'
       desc: {
         paddingLeft: number
         paddingTop: number
-        fontSize: SIZES
+        fontSize: number
       }
     }
 

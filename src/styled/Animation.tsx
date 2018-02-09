@@ -12,7 +12,7 @@ interface IFadeInDiv {
 }
 const FadeInDivCons: StyledFunction<
   IFadeInDiv & React.HTMLProps<HTMLDivElement>
-  > =
+> =
   styled.div
 
 export const FadeInDiv = FadeInDivCons`
@@ -30,7 +30,7 @@ interface IVerticalSlideInDiv {
 }
 const VerticalSlideInDivCons: StyledFunction<
   IVerticalSlideInDiv & React.HTMLProps<HTMLDivElement>
-  > =
+> =
   styled.div
 
 export const VerticalSlideInDiv = VerticalSlideInDivCons`
@@ -41,8 +41,6 @@ export const VerticalSlideInDiv = VerticalSlideInDivCons`
   opacity: ${props => `${props.slideIn ? 1 : 0}`};
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
-  height: 100%;
-  // display: inherit;
 `
 interface IHorizontalSlideInDiv {
   slideIn: boolean
@@ -51,7 +49,7 @@ interface IHorizontalSlideInDiv {
 }
 const HorizontalSlideInDivCons: StyledFunction<
   IHorizontalSlideInDiv & React.HTMLProps<HTMLDivElement>
-  > =
+> =
   styled.div
 
 export const HorizontalSlideInDiv = HorizontalSlideInDivCons`
@@ -62,8 +60,6 @@ export const HorizontalSlideInDiv = HorizontalSlideInDivCons`
   opacity: ${props => `${props.slideIn ? 1 : 0}`};
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
-  height: 100%;
-  // display: inherit;
 `
 
 // fade out
@@ -73,7 +69,7 @@ interface IVerticalSlideOutDiv {
 }
 const VerticalSlideOutDivCons: StyledFunction<
   IVerticalSlideOutDiv & React.HTMLProps<HTMLDivElement>
-  > =
+> =
   styled.div
 
 export const VerticalSlideOutDiv = VerticalSlideOutDivCons`
@@ -81,8 +77,6 @@ export const VerticalSlideOutDiv = VerticalSlideOutDivCons`
   opacity: ${props => `${props.slideOut ? 1 : 1}`};
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
-  height: 100%;
-  display: inherit;
 `
 interface IHorizontalSlideOutDiv {
   slideOut: boolean
@@ -90,16 +84,14 @@ interface IHorizontalSlideOutDiv {
 }
 const HorizontalSlideOutDivCons: StyledFunction<
   IHorizontalSlideOutDiv & React.HTMLProps<HTMLDivElement>
-  > =
+> =
   styled.div
 
 export const HorizontalSlideOutDiv = HorizontalSlideOutDivCons`
   transform: ${props => `translateY(${props.slideOut ? '100vh' : '0'})`};
-  opacity: ${props => `${props.slideOut ? 1 : 1}`};
+  opacity: 1;
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
-  height: 100%;
-  display: inherit;
 `
 
 export const dissolveIn = keyframes`

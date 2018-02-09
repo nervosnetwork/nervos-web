@@ -1,13 +1,11 @@
 // / <reference path="../../typings/custom.d.ts" />
 import * as React from 'react'
 import { I18n } from 'react-i18next'
-import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
 import { RouterProps } from '../../routes'
 import {
   RippleInput,
   HighlightButton,
-  ColorizedTitle,
   SubscribeFormLine,
   SubscribeButtonContainer,
 } from '../../styled/Common'

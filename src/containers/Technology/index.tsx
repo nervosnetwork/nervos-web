@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { I18n } from 'react-i18next'
-import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
 import { ChartIcon } from '../../styled/Common'
 import { ChartBlock, ChartsContainer } from '../../styled/Layout'

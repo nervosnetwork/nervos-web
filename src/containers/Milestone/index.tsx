@@ -1,14 +1,8 @@
 import * as React from 'react'
-import PageBlock from '../../components/PageBlock'
 import ColorizedBlock from '../../components/ColorizedBlock'
 import { RouterProps } from '../../routes'
 import { SlideIn } from '../../styled/Animation'
-import {
-  ColorizedTitle,
-  HistoryCol,
-  HistoryYearLabel,
-  HistoryItem,
-} from '../../styled/Common'
+import { HistoryCol, HistoryYearLabel, HistoryItem } from '../../styled/Common'
 import { Desc } from '../../styled/Text'
 import ScreenBlock from '../../components/ScreenBlock'
 

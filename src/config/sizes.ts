@@ -1,20 +1,20 @@
-export enum SIZES {
-  F1 = '0.5rem',
-  F2 = '0.75rem',
-  F3 = '1rem',
-  F4 = '1.125rem',
-  F5 = '1.25rem',
-  F6 = 1.375,
+// export enum SIZES {
+//   F1 = '0.5rem',
+//   F2 = '0.75rem',
+//   F3 = '1rem',
+//   F4 = '1.125rem',
+//   F5 = '1.25rem',
+//   F6 = 1.375,
 
-  F7 = '1.5rem',
-  F8 = '1.75rem',
-  F9 = '2rem',
-  F_MAX = 4.125,
-}
+//   F7 = '1.5rem',
+//   F8 = '1.75rem',
+//   F9 = '2rem',
+//   F_MAX = 4.125,
+// }
 
 export default {
-  root: '16px',
-  blockTitleHeight: SIZES.F4,
+  root: 16,
+  blockTitleHeight: 1.125,
   header: {
     height: 10, // 160
     paddingTop: 6.25,
@@ -33,14 +33,13 @@ export default {
   },
   slogan: {
     container: {
-      // paddingTop: 12.875,
       paddingTop: 3,
       paddingBottom: 14.625,
       borderWidth: 0.5,
       borderLength: 32.5,
       paddingRight: 8.5,
     },
-    fontSize: SIZES.F_MAX,
+    fontSize: 4.125,
     lineHeight: 1.4,
     paddingBottom: 3.4375,
   },
@@ -50,24 +49,23 @@ export default {
     paddingBottom: 3.4375,
   },
   dashLineWidth: 0.125, //2
-  centerBlockTitleVSpan: '3rem', // 48
+  centerBlockTitleVSpan: 3, // 48
   navSpan: 4.125, // 66
-  navItemHeight: SIZES.F7,
-  centerBlockMaxWidth: '94.625rem', // 1514
+  navItemHeight: 1.5,
+  centerBlockMaxWidth: 94.625, // 1514
   centerBlockWidth: '78.8%',
-  subscribeBtnFontSize: SIZES.F4,
-  primaryTitleFontSize: '3.875rem',
-  secondaryTitleFontSize: SIZES.F9,
-  subscribeFormLineHeight: '5.4rem',
-  subscribeFormLineWidth: '30.18rem',
-  highlightBtnWidth: '12.5rem',
-  highlightBtnHeight: '4rem',
-  historyCircleDiameter: '1.25rem', // 20
-  historyCircleBandWidth: '0.3125rem', // 5
-  historyColBorderBottomWidth: '0.3125rem', // 5
-  historyItemIconDiameter: '0.3125rem', // 5
-  pageBlockMarginTop: '7rem', // 112
-  centerBlockTitleWidth: '15rem', // 240
+  subscribeBtnFontSize: 1.125,
+  secondaryTitleFontSize: 2,
+  subscribeFormLineHeight: 5.4,
+  subscribeFormLineWidth: 30.18,
+  highlightBtnWidth: 12.5,
+  highlightBtnHeight: 4,
+  historyCircleDiameter: 1.25, // 20
+  historyCircleBandWidth: 0.3125, // 5
+  historyColBorderBottomWidth: 0.3125, // 5
+  historyItemIconDiameter: 0.3125, // 5
+  pageBlockMarginTop: 7, // 112
+  centerBlockTitleWidth: 15, // 240
   chart: {
     title: {
       fontSize: 2,
@@ -89,20 +87,18 @@ export default {
     top: 50,
     left: 6.25,
   },
-  HistoryColPaddingTop: '2.5rem',
-  HistoryColPaddingLeft: '0.93rem',
-  HistoryYearLabelPaddingBottom: '1.75rem',
-  HistoryItemHPadding: '0.625rem',
+  HistoryColPaddingTop: 2.5,
+  HistoryColPaddingLeft: 0.93,
+  HistoryYearLabelPaddingBottom: 1.75,
+  HistoryItemHPadding: 0.625,
+  HistoryItemMarginBottom: 1.5625,
   rect: {
     width: 78,
     offset: 42,
   },
-  inputFontSize: '2rem',
-  memberBlockHeight: '12.5rem', // 200
-  memberBlockDescPaddingLeft: '2.1875rem', // 35
-  memberNameFontSize: '2.875rem',
-  memberHPadding: '5.84rem',
-  memberVPadding: '2.65rem',
+  inputFontSize: 2,
+  memberBlockHeight: 12.5, // 200
+  memberNameFontSize: 2.875,
   screen: {
     title: {
       fontSize: 2.5,
@@ -122,7 +118,7 @@ export default {
     desc: {
       paddingLeft: 8.5,
       paddingTop: 0,
-      fontSize: SIZES.F6,
+      fontSize: 1.375,
     },
   },
   colorizedBlock: {
