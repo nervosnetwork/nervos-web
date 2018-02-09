@@ -1,24 +1,20 @@
-// export enum SIZES {
-//   F1 = '0.5rem',
-//   F2 = '0.75rem',
-//   F3 = '1rem',
-//   F4 = '1.125rem',
-//   F5 = '1.25rem',
-//   F6 = 1.375,
-
-//   F7 = '1.5rem',
-//   F8 = '1.75rem',
-//   F9 = '2rem',
-//   F_MAX = 4.125,
-// }
+export type SIZES = number
 
 export default {
   root: 16,
-  blockTitleHeight: 1.125,
+  input: {
+    fontSize: 2,
+  },
   header: {
     height: 10, // 160
     paddingTop: 6.25,
     paddingBottom: 0,
+    navs: {
+      nav: {
+        marginLeft: 4.125,
+        height: 1.5,
+      },
+    },
   },
   footer: {
     paddingTop: 5.25,
@@ -27,8 +23,10 @@ export default {
     logo: {
       height: 9.875,
     },
-    nav: {
-      fontSize: 1.125,
+    navs: {
+      nav: {
+        fontSize: 1.125,
+      },
     },
   },
   slogan: {
@@ -49,23 +47,41 @@ export default {
     paddingBottom: 3.4375,
   },
   dashLineWidth: 0.125, //2
-  centerBlockTitleVSpan: 3, // 48
-  navSpan: 4.125, // 66
-  navItemHeight: 1.5,
   centerBlockMaxWidth: 94.625, // 1514
-  centerBlockWidth: '78.8%',
-  subscribeBtnFontSize: 1.125,
-  secondaryTitleFontSize: 2,
-  subscribeFormLineHeight: 5.4,
-  subscribeFormLineWidth: 30.18,
-  highlightBtnWidth: 12.5,
-  highlightBtnHeight: 4,
-  historyCircleDiameter: 1.25, // 20
-  historyCircleBandWidth: 0.3125, // 5
-  historyColBorderBottomWidth: 0.3125, // 5
-  historyItemIconDiameter: 0.3125, // 5
-  pageBlockMarginTop: 7, // 112
-  centerBlockTitleWidth: 15, // 240
+  subscribe: {
+    form: {
+      lineHeight: 5.4,
+      lineWidth: 30.18,
+      button: {
+        fontSize: 1.125,
+        width: 12.5,
+        height: 4,
+      },
+    },
+  },
+  history: {
+    yearLabel: {
+      paddingBottom: 1.75,
+    },
+    borderCircle: {
+      diameter: 1.25,
+      bandWidth: 0.3125,
+    },
+    col: {
+      borderBottomWidth: 0.3125,
+      paddingTop: 2.5,
+      paddingLeft: 0.93,
+    },
+    item: {
+      HPadding: 0.625,
+      marginBottom: 1.5625,
+    },
+    index: {
+      diameter: 0.3125,
+    },
+  },
+  // pageBlockMarginTop: 7, // 112
+  // centerBlockTitleWidth: 15, // 240
   chart: {
     title: {
       fontSize: 2,
@@ -87,18 +103,18 @@ export default {
     top: 50,
     left: 6.25,
   },
-  HistoryColPaddingTop: 2.5,
-  HistoryColPaddingLeft: 0.93,
-  HistoryYearLabelPaddingBottom: 1.75,
-  HistoryItemHPadding: 0.625,
-  HistoryItemMarginBottom: 1.5625,
   rect: {
     width: 78,
     offset: 42,
   },
-  inputFontSize: 2,
-  memberBlockHeight: 12.5, // 200
-  memberNameFontSize: 2.875,
+  members: {
+    block: {
+      height: 12.5,
+    },
+    name: {
+      fontSize: 2.875,
+    },
+  },
   screen: {
     title: {
       fontSize: 2.5,

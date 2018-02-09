@@ -1,5 +1,5 @@
 import colors, { COLORS } from './colors'
-import sizes from './sizes'
+import sizes, { SIZES } from './sizes'
 
 export interface ThemeInterface {
   colors: {
@@ -11,120 +11,145 @@ export interface ThemeInterface {
     darkBackgroud: COLORS
   }
   sizes: {
-    root: number
+    root: SIZES
+    centerBlockMaxWidth: SIZES
+    input: {
+      fontSize: SIZES
+    }
     header: {
-      height: number
-      paddingTop: number
-      paddingBottom: number
+      height: SIZES
+      paddingTop: SIZES
+      paddingBottom: SIZES
+      navs: {
+        nav: {
+          marginLeft: SIZES
+          height: SIZES
+        }
+      }
+    }
+    screen: {
+      title: {
+        fontSize: SIZES
+        lineHeight: SIZES
+        borderWidth: SIZES
+      }
+      subtitle: {
+        fontSize: SIZES
+      }
+      titleContainer: {
+        marginTop: SIZES
+        marginBottom: SIZES
+      }
+      marginBottom: SIZES
+      blockMaxWidth: SIZES // 1514
+      blockWidthPercent: string // use '%'
+      desc: {
+        paddingLeft: SIZES
+        paddingTop: SIZES
+        fontSize: SIZES
+      }
     }
     footer: {
-      paddingTop: number
-      paddingBottom: number
-      marginTop: number
+      paddingTop: SIZES
+      paddingBottom: SIZES
+      marginTop: SIZES
       logo: {
-        height: number
+        height: SIZES
       }
-      nav: {
-        fontSize: number
+      navs: {
+        nav: {
+          fontSize: SIZES
+        }
       }
+    }
+    colorizedBlock: {
+      color: {
+        width: SIZES
+        height: SIZES
+      }
+      paddingLeft: SIZES
     }
     slogan: {
       container: {
-        paddingTop: number
-        paddingBottom: number
-        borderWidth: number
-        borderLength: number
-        paddingRight: number
+        paddingTop: SIZES
+        paddingBottom: SIZES
+        borderWidth: SIZES
+        borderLength: SIZES
+        paddingRight: SIZES
       }
-      fontSize: number
-      lineHeight: number
-      paddingBottom: number
+      fontSize: SIZES
+      lineHeight: SIZES
+      paddingBottom: SIZES
     }
     homepageDesc: {
-      fontSize: number
-      lineHeight: number
-      paddingBottom: number
+      fontSize: SIZES
+      lineHeight: SIZES
+      paddingBottom: SIZES
     }
-    centerBlockMaxWidth: number
-    centerBlockWidth: string // use '%'
-    navSpan: number
-    dashLineWidth: number
-    centerBlockTitleVSpan: number
-    navItemHeight: number
-    blockTitleHeight: number
-    subscribeBtnFontSize: number
-    secondaryTitleFontSize: number
-    subscribeFormLineHeight: number
-    subscribeFormLineWidth: number
-    highlightBtnWidth: number
-    highlightBtnHeight: number
-    memberBlockHeight: number
-    pageBlockMarginTop: number
-    centerBlockTitleWidth: number
-    memberNameFontSize: number
+    dashLineWidth: SIZES
+    subscribe: {
+      form: {
+        lineHeight: SIZES
+        lineWidth: SIZES
+        button: {
+          fontSize: SIZES
+          width: SIZES
+          height: SIZES
+        }
+      }
+    }
+    members: {
+      block: {
+        height: SIZES
+      }
+      name: {
+        fontSize: SIZES
+      }
+    }
     slideNav: {
-      top: number
-      left: number
+      top: SIZES
+      left: SIZES
     }
-    historyCircleDiameter: number
-    historyCircleBandWidth: number
-    historyColBorderBottomWidth: number
-    historyItemIconDiameter: number
-    HistoryColPaddingTop: number
-    HistoryColPaddingLeft: number
-    HistoryYearLabelPaddingBottom: number
-    HistoryItemHPadding: number
-    HistoryItemMarginBottom: number
+    history: {
+      yearLabel: {
+        paddingBottom: SIZES
+      }
+      borderCircle: {
+        diameter: SIZES
+        bandWidth: SIZES
+      }
+      col: {
+        borderBottomWidth: SIZES
+        paddingTop: SIZES
+        paddingLeft: SIZES
+      }
+      item: {
+        HPadding: SIZES
+        marginBottom: SIZES
+      }
+      index: {
+        diameter: SIZES
+      }
+    }
     chart: {
       title: {
-        fontSize: number
-        borderWidth: number // 20
-        paddingLeft: number
+        fontSize: SIZES
+        borderWidth: SIZES // 20
+        paddingLeft: SIZES
       }
       desc: {
-        fontSize: number
-        paddingTop: number
+        fontSize: SIZES
+        paddingTop: SIZES
       }
       icon: {
-        marginBottom: number
-        size: number
+        marginBottom: SIZES
+        size: SIZES
       }
-      blockHPadding: number
+      blockHPadding: SIZES
     }
     rect: {
-      width: number
-      offset: number
-    }
-    inputFontSize: number
-    screen: {
-      title: {
-        fontSize: number
-        lineHeight: number
-        borderWidth: number
-      }
-      subtitle: {
-        fontSize: number
-      }
-      titleContainer: {
-        marginTop: number
-        marginBottom: number
-      }
-      marginBottom: number
-      blockMaxWidth: number // 1514
-      blockWidthPercent: string // use '%'
-      desc: {
-        paddingLeft: number
-        paddingTop: number
-        fontSize: number
-      }
-    }
-
-    colorizedBlock: {
-      color: {
-        width: number
-        height: number
-      }
-      paddingLeft: number
+      width: SIZES
+      offset: SIZES
     }
   }
 }

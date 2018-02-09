@@ -74,7 +74,6 @@ const Milestone = props => (
             {history.items.map((item, itemIndex) => (
               <SlideIn.horizontal
                 slideIn={props.loaded}
-                // index={30 + itemIndex * 5 - colIndex * 5}
                 index={8 * itemIndex + 3 * colIndex}
                 key={item}
               >
