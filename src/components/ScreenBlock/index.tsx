@@ -8,13 +8,22 @@ import Navigator from '../Navigator'
 import { SlideIn, Dissolve } from '../../styled/Animation'
 import { scrollObservable } from '../../utils/observables'
 
+const styles = require('../../styles/common.scss')
+
 export default originalProps => Comp =>
   class Screened extends React.Component<ScreenBlockProps, ScreenBlockState> {
+    static hideLoading () {
+      const loading = document.getElementById('loading') as HTMLElement
+      if (loading) {
+        loading.classList.add(styles.fadeOut)
+      }
+    }
     displayName = 'screened'
     state = {
       loaded: false,
     }
-    componentDidMount() {
+    componentDidMount () {
+      Screened.hideLoading()
       this.checkVisibility()
       scrollObservable.subscribe(this.checkVisibility)
     }
@@ -33,7 +42,7 @@ export default originalProps => Comp =>
       }
     }
     public container: HTMLElement | null
-    render(): JSX.Element {
+    render (): JSX.Element {
       const { loaded } = this.state
       const { props } = this
       const { screenInfo } = originalProps

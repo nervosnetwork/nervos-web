@@ -19,5 +19,10 @@ module.exports = {
       path: path.resolve(__dirname, '../lib/[name]_manifest.json'),
     }),
     new ManifestPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
   ],
 }
