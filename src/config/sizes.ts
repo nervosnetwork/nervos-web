@@ -32,7 +32,8 @@ export default {
   slogan: {
     container: {
       paddingTop: 3,
-      paddingBottom: 14.625,
+      // paddingBottom: 14.625,
+      paddingBottom: 10.625,
       borderWidth: 0.5,
       borderLength: 32.5,
       paddingRight: 8.5,
@@ -46,7 +47,7 @@ export default {
     lineHeight: 1.4,
     paddingBottom: 3.4375,
   },
-  dashLineWidth: 0.125, //2
+  dashLineWidth: 0.125, // 2
   centerBlockMaxWidth: 94.625, // 1514
   subscribe: {
     form: {
