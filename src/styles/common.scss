@@ -40,3 +40,17 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+@keyframes fade_out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+.fadeOut {
+  opacity: 1;
+  animation: fade_out 0.5s forwards;
+}
