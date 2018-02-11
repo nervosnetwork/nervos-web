@@ -9,14 +9,14 @@ export const ScreenDiv = styled.div`
   max-width: ${props => `${props.theme.sizes.screen.blockMaxWidth}rem`};
   width: ${props => props.theme.sizes.screen.blockWidthPercent};
   margin: 0 auto;
-  margin-bottom: ${props => props.theme.sizes.screen.marginBottom + 'rem'};
+  margin-bottom: ${props => `${props.theme.sizes.screen.marginBottom}rem`};
   padding-top: ${props => `${props.theme.sizes.screen.desc.paddingTop}rem`};
   &:last-of-type {
     margin-bottom: 0;
   }
   @media (max-width: 1280px) {
     padding-top: ${props =>
-      `${props.theme.sizes.screen.desc.paddingTop / 2}rem`};
+    `${props.theme.sizes.screen.desc.paddingTop / 2}rem`};
   }
   @media (max-width: 768px) {
     padding-top: 0;
@@ -45,7 +45,7 @@ export const SloganContainer = styled.div`
   }
   @media (max-width: 1920px) {
     padding-top: ${props =>
-      `${(props.theme.sizes.slogan.container.paddingTop -
+    `${(props.theme.sizes.slogan.container.paddingTop -
         props.theme.sizes.screen.desc.paddingTop) *
         0.14}rem`};
   }
@@ -73,9 +73,9 @@ export const ScreenTitleContainer = styled.div`
     `${props.theme.sizes.screen.titleContainer.marginBottom}rem`};
   @media (max-width: 1920px) {
     margin-top: ${props =>
-      `${props.theme.sizes.screen.titleContainer.marginTop / 2}rem`};
+    `${props.theme.sizes.screen.titleContainer.marginTop / 2}rem`};
     margin-bottom: ${props =>
-      `${props.theme.sizes.screen.titleContainer.marginBottom / 2}rem`};
+    `${props.theme.sizes.screen.titleContainer.marginBottom / 2}rem`};
   }
 `
 
@@ -99,9 +99,10 @@ interface IChartBlock {
 const ChartBlockCons: StyledFunction<IChartBlock> = styled.div
 export const ChartBlock = ChartBlockCons`
   display: grid;
-  margin-bottom: 30px;
+  margin-bottom: ${props => `${props.theme.sizes.chart.title.fontSize}rem`};
   grid-template-columns: 20% auto 20%;
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: ${props =>
+    `${props.theme.sizes.chart.title.fontSize * 2}rem auto`};
   grid-column-gap: 3vw;
   & > img {
     grid-column: ${props => (props.index % 2 ? '2/4' : '1/3')};
@@ -111,6 +112,7 @@ export const ChartBlock = ChartBlockCons`
   &>h1{
     grid-column: ${props => (props.index % 2 ? '1/3' : '2/4')};
     grid-row: 1/2;
+    justify-self: ${props => (props.index % 2 ? 'right' : 'left')}
   }
   & > div {
     grid-column: ${props => (props.index % 2 ? '1/3' : '2/4')};

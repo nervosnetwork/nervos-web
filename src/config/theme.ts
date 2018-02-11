@@ -1,6 +1,7 @@
 import colors, { COLORS } from './colors'
 import sizes, { SIZES } from './sizes'
 
+/* eslint-disable no-restricted-globals */
 export interface ThemeInterface {
   colors: {
     primary: COLORS
@@ -9,6 +10,7 @@ export interface ThemeInterface {
     plain: COLORS
     assist: COLORS
     darkBackgroud: COLORS
+    selected: COLORS
   }
   sizes: {
     root: SIZES
@@ -153,6 +155,7 @@ export interface ThemeInterface {
     }
   }
 }
+/* eslint-enable no-restricted-globals */
 
 const theme: ThemeInterface = {
   colors,
