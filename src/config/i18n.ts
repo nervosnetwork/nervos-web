@@ -7,7 +7,7 @@ import en from './locale/en'
 
 i18n
   .use(XHR)
-  .use(LanguageDetector)
+  // .use(LanguageDetector)
   .use(reactI18nextModule)
   .init({
     fallbackLng: 'en',

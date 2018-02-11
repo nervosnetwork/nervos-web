@@ -14,4 +14,5 @@ export default {
   plain: COLORS.WHITE,
   assist: COLORS.BLUE,
   darkBackgroud: COLORS.BLACK_BLUE,
+  selected: COLORS.GREEN,
 }
