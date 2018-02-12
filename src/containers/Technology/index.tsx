@@ -50,10 +50,7 @@ const charts: IChart[] = [
 const Chart = ({ img, title, desc, key, index, primary, loaded }) => (
   <I18n ns="translations" key={key}>
     {(t, { i18n }) => (
-      <Technology
-        key={key}
-        // index={index}
-      >
+      <Technology key={key}>
         <SlideIn.horizontal slideIn={loaded} index={5 * index}>
           <ChartIcon src={img} alt={title} />
           <TechnologyTitle>{t(title)}</TechnologyTitle>

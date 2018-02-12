@@ -134,6 +134,9 @@ export const Technology = styled.div`
   width: 100%;
   height: ${props => `${props.theme.sizes.chart.icon.size}rem`};
   margin-bottom: ${props => `${props.theme.sizes.chart.icon.size}rem`};
+  &:last-of-type {
+    margin-bottom: 0;
+  }
   & img {
     position: absolute;
     top: 0;

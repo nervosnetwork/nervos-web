@@ -15,7 +15,7 @@ export const Slogan = styled.h1`
     font-size: ${props => `${+props.theme.sizes.slogan.fontSize * 3 / 4}rem`};
   }
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
   }
 `
 
@@ -52,10 +52,18 @@ const titleColorExpand = keyframes`
   }
 `
 
-export const ScreenTitle = styled.h1`
+interface IScreenTitle {
+  hasSubtitle?: boolean
+}
+
+const ScreenTitleCons: StyledFunction<IScreenTitle> = styled.h1
+
+export const ScreenTitle = ScreenTitleCons`
   display: inline-block;
   position: relative;
-  font-size: ${props => `${props.theme.sizes.screen.title.fontSize}rem`};
+  font-size: ${props =>
+    `${props.theme.sizes.screen.title.fontSize *
+      (props.hasSubtitle ? 0.75 : 1)}rem`};
   text-transform: uppercase;
   line-height: ${props => props.theme.sizes.screen.title.lineHeight};
   color: ${props => props.theme.colors.plain};
