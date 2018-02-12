@@ -124,7 +124,7 @@ export default {
       borderWidth: 0.375,
     },
     subtitle: {
-      fontSize: 1.5,
+      fontSize: 2.5,
     },
     titleContainer: {
       marginTop: 5,

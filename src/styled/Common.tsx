@@ -333,6 +333,11 @@ export const Member = styled.div`
   @media (max-width: 1000px) {
     width: 100%;
   }
+  @media (max-width: 768px) {
+    min-width: auto;
+    padding-right: 0;
+    text-align: center;
+  }
 `
 export const MemberAvatar = styled.img`
   width: ${props => `${props.theme.sizes.members.container.height}rem`};
@@ -349,6 +354,17 @@ export const MemberDesc = styled.div`
   color: ${props => props.theme.colors.primary};
   font-weight: 100;
   font-size: 20px;
+  text-align: justify;
+  text-align-last: left;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    text-align-last: center;
+  }
+  @media (max-width: 414px) {
+    text-align: justify;
+    text-align-last: left;
+  }
 `
 
 export const ChartIcon = styled.img`
