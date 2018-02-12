@@ -302,9 +302,11 @@ export const HistoryItem = styled.p`
 `
 
 export const Members = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  /* display: flex;
+  flex-wrap: wrap; */
+  /* width: 100%; */
+
+  margin-right: -3rem;
   & > div:nth-child(n + 4) {
     margin-top: ${props => `${props.theme.sizes.members.member.marginTop}rem`};
   }
@@ -320,12 +322,16 @@ export const Members = styled.div`
     `${props.theme.sizes.members.member.marginTop}rem`};
     }
   }
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `
 export const Member = styled.div`
+  display: inline-block;
   width: 33.3%;
   min-width: 300px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   padding-right: 3rem;
   @media (max-width: 1560px) {
     width: 50%;
