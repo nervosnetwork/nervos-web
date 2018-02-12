@@ -12,7 +12,7 @@ interface IFadeInDiv {
 }
 const FadeInDivCons: StyledFunction<
   IFadeInDiv & React.HTMLProps<HTMLDivElement>
-> =
+  > =
   styled.div
 
 export const FadeInDiv = FadeInDivCons`
@@ -20,6 +20,7 @@ export const FadeInDiv = FadeInDivCons`
   transition: opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   height: 100%;
+  font-weight: inherit;
 `
 
 // slide in
@@ -30,7 +31,7 @@ interface IVerticalSlideInDiv {
 }
 const VerticalSlideInDivCons: StyledFunction<
   IVerticalSlideInDiv & React.HTMLProps<HTMLDivElement>
-> =
+  > =
   styled.div
 
 export const VerticalSlideInDiv = VerticalSlideInDivCons`
@@ -41,6 +42,7 @@ export const VerticalSlideInDiv = VerticalSlideInDivCons`
   opacity: ${props => `${props.slideIn ? 1 : 0}`};
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
+  font-weight: inherit;
 `
 interface IHorizontalSlideInDiv {
   slideIn: boolean
@@ -49,7 +51,7 @@ interface IHorizontalSlideInDiv {
 }
 const HorizontalSlideInDivCons: StyledFunction<
   IHorizontalSlideInDiv & React.HTMLProps<HTMLDivElement>
-> =
+  > =
   styled.div
 
 export const HorizontalSlideInDiv = HorizontalSlideInDivCons`
@@ -60,6 +62,7 @@ export const HorizontalSlideInDiv = HorizontalSlideInDivCons`
   opacity: ${props => `${props.slideIn ? 1 : 0}`};
   transition: transform 1.2s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
+  font-weight: inherit;
 `
 
 // fade out
@@ -69,7 +72,7 @@ interface IVerticalSlideOutDiv {
 }
 const VerticalSlideOutDivCons: StyledFunction<
   IVerticalSlideOutDiv & React.HTMLProps<HTMLDivElement>
-> =
+  > =
   styled.div
 
 export const VerticalSlideOutDiv = VerticalSlideOutDivCons`
@@ -77,6 +80,7 @@ export const VerticalSlideOutDiv = VerticalSlideOutDivCons`
   opacity: ${props => `${props.slideOut ? 1 : 1}`};
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
+  font-weight: inherit;
 `
 interface IHorizontalSlideOutDiv {
   slideOut: boolean
@@ -84,7 +88,7 @@ interface IHorizontalSlideOutDiv {
 }
 const HorizontalSlideOutDivCons: StyledFunction<
   IHorizontalSlideOutDiv & React.HTMLProps<HTMLDivElement>
-> =
+  > =
   styled.div
 
 export const HorizontalSlideOutDiv = HorizontalSlideOutDivCons`
@@ -92,6 +96,7 @@ export const HorizontalSlideOutDiv = HorizontalSlideOutDivCons`
   opacity: 1;
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
+  font-weight: inherit;
 `
 
 export const dissolveIn = keyframes`
@@ -116,6 +121,7 @@ export const DissolveInDiv = DissolveInDivCons`
   height: 100%;
   filter: blur(100px);
   letter-spacing: 4px;
+  font-weight: inherit;
   animation: ${props =>
     `${dissolveIn} ${props.duration || 2}s ease-in ${(props.delay || 0) *
       0.2}s forwards`}

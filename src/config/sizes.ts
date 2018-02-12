@@ -32,14 +32,13 @@ export default {
   slogan: {
     container: {
       paddingTop: 3,
-      // paddingBottom: 14.625,
       paddingBottom: 10.625,
       borderWidth: 0.5,
       borderLength: 32.5,
       paddingRight: 8.5,
     },
-    fontSize: 4.125,
-    lineHeight: 1.4,
+    fontSize: 6.67, // 80pt
+    lineHeight: 1.2, // 96pt
     paddingBottom: 3.4375,
   },
   homepageDesc: {
@@ -62,6 +61,7 @@ export default {
   },
   history: {
     yearLabel: {
+      fontSize: 1.5,
       paddingBottom: 1.75,
     },
     borderCircle: {
@@ -81,17 +81,15 @@ export default {
       diameter: 0.3125,
     },
   },
-  // pageBlockMarginTop: 7, // 112
-  // centerBlockTitleWidth: 15, // 240
   chart: {
     title: {
-      fontSize: 2,
+      fontSize: 3.33, // 40pt
       borderWidth: 1.25, // 20
       paddingLeft: 2,
+      lineHeight: 4, // 48pt
     },
     desc: {
       fontSize: 1.375,
-      // paddingTop: 3.125,
       paddingTop: 0,
     },
     icon: {
@@ -109,16 +107,19 @@ export default {
     offset: 42,
   },
   members: {
-    block: {
+    container: {
       height: 12.5,
     },
-    name: {
-      fontSize: 2.875,
+    member: {
+      marginTop: 3,
+      name: {
+        fontSize: 4, // 48pt
+      },
     },
   },
   screen: {
     title: {
-      fontSize: 2.5,
+      fontSize: 3.33, // 40pt
       lineHeight: 1.75,
       borderWidth: 0.375,
     },
