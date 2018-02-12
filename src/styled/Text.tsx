@@ -112,6 +112,7 @@ export const ChartDesc = styled.p`
   color: ${props => props.theme.colors.plain};
   font-size: ${props => `${props.theme.sizes.screen.desc.fontSize}rem`};
   padding-top: ${props => `${props.theme.sizes.chart.desc.paddingTop}rem`};
+  line-height: 1.4;
   word-wrap: break-word;
   word-break: break-all;
   white-space: pre-wrap;
