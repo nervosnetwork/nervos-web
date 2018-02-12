@@ -31,8 +31,7 @@ injectGlobal`
     padding-bottom: ${`${theme.sizes.footer.logo.height +
       theme.sizes.footer.paddingTop +
       theme.sizes.footer.paddingBottom +
-      theme.sizes.footer.marginTop
-  }rem`}
+      theme.sizes.footer.marginTop}rem`}
   }
   header {
     padding-top: ${`${theme.sizes.header.paddingTop}rem`};
@@ -198,6 +197,7 @@ export const SubscribeButton = styled.button`
   background-color: ${props => props.theme.colors.highlight};
   font-size: ${props =>
     `${props.theme.sizes.subscribe.form.button.fontSize}rem`};
+  text-transform: uppercase;
   width: ${props => `${props.theme.sizes.subscribe.form.button.width}rem`};
   height: ${props => `${props.theme.sizes.subscribe.form.button.height}rem`};
   line-height: ${props =>
@@ -272,6 +272,7 @@ export const HistoryYearLabel = styled.span`
   position: absolute;
   bottom: 100%;
   right: ${props => `-${`${props.theme.sizes.dashLineWidth}rem`}`};
+  font-size: ${props => `${props.theme.sizes.history.yearLabel.fontSize}rem`};
   padding-bottom: ${props =>
     `${props.theme.sizes.history.yearLabel.paddingBottom}rem`};
   color: ${props => props.theme.colors.primary};
@@ -303,69 +304,51 @@ export const HistoryItem = styled.p`
 export const Members = styled.div`
   display: flex;
   flex-wrap: wrap;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 4vh 5%;
-  @media (max-width: 992px) {
-    grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+  & > div:nth-child(n + 4) {
+    margin-top: ${props => `${props.theme.sizes.members.member.marginTop}rem`};
+  }
+  @media (max-width: 1560px) {
+    & > div:nth-child(n + 3) {
+      margin-top: ${props =>
+    `${props.theme.sizes.members.member.marginTop}rem`};
+    }
+  }
+  @media (max-width: 1000px) {
+    & > div:nth-child(n + 2) {
+      margin-top: ${props =>
+    `${props.theme.sizes.members.member.marginTop}rem`};
+    }
   }
 `
-export const MemberBlock = styled.div`
+export const Member = styled.div`
+  width: 33.3%;
+  min-width: 300px;
   display: flex;
-  min-width: 30%;
-  flex: 1;
-  text-align: center;
   flex-direction: column;
-  @media (max-width: 992px) {
-    flex-direction: row;
+  padding-right: 3rem;
+  @media (max-width: 1560px) {
+    width: 50%;
   }
-  @media (max-width: 750px) {
-    flex-direction: column;
-  }
-  @media (max-width: 750px) {
-    height: auto;
-    text-align: center;
+  @media (max-width: 1000px) {
+    width: 100%;
   }
 `
 export const MemberAvatar = styled.img`
-  width: ${props => `${props.theme.sizes.members.block.height}rem`};
-  height: ${props => `${props.theme.sizes.members.block.height}rem`};
+  width: ${props => `${props.theme.sizes.members.container.height}rem`};
+  height: ${props => `${props.theme.sizes.members.container.height}rem`};
   border-radius: 50%;
-  @media (max-width: 750px) {
-    float: left;
-  }
-`
-export const MemberInfo = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  text-align: justify;
-  text-align-last: left;
-  padding-top: 15px;
-  @media (max-width: 992px) {
-    padding-left: 3.5rem;
-  }
-  @media (max-width: 750px) {
-    padding-left: 0;
-    padding-bottom: 20px;
-  }
 `
 export const MemberName = styled.div`
-  flex: 1;
-  font-size: ${props => `${props.theme.sizes.members.name.fontSize}rem`};
-  font-weight: 100;
+  font-size: ${props => `${props.theme.sizes.members.member.name.fontSize}rem`};
+  font-weight: 900;
   color: ${props => props.theme.colors.plain};
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  line-height: 1.4;
 `
 export const MemberDesc = styled.div`
-  flex: 1;
   color: ${props => props.theme.colors.primary};
+  font-weight: 100;
   font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 `
 
 export const ChartIcon = styled.img`

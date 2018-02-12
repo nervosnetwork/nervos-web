@@ -29,6 +29,7 @@ export const Download = styled.a`
   cursor: pointer;
   color: ${props => props.theme.colors.plain};
   transition: all 0.3s;
+  font-weight: 100;
   &:after {
     display: block;
     position: absolute;

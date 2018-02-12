@@ -101,11 +101,14 @@ export interface ThemeInterface {
       }
     }
     members: {
-      block: {
+      container: {
         height: SIZES
       }
-      name: {
-        fontSize: SIZES
+      member: {
+        marginTop: SIZES
+        name: {
+          fontSize: SIZES
+        }
       }
     }
     slideNav: {
@@ -114,6 +117,7 @@ export interface ThemeInterface {
     }
     history: {
       yearLabel: {
+        fontSize: SIZES
         paddingBottom: SIZES
       }
       borderCircle: {
@@ -138,6 +142,7 @@ export interface ThemeInterface {
         fontSize: SIZES
         borderWidth: SIZES // 20
         paddingLeft: SIZES
+        lineHeight: SIZES
       }
       desc: {
         fontSize: SIZES

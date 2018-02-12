@@ -25,7 +25,9 @@ export const ScreenDiv = styled.div`
 
 export const SloganContainer = styled.div`
   position: relative;
-  padding-left: ${props => `${props.theme.sizes.screen.desc.paddingLeft}rem`};
+  /* padding-left: ${props =>
+    `${props.theme.sizes.screen.desc.paddingLeft}rem`}; */
+  padding-left: 0;
   padding-right: ${props =>
     `${props.theme.sizes.slogan.container.paddingRight}rem`};
   padding-top: ${props =>
@@ -38,7 +40,8 @@ export const SloganContainer = styled.div`
     content: '';
     position: absolute;
     top: 100%;
-    left: ${props => `${props.theme.sizes.screen.desc.paddingLeft}rem`};
+    /* left: ${props => `${props.theme.sizes.screen.desc.paddingLeft}rem`}; */
+    left: 0;
     height: ${props => `${props.theme.sizes.slogan.container.borderWidth}rem`};
     width: ${props => `${props.theme.sizes.slogan.container.borderLength}rem`};
     background-color: ${props => props.theme.colors.plain};
@@ -79,7 +82,7 @@ export const ScreenTitleContainer = styled.div`
   }
 `
 
-export const ChartsContainer = styled.div`
+export const Technologies = styled.div`
   display: block;
   margin-left: ${props =>
     `${props.theme.sizes.screen.desc.paddingLeft -
@@ -87,42 +90,88 @@ export const ChartsContainer = styled.div`
   margin-right: ${props =>
     `${props.theme.sizes.screen.desc.paddingLeft -
       props.theme.sizes.chart.blockHPadding / 2}rem`};
-  @media (max-width: 800px) {
+  @media (max-width: 768px) {
     margin: 0;
   }
 `
 
-interface IChartBlock {
-  index: number
-}
+// interface ITechnology {
+//   index: number
+// }
 
-const ChartBlockCons: StyledFunction<IChartBlock> = styled.div
-export const ChartBlock = ChartBlockCons`
-  display: grid;
-  margin-bottom: ${props => `${props.theme.sizes.chart.title.fontSize}rem`};
-  grid-template-columns: 20% auto 20%;
-  grid-template-rows: ${props =>
-    `${props.theme.sizes.chart.title.fontSize * 2}rem auto`};
-  grid-column-gap: 3vw;
-  & > img {
-    grid-column: ${props => (props.index % 2 ? '2/4' : '1/3')};
-    grid-row: 1/3;
-    justify-self: ${props => (props.index % 2 ? 'right' : 'left')}
+// const TechnologyCons: StyledFunction<ITechnology> = styled.div
+// export const Technology = TechnologyCons`
+//   display: grid;
+//   margin-bottom: ${props => `${props.theme.sizes.chart.title.fontSize}rem`};
+//   grid-template-columns: 20% auto 20%;
+//   grid-template-rows: ${props =>
+//     `${props.theme.sizes.chart.title.fontSize * 2}rem auto`};
+//   grid-column-gap: 3vw;
+//   & > img {
+//     grid-column: ${props => (props.index % 2 ? '2/4' : '1/3')};
+//     grid-row: 1/3;
+//     justify-self: ${props => (props.index % 2 ? 'right' : 'left')}
+//   }
+//   &>h1{
+//     grid-column: ${props => (props.index % 2 ? '1/3' : '2/4')};
+//     grid-row: 1/2;
+//     justify-self: ${props => (props.index % 2 ? 'right' : 'left')}
+//   }
+//   & > div {
+//     grid-column: ${props => (props.index % 2 ? '1/3' : '2/4')};
+//     grid-row: 2/3;
+//     justify-self: ${props => (props.index % 2 ? 'left' : 'right')}
+//   }
+//   @media (max-width: 750px) {
+//     display: block;
+//     text-align: center;
+//     margin-bottom: 25px;
+//   }
+// `
+
+export const Technology = styled.div`
+  position: relative;
+  width: 100%;
+  height: ${props => `${props.theme.sizes.chart.icon.size}rem`};
+  margin-bottom: ${props => `${props.theme.sizes.chart.icon.size}rem`};
+  & img {
+    position: absolute;
+    top: 0;
   }
-  &>h1{
-    grid-column: ${props => (props.index % 2 ? '1/3' : '2/4')};
-    grid-row: 1/2;
-    justify-self: ${props => (props.index % 2 ? 'right' : 'left')}
+  &:nth-of-type(odd) {
+    padding-left: ${props => `${props.theme.sizes.chart.icon.size}rem`};
+    img {
+      right: 100%;
+    }
+    h1,
+    p {
+      padding-left: ${props => `${props.theme.sizes.chart.icon.size / 2}rem`};
+    }
   }
-  & > div {
-    grid-column: ${props => (props.index % 2 ? '1/3' : '2/4')};
-    grid-row: 2/3;
-    justify-self: ${props => (props.index % 2 ? 'left' : 'right')}
+  &:nth-of-type(even) {
+    padding-right: ${props => `${props.theme.sizes.chart.icon.size}rem`};
+    img {
+      left: 100%;
+    }
+    h1,
+    p {
+      padding-right: ${props => `${props.theme.sizes.chart.icon.size / 2}rem`};
+    }
   }
-  @media (max-width: 750px) {
-    display: block;
+  @media (max-width: 768px) {
+    padding: 0 !important;
     text-align: center;
-    margin-bottom: 25px;
+    height: auto;
+    margin-bottom: ${props => `${props.theme.sizes.chart.title.fontSize}rem`};
+    img {
+      position: relative;
+      right: auto !important;
+      left: auto !important;
+    }
+    h1,
+    p {
+      padding: 0 !important;
+    }
   }
 `
 export const SubscribeButtonContainer = styled.div`
@@ -138,4 +187,10 @@ export const SubscribeButtonContainer = styled.div`
     left: 100%;
     transform: translateX(-100%);
   }
+`
+
+export const MilestoneContainer = styled.div`
+  padding-top: ${props =>
+    `${props.theme.sizes.history.yearLabel.paddingBottom +
+      props.theme.sizes.history.yearLabel.fontSize * 1.4}rem`};
 `

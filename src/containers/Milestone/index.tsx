@@ -5,6 +5,7 @@ import { SlideIn } from '../../styled/Animation'
 import { HistoryCol, HistoryYearLabel, HistoryItem } from '../../styled/Common'
 import { Desc } from '../../styled/Text'
 import ScreenBlock from '../../components/ScreenBlock'
+import { MilestoneContainer } from '../../styled/Layout'
 
 const screenInfo: { title: string; subtitle: string } = {
   title: 'Milestone',
@@ -59,30 +60,32 @@ const historys = [
 const Milestone = props => (
   <Desc>
     <ColorizedBlock primary={false} colorBlockHeight={3.5}>
-      {historys.map((history, colIndex) => (
-        <HistoryCol key={history.key}>
-          <HistoryYearLabel>
-            <SlideIn.vertical
-              slideIn={props.loaded}
-              fromTop
-              index={8 + colIndex}
-            >
-              {history.time}
-            </SlideIn.vertical>
-          </HistoryYearLabel>
-          <SlideIn.horizontal slideIn={props.loaded} index={colIndex}>
-            {history.items.map((item, itemIndex) => (
-              <SlideIn.horizontal
+      <MilestoneContainer>
+        {historys.map((history, colIndex) => (
+          <HistoryCol key={history.key}>
+            <HistoryYearLabel>
+              <SlideIn.vertical
                 slideIn={props.loaded}
-                index={8 * itemIndex + 3 * colIndex}
-                key={item}
+                fromTop
+                index={8 + colIndex}
               >
-                <HistoryItem key={item}>{item}</HistoryItem>
-              </SlideIn.horizontal>
-            ))}
-          </SlideIn.horizontal>
-        </HistoryCol>
-      ))}
+                {history.time}
+              </SlideIn.vertical>
+            </HistoryYearLabel>
+            <SlideIn.horizontal slideIn={props.loaded} index={colIndex}>
+              {history.items.map((item, itemIndex) => (
+                <SlideIn.horizontal
+                  slideIn={props.loaded}
+                  index={8 * itemIndex + 3 * colIndex}
+                  key={item}
+                >
+                  <HistoryItem key={item}>{item}</HistoryItem>
+                </SlideIn.horizontal>
+              ))}
+            </SlideIn.horizontal>
+          </HistoryCol>
+        ))}
+      </MilestoneContainer>
     </ColorizedBlock>
   </Desc>
 )

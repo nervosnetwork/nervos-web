@@ -27,6 +27,7 @@ export const HomepageDesc = styled.div`
     `${props.theme.sizes.homepageDesc.paddingBottom}rem`};
   text-align: justify;
   text-align-last: left;
+  font-weight: 100;
 `
 
 export const Desc = styled.div`
@@ -55,6 +56,7 @@ export const ScreenTitle = styled.h1`
   display: inline-block;
   position: relative;
   font-size: ${props => `${props.theme.sizes.screen.title.fontSize}rem`};
+  text-transform: uppercase;
   line-height: ${props => props.theme.sizes.screen.title.lineHeight};
   color: ${props => props.theme.colors.plain};
   margin: 0;
@@ -80,22 +82,25 @@ export const ScreenTitle = styled.h1`
 
 export const ScreenSubTitle = styled.h1`
   font-size: ${props => `${props.theme.sizes.screen.subtitle.fontSize}rem`};
+  text-transform: uppercase;
   color: ${props => props.theme.colors.plain};
   margin: 0;
+  font-weight: 500;
 `
-export const ChartTitle = styled.h1`
+export const TechnologyTitle = styled.h1`
   font-size: ${props => `${props.theme.sizes.chart.title.fontSize}rem`};
-  line-height: 1;
+  line-height: ${props => `${props.theme.sizes.chart.title.lineHeight}rem`};
   display: block;
   color: ${props => props.theme.colors.plain};
   margin: 0;
+  margin-bottom: ${props => `${props.theme.sizes.chart.title.fontSize / 2}rem`};
   text-transform: uppercase;
   font-weight: 900;
   @media (max-width: 768px) {
     padding: 1em 0;
   }
 `
-export const ChartDesc = styled.div`
+export const ChartDesc = styled.p`
   color: ${props => props.theme.colors.plain};
   font-size: ${props => `${props.theme.sizes.screen.desc.fontSize}rem`};
   padding-top: ${props => `${props.theme.sizes.chart.desc.paddingTop}rem`};
@@ -105,4 +110,5 @@ export const ChartDesc = styled.div`
   text-align: justify;
   text-align-last: left;
   mix-blend-mode: exclusion;
+  margin: 0;
 `

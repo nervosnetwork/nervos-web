@@ -2,8 +2,8 @@ import * as React from 'react'
 import { I18n } from 'react-i18next'
 import ColorizedBlock from '../../components/ColorizedBlock'
 import { ChartIcon } from '../../styled/Common'
-import { ChartBlock, ChartsContainer } from '../../styled/Layout'
-import { ChartTitle, ChartDesc } from '../../styled/Text'
+import { Technology, Technologies } from '../../styled/Layout'
+import { TechnologyTitle, ChartDesc } from '../../styled/Text'
 import { RouterProps } from '../../routes'
 import { SlideIn } from '../../styled/Animation'
 import ScreenBlock from '../../components/ScreenBlock'
@@ -50,24 +50,27 @@ const charts: IChart[] = [
 const Chart = ({ img, title, desc, key, index, primary, loaded }) => (
   <I18n ns="translations" key={key}>
     {(t, { i18n }) => (
-      <SlideIn.horizontal slideIn={loaded} index={5 * index}>
-        <ChartBlock key={key} index={index}>
+      <Technology
+        key={key}
+        // index={index}
+      >
+        <SlideIn.horizontal slideIn={loaded} index={5 * index}>
           <ChartIcon src={img} alt={title} />
-          <ChartTitle>{t(title)}</ChartTitle>
+          <TechnologyTitle>{t(title)}</TechnologyTitle>
           <ChartDesc>{t(desc)}</ChartDesc>
-        </ChartBlock>
-      </SlideIn.horizontal>
+        </SlideIn.horizontal>
+      </Technology>
     )}
   </I18n>
 )
 
 const Tech = (props: { charts: IChart[]; loaded: boolean }) => (
   <React.Fragment>
-    <ChartsContainer>
+    <Technologies>
       {props.charts.map((block, index) =>
         Chart({ ...block, index, loaded: props.loaded }),
       )}
-    </ChartsContainer>
+    </Technologies>
   </React.Fragment>
 )
 const ScreenBlocked = ScreenBlock({ charts, screenInfo })(Tech)
