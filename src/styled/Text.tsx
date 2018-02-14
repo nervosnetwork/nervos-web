@@ -52,18 +52,10 @@ const titleColorExpand = keyframes`
   }
 `
 
-interface IScreenTitle {
-  hasSubtitle?: boolean
-}
-
-const ScreenTitleCons: StyledFunction<IScreenTitle> = styled.h1
-
-export const ScreenTitle = ScreenTitleCons`
+export const ScreenTitle = styled.h1`
   display: inline-block;
   position: relative;
-  font-size: ${props =>
-    `${props.theme.sizes.screen.title.fontSize *
-      (props.hasSubtitle ? 0.75 : 1)}rem`};
+  font-size: ${props => `${props.theme.sizes.screen.title.fontSize}rem`};
   text-transform: uppercase;
   line-height: ${props => props.theme.sizes.screen.title.lineHeight};
   color: ${props => props.theme.colors.plain};
@@ -88,7 +80,7 @@ export const ScreenTitle = ScreenTitleCons`
   }
 `
 
-export const ScreenSubTitle = styled.h1`
+export const ScreenSubTitle = styled.h2`
   font-size: ${props => `${props.theme.sizes.screen.subtitle.fontSize}rem`};
   text-transform: uppercase;
   color: ${props => props.theme.colors.plain};
