@@ -104,6 +104,25 @@ export const NavItem = styled.li`
     position: relative;
     cursor: pointer;
     text-transform: uppercase;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 120%;
+      left: -10%;
+      width: 120%;
+      height: 3px;
+      background: currentColor;
+      transform-origin: center center;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-out;
+    }
+    &:hover {
+      /* text-shadow: 0 0 3px currentColor; */
+      &:after {
+        transform: scaleX(1);
+      }
+    }
   }
   @media (max-width: 768px) {
     margin-left: 1.125rem;
