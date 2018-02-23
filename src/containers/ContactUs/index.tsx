@@ -22,21 +22,32 @@ const ContactUs = props => (
     {(t, { i18n }) => (
       <Desc>
         <ColorizedBlock colorBlock colorBlockHeight={4}>
-          <SlideIn.horizontal slideIn={props.loaded} index={6}>
-            <SubscribeFormLine>
-              <RippleInput placeholder={t('Your Name')} />
-            </SubscribeFormLine>
-          </SlideIn.horizontal>
-          <SlideIn.horizontal slideIn={props.loaded} index={10}>
-            <SubscribeFormLine>
-              <RippleInput placeholder={t('E-mail')} />
-              <SubscribeButtonContainer>
-                <SlideIn.horizontal slideIn={props.loaded} index={14}>
-                  <SubscribeButton>{t('Subscribe')}</SubscribeButton>
-                </SlideIn.horizontal>
-              </SubscribeButtonContainer>
-            </SubscribeFormLine>
-          </SlideIn.horizontal>
+          <form
+            action="https://ezcook.us17.list-manage.com/subscribe/post?u=6b6750d23d175a99aa207330c&amp;id=405f6d7e8b"
+            method="post"
+            id="mc-embedded-subscribe-form"
+            name="mc-embedded-subscribe-form"
+            className="validate"
+            target="_blank"
+          >
+            <SlideIn.horizontal slideIn={props.loaded} index={6}>
+              <SubscribeFormLine>
+                <RippleInput name="LNAME" placeholder={t('Your Name')} />
+              </SubscribeFormLine>
+            </SlideIn.horizontal>
+            <SlideIn.horizontal slideIn={props.loaded} index={10}>
+              <SubscribeFormLine>
+                <RippleInput name="EMAIL" placeholder={t('E-mail')} />
+                <SubscribeButtonContainer>
+                  <SlideIn.horizontal slideIn={props.loaded} index={14}>
+                    <SubscribeButton type="submit">
+                      {t('Subscribe')}
+                    </SubscribeButton>
+                  </SlideIn.horizontal>
+                </SubscribeButtonContainer>
+              </SubscribeFormLine>
+            </SlideIn.horizontal>
+          </form>
         </ColorizedBlock>
       </Desc>
     )}
