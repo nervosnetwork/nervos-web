@@ -5,6 +5,7 @@ export default {
   input: {
     fontSize: 2,
   },
+  letterSpacing: 0.3125,
   header: {
     height: 10, // 160
     paddingTop: 6.25,
@@ -119,12 +120,14 @@ export default {
   },
   screen: {
     title: {
-      fontSize: 3.33, // 40pt
+      // fontSize: 3.33, // 40pt
+      // fontSize: 2.5,
+      fontSize: 3,
       lineHeight: 1.75,
-      borderWidth: 0.375,
+      borderWidth: 0.875,
     },
     subtitle: {
-      fontSize: 2.5,
+      fontSize: 1.875,
     },
     titleContainer: {
       marginTop: 5,

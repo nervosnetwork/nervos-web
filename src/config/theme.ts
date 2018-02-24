@@ -14,6 +14,7 @@ export interface ThemeInterface {
   }
   sizes: {
     root: SIZES
+    letterSpacing: SIZES
     centerBlockMaxWidth: SIZES
     input: {
       fontSize: SIZES

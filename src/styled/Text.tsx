@@ -58,6 +58,7 @@ export const ScreenTitle = styled.h1`
   font-size: ${props => `${props.theme.sizes.screen.title.fontSize}rem`};
   text-transform: uppercase;
   line-height: ${props => props.theme.sizes.screen.title.lineHeight};
+  letter-spacing: ${props => `${props.theme.sizes.letterSpacing}rem`};
   color: ${props => props.theme.colors.plain};
   margin: 0;
   font-weight: 900;
@@ -84,6 +85,7 @@ export const ScreenSubTitle = styled.h2`
   font-size: ${props => `${props.theme.sizes.screen.subtitle.fontSize}rem`};
   text-transform: uppercase;
   color: ${props => props.theme.colors.plain};
+  letter-spacing: ${props => `${props.theme.sizes.letterSpacing / 2}rem`};
   margin: 0;
   font-weight: 500;
 `
