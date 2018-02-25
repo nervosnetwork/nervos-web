@@ -31,6 +31,7 @@ const prodConfig = {
         test: /\.s?css$/,
         use: ExtractPlugin.extract({
           fallback: 'style-loader',
+          publicPath: './',
           use: [
             {
               loader: 'css-loader',

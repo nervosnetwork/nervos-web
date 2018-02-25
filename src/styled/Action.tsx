@@ -25,9 +25,9 @@ const jump = keyframes`
 export const Download = styled.a`
   position: relative;
   color: ${props => props.theme.colors.plain};
-  font-size: 1rem;
+  font-size: 1.6rem;
   cursor: pointer;
-  color: ${props => props.theme.colors.plain};
+  color: ${props => props.theme.colors.primary};
   transition: all 0.3s;
   font-weight: 100;
   &:after {
@@ -37,6 +37,7 @@ export const Download = styled.a`
     left: 105%;
     content: ${`url(${downloadIcon})`};
     transform-origin: center bottom;
+    line-height: 1.5;
   }
   &:hover:after {
     animation: ${jump} 1s infinite;
