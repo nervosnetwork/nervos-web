@@ -1,7 +1,7 @@
 export default {
   translations: {
     slogan: `The Common Knowledge Base for The 7.6 Billion People.`,
-    description: `NERVOS is the world's first Common Knowledge Base. It defines a suite of scalable and interoperable blockchain protocols to facilitate common knowledge formation and , storage and impact of our society. It's a third generation blockchain project with a more general abstraction that goes beyond the distributed ledgers of value and smart contracts, to allow expressions of real world commercial building blocks such as identity, reputation, endorsement, and stable currency.`,
+    description: `NERVOS is the world's first Common Knowledge Base. It defines a suite of scalable and interoperable blockchain protocols to facilitate common knowledge formation and, storage and impact of our society. It's a third generation blockchain project with a more general abstraction that goes beyond the distributed ledgers of value and smart contracts, to allow expressions of real world commercial building blocks such as identity, reputation, endorsement, and stable currency.`,
     download: 'Download',
     whitepaper: 'White Paper',
     FAQ: 'FAQ',

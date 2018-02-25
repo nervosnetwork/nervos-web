@@ -5,7 +5,6 @@ import theme from '../config/theme'
 export const ScreenDiv = styled.div`
   position: relative;
   width: 100%;
-  /* height: 100vh; */
   max-width: ${props => `${props.theme.sizes.screen.blockMaxWidth}rem`};
   width: ${props => props.theme.sizes.screen.blockWidthPercent};
   margin: 0 auto;
@@ -14,44 +13,51 @@ export const ScreenDiv = styled.div`
   &:last-of-type {
     margin-bottom: 0;
   }
+  @media (max-width: 1716px) {
+    max-width: none;
+    padding: ${props =>
+    `${props.theme.sizes.screen.desc.paddingTop}rem 50px 0`};
+  }
+  @media (max-width: 1440px) {
+    max-width: none;
+    padding: ${props =>
+    `${props.theme.sizes.screen.desc.paddingTop}rem 50px 0`};
+  }
   @media (max-width: 1280px) {
     padding-top: ${props =>
     `${props.theme.sizes.screen.desc.paddingTop / 2}rem`};
   }
   @media (max-width: 768px) {
-    padding-top: 0;
+    padding: 0 15px;
   }
 `
 
 export const SloganContainer = styled.div`
   position: relative;
-  /* padding-left: ${props =>
-    `${props.theme.sizes.screen.desc.paddingLeft}rem`}; */
   padding-left: 0;
-  padding-right: ${props =>
-    `${props.theme.sizes.slogan.container.paddingRight}rem`};
   padding-top: ${props =>
     `${props.theme.sizes.slogan.container.paddingTop -
       props.theme.sizes.screen.desc.paddingTop}rem`};
   padding-bottom: ${props =>
     `${props.theme.sizes.slogan.container.paddingBottom}rem`};
+  padding-right: ${props =>
+    `${props.theme.sizes.slogan.container.paddingRight}rem`};
   &:after {
     display: block;
     content: '';
     position: absolute;
     top: 100%;
-    /* left: ${props => `${props.theme.sizes.screen.desc.paddingLeft}rem`}; */
     left: 0;
     height: ${props => `${props.theme.sizes.slogan.container.borderWidth}rem`};
     width: ${props => `${props.theme.sizes.slogan.container.borderLength}rem`};
     background-color: ${props => props.theme.colors.plain};
   }
-  @media (max-width: 1920px) {
+  /* @media (max-width: 1920px) {
     padding-top: ${props =>
     `${(props.theme.sizes.slogan.container.paddingTop -
         props.theme.sizes.screen.desc.paddingTop) *
         0.14}rem`};
-  }
+  } */
   @media (max-width: 1440px) {
     padding-bottom: 10rem;
   }
@@ -133,7 +139,7 @@ export const Technology = styled.div`
   position: relative;
   width: 100%;
   height: ${props => `${props.theme.sizes.chart.icon.size}rem`};
-  margin-bottom: ${props => `${props.theme.sizes.chart.icon.size}rem`};
+  margin-bottom: ${props => `${props.theme.sizes.chart.icon.size * 0.5}rem`};
   &:last-of-type {
     margin-bottom: 0;
   }

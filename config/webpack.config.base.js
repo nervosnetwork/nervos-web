@@ -31,10 +31,11 @@ module.exports = {
         include: /src/,
       },
       {
-        test: /\.(woff|woff2)$/,
+        test: /\.(otf|woff|woff2)$/,
         loader: 'url-loader',
         options: {
           mimetype: 'application/font-woff',
+          limit: 81920,
           name: 'fonts/[name].[ext]',
         },
       },

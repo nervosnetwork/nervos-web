@@ -4,9 +4,9 @@ import theme from '../config/theme'
 
 export const Slogan = styled.h1`
   color: ${props => props.theme.colors.primary};
-  font-family: Futura;
+  font-family: 'Mplus-1p Heavy', 'SourceHanSans Bold', 'PingFang-SC Light',
+    'Microsoft YaHei';
   font-size: ${props => `${props.theme.sizes.slogan.fontSize}rem`};
-  font-weight: 900;
   margin: 0;
   line-height: ${props => props.theme.sizes.slogan.lineHeight};
   padding-bottom: ${props => `${props.theme.sizes.slogan.paddingBottom}rem`};
@@ -27,7 +27,7 @@ export const HomepageDesc = styled.div`
     `${props.theme.sizes.homepageDesc.paddingBottom}rem`};
   text-align: justify;
   text-align-last: left;
-  font-weight: 100;
+  /* font-weight: 100; */
 `
 
 export const Desc = styled.div`
@@ -56,13 +56,14 @@ export const ScreenTitle = styled.h1`
   display: inline-block;
   position: relative;
   font-size: ${props => `${props.theme.sizes.screen.title.fontSize}rem`};
+  font-family: 'Mplus-1p Heavy', 'SourceHanSans Heavy', 'PingFang-SC Light',
+    'Microsoft YaHei';
   text-transform: uppercase;
   line-height: ${props => props.theme.sizes.screen.title.lineHeight};
   letter-spacing: ${props => `${props.theme.sizes.letterSpacing}rem`};
   color: ${props => props.theme.colors.plain};
   margin: 0;
-  font-weight: 900;
-  margin-top: 10rem;
+  margin-top: ${props => `${props.theme.sizes.screen.title.marginTop}rem`};
   &:before {
     content: '';
     display: block;
@@ -83,28 +84,33 @@ export const ScreenTitle = styled.h1`
 
 export const ScreenSubTitle = styled.h2`
   font-size: ${props => `${props.theme.sizes.screen.subtitle.fontSize}rem`};
+  font-family: 'Mplus-1p Medium', 'SourceHanSans Medium' 'PingFang-SC Light',
+    'Microsoft YaHei';
   text-transform: uppercase;
   color: ${props => props.theme.colors.plain};
+  opacity: 0.8;
   letter-spacing: ${props => `${props.theme.sizes.letterSpacing / 2}rem`};
   margin: 0;
-  font-weight: 500;
+  /* font-weight: 500; */
 `
 export const TechnologyTitle = styled.h1`
   font-size: ${props => `${props.theme.sizes.chart.title.fontSize}rem`};
+  font-family: 'Mplus-1p Bold', 'SourceHanSans Bold', 'PingFang-SC Light',
+    'Microsoft YaHei';
   line-height: ${props => `${props.theme.sizes.chart.title.lineHeight}rem`};
   display: block;
-  color: ${props => props.theme.colors.plain};
+  color: ${props => props.theme.colors.primary};
   margin: 0;
   margin-bottom: ${props => `${props.theme.sizes.chart.title.fontSize / 2}rem`};
   text-transform: uppercase;
-  font-weight: 900;
+  /* font-weight: 900; */
   @media (max-width: 768px) {
     padding: 1em 0;
   }
 `
 export const ChartDesc = styled.p`
   color: ${props => props.theme.colors.plain};
-  font-size: ${props => `${props.theme.sizes.screen.desc.fontSize}rem`};
+  font-size: ${props => `${props.theme.sizes.chart.desc.fontSize}rem`};
   padding-top: ${props => `${props.theme.sizes.chart.desc.paddingTop}rem`};
   line-height: 1.4;
   word-wrap: break-word;

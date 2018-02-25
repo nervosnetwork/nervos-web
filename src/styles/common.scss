@@ -1,21 +1,80 @@
+// MPlus Fonts
 @font-face {
-  font-family: 'Futura';
-  src: url('../fonts/futura.woff2') format('woff2'),
-    url('../fonts/futura.woff') format('woff');
+  font-family: 'Mplus-1p Heavy';
+  src: url('../fonts/mplus-1p-heavy-sub.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mplus-1p Bold';
+  src: url('../fonts/mplus-1p-bold-sub.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mplus-1p Medium';
+  src: url('../fonts/mplus-1p-medium-sub.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mplus-1p Regular';
+  src: url('../fonts/mplus-1p-regular-sub.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mplus-1p Light';
+  src: url('../fonts/mplus-1p-light-sub.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Font SourceHanSans
+@font-face {
+  font-family: 'SourceHanSans Heavy';
+  src: url('../fonts/SourceHanSansCN-Heavy.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceHanSans Bold';
+  src: url('../fonts/SourceHanSansCN-Bold.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceHanSans Medium';
+  src: url('../fonts/SourceHanSansCN-Medium.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SourceHanSans Regular';
+  src: url('../fonts/SourceHanSansCN-Regular.otf') format('otf');
   font-weight: normal;
   font-style: normal;
 }
 
 * {
   box-sizing: border-box;
-  font-family: Futura, 'PingFang-SC Light', 'Microsoft YaHei';
+  font-family: 'Mplus-1p Regular', 'SourceHanSans Regular', 'PingFang-SC Light',
+    'Microsoft YaHei';
   outline: none;
   letter-spacing: 0px;
 }
+
 ul {
   margin: 0;
   padding: 0;
 }
+
 a {
   color: #fff;
   text-decoration: none;
@@ -33,10 +92,12 @@ header {
     padding-top: 15px;
   }
 }
+
 main {
   position: relative;
   z-index: 1;
 }
+
 html,
 body {
   min-height: 100vh;
@@ -52,6 +113,7 @@ body {
     display: none;
   }
 }
+
 .fadeOut {
   opacity: 1;
   animation: fade_out 0.5s forwards;

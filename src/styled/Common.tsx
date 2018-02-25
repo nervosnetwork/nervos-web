@@ -6,6 +6,8 @@ import theme from '../config/theme'
 const sendIcon = require('../images/send') as string
 /* eslint-enable global-require */
 
+const rectRatio = 3.2
+
 /* eslint-disable no-unused-expressions */
 injectGlobal`
   html, body {
@@ -64,10 +66,18 @@ export const Header = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1716px) {
+    max-width: none;
+    padding: 0 50px;
+  }
+  @media (max-width: 1440px) {
+    max-width: none;
+    padding: 0 50px;
+  }
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    max-width: auto;
+    padding: 0;
     width: 100vw;
   }
 `
@@ -101,9 +111,12 @@ export const NavItem = styled.li`
   font-size: ${props => `${props.theme.sizes.header.navs.nav.height}rem`};
   & a,
   & span {
+    font-family: 'Mplus-1p Medium', 'SourceHanSans Medium', 'PingFang-SC Light',
+      'Microsoft YaHei';
     position: relative;
     cursor: pointer;
     text-transform: uppercase;
+    font-size: ${props => `${props.theme.sizes.header.navs.nav.fontSize}rem`};
     &:after {
       content: '';
       display: block;
@@ -156,10 +169,8 @@ const ColorizedDivWithCons: StyledFunction<
 
 export const ColorizedDiv = ColorizedDivWithCons`
   position: relative;
-  border-left: ${props =>
-    `${props.theme.sizes.dashLineWidth}rem dotted ${
-      props.primary ? props.theme.colors.primary : props.theme.colors.highlight
-    }`};
+  color: ${props =>
+    props.primary ? props.theme.colors.primary : props.theme.colors.highlight};
   padding-left: ${props =>
     props.chart
       ? `${props.theme.sizes.chart.title.paddingLeft +
@@ -174,11 +185,20 @@ export const ColorizedDiv = ColorizedDivWithCons`
         (props.colorBlockHeight || 1)}rem`};
     position: absolute;
     top: 0;
-    left: ${props => `-${props.theme.sizes.dashLineWidth}rem`};
-    background-color: ${props =>
-    props.primary
-      ? props.theme.colors.primary
-      : props.theme.colors.highlight};
+    left: 0;
+    background-color: currentColor;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    width: ${props => `${props.theme.sizes.dashLineWidth}rem`};
+    background-image: ${props =>
+    `linear-gradient(to bottom, currentColor, currentColor 85%, transparent 85%, transparent 100%)`};
+    background-size: ${props => `${props.theme.sizes.dashLineWidth}rem 6px`};
   }
 `
 /* eslint-enable no-use-before-define */
@@ -349,8 +369,6 @@ export const Member = styled.div`
   display: inline-block;
   width: 33.3%;
   min-width: 300px;
-  /* display: flex; */
-  /* flex-direction: column; */
   padding-right: 3rem;
   @media (max-width: 1560px) {
     width: 50%;
@@ -371,13 +389,15 @@ export const MemberAvatar = styled.img`
 `
 export const MemberName = styled.div`
   font-size: ${props => `${props.theme.sizes.members.member.name.fontSize}rem`};
-  font-weight: 900;
+  font-family: 'Mplus-1p Medium', 'SourceHanSans Medium', 'PingFang-SC Light',
+    'Microsoft YaHei';
+  /* font-weight: 900; */
   color: ${props => props.theme.colors.plain};
   line-height: 1.4;
 `
 export const MemberDesc = styled.div`
   color: ${props => props.theme.colors.primary};
-  font-weight: 100;
+  /* font-weight: 100; */
   font-size: 20px;
   text-align: justify;
   text-align-last: left;
@@ -471,7 +491,7 @@ export const Rect = RectCons`
   left:0;
   display: block;
   width: ${props => `${props.theme.sizes.rect.width}px`};
-  height: ${props => `${4 * props.theme.sizes.rect.width}px`};
+  height: ${props => `${rectRatio * props.theme.sizes.rect.width}px`};
   opacity: 0;
   background-color: ${props => props.theme.colors.highlight};
   transform: ${props => `rotate(${props.deg}deg) `};
@@ -497,32 +517,32 @@ interface IHomepageWidget {
 const HomepageWidgetCons: StyledFunction<IHomepageWidget> = styled.div
 export const HomepageWidget = HomepageWidgetCons`
   position: absolute;
-  width: ${props => `${4 * props.theme.sizes.rect.width * 2.82}px`};
-  height: ${props =>
-    `${4 *
+  width: ${props =>
+    `${rectRatio *
       props.theme.sizes.rect.width *
-      (+props.theme.sizes.rect.offset + 100) /
-      100 *
-      Math.sqrt(3) +
+      2 *
+      (1 + +props.theme.sizes.rect.offset / 100)}px`};
+  height: ${props =>
+    `${Math.sqrt(3) *
+      rectRatio *
+      props.theme.sizes.rect.width *
+      (1 + +props.theme.sizes.rect.offset / 100) +
       props.theme.sizes.rect.width / 2}px`};
   transform-origin: center center;
   transform: ${props =>
     props.primary
       ? 'rotate(60deg)'
-      : `translateX(${4 *
+      : `translateX(${rectRatio *
           props.theme.sizes.rect.width *
           (2 * +props.theme.sizes.rect.offset + 100) /
-          100}px) rotate(-120deg) `};
+          100}px) rotate(0deg) `};
   &>div{
-    top: ${props => `-${props.theme.sizes.rect.width / 2}px`};
+    top: ${props => `-${props.theme.sizes.rect.width / (2 * Math.sqrt(2))}px`};
     left: ${props =>
-    `${(4 *
+    `${rectRatio *
         props.theme.sizes.rect.width *
-        (+props.theme.sizes.rect.offset + 100) /
-        100 *
-        Math.sqrt(3) +
-        props.theme.sizes.rect.width / 2) /
-        2}px`};
+        (1 + +props.theme.sizes.rect.offset / 100) -
+        props.theme.sizes.rect.width / 2}px`};
   }
 `
 
@@ -532,18 +552,18 @@ export const HomepageWidgets = styled.div`
   top: 0;
   left: 100%;
   transform: ${props =>
-    `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 11 +
-      0.5}rem, -310px) rotate(60deg)`};
+    `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 9 +
+      0.5}rem, -264px) rotate(60deg)`};
   transform-origin: ${props =>
     `${100 *
       (100 + props.theme.sizes.rect.offset) /
       (300 + props.theme.sizes.rect.offset * 4)}% center`};
   width: ${props =>
-    `${4 *
+    `${rectRatio *
       props.theme.sizes.rect.width *
       (3 + +props.theme.sizes.rect.offset / 100 * 4)}px`};
   height: ${props =>
-    `${4 *
+    `${rectRatio *
       +props.theme.sizes.rect.width *
       (+props.theme.sizes.rect.offset + 100) /
       100 *
@@ -551,18 +571,18 @@ export const HomepageWidgets = styled.div`
       +props.theme.sizes.rect.width / 2}px`};
   @media (max-width: 1440px) {
     transform: ${props =>
-    `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 11 +
-        0.5}rem, -320px) scale(0.9) rotate(60deg)`};
+    `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 10.8 +
+        0.5}rem, -274px) scale(0.9) rotate(60deg)`};
   }
   @media (max-width: 1280px) {
     transform: ${props =>
-    `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 11 +
-        0.5}rem, -332px) scale(0.6) rotate(60deg)`};
+    `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 11.8 +
+        0.5}rem, -289px) scale(0.6) rotate(60deg)`};
   }
   @media (max-width: 992px) {
     transform: ${props =>
-    `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 11 +
-        0.5}rem, -337px) scale(0.5) rotate(60deg)`};
+    `translate(-${props.theme.sizes.header.navs.nav.marginLeft * 9 +
+        0.5}rem, -291px) scale(0.5) rotate(60deg)`};
   }
   @media (max-width: 750px) {
     display: none;

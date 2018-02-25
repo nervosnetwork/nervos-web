@@ -21,6 +21,7 @@ export const FadeInDiv = FadeInDivCons`
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   height: 100%;
   font-weight: inherit;
+  line-height: inherit;
 `
 
 // slide in
@@ -43,6 +44,8 @@ export const VerticalSlideInDiv = VerticalSlideInDivCons`
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   font-weight: inherit;
+  font-family: inherit;
+  line-height: inherit;
 `
 interface IHorizontalSlideInDiv {
   slideIn: boolean
@@ -63,6 +66,8 @@ export const HorizontalSlideInDiv = HorizontalSlideInDivCons`
   transition: transform 1.2s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   font-weight: inherit;
+  font-family: inherit;
+  line-height: inherit;
 `
 
 // fade out
@@ -81,6 +86,8 @@ export const VerticalSlideOutDiv = VerticalSlideOutDivCons`
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   font-weight: inherit;
+  font-family: inherit;
+  line-height: inherit;
 `
 interface IHorizontalSlideOutDiv {
   slideOut: boolean
@@ -97,6 +104,8 @@ export const HorizontalSlideOutDiv = HorizontalSlideOutDivCons`
   transition: transform 1.2s, opacity 0.8s;
   transition-delay: ${props => `${(props.index || 0) * 0.05}s`};
   font-weight: inherit;
+  font-family: inherit;
+  line-height: inherit;
 `
 
 export const dissolveIn = keyframes`
@@ -122,6 +131,7 @@ export const DissolveInDiv = DissolveInDivCons`
   filter: blur(100px);
   letter-spacing: 4px;
   font-weight: inherit;
+  line-height: inherit;
   animation: ${props =>
     `${dissolveIn} ${props.duration || 2}s ease-in ${(props.delay || 0) *
       0.2}s forwards`}

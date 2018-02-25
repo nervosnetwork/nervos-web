@@ -15,7 +15,6 @@ export interface ThemeInterface {
   sizes: {
     root: SIZES
     letterSpacing: SIZES
-    centerBlockMaxWidth: SIZES
     input: {
       fontSize: SIZES
     }
@@ -27,6 +26,7 @@ export interface ThemeInterface {
         nav: {
           marginLeft: SIZES
           height: SIZES
+          fontSize: SIZES
         }
       }
     }
@@ -35,6 +35,7 @@ export interface ThemeInterface {
         fontSize: SIZES
         lineHeight: SIZES
         borderWidth: SIZES
+        marginTop: SIZES
       }
       subtitle: {
         fontSize: SIZES
