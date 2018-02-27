@@ -33,19 +33,30 @@
 
     .loading path,
     .loading polygon {
-      stroke: #FFF;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: dash 5s linear infinite;
+      color: #FFF;
+      stroke: currentColor;
+      stroke-width: 1.5px;
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: dash 3s linear infinite;
     }
 
     .loading path:nth-child(5) {
-      stroke: red;
+      color: red;
+      stroke: currentColor;
     }
 
     @keyframes dash {
+      from,
+      50% {
+        fill: transparent;
+      }
+      80% {
+        fill: currentColor;
+      }
       to {
         stroke-dashoffset: 0;
+        fill: currentColor;
       }
     }
   </style>
@@ -54,7 +65,7 @@
 <body>
   <header id="header"></header>
   <div class="loading" id="loading">
-    <svg width="221px" height="47px" viewBox="0 0 221 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg width="331.5px" height="70.5px" viewBox="0 0 221 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <desc>Created with Sketch.</desc>
       <defs></defs>
       <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

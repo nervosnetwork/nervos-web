@@ -631,9 +631,9 @@ export const FooterLogo = styled.img`
 export const FooterNavs = styled.div`
   padding: ${props => `${props.theme.sizes.footer.logo.height / 4}rem 0`};
   padding-left: ${props =>
-    `${props.theme.sizes.screen.desc.paddingLeft -
-    props.theme.sizes.footer.logo.height * logoRatio
-    }rem`};
+    `${props.theme.sizes.screen.desc.paddingLeft +
+      props.theme.sizes.colorizedBlock.paddingLeft -
+      props.theme.sizes.footer.logo.height * logoRatio}rem`};
   display: flex;
   width: 100%;
   @media (max-width: 768px) {
@@ -650,11 +650,13 @@ export const FooterNav = styled.div`
   & span {
     position: relative;
     color: ${props => props.theme.colors.plain};
+    padding-left: 13px;
     cursor: pointer;
     &:before {
       position: absolute;
       top: 50%;
-      right: 120%;
+      /* right: 120%; */
+      left: 0;
       transform: translateY(-50%);
       content: '';
       display: block;
@@ -668,6 +670,7 @@ export const FooterNav = styled.div`
     text-align: center;
     & a,
     & span {
+      padding-left: 0;
       &:before {
         display: none;
       }
