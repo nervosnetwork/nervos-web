@@ -108,7 +108,14 @@ export interface ThemeInterface {
       }
       member: {
         marginTop: SIZES
+        marginRight: SIZES
+        avatar: {
+          marginBottom: SIZES
+        }
         name: {
+          fontSize: SIZES
+        }
+        desc: {
           fontSize: SIZES
         }
       }
@@ -144,6 +151,7 @@ export interface ThemeInterface {
         fontSize: SIZES
         borderWidth: SIZES // 20
         paddingLeft: SIZES
+        paddingBottom: SIZES
         lineHeight: SIZES
       }
       desc: {

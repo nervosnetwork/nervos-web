@@ -93,8 +93,10 @@ export default {
       // fontSize: 3.33, // 40pt
       fontSize: 2.5,
       borderWidth: 1.25, // 20
-      paddingLeft: 2,
-      lineHeight: 4, // 48pt
+      paddingLeft: 1.25,
+      paddingBottom: 4.8,
+      // lineHeight: 4, // 48pt
+      lineHeight: 2.5,
     },
     desc: {
       // fontSize: 1.375,
@@ -105,7 +107,8 @@ export default {
       marginBottom: 6.25,
       size: 11.5,
     },
-    blockHPadding: 9.25,
+    // blockHPadding: 9.25,
+    blockHPadding: 0,
   },
   slideNav: {
     top: 50,
@@ -120,10 +123,18 @@ export default {
       height: 12.5,
     },
     member: {
-      marginTop: 3,
+      marginTop: 5,
+      marginRight: 6,
+      avatar: {
+        // marginBottom: 2,
+        marginBottom: 0,
+      },
       name: {
         // fontSize: 4, // 48pt
         fontSize: 3, // 48px
+      },
+      desc: {
+        fontSize: 1.5,
       },
     },
   },
@@ -147,7 +158,8 @@ export default {
     blockMaxWidth: 101, // 1616
     blockWidthPercent: '100%',
     desc: {
-      paddingLeft: 8.5,
+      // paddingLeft: 8.5,
+      paddingLeft: 10.5,
       paddingTop: 0,
       fontSize: 1.375,
     },

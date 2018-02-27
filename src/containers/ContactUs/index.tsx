@@ -12,6 +12,7 @@ import { SubscribeButtonContainer } from '../../styled/Layout'
 import { Desc } from '../../styled/Text'
 import { SlideIn } from '../../styled/Animation'
 import ScreenBlock from '../../components/ScreenBlock'
+import { Form } from '../../styled/Action'
 
 const screenInfo: { title: string; subtitle: string } = {
   title: 'Keep You Update',
@@ -22,16 +23,15 @@ const ContactUs = props => (
     {(t, { i18n }) => (
       <Desc>
         <ColorizedBlock colorBlock colorBlockHeight={4}>
-          <form
+          <Form
             action="https://ezcook.us17.list-manage.com/subscribe/post?u=6b6750d23d175a99aa207330c&amp;id=405f6d7e8b"
             method="post"
             id="mc-embedded-subscribe-form"
             name="mc-embedded-subscribe-form"
-            className="validate"
             target="_blank"
           >
             <SlideIn.horizontal slideIn={props.loaded} index={6}>
-              <SubscribeFormLine>
+              <SubscribeFormLine first>
                 <RippleInput name="LNAME" placeholder={t('Your Name')} />
               </SubscribeFormLine>
             </SlideIn.horizontal>
@@ -47,7 +47,7 @@ const ContactUs = props => (
                 </SubscribeButtonContainer>
               </SubscribeFormLine>
             </SlideIn.horizontal>
-          </form>
+          </Form>
         </ColorizedBlock>
       </Desc>
     )}
