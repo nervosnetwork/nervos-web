@@ -6,7 +6,7 @@ export default {
     whitepaper: '白皮书',
     FAQ: '常见问题',
     CN: '中文',
-    EN: '英文',
+    EN: 'EN',
     Homepage: '首页',
     Technology: '技术',
     Milestone: '里程碑',

@@ -5,7 +5,7 @@ export default {
     download: 'Download',
     whitepaper: 'White Paper',
     FAQ: 'FAQ',
-    CN: 'CN',
+    CN: '中文',
     EN: 'EN',
     Homepage: 'Homepage',
     Technology: 'Technology',

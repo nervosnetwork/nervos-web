@@ -7,6 +7,7 @@ const sendIcon = require('../images/send') as string
 /* eslint-enable global-require */
 
 const rectRatio = 3.2
+const logoRatio = 139 / 158
 
 /* eslint-disable no-unused-expressions */
 injectGlobal`
@@ -36,10 +37,11 @@ injectGlobal`
       theme.sizes.footer.marginTop}rem`}
   }
   header {
-    padding-top: ${`${theme.sizes.header.paddingTop}rem`};
-    @media (max-width: 1280px) {
+    /* padding-top: ${`${theme.sizes.header.paddingTop}rem`}; */
+    /* @media (max-width: 1280px) {
       padding-top: 1rem;
-    }
+    } */
+    padding-top: 10vh;
     @media (max-width: 768px) {
       padding-top: 0;
     }
@@ -66,13 +68,13 @@ export const Header = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 1716px) {
+  @media (max-width: 1874px) {
     max-width: none;
-    padding: 0 50px;
+    padding: 0 8%;
   }
   @media (max-width: 1440px) {
     max-width: none;
-    padding: 0 50px;
+    padding: 0 8%;
   }
   @media (max-width: 768px) {
     display: flex;
@@ -252,12 +254,22 @@ export const SubscribeButton = styled.button`
   }
 `
 
-export const SubscribeFormLine = styled.div`
+interface ISubscribeFormLine {
+  inline?: boolean
+  first?: boolean
+}
+
+const SubscribeFormLineCons: StyledFunction<ISubscribeFormLine> = styled.div
+
+export const SubscribeFormLine = SubscribeFormLineCons`
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: ${props => `${props.theme.sizes.subscribe.form.lineHeight}rem`};
+  height: ${props =>
+    !props.inline && props.first
+      ? 'auto'
+      : `${props.theme.sizes.subscribe.form.lineHeight}rem`};
   width: ${props => `${props.theme.sizes.subscribe.form.lineWidth}rem`};
   @media (max-width: 768px) {
     width: 100%;
@@ -345,7 +357,8 @@ export const Members = styled.div`
   flex-wrap: wrap; */
   /* width: 100%; */
 
-  margin-right: -3rem;
+  margin-right: ${props =>
+    `-${props.theme.sizes.members.member.marginRight}rem`};
   & > div:nth-child(n + 4) {
     margin-top: ${props => `${props.theme.sizes.members.member.marginTop}rem`};
   }
@@ -369,7 +382,8 @@ export const Member = styled.div`
   display: inline-block;
   width: 33.3%;
   min-width: 300px;
-  padding-right: 3rem;
+  padding-right: ${props =>
+    `${props.theme.sizes.members.member.marginRight}rem`};
   @media (max-width: 1560px) {
     width: 50%;
   }
@@ -385,6 +399,8 @@ export const Member = styled.div`
 export const MemberAvatar = styled.img`
   width: ${props => `${props.theme.sizes.members.container.height}rem`};
   height: ${props => `${props.theme.sizes.members.container.height}rem`};
+  margin-bottom: ${props =>
+    `${props.theme.sizes.members.member.avatar.marginBottom}rem`};
   border-radius: 50%;
 `
 export const MemberName = styled.div`
@@ -393,12 +409,12 @@ export const MemberName = styled.div`
     'Microsoft YaHei';
   /* font-weight: 900; */
   color: ${props => props.theme.colors.plain};
-  line-height: 1.4;
+  line-height: 2;
 `
 export const MemberDesc = styled.div`
   color: ${props => props.theme.colors.primary};
   /* font-weight: 100; */
-  font-size: 20px;
+  font-size: ${props => `${props.theme.sizes.members.member.desc.fontSize}rem`};
   text-align: justify;
   text-align-last: left;
 
@@ -599,21 +615,37 @@ export const Footer = styled.div`
   max-width: ${props => `${props.theme.sizes.screen.blockMaxWidth}rem`};
   width: ${props => props.theme.sizes.screen.blockWidthPercent};
   margin: 0 auto;
+  @media (max-width: 1874px) {
+    max-width: none;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
 `
 
 export const FooterLogo = styled.img`
   height: ${props => `${props.theme.sizes.footer.logo.height}rem`};
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 export const FooterNavs = styled.div`
   padding: ${props => `${props.theme.sizes.footer.logo.height / 4}rem 0`};
+  padding-left: ${props =>
+    `${props.theme.sizes.screen.desc.paddingLeft -
+    props.theme.sizes.footer.logo.height * logoRatio
+    }rem`};
   display: flex;
-  width: 80%;
+  width: 100%;
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 `
 
 export const FooterNav = styled.div`
   font-size: ${props => `${props.theme.sizes.footer.navs.nav.fontSize}rem`};
   flex: 1;
-  text-align: right;
+  /* text-align: right; */
+  text-align: left;
   & a,
   & span {
     position: relative;
@@ -630,6 +662,15 @@ export const FooterNav = styled.div`
       height: 9px;
       border-radius: 50%;
       background-color: ${props => props.theme.colors.highlight};
+    }
+  }
+  @media (max-width: 768px) {
+    text-align: center;
+    & a,
+    & span {
+      &:before {
+        display: none;
+      }
     }
   }
 `

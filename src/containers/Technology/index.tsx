@@ -53,8 +53,10 @@ const Chart = ({ img, title, desc, key, index, primary, loaded }) => (
       <Technology key={key}>
         <SlideIn.horizontal slideIn={loaded} index={5 * index}>
           <ChartIcon src={img} alt={title} />
-          <TechnologyTitle>{t(title)}</TechnologyTitle>
-          <ChartDesc>{t(desc)}</ChartDesc>
+          <ColorizedBlock primary={index % 2 === 1} colorBlockHeight={5.5}>
+            <TechnologyTitle>{t(title)}</TechnologyTitle>
+            <ChartDesc>{t(desc)}</ChartDesc>
+          </ColorizedBlock>
         </SlideIn.horizontal>
       </Technology>
     )}

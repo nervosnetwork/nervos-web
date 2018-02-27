@@ -2,6 +2,8 @@ import * as React from 'react'
 import styled, { injectGlobal, StyledFunction, keyframes } from './styleUtils'
 import theme from '../config/theme'
 
+const chartIconOffset = 2
+
 export const ScreenDiv = styled.div`
   position: relative;
   width: 100%;
@@ -13,15 +15,13 @@ export const ScreenDiv = styled.div`
   &:last-of-type {
     margin-bottom: 0;
   }
-  @media (max-width: 1716px) {
+  @media (max-width: 1874px) {
     max-width: none;
-    padding: ${props =>
-    `${props.theme.sizes.screen.desc.paddingTop}rem 50px 0`};
+    padding: ${props => `${props.theme.sizes.screen.desc.paddingTop}rem 8% 0`};
   }
   @media (max-width: 1440px) {
     max-width: none;
-    padding: ${props =>
-    `${props.theme.sizes.screen.desc.paddingTop}rem 50px 0`};
+    padding: ${props => `${props.theme.sizes.screen.desc.paddingTop}rem 8% 0`};
   }
   @media (max-width: 1280px) {
     padding-top: ${props =>
@@ -138,34 +138,39 @@ export const Technologies = styled.div`
 export const Technology = styled.div`
   position: relative;
   width: 100%;
-  height: ${props => `${props.theme.sizes.chart.icon.size}rem`};
+  /* height: ${props => `${props.theme.sizes.chart.icon.size}rem`}; */
   margin-bottom: ${props => `${props.theme.sizes.chart.icon.size * 0.5}rem`};
   &:last-of-type {
     margin-bottom: 0;
   }
   & img {
     position: absolute;
-    top: 0;
+    /* top: 0; */
+    bottom: 0;
   }
   &:nth-of-type(odd) {
-    padding-left: ${props => `${props.theme.sizes.chart.icon.size}rem`};
+    padding-left: ${props =>
+    `${chartIconOffset * props.theme.sizes.chart.icon.size}rem`};
     img {
       right: 100%;
+      transform: ${props => `translateX(-${(chartIconOffset - 1) * 100}%)`};
     }
-    h1,
+    /* h1,
     p {
       padding-left: ${props => `${props.theme.sizes.chart.icon.size / 2}rem`};
-    }
+    } */
   }
   &:nth-of-type(even) {
-    padding-right: ${props => `${props.theme.sizes.chart.icon.size}rem`};
+    padding-right: ${props =>
+    `${chartIconOffset * props.theme.sizes.chart.icon.size}rem`};
     img {
       left: 100%;
+      transform: ${props => `translateX(${(chartIconOffset - 1) * 100}%)`};
     }
-    h1,
+    /* h1,
     p {
       padding-right: ${props => `${props.theme.sizes.chart.icon.size / 2}rem`};
-    }
+    } */
   }
   @media (max-width: 768px) {
     padding: 0 !important;
@@ -176,10 +181,17 @@ export const Technology = styled.div`
       position: relative;
       right: auto !important;
       left: auto !important;
+      transform: none!important;
+      margin-bottom: ${props => `${props.theme.sizes.chart.icon.size / 4}rem`};
+      margin-top: ${props => `${props.theme.sizes.chart.icon.size / 2}rem`};
     }
     h1,
     p {
-      padding: 0 !important;
+      padding-right: ${props =>
+    `${props.theme.sizes.colorizedBlock.paddingLeft}rem`};
+    }
+    h1{
+      text-align: left;
     }
   }
 `

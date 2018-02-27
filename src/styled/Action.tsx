@@ -44,6 +44,9 @@ export const Download = styled.a`
   }
 `
 
+export const Form = styled.form``
+
 export default {
   Download,
+  Form,
 }

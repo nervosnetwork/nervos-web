@@ -101,7 +101,9 @@ export const TechnologyTitle = styled.h1`
   display: block;
   color: ${props => props.theme.colors.primary};
   margin: 0;
-  margin-bottom: ${props => `${props.theme.sizes.chart.title.fontSize / 2}rem`};
+  padding-top: ${props => `${props.theme.sizes.chart.title.fontSize / 2}rem`};
+  padding-bottom: ${props =>
+    `${props.theme.sizes.chart.title.paddingBottom}rem`};
   text-transform: uppercase;
   /* font-weight: 900; */
   @media (max-width: 768px) {

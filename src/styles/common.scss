@@ -36,28 +36,28 @@
 // Font SourceHanSans
 @font-face {
   font-family: 'SourceHanSans Heavy';
-  src: url('../fonts/SourceHanSansCN-Heavy.otf') format('otf');
+  src: url('../fonts/SourceHanSansCN-Heavy.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SourceHanSans Bold';
-  src: url('../fonts/SourceHanSansCN-Bold.otf') format('otf');
+  src: url('../fonts/SourceHanSansCN-Bold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SourceHanSans Medium';
-  src: url('../fonts/SourceHanSansCN-Medium.otf') format('otf');
+  src: url('../fonts/SourceHanSansCN-Medium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SourceHanSans Regular';
-  src: url('../fonts/SourceHanSansCN-Regular.otf') format('otf');
+  src: url('../fonts/SourceHanSansCN-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -85,12 +85,7 @@ input::placeholder {
 }
 
 header {
-  width: 100%;
-  padding-top: 100px;
   z-index: 999;
-  @media (max-width: 600px) {
-    padding-top: 15px;
-  }
 }
 
 main {
