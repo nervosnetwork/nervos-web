@@ -2,8 +2,6 @@ import * as React from 'react'
 import { createPortal } from 'react-dom'
 import { I18n } from 'react-i18next'
 import { Header, Logo, Navs, NavItem } from '../../styled/Common'
-import { SlideIn, Dissolve } from '../../styled/Animation'
-import HomepageWidgets from '../../components/HomepageWidgets'
 
 /* eslint-disable global-require */
 const LogoImg = require('../../images/nerveos.svg') as string
@@ -13,18 +11,6 @@ const navs = [
   {
     label: 'whitepaper',
     path: '/white-paper',
-  },
-  {
-    label: 'FAQ',
-    path: '/faq',
-  },
-  {
-    label: 'EN',
-    path: 'en',
-  },
-  {
-    label: 'CN',
-    path: 'zh',
   },
 ]
 
@@ -43,19 +29,18 @@ export default class extends React.Component<HeaderProps, HeaderState> {
   state = {
     loaded: false,
   }
-  componentDidMount() {
+  componentDidMount () {
     setTimeout(() => {
       this.setState(() => ({ loaded: true }))
     }, 0)
   }
-  render() {
+  render () {
     const { props } = this
     const { loaded } = this.state
     return createPortal(
       <I18n>
         {(t, { i18n }) => (
           <Header>
-            <HomepageWidgets />
             <Logo
               src={LogoImg}
               alt="NervOS"
@@ -66,15 +51,13 @@ export default class extends React.Component<HeaderProps, HeaderState> {
             <Navs>
               {navs.map((item, index) => (
                 <NavItem key={item.path}>
-                  <SlideIn.horizontal slideIn={loaded} index={index}>
-                    {item.path.startsWith('/') ? (
-                      <a href={item.path}>{t(item.label)}</a>
-                    ) : (
-                      <span onClick={() => i18n.changeLanguage(item.path)}>
-                        {t(item.label)}
-                      </span>
-                    )}
-                  </SlideIn.horizontal>
+                  {item.path.startsWith('/') ? (
+                    <a href={item.path}>{t(item.label)}</a>
+                  ) : (
+                    <span onClick={() => i18n.changeLanguage(item.path)}>
+                      {t(item.label)}
+                    </span>
+                  )}
                 </NavItem>
               ))}
             </Navs>
