@@ -1,86 +1,22 @@
-import { IScreenBlock } from './components/ScreenBlock/type'
-
-export const HomeSlide = {
-  title: '',
-  path: '/',
-  key: 'homepage',
-  module: 'Homepage',
-  navable: true,
-  exact: true,
-}
-export const TechSlide = {
-  title: 'Technology',
-  path: '/',
-  key: 'technology',
-  module: 'Technology',
-  navable: true,
-  exact: true,
-}
-export const ContactUsSlide = {
-  title: 'Keep You Update',
-  path: '/',
-  key: 'contactUs',
-  module: 'ContactUs',
-  navable: true,
-  exact: true,
+export interface IPage {
+  title?: string
+  key: string
+  path: string
+  module: string
+  index?: number
+  navable?: boolean
+  exact?: boolean
 }
 
-export const MilestoneSlide = {
-  title: 'Milestone',
-  path: '/',
-  key: 'milestone',
-  module: 'Milestone',
-  navable: true,
-  exact: true,
-}
-
-export const TeamMembersSlide = {
-  title: 'Team Members',
-  path: '/',
-  key: 'teamMembers',
-  module: 'TeamMembers',
-  navable: true,
-  exact: true,
-}
-export const AdvisorsSlide = {
-  title: 'Advisors',
-  path: '/',
-  key: 'advisors',
-  module: 'Advisors',
-  navable: true,
-  exact: true,
-}
-export const SupportersSlide = {
-  title: 'Supporters',
-  path: '/',
-  key: 'supporters',
-  module: 'Supporters',
-  navable: true,
-  exact: true,
-}
-export const screenBlocks: IScreenBlock[] = [
-  HomeSlide,
-  TechSlide,
-  MilestoneSlide,
-  ContactUsSlide,
-  TeamMembersSlide,
-  AdvisorsSlide,
-  SupportersSlide,
-]
-
-export interface IPage extends IScreenBlock {}
-
+/* eslint-disable no-use-before-define */
 export interface RouterProps {
-  history: any
+  // history: any
   match: any
-  location: any
+  // location: any
   routes: IPage[]
 }
+/* eslint-enable no-use-before-define */
 
-const routes: IPage[] = [
-  { path: '/', key: 'Header', module: 'Header' },
-  ...screenBlocks,
-  { path: '/', key: 'Footer', module: 'Footer' },
-]
+const routes: IPage[] = [{ path: '/', key: 'Header', module: 'Header' }]
 
 export default routes

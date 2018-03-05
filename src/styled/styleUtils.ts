@@ -1,6 +1,9 @@
+/* eslint-disable no-duplicate-imports */
+/* eslint-disable import/no-duplicates */
 import * as styledComponents from 'styled-components'
-import { StyledFunction } from 'styled-components'
-import { ThemedStyledComponentsModule } from 'styled-components'
+import { StyledFunction, ThemedStyledComponentsModule } from 'styled-components'
+/* eslint-enable import/no-duplicates */
+/* eslint-enable no-duplicate-imports */
 
 import { ThemeInterface } from '../config/theme'
 
@@ -21,16 +24,6 @@ const sizes = {
   tablet: 992,
   phone: 768,
 }
-
-// const media = Object.keys(sizes).reduce((accumulator, label) => {
-//   const emSize = sizes[label] / 16
-//   accumulator[label] = (...args) => css`
-//     @media (max-width: ${emSize}em) {
-//       ${css(...args)};
-//     }
-//   `
-//   return accumulator
-// }, {})
 
 export { css, injectGlobal, keyframes, ThemeProvider, StyledFunction }
 export default styled
