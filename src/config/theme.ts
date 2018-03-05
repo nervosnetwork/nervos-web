@@ -16,8 +16,6 @@ export interface ThemeInterface {
     root: SIZES
     header: {
       height: SIZES
-      paddingTop: SIZES
-      paddingBottom: SIZES
       navs: {
         nav: {
           marginLeft: SIZES
@@ -27,27 +25,8 @@ export interface ThemeInterface {
       }
     }
     screen: {
-      title: {
-        fontSize: SIZES
-        lineHeight: SIZES
-        borderWidth: SIZES
-        marginTop: SIZES
-      }
-      subtitle: {
-        fontSize: SIZES
-      }
-      titleContainer: {
-        marginTop: SIZES
-        marginBottom: SIZES
-      }
-      marginBottom: SIZES
       blockMaxWidth: SIZES // 1514
       blockWidthPercent: string // use '%'
-      desc: {
-        paddingLeft: SIZES
-        paddingTop: SIZES
-        fontSize: SIZES
-      }
     }
   }
 }
