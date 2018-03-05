@@ -1,8 +1,7 @@
 /* eslint-disable no-duplicate-imports, import/no-duplicates */
 import * as styledComponents from 'styled-components'
 import { StyledFunction, ThemedStyledComponentsModule } from 'styled-components'
-/* eslint-enable import/no-duplicates */
-/* eslint-enable no-duplicate-imports */
+/* eslint-enable import/no-duplicates, import/no-deplicates */
 
 import { ThemeInterface } from '../config/theme'
 
