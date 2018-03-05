@@ -1,5 +1,4 @@
-/* eslint-disable no-duplicate-imports */
-/* eslint-disable import/no-duplicates */
+/* eslint-disable no-duplicate-imports, import/no-duplicates */
 import * as styledComponents from 'styled-components'
 import { StyledFunction, ThemedStyledComponentsModule } from 'styled-components'
 /* eslint-enable import/no-duplicates */
