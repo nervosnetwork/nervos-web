@@ -14,10 +14,6 @@ export interface ThemeInterface {
   }
   sizes: {
     root: SIZES
-    letterSpacing: SIZES
-    input: {
-      fontSize: SIZES
-    }
     header: {
       height: SIZES
       paddingTop: SIZES
@@ -52,121 +48,6 @@ export interface ThemeInterface {
         paddingTop: SIZES
         fontSize: SIZES
       }
-    }
-    footer: {
-      paddingTop: SIZES
-      paddingBottom: SIZES
-      marginTop: SIZES
-      logo: {
-        height: SIZES
-      }
-      navs: {
-        nav: {
-          fontSize: SIZES
-        }
-      }
-    }
-    colorizedBlock: {
-      color: {
-        width: SIZES
-        height: SIZES
-      }
-      paddingLeft: SIZES
-    }
-    slogan: {
-      container: {
-        paddingTop: SIZES
-        paddingBottom: SIZES
-        borderWidth: SIZES
-        borderLength: SIZES
-        paddingRight: SIZES
-      }
-      fontSize: SIZES
-      lineHeight: SIZES
-      paddingBottom: SIZES
-    }
-    homepageDesc: {
-      fontSize: SIZES
-      lineHeight: SIZES
-      paddingBottom: SIZES
-    }
-    dashLineWidth: SIZES
-    subscribe: {
-      form: {
-        lineHeight: SIZES
-        lineWidth: SIZES
-        button: {
-          fontSize: SIZES
-          width: SIZES
-          height: SIZES
-        }
-      }
-    }
-    members: {
-      container: {
-        height: SIZES
-      }
-      member: {
-        marginTop: SIZES
-        marginRight: SIZES
-        avatar: {
-          marginBottom: SIZES
-        }
-        name: {
-          fontSize: SIZES
-        }
-        desc: {
-          fontSize: SIZES
-        }
-      }
-    }
-    slideNav: {
-      top: SIZES
-      left: SIZES
-    }
-    history: {
-      yearLabel: {
-        fontSize: SIZES
-        paddingBottom: SIZES
-      }
-      borderCircle: {
-        diameter: SIZES
-        bandWidth: SIZES
-      }
-      col: {
-        borderBottomWidth: SIZES
-        paddingTop: SIZES
-        paddingLeft: SIZES
-      }
-      item: {
-        HPadding: SIZES
-        marginBottom: SIZES
-      }
-      index: {
-        diameter: SIZES
-      }
-    }
-    chart: {
-      title: {
-        fontSize: SIZES
-        borderWidth: SIZES // 20
-        paddingLeft: SIZES
-        paddingBottom: SIZES
-        lineHeight: SIZES
-      }
-      desc: {
-        fontSize: SIZES
-        paddingTop: SIZES
-      }
-      icon: {
-        marginBottom: SIZES
-        size: SIZES
-      }
-      blockHPadding: SIZES
-    }
-    rect: {
-      width: SIZES
-      offset: SIZES
     }
   }
 }
