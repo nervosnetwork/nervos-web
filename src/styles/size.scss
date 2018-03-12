@@ -1,0 +1,12 @@
+$w-default: (1vw / 19.2);
+// $w: if ( $w-default < 1px, $w-default, 1px);
+$w: (1vw / 19.2);
+@media (min-width: 1920px) {
+    $w: 1px;
+}
+
+@media (max-width: 1920px) {
+    $w: (1vw / 19.2);
+} 
+
+$wLine: 1px;

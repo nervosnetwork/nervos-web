@@ -1,0 +1,292 @@
+@import "color.scss";
+@import "size.scss";
+
+#footer {
+  background-color: $cBgBlack;
+}
+
+.main {
+  background-color: $cBgBlack;
+  text-align: center;
+  color: $cNormalW;
+}
+
+.container {
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 0 135 * $w;
+}
+
+.left {
+  display: inline-block;
+  padding-left: 32 * $w;
+  padding-top: 130 * $w;
+  vertical-align: top;
+  width: 750 * $w;
+
+  .image {
+    width: 120 * $w;
+    padding-bottom: 70 * $w;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .navItem {
+    display: block;
+    margin-bottom: 25 * $w;
+  }
+}
+
+.right {
+  display: inline-block;
+  text-align: center;
+  padding-top: 150 * $w;
+}
+
+.subscribe {
+  color: $cImportant;
+  position: relative;
+  display: inline-block;
+  width: 705 * $w;
+  // bottom: 120 * $w;
+  // left: 400 * $w;
+
+  .buttonOuter {
+    border: 1px solid;
+    height: 85 * $w;
+    text-align: left;
+
+    .buttonInner {
+      display: inline-block;
+      border: 1px solid $cImportant;
+      border-left: none;
+      border-top: none;
+      color: $cNormalW;
+      font-size: 28 * $w;
+      width: 690 * $w;
+      height: 70 * $w;
+      text-align: right;
+      font-family: "lucdia";
+
+      input {
+        width: 64.2%;
+        height: 100%;
+        display: inline-block;
+        color: $cNormalW;
+        background: none;
+        border: none;
+        padding: 0 0 0 24 * $w;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::placeholder {
+          color: inherit;
+        }
+      }
+
+      .label {
+        width: 35.8%;
+        height: 100%;
+        display: inline-block;
+        text-transform: uppercase;
+        line-height: 70 * $w;
+        cursor: pointer;
+        background-color: $cImportant;
+        text-align: center;
+        vertical-align: top;
+        padding: 0;
+        border: 0;
+        color: $cNormalW;
+
+        &:hover {
+          color: $cButtonHover;
+        }
+      }
+    }
+    .diagonal {
+      position: absolute;
+      width: 21 * $w;
+      height: 1px;
+      background-color: $cImportant;
+      // background-color: red;
+      right: -6 * $w;
+      bottom: 15 * $w;
+      transform: rotate(45deg);
+      transform-origin: 0 0;
+    }
+  }
+}
+
+.socialiconContainer {
+  padding-top: 100 * $w;
+  display: inline-block;
+
+  img {
+    width: 65 * $w;
+    margin: 0 30 * $w;
+  }
+}
+
+.bottom {
+  margin-top: 80 * $w;
+  display: inline-block;
+  border-top: 1px solid $cImportant;
+  padding-top: 80 * $w;
+  padding-left: 55 * $w;
+  padding-bottom: 160 * $w;
+  // height: 100px;
+  width: 100%;
+}
+
+@media (max-width: 1080px) {
+  $w: (1vw / 10.8);
+  .main {
+    color: $cNormalW;
+  }
+
+  .container {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    padding: 0 135 * $w;
+    font-size: 21 * $w;
+  }
+
+  .left {
+    display: inline-block;
+    position: relative;
+    margin-top: 130 * $w;
+    margin-bottom: 70 * $w;
+    padding: 0;
+    width: 750 * $w;
+
+    .image {
+      display: inline-block;
+      width: 120 * $w;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .nav {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+
+      .navItem {
+        display: inline-block;
+        margin-bottom: 25 * $w;
+        margin-left: 118 * $w;
+      }
+    }
+  }
+
+  .right {
+    display: inline-block;
+    text-align: center;
+    // padding-top: 0 * $w;
+    padding-top: 0;
+  }
+
+  .subscribe {
+    color: $cImportant;
+    position: relative;
+    display: inline-block;
+    width: 705 * $w;
+    // bottom: 120 * $w;
+    // left: 400 * $w;
+
+    .buttonOuter {
+      border: 1px solid;
+      height: 85 * $w;
+      text-align: left;
+
+      .buttonInner {
+        display: inline-block;
+        border: 1px solid $cImportant;
+        border-left: none;
+        border-top: none;
+        color: $cNormalW;
+        font-size: 28 * $w;
+        width: 690 * $w;
+        height: 70 * $w;
+        text-align: right;
+        font-family: "lucdia";
+
+        input {
+          width: 64.2%;
+          height: 100%;
+          display: inline-block;
+          color: $cNormalW;
+          background: none;
+          border: none;
+          padding: 0 0 0 24 * $w;
+
+          &:focus {
+            outline: none;
+          }
+
+          &::placeholder {
+            color: inherit;
+          }
+        }
+
+        .label {
+          width: 35.8%;
+          height: 100%;
+          display: inline-block;
+          text-transform: uppercase;
+          line-height: 70 * $w;
+          cursor: pointer;
+          background-color: $cImportant;
+          text-align: center;
+          vertical-align: top;
+
+          &:hover {
+            color: $cButtonHover;
+          }
+        }
+      }
+      .diagonal {
+        position: absolute;
+        width: 21 * $w;
+        height: 1px;
+        background-color: $cImportant;
+        // background-color: red;
+        right: -6 * $w;
+        bottom: 15 * $w;
+        transform: rotate(45deg);
+        transform-origin: 0 0;
+      }
+    }
+  }
+
+  .socialiconContainer {
+    padding-top: 100 * $w;
+    display: inline-block;
+
+    img {
+      width: 65 * $w;
+      margin: 0 30 * $w;
+    }
+  }
+
+  .bottom {
+    margin-top: 80 * $w;
+    display: inline-block;
+    border-top: 1px solid $cImportant;
+    padding-top: 80 * $w;
+    padding-left: 55 * $w;
+    padding-bottom: 160 * $w;
+    // height: 100px;
+    width: 100%;
+  }
+}
