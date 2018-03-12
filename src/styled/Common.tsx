@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styled, { injectGlobal, StyledFunction, keyframes } from './styleUtils'
+import styled, { injectGlobal, StyledFunction, keyframes, } from './styleUtils'
 import theme from '../config/theme'
 
 /* eslint-disable no-unused-expressions */
@@ -25,10 +25,10 @@ injectGlobal`
 // Header
 export const Header = styled.div`
   position: relative;
-  height: ${props => `${props.theme.sizes.header.height}rem`};
-  line-height: ${props => `${props.theme.sizes.header.height}rem`};
-  max-width: ${props => `${props.theme.sizes.screen.blockMaxWidth}rem`};
-  width: ${props => props.theme.sizes.screen.blockWidthPercent};
+  height: ${(props) => `${props.theme.sizes.header.height}rem`};
+  line-height: ${(props) => `${props.theme.sizes.header.height}rem`};
+  max-width: ${(props) => `${props.theme.sizes.screen.blockMaxWidth}rem`};
+  width: ${(props) => props.theme.sizes.screen.blockWidthPercent};
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -41,15 +41,16 @@ export const Logo = styled.img`
 `
 export const Navs = styled.ul`
   height: 100%;
-  color: ${props => props.theme.colors.plain};
+  color: ${(props) => props.theme.colors.plain};
   list-style: none;
   float: right;
   z-index: 1;
 `
 export const NavItem = styled.li`
   float: left;
-  margin-left: ${props => `${props.theme.sizes.header.navs.nav.marginLeft}rem`};
-  font-size: ${props => `${props.theme.sizes.header.navs.nav.height}rem`};
+  margin-left: ${(props) =>
+    `${props.theme.sizes.header.navs.nav.marginLeft}rem`};
+  font-size: ${(props) => `${props.theme.sizes.header.navs.nav.height}rem`};
   & a,
   & span {
     font-family: 'Mplus-1p Medium', 'SourceHanSans Medium', 'PingFang-SC Light',
@@ -57,7 +58,7 @@ export const NavItem = styled.li`
     position: relative;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: ${props => `${props.theme.sizes.header.navs.nav.fontSize}rem`};
+    font-size: ${(props) => `${props.theme.sizes.header.navs.nav.fontSize}rem`};
     &:after {
       content: '';
       display: block;

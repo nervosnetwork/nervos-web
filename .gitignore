@@ -1,5 +1,6 @@
 # Sys
 .DS_Store
+.vscode
 
 # Logs
 *.log
@@ -19,3 +20,7 @@ dist
 
 # Optional yarn error log
 yarn-error
+lib/react_manifest.json
+
+
+

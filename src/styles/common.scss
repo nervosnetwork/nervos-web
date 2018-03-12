@@ -1,1 +1,50 @@
+@import 'size.scss';
 
+@font-face {
+  font-family: "lucdia";
+  src: url("./fonts/Lucida Sans Unicode.ttf");
+}
+
+@font-face {
+  font-family: "myrida";
+  src: url("./fonts/MyriadPro-Bold.otf");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// html {
+//   font-size: (1vw / 19.2);
+// }
+
+// @media (min-width: 1920) {
+//   html {
+//     font-size: 1px;
+//   }
+// }
+
+body {
+  font-family: "lucdia";
+  font-size: 24 * $w;
+  // line-height: 40 * $w;
+  // text-align: center;
+}
+
+:global {
+  .fontBold {
+    font-family: "myrida";
+  }
+}
+
+@media (max-width: 1080px) {
+  $w: (1vw / 10.8);
+  // body {
+  //   // font-size: 24 * $w;
+  // }
+}

@@ -1,0 +1,233 @@
+@import "color.scss";
+@import "size.scss";
+
+// $sectionImgWidth: 185vw * (649 / 173);
+
+.main {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: $cBgBlue;
+  color: $cNormalB;
+  position: relative;
+  text-align: center;
+  // padding-left: 92 * $w;
+  // padding-right: 67 * $w;
+
+  .container {
+    display: inline-block;
+    position: relative;
+
+    top: -120 * $w;
+  }
+}
+
+.titleContainer {
+  position: relative;
+
+  .title {
+    font-size: 60 * $w;
+    color: $cImportant;
+    position: absolute;
+    bottom: 65 * $w;
+    left: 185 * $w;
+    display: inline-block;
+
+    .text {
+      position: relative;
+      left: -50%;
+    }
+  }
+  .verticalLine {
+    width: $wLine;
+    height: 53 * $w;
+    position: absolute;
+    left: 185 * $w;
+    bottom: 0;
+    background-color: $cImportant;
+  }
+}
+
+.subscribe {
+  color: $cImportant;
+  position: absolute;
+  bottom: 120 * $w;
+  left: 275 * $w;
+  font-family: "myrida";
+
+  .line {
+    border: $wLine solid;
+    width: 230 * $w;
+    position: absolute;
+
+    &.left {
+      border-right: none;
+      border-bottom: none;
+      height: 90 * $w;
+      left: 0;
+      top: 50%;
+      transform: translate(-274 * $w);
+    }
+
+    &.right {
+      border-left: none;
+      border-top: none;
+      height: 200 * $w;
+      right: 0;
+      bottom: 50%;
+      transform: translate(120%);
+    }
+  }
+
+  .buttonOuter {
+    border: $wLine solid;
+    width: 255 * $w;
+    height: 85 * $w;
+    text-align: left;
+
+    .buttonInner {
+      display: inline-block;
+      vertical-align: top;
+      border: $wLine solid $cImportant;
+      border-left: none;
+      border-top: none;
+      color: $cNormalW;
+      font-size: 28 * $w;
+      width: 240 * $w;
+      height: 70 * $w;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 3.64583vw;
+      background-color: $cImportant;
+      cursor: pointer;
+      font-family: "lucdia";
+
+      &:hover {
+        color: $cButtonHover;
+      }
+    }
+    .diagonal {
+      position: absolute;
+      width: 21 * $w;
+      height: $wLine;
+      background-color: $cImportant;
+      // background-color: red;
+      right: -6 * $w;
+      bottom: 15 * $w;
+      transform: rotate(45deg);
+      transform-origin: 0 0;
+    }
+  }
+}
+
+.sectionList {
+  background-color: $cNormalW;
+  position: relative;
+  padding-top: 70 * $w;
+  padding-bottom: 130 * $w;
+  width: 1735 * $w;
+
+  .border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: $wLine solid $cImportant;
+    left: 25 * $w;
+    top: 21 * $w;
+  }
+
+  .verticalLine {
+    width: $wLine;
+    position: absolute;
+    background-color: $cImportant;
+
+    &.top1 {
+      height: 53 * $w;
+      left: 185 * $w;
+      top: 0;
+      transform: translateY(-100%);
+    }
+
+    &.top2 {
+      height: 135 * $w;
+      left: 185 * $w;
+      top: 0;
+      background-color: $cLineFeaturesInner;
+    }
+
+    &.bottom1 {
+      height: 228 * $w;
+      left: 256 * $w;
+      bottom: 0;
+      background-color: $cLineFeaturesInner;
+    }
+
+    &.bottom2 {
+      height: 100 * $w;
+      left: 256 * $w;
+      bottom: 0;
+      transform: translateY(100%);
+    }
+  }
+}
+
+.section {
+
+  .img {
+    display: inline-block;
+
+    img {
+      width: 100%;
+    }
+  }
+  .desc {
+    display: inline-block;
+    text-align: left;
+    vertical-align: top;
+
+    .title {
+      font-size: 48 * $w;
+      padding-bottom: 60 * $w;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 30 * $w;
+        width: 62 * $w;
+        height: 7 * $w;
+        background-color: $cImportant;
+      }
+    }
+
+    .text {
+      font-size: 24 * $w;
+    }
+  }
+
+  &.limg {
+    .desc {
+      width: 1130 * $w;
+      padding-left: 95 * $w;
+      padding-right: 220 * $w;
+    }
+    .img {
+      padding-left: 19 * $w;
+      width: 600 * $w;
+      text-align: right;
+    }
+  }
+
+  &.rimg {
+    .desc {
+      width: 1060 * $w;
+      padding-left: 140 * $w;
+      padding-right: 145 * $w;
+    }
+    .img {
+      padding-right: 90 * $w;
+      width: 660 * $w;
+      text-align: left;
+    }
+  }
+}
