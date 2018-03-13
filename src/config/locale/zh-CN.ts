@@ -61,6 +61,9 @@ export default {
       },
     ],
   },
+  supporters: {
+    title: '支持',
+  },
   footer: {
     // navList: ['中文 ddddd', '中文 ddddd', '中文 ddddd', ],
     navList: [

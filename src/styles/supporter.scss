@@ -1,0 +1,74 @@
+@import "color.scss";
+@import "size.scss";
+
+.main {
+  text-align: center;
+  background-color: $cBgBlue;
+  padding-bottom: 190 * $w;
+
+  .container {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    padding: 0 360 * $w;
+  }
+}
+
+.titleContainer {
+  position: relative;
+  margin-bottom: 80 * $w;
+
+  .title {
+    font-size: 60 * $w;
+    color: $cImportant;
+    position: relative;
+    // left: 100 * $w;
+    display: inline-block;
+    transform: translateX(-40%);
+  }
+  .vLine {
+    display: block;
+    position: relative;
+    width: $wLine;
+    height: 106 * $w;
+    background-color: $cImportant;
+    margin-bottom: 20 * $w;
+    // transform: translateY(100%);
+  }
+}
+
+.supporterList {
+  text-align: center;
+}
+
+.supporterCell {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+
+  .supporterImgBack {
+    width: 502 * $w;
+    height: 126 * $w;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $cImportant;
+  }
+
+  .supporterImg {
+    position: relative;
+    width: 467 * $w;
+    height: 164 * $w;
+    background-color: $cNormalW;
+
+    img {
+      padding: 40 * $w 60 * $w;
+      max-width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
