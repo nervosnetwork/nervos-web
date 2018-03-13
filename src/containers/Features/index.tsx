@@ -55,8 +55,14 @@ export default class extends React.Component {
     const { section, index, } = props
     const { title, text, } = section
     const image = sectionImgList[index]
+    let className
+    if (index === 0) {
+      className = `${css.section} ${css.limg} ${css.first}`
+    } else {
+      className = `${css.section} ${css.limg}`
+    }
     return (
-      <section className={`${css.section} ${css.limg}`}>
+      <section className={className}>
         <div className={css.img}>
           <img src={image} alt="" />
         </div>
