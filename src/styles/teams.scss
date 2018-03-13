@@ -7,6 +7,13 @@ $peopleImgSize: 190 * $w;
   background-color: $cBgBlue;
   text-align: center;
   color: $cNormalW;
+
+  .container {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+    padding: 0 244 * $w;
+  }
 }
 
 .title {
@@ -16,14 +23,6 @@ $peopleImgSize: 190 * $w;
   left: 100 * $w;
   display: inline-block;
   transform: translateX(-50%);
-}
-
-.container {
-  width: 1432 * $w;
-  // padding-left: 163.5 * $w;
-  display: inline-block;
-  text-align: left;
-  padding-bottom: 190 * $w;
 }
 
 .people {
