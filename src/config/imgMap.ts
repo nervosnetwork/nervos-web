@@ -50,6 +50,12 @@ teams.people3 = require('../images/teams/3.jpg')
 teams.people4 = require('../images/teams/4.jpg')
 
 //
+const supporters = {
+  supporter1: '',
+}
+supporters.supporter1 = require('../images/supporter/cmb.png')
+
+//
 const footer = {
   socialicon_01: '',
   socialicon_02: '',
@@ -68,6 +74,6 @@ footer.socialicon_05 = require('../images/footer/socialicon_05.png')
 footer.socialicon_06 = require('../images/footer/socialicon_06.png')
 footer.logo = require('../images/footer/logo.png')
 
-export { footer, teams, features, slogan, }
+export { footer, supporters, teams, features, slogan, }
 
 export default {}
