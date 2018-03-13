@@ -37,7 +37,9 @@ export default class extends React.Component {
       this.setState(() => ({ loaded: true, }))
     }, 0)
     window.onload = autoRenderSloganWord
-    if (!localePathList.includes(lang.language)) {
+    if (lang.language.startwidth('zh')) {
+      lang.changeLanguage('zh')
+    } else {
       lang.changeLanguage('en')
     }
   }
