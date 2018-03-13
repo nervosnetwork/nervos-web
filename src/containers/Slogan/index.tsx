@@ -37,7 +37,7 @@ export default class extends React.Component {
       this.setState(() => ({ loaded: true, }))
     }, 0)
     window.onload = autoRenderSloganWord
-    if (lang.language.startwidth('zh')) {
+    if (lang.language.startsWith('zh')) {
       lang.changeLanguage('zh')
     } else {
       lang.changeLanguage('en')
@@ -52,7 +52,7 @@ export default class extends React.Component {
   Locale = (props) => {
     const { t, lang, } = this
     return (
-      <div className={css.locale} >
+      <div className={css.locale}>
         {localeList.map((item) => {
           const { path, label, } = item
           return (
