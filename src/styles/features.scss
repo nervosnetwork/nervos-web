@@ -172,11 +172,18 @@
 
 .section {
 
+
   .img {
     display: inline-block;
 
     img {
       width: 100%;
+    }
+  }
+
+  &.first {
+    .desc {
+      padding-top: 55 * $w;
     }
   }
   .desc {
@@ -202,6 +209,7 @@
 
     .text {
       font-size: 24 * $w;
+      line-height: 40 * $w;
     }
   }
 
