@@ -63,6 +63,9 @@ export default {
       },
     ],
   },
+  supporters: {
+    title: 'Supporter',
+  },
   footer: {
     // navList: ['Privacy Policy', 'Contact Us', 'FAQ', ],
     navList: [
