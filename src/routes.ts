@@ -21,8 +21,8 @@ const routes: IPage[] = [
   // { path: '/', key: 'Header', module: 'Header', exact: true },
   { path: '/', key: 'Slogan', module: 'Slogan', },
   { path: '/', key: 'Features', module: 'Features', },
-  { path: '/', key: 'Teams', module: 'Teams', },
-  // { path: '/', key: 'Supporters', module: 'Supporters', },
+  // { path: '/', key: 'Teams', module: 'Teams', },
+  { path: '/', key: 'Supporters', module: 'Supporters', },
   { path: '/', key: 'Footer', module: 'Footer', },
 ]
 
