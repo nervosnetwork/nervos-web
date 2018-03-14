@@ -22,5 +22,5 @@ dist
 yarn-error
 lib/react_manifest.json
 
-
-
+# Editor file
+.vscode
