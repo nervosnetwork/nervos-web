@@ -15,21 +15,21 @@ export default {
     title: 'Features',
     sectionList: [
       {
-        title: 'COMMON KNOWLEDGE BASE',
+        title: 'A New Decentralized Computing Paradigm',
         text: [
-          'NERVOS 针对共同知识做了更泛化的抽象，比特币的 UTXO 模型 和 以太坊 Account 模型， 都可以在此泛化抽象之上轻松实现出来。 NERVOS 不在只是 『共享账本』， 而是真正意义上的 『共同知识库』。',
+          'NERVOS designed a radically decoupled decentralized computing platform to allow multiple paths of scalability, transaction certainty and low local latency, leading to Mobile and Web DApps with superior user experience.',
         ],
       },
       {
-        title: 'BUILT-IN IDENTITY',
+        title: 'Ready for Real World Applications',
         text: [
-          'In NERVOS, individuals and businesses can control their identities directly on the protocol layer, independent of any applications. Identities are critical for the expression of property right, which is the foundation of commerce.',
+          'Our system comes with built-in identity support that allows flexible trust models, which allows DApps to express real world trust based transaction context.',
         ],
       },
       {
-        title: 'PRACTICAL',
+        title: 'Interoperable with Existing Systems',
         text: [
-          'To reach NERVOS’ goal of serving real people and businesses, we have to make practical choices to integrate with today’s financial and commercial infrastructure. We provide protocol layer stable currency for price certainty and KYC & AML solutions for businesses to meet compliance requirements.',
+          'Our provide a standardized client interface with very limited state transition semantics. Existing systems can keep their programming language, business logic, and engineering best practices intact and seamlessly integrate with a world class public blockchain. ',
         ],
       },
     ],
