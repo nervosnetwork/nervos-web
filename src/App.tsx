@@ -1,9 +1,9 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import 'normalize.css'
-import { HashRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, } from 'react-router-dom'
 import AsyncRoutes from './components/AsyncRoutes'
-import { ThemeProvider } from './styled/styleUtils'
+import { ThemeProvider, } from './styled/styleUtils'
 import theme from './config/theme'
 import routes from './routes'
 
