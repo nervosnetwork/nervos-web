@@ -62,7 +62,7 @@ export default {
     ],
   },
   supporters: {
-    title: '支持',
+    title: '技术实现',
   },
   footer: {
     // navList: ['中文 ddddd', '中文 ddddd', '中文 ddddd', ],

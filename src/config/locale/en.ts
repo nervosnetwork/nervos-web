@@ -64,7 +64,7 @@ export default {
     ],
   },
   supporters: {
-    title: 'Supporter',
+    title: 'Technical Team',
   },
   footer: {
     // navList: ['Privacy Policy', 'Contact Us', 'FAQ', ],
