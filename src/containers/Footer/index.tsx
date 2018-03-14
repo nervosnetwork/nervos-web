@@ -124,7 +124,7 @@ export default class extends React.Component {
     return (
       <div className={css.right}>
         <Subscribe />
-        <SocialiconList />
+        {/* <SocialiconList /> */}
       </div>
     )
   }

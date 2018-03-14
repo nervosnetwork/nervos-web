@@ -24,7 +24,8 @@
     position: relative;
     // left: 100 * $w;
     display: inline-block;
-    transform: translateX(-40%);
+    // transform: translateX(-40%);
+    transform: translateX(-50%);
   }
   .vLine {
     display: block;
@@ -58,13 +59,14 @@
 
   .supporterImg {
     position: relative;
+    display: inline-block;
     width: 467 * $w;
     height: 164 * $w;
     background-color: $cNormalW;
 
     img {
       padding: 40 * $w 60 * $w;
-      max-width: 100%;
+      width: 100%;
       position: absolute;
       top: 50%;
       left: 50%;

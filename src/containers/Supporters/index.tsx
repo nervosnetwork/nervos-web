@@ -7,7 +7,12 @@ import { supporters as imgs, } from '../../config/imgMap'
 
 const css = require('../../styles/supporter')
 
-const supporterImgList = [imgs.supporter1, ]
+const supporterImgList = [
+  {
+    img: imgs.supporter1,
+    href: 'https://www.cryptape.com/#/about/',
+  },
+]
 
 export default class extends React.Component {
   state = {
@@ -23,7 +28,7 @@ export default class extends React.Component {
     const title = t('title')
     return (
       <div className={css.titleContainer}>
-        <div className={css.vLine} />
+        {/* <div className={css.vLine} /> */}
         <div className={`${css.title} fontBold`}>{title}</div>
       </div>
     )
@@ -33,19 +38,34 @@ export default class extends React.Component {
     const { SupporterCell, } = this
     return (
       <div className={css.supporterList}>
-        {supporterImgList.map((img, i) => <SupporterCell img={img} />)}
+        {supporterImgList.map((imgInfo, i) => {
+          const { img, href, } = imgInfo
+          return <SupporterCell img={img} href={href} />
+        })}
       </div>
     )
   }
 
   SupporterCell = (props) => {
-    const { img, } = props
-    return (
-      <div className={css.supporterCell}>
-        <div className={css.supporterImgBack} />
+    const { img, href, } = props
+    let logo
+    if (href) {
+      logo = (
+        <a className={css.supporterImg} href={href} target="_blank">
+          <img src={img} alt="" />
+        </a>
+      )
+    } else {
+      logo = (
         <div className={css.supporterImg}>
           <img src={img} alt="" />
         </div>
+      )
+    }
+    return (
+      <div className={css.supporterCell}>
+        <div className={css.supporterImgBack} />
+        {logo}
       </div>
     )
   }

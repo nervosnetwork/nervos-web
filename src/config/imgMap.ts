@@ -53,7 +53,7 @@ teams.people4 = require('../images/teams/4.jpg')
 const supporters = {
   supporter1: '',
 }
-supporters.supporter1 = require('../images/supporter/cmb.png')
+supporters.supporter1 = require('../images/supporter/cryptape.png')
 
 //
 const footer = {
