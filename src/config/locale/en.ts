@@ -3,7 +3,8 @@ import { footer, } from '../imgMap'
 export default {
   translations: {
     whitepaper: 'White Paper',
-    whitepaperHref: 'wp',
+    whitepaperHref:
+      'https://github.com/NervosFoundation/nervos-web/blob/master/nervos-ckb-zh-20180315.pdf',
     subscribe: 'subscribe',
   },
   slogan: {

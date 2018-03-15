@@ -72,7 +72,7 @@ export default class extends React.Component {
 
   Header = (props) => {
     const { t, lang, Locale, } = this
-    const subscribe = t('translations:whitepaper')
+    const subscribe = '白皮书'
     const href = t('translations:whitepaperHref')
     return (
       <div className={css.header}>

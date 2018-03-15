@@ -134,10 +134,16 @@
   padding-top: 100 * $w;
   display: inline-block;
 
-  a {
+  .object {
+    position: relative;
     display: inline-block;
     width: 65 * $w;
+    height: 65 * $w;
     margin: 0 30 * $w;
+  }
+
+  object.object {
+    position: absolute;
   }
 }
 
@@ -281,8 +287,10 @@
   .socialiconContainer {
     padding-top: 100 * $w;
 
-    a {
+    .object {
       width: 65 * $w;
+      height: 65 * $w;
+      margin: 0 30 * $w;
     }
   }
 
