@@ -114,7 +114,7 @@ export default class extends React.Component {
             actionLittleImgCss: `${css.actionBefore} ${css.action}`,
           })
         }, 100)
-      }, 1000)
+      }, 1200)
       setTimeout(() => {
         resolve()
       }, sloganWordTimeout)

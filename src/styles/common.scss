@@ -37,6 +37,9 @@ body {
 }
 
 :global {
+  #root {
+    overflow: hidden;
+  }
   .fontBold {
     font-family: "myrida";
   }
