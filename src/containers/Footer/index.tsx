@@ -115,13 +115,13 @@ export default class extends React.Component {
     <div className={css.socialiconList}>
       {socialiconList.map((item) => (
         <div className={css.socialiconContainer}>
-          <a href={item.href}>
-            <object
-              className={css.object}
-              data={item.img}
-              type="image/svg+xml"
-              aria-label=""
-            />
+          <object
+            className={css.object}
+            data={item.img}
+            type="image/svg+xml"
+            aria-label=""
+          />
+          <a href={item.href} className={css.object}>
             {/* <img className={css.object} src={item.img}  /> */}
           </a>
         </div>
