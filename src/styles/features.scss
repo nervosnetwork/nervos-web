@@ -10,6 +10,7 @@
   color: $cNormalB;
   position: relative;
   text-align: center;
+  padding-bottom: 100 * $w;
   // padding-left: 92 * $w;
   // padding-right: 67 * $w;
 
@@ -17,7 +18,7 @@
     display: inline-block;
     position: relative;
 
-    top: -120 * $w;
+    top: -28 * $w;
   }
 }
 
@@ -28,7 +29,7 @@
     font-size: 60 * $w;
     color: $cImportant;
     position: absolute;
-    bottom: 65 * $w;
+    bottom: 50 * $w;
     left: 185 * $w;
     display: inline-block;
 
@@ -50,7 +51,7 @@
 .subscribe {
   color: $cImportant;
   position: absolute;
-  bottom: 120 * $w;
+  bottom: 80 * $w;
   left: 275 * $w;
   font-family: "myrida";
 
@@ -62,7 +63,7 @@
     &.left {
       border-right: none;
       border-bottom: none;
-      height: 90 * $w;
+      height: 59 * $w;
       left: 0;
       top: 50%;
       transform: translate(-274 * $w);
@@ -96,7 +97,7 @@
       height: 70 * $w;
       text-align: center;
       text-transform: uppercase;
-      line-height: 3.64583vw;
+      line-height: 70 * $w;
       background-color: $cImportant;
       cursor: pointer;
       font-family: "lucdia";
@@ -141,7 +142,7 @@
     background-color: $cImportant;
 
     &.top1 {
-      height: 53 * $w;
+      height: 50 * $w;
       left: 185 * $w;
       top: 0;
       transform: translateY(-100%);
@@ -172,7 +173,7 @@
 
 .section {
   position: relative;
-
+  margin-bottom: 65 * $w;
 
   .img {
     display: inline-block;
@@ -237,6 +238,175 @@
       padding-right: 90 * $w;
       width: 660 * $w;
       text-align: left;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  $w: (1vw / 10.8);
+  .main {
+    padding-bottom: 100 * $w;
+
+    .container {
+      top: -28 * $w;
+    }
+  }
+
+  .titleContainer {
+    .title {
+      font-size: 60 * $w;
+      bottom: 50 * $w;
+      left: 185 * $w;
+
+      // .text {
+      // }
+    }
+    .verticalLine {
+      height: 53 * $w;
+      left: 185 * $w;
+    }
+  }
+
+  .subscribe {
+    bottom: 80 * $w;
+    left: 275 * $w;
+
+    .line {
+      width: 230 * $w;
+
+      &.left {
+        height: 59 * $w;
+        transform: translate(-274 * $w);
+      }
+
+      &.right {
+        height: 200 * $w;
+      }
+    }
+
+    .buttonOuter {
+      width: 255 * $w;
+      height: 85 * $w;
+
+      .buttonInner {
+        font-size: 28 * $w;
+        width: 240 * $w;
+        height: 70 * $w;
+        line-height: 70 * $w;
+
+        // &:hover {
+        // }
+      }
+      .diagonal {
+        width: 21 * $w;
+        right: -6 * $w;
+        bottom: 15 * $w;
+      }
+    }
+  }
+
+  .sectionList {
+    padding-top: 70 * $w;
+    padding-bottom: 130 * $w;
+    width: 1000 * $w;
+
+    .border {
+      left: 25 * $w;
+      top: 21 * $w;
+    }
+
+    .verticalLine {
+      &.top1 {
+        height: 50 * $w;
+        left: 185 * $w;
+      }
+
+      &.top2 {
+        height: 135 * $w;
+        left: 185 * $w;
+      }
+
+      &.bottom1 {
+        height: 228 * $w;
+        left: 256 * $w;
+      }
+
+      &.bottom2 {
+        height: 100 * $w;
+        left: 256 * $w;
+      }
+    }
+  }
+
+  .section {
+    position: relative;
+    margin-bottom: 65 * $w;
+
+    .img {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, 0);
+      height: 450 * $w;
+      width: auto;
+
+      img {
+        height: 100%;
+        width: auto;
+        max-height: 100%;
+      }
+    }
+
+    &.first {
+      .desc {
+        padding-top: 55 * $w;
+      }
+    }
+    .desc {
+      margin-top: 500 * $w;
+
+      .title {
+        font-size: 48 * $w;
+        padding-bottom: 60 * $w;
+
+        &::after {
+          bottom: 30 * $w;
+          width: 62 * $w;
+          height: 7 * $w;
+          background-color: $cImportant;
+        }
+      }
+
+      .text {
+        font-size: 24 * $w;
+        line-height: 40 * $w;
+      }
+    }
+
+    &.limg {
+      .desc {
+        width: 1130 * $w;
+        padding-left: 95 * $w;
+        padding-right: 220 * $w;
+      }
+      .img {
+        padding: 0;
+        width: auto;
+      }
+    }
+
+    &.rimg {
+      .desc {
+        width: 1060 * $w;
+        padding-left: 140 * $w;
+        padding-right: 145 * $w;
+      }
+      .img {
+        padding-right: 90 * $w;
+        width: auto;
+        text-align: center;
+        padding: 0;
+      }
     }
   }
 }

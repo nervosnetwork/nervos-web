@@ -7,12 +7,7 @@ import { supporters as imgs, } from '../../config/imgMap'
 
 const css = require('../../styles/supporter')
 
-const supporterImgList = [
-  {
-    img: imgs.supporter1,
-    href: 'https://www.cryptape.com/#/about/',
-  },
-]
+const supporterImgList = [imgs.supporter1, ]
 
 export default class extends React.Component {
   state = {
@@ -35,19 +30,19 @@ export default class extends React.Component {
   }
 
   SupporterList = (props) => {
-    const { SupporterCell, } = this
+    const { SupporterCell, t, } = this
     return (
       <div className={css.supporterList}>
-        {supporterImgList.map((imgInfo, i) => {
-          const { img, href, } = imgInfo
-          return <SupporterCell img={img} href={href} />
+        {t('supporterList', { returnObjects: true, }).map((prop, i) => {
+          const img = supporterImgList[i]
+          return <SupporterCell {...prop} img={img} />
         })}
       </div>
     )
   }
 
   SupporterCell = (props) => {
-    const { img, href, } = props
+    const { img, href, desc, name, } = props
     let logo
     if (href) {
       logo = (
@@ -64,8 +59,14 @@ export default class extends React.Component {
     }
     return (
       <div className={css.supporterCell}>
-        <div className={css.supporterImgBack} />
-        {logo}
+        <div className={css.supporterImgBack}>
+          <div className={css.backTop} />
+          {/* <div className={css.backBottom} /> */}
+          {logo}
+        </div>
+
+        <div className={css.name}>{name}</div>
+        {/* <div className={css.desc}>{desc}</div> */}
       </div>
     )
   }

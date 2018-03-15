@@ -97,7 +97,7 @@ export default class extends React.Component {
     return (
       <div className={css.sectionList}>
         <div className={`${css.verticalLine} ${css.top1}`} />
-        <div className={`${css.verticalLine} ${css.top2}`} />
+        {/* <div className={`${css.verticalLine} ${css.top2}`} /> */}
         <div className={css.border} />
         {sectionList.map(
           (section, i) =>
@@ -107,7 +107,7 @@ export default class extends React.Component {
               <SectionRImg section={section} index={i} />
             )
         )}
-        <div className={`${css.verticalLine} ${css.bottom1}`} />
+        {/* <div className={`${css.verticalLine} ${css.bottom1}`} /> */}
         <div className={`${css.verticalLine} ${css.bottom2}`} />
       </div>
     )

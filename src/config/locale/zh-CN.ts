@@ -6,8 +6,10 @@ export default {
   },
   slogan: {
     word: 'The Common Knowledge Base for The 7.6 Billion People.',
-    desc:
-      'NERVOS facilitates human collaboration on the global scale, and serves as the protocol of the new digital commonwealth. It employs an on-chain protocol governance model so that the network can evolve to maximize the welfare of all participants.',
+    desc: [
+      `Nervos is a suite of scalable and interoperable protocols and an open blockchain platform for decentralized applications. It utilizes "Trustware", a new decentralized computing paradigm that goes beyond distributed ledgers and smart contracts, to bring general expression of trust into the context of transactions to meet the demand of today's real world applications. `,
+      `In contrast to smart contract platforms, Nervos uses the "Common Knowledge Base", a simpler state machine with uniform state transation semantics for superior scalability,  interoperability and more aligned incentives for all participants of the network.`,
+    ],
   },
   features: {
     title: '特性',
@@ -63,6 +65,13 @@ export default {
   },
   supporters: {
     title: '技术实现',
+    supporterList: [
+      {
+        name: 'CRYPTAPE',
+        desc: 'Inter-enterprise Trust Automation ',
+        href: 'https://www.cryptape.com/#/about/',
+      },
+    ],
   },
   footer: {
     // navList: ['中文 ddddd', '中文 ddddd', '中文 ddddd', ],

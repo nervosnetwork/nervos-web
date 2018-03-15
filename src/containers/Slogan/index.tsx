@@ -2,7 +2,7 @@ import * as React from 'react'
 import { createPortal, } from 'react-dom'
 import { I18n, } from 'react-i18next'
 
-import { Header, Logo, Navs, NavItem, } from '../../styled/Common'
+import { Logo, Navs, NavItem, } from '../../styled/Common'
 import { log, } from '../../utils'
 import { slogan as imgs, } from '../../config/imgMap'
 
@@ -38,7 +38,8 @@ export default class extends React.Component {
     }, 0)
     window.onload = autoRenderSloganWord
     if (lang.language.startsWith('zh')) {
-      lang.changeLanguage('zh')
+      // lang.changeLanguage('zh')
+      lang.changeLanguage('en')
     } else {
       lang.changeLanguage('en')
     }
@@ -65,6 +66,23 @@ export default class extends React.Component {
             </div>
           )
         })}
+      </div>
+    )
+  }
+
+  Header = (props) => {
+    const { t, lang, Locale, } = this
+    const subscribe = t('translations:whitepaper')
+    const href = t('translations:whitepaperHref')
+    return (
+      <div className={css.header}>
+        <div className={css.image}>
+          <img src={imgs.logo} alt="logo" />
+        </div>
+        <a className={`${css.locale} ${css.whitePaper}`} href={href}>
+          {subscribe}
+        </a>
+        {/* <Locale /> */}
       </div>
     )
   }
@@ -96,7 +114,7 @@ export default class extends React.Component {
             actionLittleImgCss: `${css.actionBefore} ${css.action}`,
           })
         }, 100)
-      }, 2000)
+      }, 1200)
       setTimeout(() => {
         resolve()
       }, sloganWordTimeout)
@@ -128,11 +146,10 @@ export default class extends React.Component {
     const { t, lang, } = this
     return (
       <div className={css.description}>
-        <div className={css.image}>
-          <img src={imgs.logo} alt="logo" />
-        </div>
         <SloganWord />
-        <div className={css.text}>{t('desc')}</div>
+        {t('desc', { returnObjects: true, }).map((desc, i) => (
+          <div className={css.text}>{desc}</div>
+        ))}
       </div>
     )
   }
@@ -140,7 +157,6 @@ export default class extends React.Component {
   SloganImg = (props) => {
     const { actionBigImgCss, actionLittleImgCss, } = this.state
     return (
-      //   需要添加动效
       <div className={css.sloganImg}>
         <img
           className={`${css.n1} ${css.little} ${actionLittleImgCss}`}
@@ -202,7 +218,7 @@ export default class extends React.Component {
   }
 
   render () {
-    const { props, Locale, Description, SloganImg, Subscribe, } = this
+    const { props, Header, Description, SloganImg, Subscribe, } = this
     const { loaded, } = this.state
     return (
       <I18n ns="slogan">
@@ -214,9 +230,9 @@ export default class extends React.Component {
               className={css.slogan}
               style={{ backgroundImage: `url(${imgs.bg}`, }}
             >
-              <Locale />
-              <Description />
+              <Header />
               <SloganImg />
+              <Description />
             </div>
           )
         }}

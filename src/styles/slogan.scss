@@ -5,37 +5,53 @@
   background-size: cover;
   width: 100vw;
   height: 64.06vw;
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
 }
 
-.locale {
-  color: white;
-  font-size: 24 * $w;
-  position: absolute;
-  margin-top: 3.125vw;
-  right: 4.6875vw;
-  z-index: 200;
-  cursor: pointer;
+.header {
+  .image {
+    padding-top: 80 * $w;
+    padding-left: 340 * $w;
 
-  div {
-    display: inline-block;
-    text-transform: uppercase;
-
-    &.active {
-      color: $cImportant;
+    img {
+      width: 449 * $w;
     }
   }
 
-  div:first-child {
-    padding-right: 12 * $w;
-  }
+  .locale {
+    color: white;
+    font-size: 24 * $w;
+    position: absolute;
+    right: 80 * $w;
+    top: 60 * $w;
+    cursor: pointer;
+    z-index: 1000;
 
-  div ~ div {
-    &::before {
-      content: "|";
-      color: $cNormalW;
+    &.whitePaper {
+      color: $cImportant;
+      text-transform: uppercase;
+    }
+
+    div {
+      display: inline-block;
+      text-transform: uppercase;
+
+      &.active {
+        color: $cImportant;
+      }
+    }
+
+    div:first-child {
       padding-right: 12 * $w;
+    }
+
+    div ~ div {
+      &::before {
+        content: "|";
+        color: $cNormalW;
+        padding-right: 12 * $w;
+      }
     }
   }
 }
@@ -43,32 +59,24 @@
 .description {
   display: inline-block;
   vertical-align: top;
-  margin-top: 4.948vw;
-  margin-left: 8.33vw;
+  margin-left: 90 * $w;
   width: 855 * $w;
   color: $cNormalW;
-
-  .image {
-    text-align: center;
-
-    img {
-      width: 449 * $w;
-    }
-  }
 
   .sloganWord {
     color: $cImportant;
     //   font-size: 60vw * (4 / (3 * 19.2));
     font-size: 60 * $w;
     position: relative;
-    margin-top: 105 * $w;
-    margin-bottom: 67 * $w;
-    width: 120%;
+    margin-top: 50 * $w;
+    margin-bottom: 20 * $w;
+    margin-left: 60 * $w;
+    width: 110%;
     text-align: left;
 
     img {
       position: absolute;
-      left: -30 * $w;
+      left: -10 * $w;
       width: 54 * $w;
       transform: translate(-100%, -50%);
     }
@@ -81,24 +89,26 @@
 
   .text {
     // width: 650 * $w;
-    width: 85%;
+    width: 104%;
     line-height: 40 * $w;
     font-size: 24 * $w;
+    padding-bottom: 60 * $w;
   }
 }
 
 .sloganImg {
   display: inline-block;
   position: absolute;
-  position: absolute;
   width: 51.3vw;
   height: 64.06vw;
   right: 0;
+  top: 0;
   z-index: 100;
+  transform: translate(40 * $w, 100 * $w);
 
   img {
     position: absolute;
-    transition: all 2s ease-out;
+    transition: all 1s ease-out;
 
     &.little {
       top: 30vw;
@@ -231,6 +241,239 @@
       bottom: 0;
       transform: rotate(45deg);
       transform-origin: 100%;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  $w: (1vw / 10.8);
+  .slogan {
+    width: 100vw;
+    height: auto;
+    padding-bottom: 300 * $w;
+  }
+
+  .header {
+    .image {
+      padding-top: 90 * $w;
+      padding-left: 100 * $w;
+
+      img {
+        width: 449 * $w;
+      }
+    }
+
+    .locale {
+      color: white;
+      font-size: 24 * $w;
+      position: absolute;
+      right: 37 * $w;
+      top: 80 * $w;
+      cursor: pointer;
+
+      div {
+        display: inline-block;
+        text-transform: uppercase;
+
+        &.active {
+          color: $cImportant;
+        }
+      }
+
+      div:first-child {
+        padding-right: 12 * $w;
+      }
+
+      div ~ div {
+        &::before {
+          content: "|";
+          color: $cNormalW;
+          padding-right: 12 * $w;
+        }
+      }
+    }
+  }
+
+  .description {
+    margin-left: 90 * $w;
+    width: 855 * $w;
+
+    .sloganWord {
+      color: $cImportant;
+      font-size: 60 * $w;
+      position: relative;
+      margin-bottom: 20 * $w;
+      margin-left: 60 * $w;
+      width: 100%;
+      text-align: left;
+
+      img {
+        position: absolute;
+        left: -10 * $w;
+        width: 54 * $w;
+        transform: translate(-100%, -50%);
+      }
+
+      .hidden {
+        // outline: 1px solid;
+        display: none;
+      }
+    }
+
+    .text {
+      // width: 650 * $w;
+      width: 104%;
+      line-height: 40 * $w;
+      font-size: 24 * $w;
+      padding-bottom: 60 * $w;
+    }
+  }
+
+  .sloganImg {
+    display: inline-block;
+    position: static;
+    width: 980 * $w;
+    height: 910 * $w;
+    right: 0;
+    z-index: 100;
+    transform: translate(100 * $w, -270 * $w);
+
+    img {
+      position: absolute;
+      transition: all 2s ease-out;
+
+      &.little {
+        top: 740 * $w;
+        display: none;
+
+        &.actionBefore {
+          display: inline-block;
+        }
+
+        &.n1 {
+          right: 586 * $w;
+          width: 89 * $w;
+          &.action {
+            top: 215 * $w;
+          }
+        }
+        &.n2 {
+          right: 489 * $w;
+          width: 117 * $w;
+          &.action {
+            top: 78 * $w;
+          }
+        }
+        &.n3 {
+          right: 436 * $w;
+          width: 53 * $w;
+          &.action {
+            top: 286 * $w;
+          }
+        }
+        &.n4 {
+          right: 290 * $w;
+          width: 167 * $w;
+          &.action {
+            top: 190 * $w;
+          }
+        }
+        &.n5 {
+          right: 252 * $w;
+          width: 76 * $w;
+          &.action {
+            top: 293 * $w;
+          }
+        }
+        &.n6 {
+          right: 145 * $w;
+          width: 226 * $w;
+          &.action {
+            top: 143 * $w;
+          }
+        }
+        &.n7 {
+          right: 67 * $w;
+          width: 66 * $w;
+          &.action {
+            top: 387 * $w;
+          }
+        }
+      }
+
+      &.big {
+        top: 270 * $w;
+        width: 100%;
+        transform: translate(100%, 100%);
+
+        &.actionBefore {
+          transform: translate(0);
+        }
+      }
+    }
+  }
+
+  .subscribe {
+    color: $cImportant;
+    position: absolute;
+    left: 552 * $w;
+    bottom: 305 * $w;
+
+    .line {
+      border: 1px solid;
+      width: 230 * $w;
+      position: absolute;
+
+      &.left {
+        border-right: none;
+        border-bottom: none;
+        height: 90 * $w;
+        left: 0;
+        top: 50%;
+        transform: translate(-274 * $w);
+      }
+
+      &.right {
+        border-left: none;
+        border-top: none;
+        height: 200 * $w;
+        right: 0;
+        bottom: 50%;
+        transform: translate(120%);
+      }
+    }
+
+    .buttonOuter {
+      border: 1px solid;
+      width: 255 * $w;
+      height: 85 * $w;
+
+      .buttonInner {
+        border: 1px solid $cImportant;
+        color: $cNormalW;
+        font-size: 28 * $w;
+        width: 240 * $w;
+        height: 70 * $w;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 3.64583vw;
+        background-color: $cImportant;
+        cursor: pointer;
+
+        &:hover {
+          color: $cButtonHover;
+        }
+      }
+      .diagonal {
+        position: absolute;
+        width: (21.213vw / 19.2);
+        height: 1px;
+        background-color: $cImportant;
+        right: 0;
+        bottom: 0;
+        transform: rotate(45deg);
+        transform-origin: 100%;
+      }
     }
   }
 }

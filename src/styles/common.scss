@@ -1,4 +1,4 @@
-@import 'size.scss';
+@import "size.scss";
 
 @font-face {
   font-family: "lucdia";
@@ -37,6 +37,9 @@ body {
 }
 
 :global {
+  #root {
+    overflow: hidden;
+  }
   .fontBold {
     font-family: "myrida";
   }
@@ -44,7 +47,7 @@ body {
 
 @media (max-width: 1080px) {
   $w: (1vw / 10.8);
-  // body {
-  //   // font-size: 24 * $w;
-  // }
+  body {
+    font-size: 24 * $w;
+  }
 }
