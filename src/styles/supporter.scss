@@ -10,7 +10,7 @@
     display: inline-block;
     text-align: left;
     width: 100%;
-    padding: 0 360 * $w;
+    // padding: 0 360 * $w;
   }
 }
 
@@ -22,7 +22,8 @@
     font-size: 60 * $w;
     color: $cImportant;
     position: relative;
-    // left: 100 * $w;
+    left: 300 * $w;
+    // padding-left: 360 * $w;
     display: inline-block;
     // transform: translateX(-40%);
     transform: translateX(-50%);
@@ -46,31 +47,132 @@
   display: inline-block;
   text-align: center;
   position: relative;
+  line-height: 40 * $w;
+  width: 273 * $w;
+  height: 150 * $w;
+  // font-size: 24 * $w;
 
   .supporterImgBack {
-    width: 502 * $w;
-    height: 126 * $w;
+    width: 274 * $w;
+    height: 150 * $w;
+    position: relative;
+    background-color: #48506d;
+
+    .backTop {
+      width: 100%;
+      height: 10 * $w;
+      background-color: $cImportant;
+      transition: all 0.5s ease;
+    }
+    &:hover {
+      .backTop {
+        height: 150 * $w;
+      }
+    }
+  }
+
+  .name {
+    color: $cImportant;
+    padding-top: 27 * $w;
+  }
+
+  .desc {
+    color: $cNormalW;
+  }
+
+  .supporterImg {
+    display: inline-block;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: $cImportant;
-  }
-
-  .supporterImg {
-    position: relative;
-    display: inline-block;
-    width: 467 * $w;
-    height: 164 * $w;
-    background-color: $cNormalW;
+    width: 274 * $w;
+    // background-color: $cNormalW;
 
     img {
-      padding: 40 * $w 60 * $w;
+      // padding: 40 * $w 60 * $w;
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  $w: (1vw / 10.8);
+  .main {
+    padding-bottom: 190 * $w;
+
+    // .container {
+    // }
+  }
+
+  .titleContainer {
+    margin-bottom: 80 * $w;
+
+    .title {
+      font-size: 60 * $w;
+      left: 300 * $w;
+    }
+    .vLine {
+      height: 106 * $w;
+      margin-bottom: 20 * $w;
+    }
+  }
+
+  .supporterList {
+    text-align: center;
+  }
+
+  .supporterCell {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    line-height: 40 * $w;
+    width: 273 * $w;
+    height: 150 * $w;
+    // font-size: 24 * $w;
+
+    .supporterImgBack {
+      width: 274 * $w;
+      height: 150 * $w;
+      position: relative;
+      background-color: #48506d;
+
+      .backTop {
+        width: 100%;
+        height: 10 * $w;
+        background-color: $cImportant;
+        transition: all 0.5s ease;
+      }
+
+      &:hover {
+        .backTop {
+          height: 150 * $w;
+        }
+      }
+    }
+
+    .name {
+      color: $cImportant;
+      padding-top: 27 * $w;
+    }
+
+    .desc {
+      color: $cNormalW;
+    }
+
+    .supporterImg {
+      display: inline-block;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: 274 * $w;
+      // background-color: $cNormalW;
+
+      img {
+        // padding: 40 * $w 60 * $w;
+        width: 100%;
+      }
     }
   }
 }

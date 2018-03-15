@@ -22,7 +22,7 @@ module.exports = {
         include: /src/,
       },
       {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.(png|jpg)$/,
         loader: 'url-loader',
         options: {
           limit: 8192,
@@ -31,7 +31,7 @@ module.exports = {
         include: /src/,
       },
       {
-        test: /\.(otf|woff|woff2|ttf)$/,
+        test: /\.(otf|woff|woff2|ttf|svg)$/,
         loader: 'file-loader',
         options: {
           mimetype: 'application/font-woff',

@@ -122,11 +122,16 @@
   }
 }
 
+.socialiconList {
+  text-align: left;
+}
+
 .socialiconContainer {
   padding-top: 100 * $w;
   display: inline-block;
 
-  img {
+  a {
+    display: inline-block;
     width: 65 * $w;
     margin: 0 30 * $w;
   }
@@ -271,22 +276,16 @@
 
   .socialiconContainer {
     padding-top: 100 * $w;
-    display: inline-block;
 
-    img {
+    a {
       width: 65 * $w;
-      margin: 0 30 * $w;
     }
   }
 
   .bottom {
     margin-top: 80 * $w;
-    display: inline-block;
-    border-top: 1px solid $cImportant;
     padding-top: 80 * $w;
     padding-left: 55 * $w;
     padding-bottom: 160 * $w;
-    // height: 100px;
-    width: 100%;
   }
 }

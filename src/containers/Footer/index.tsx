@@ -9,28 +9,32 @@ import { footer as imgs, } from '../../config/imgMap'
 const css = require('../../styles/footer')
 
 const socialiconList = [
+  // {
+  //   img: imgs.socialicon_01,
+  //   href: 'social',
+  // },
+  // {
+  //   img: imgs.socialicon_02,
+  //   href: 'social',
+  // },
+  // {
+  //   img: imgs.socialicon_03,
+  //   href: 'social',
+  // },
+  // {
+  //   img: imgs.socialicon_04,
+  //   href: 'social',
+  // },
+  // {
+  //   img: imgs.socialicon_05,
+  //   href: 'social',
+  // },
+  // {
+  //   img: imgs.socialicon_06,
+  //   href: 'social',
+  // },
   {
-    img: imgs.socialicon_01,
-    href: 'social',
-  },
-  {
-    img: imgs.socialicon_02,
-    href: 'social',
-  },
-  {
-    img: imgs.socialicon_03,
-    href: 'social',
-  },
-  {
-    img: imgs.socialicon_04,
-    href: 'social',
-  },
-  {
-    img: imgs.socialicon_05,
-    href: 'social',
-  },
-  {
-    img: imgs.socialicon_06,
+    img: imgs.github,
     href: 'social',
   },
 ]
@@ -112,7 +116,8 @@ export default class extends React.Component {
       {socialiconList.map((item) => (
         <div className={css.socialiconContainer}>
           <a href={item.href}>
-            <img src={item.img} alt="" />
+            <object className={css.object} data={item.img} type="image/svg+xml" aria-label="" />
+            {/* <img className={css.object} src={item.img}  /> */}
           </a>
         </div>
       ))}
@@ -124,7 +129,7 @@ export default class extends React.Component {
     return (
       <div className={css.right}>
         <Subscribe />
-        {/* <SocialiconList /> */}
+        <SocialiconList />
       </div>
     )
   }

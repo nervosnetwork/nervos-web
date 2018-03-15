@@ -27,12 +27,10 @@ slogan.action6 = require('../images/slogan/action6.png')
 slogan.action7 = require('../images/slogan/action7.png')
 
 const features = {
-  bg: '',
   auto: '',
   re: '',
   pr: '',
 }
-features.bg = require('../images/features/bg.png')
 features.auto = require('../images/features/auto.png')
 features.re = require('../images/features/re.png')
 features.pr = require('../images/features/pr.png')
@@ -63,6 +61,7 @@ const footer = {
   socialicon_04: '',
   socialicon_05: '',
   socialicon_06: '',
+  github: '',
   logo: '',
 }
 
@@ -72,6 +71,7 @@ footer.socialicon_03 = require('../images/footer/socialicon_03.png')
 footer.socialicon_04 = require('../images/footer/socialicon_04.png')
 footer.socialicon_05 = require('../images/footer/socialicon_05.png')
 footer.socialicon_06 = require('../images/footer/socialicon_06.png')
+footer.github = require('../images/footer/github.svg')
 footer.logo = require('../images/footer/logo.png')
 
 export { footer, supporters, teams, features, slogan, }

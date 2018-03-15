@@ -2,7 +2,7 @@ import * as React from 'react'
 import { createPortal, } from 'react-dom'
 import { I18n, } from 'react-i18next'
 
-import { Header, Logo, Navs, NavItem, } from '../../styled/Common'
+import { Logo, Navs, NavItem, } from '../../styled/Common'
 import { log, } from '../../utils'
 import { slogan as imgs, } from '../../config/imgMap'
 
@@ -69,6 +69,18 @@ export default class extends React.Component {
     )
   }
 
+  Header = (props) => {
+    const { t, lang, Locale, } = this
+    return (
+      <div className={css.header}>
+        <div className={css.image}>
+          <img src={imgs.logo} alt="logo" />
+        </div>
+        <Locale />
+      </div>
+    )
+  }
+
   autoRenderSloganWord = () => {
     const { t, } = this
 
@@ -128,11 +140,10 @@ export default class extends React.Component {
     const { t, lang, } = this
     return (
       <div className={css.description}>
-        <div className={css.image}>
-          <img src={imgs.logo} alt="logo" />
-        </div>
         <SloganWord />
-        <div className={css.text}>{t('desc')}</div>
+        {t('desc', { returnObjects: true, }).map((desc, i) => (
+          <div className={css.text}>{desc}</div>
+        ))}
       </div>
     )
   }
@@ -202,7 +213,7 @@ export default class extends React.Component {
   }
 
   render () {
-    const { props, Locale, Description, SloganImg, Subscribe, } = this
+    const { props, Header, Description, SloganImg, Subscribe, } = this
     const { loaded, } = this.state
     return (
       <I18n ns="slogan">
@@ -214,9 +225,9 @@ export default class extends React.Component {
               className={css.slogan}
               style={{ backgroundImage: `url(${imgs.bg}`, }}
             >
-              <Locale />
-              <Description />
+              <Header />
               <SloganImg />
+              <Description />
             </div>
           )
         }}
