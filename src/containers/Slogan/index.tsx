@@ -38,7 +38,8 @@ export default class extends React.Component {
     }, 0)
     window.onload = autoRenderSloganWord
     if (lang.language.startsWith('zh')) {
-      lang.changeLanguage('zh')
+      // lang.changeLanguage('zh')
+      lang.changeLanguage('en')
     } else {
       lang.changeLanguage('en')
     }
@@ -71,12 +72,17 @@ export default class extends React.Component {
 
   Header = (props) => {
     const { t, lang, Locale, } = this
+    const subscribe = t('translations:whitepaper')
+    const href = t('translations:whitepaperHref')
     return (
       <div className={css.header}>
         <div className={css.image}>
           <img src={imgs.logo} alt="logo" />
         </div>
-        <Locale />
+        <a className={`${css.locale} ${css.whitePaper}`} href={href}>
+          {subscribe}
+        </a>
+        {/* <Locale /> */}
       </div>
     )
   }
@@ -108,7 +114,7 @@ export default class extends React.Component {
             actionLittleImgCss: `${css.actionBefore} ${css.action}`,
           })
         }, 100)
-      }, 2000)
+      }, 1000)
       setTimeout(() => {
         resolve()
       }, sloganWordTimeout)
@@ -151,7 +157,6 @@ export default class extends React.Component {
   SloganImg = (props) => {
     const { actionBigImgCss, actionLittleImgCss, } = this.state
     return (
-      //   需要添加动效
       <div className={css.sloganImg}>
         <img
           className={`${css.n1} ${css.little} ${actionLittleImgCss}`}

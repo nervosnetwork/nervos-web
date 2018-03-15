@@ -35,8 +35,12 @@
   }
 
   .navItem {
-    display: block;
+    display: inline-block;
     margin-bottom: 25 * $w;
+
+    &:hover {
+      color: $cImportant;
+    }
   }
 }
 
@@ -183,8 +187,8 @@
       display: inline-block;
       position: absolute;
       top: 50%;
-      right: 0;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
 
       .navItem {
         display: inline-block;

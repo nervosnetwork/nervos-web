@@ -78,18 +78,18 @@ export default {
   footer: {
     // navList: ['Privacy Policy', 'Contact Us', 'FAQ', ],
     navList: [
-      {
-        label: 'Privacy Policy',
-        href: 'pp',
-      },
+      // {
+      //   label: 'Privacy Policy',
+      //   href: 'pp',
+      // },
       {
         label: 'Contact Us',
-        href: 'cu',
+        href: 'mailto: hello@nervos.org',
       },
-      {
-        label: 'FAQ',
-        href: 'faq',
-      },
+      // {
+      //   label: 'FAQ',
+      //   href: 'faq',
+      // },
     ],
     enterMail: 'Enter your email address',
   },

@@ -66,7 +66,7 @@ export default class extends React.Component {
         </div>
 
         <div className={css.name}>{name}</div>
-        <div className={css.desc}>{desc}</div>
+        {/* <div className={css.desc}>{desc}</div> */}
       </div>
     )
   }

@@ -26,6 +26,12 @@
     right: 80 * $w;
     top: 60 * $w;
     cursor: pointer;
+    z-index: 1000;
+
+    &.whitePaper {
+      color: $cImportant;
+      text-transform: uppercase;
+    }
 
     div {
       display: inline-block;

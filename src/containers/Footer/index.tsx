@@ -35,7 +35,7 @@ const socialiconList = [
   // },
   {
     img: imgs.github,
-    href: 'social',
+    href: 'https://github.com/NervosFoundation',
   },
 ]
 
@@ -62,9 +62,9 @@ export default class extends React.Component {
         {navList.map((item, i) => {
           const href = navHrefList[i]
           return (
-            <Link className={css.navItem} to={item.href}>
+            <a className={css.navItem} href={item.href}>
               {item.label}
-            </Link>
+            </a>
           )
         })}
       </div>
@@ -92,7 +92,7 @@ export default class extends React.Component {
         <div className={css.buttonOuter}>
           <form
             className="sc-fBuWsC eeihxG"
-            action="https://ezcook.us17.list-manage.com/subscribe/post?u=6b6750d23d175a99aa207330c&amp;id=405f6d7e8b"
+            action="https://nervos.us12.list-manage.com/subscribe/post?u=4c8614ca1116cd07ea946454e&amp;id=bb84a46985"
             method="post"
             id="mc-embedded-subscribe-form"
             name="mc-embedded-subscribe-form"
@@ -116,7 +116,12 @@ export default class extends React.Component {
       {socialiconList.map((item) => (
         <div className={css.socialiconContainer}>
           <a href={item.href}>
-            <object className={css.object} data={item.img} type="image/svg+xml" aria-label="" />
+            <object
+              className={css.object}
+              data={item.img}
+              type="image/svg+xml"
+              aria-label=""
+            />
             {/* <img className={css.object} src={item.img}  /> */}
           </a>
         </div>
