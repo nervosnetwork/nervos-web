@@ -32,7 +32,7 @@ export default {
       {
         title: 'Interoperable with Existing Systems',
         text: [
-          'Nervos provides a standardized client interface with a small set of state transition semantics. Existing systems don't have to change their programming language, move their business rules, or break their engineering best practices to integrate with a world class public blockchain. ',
+          'Nervos provides a standardized client interface with a small set of state transition semantics. Existing systems don\'t have to change their programming language, move their business rules, or break their engineering best practices to integrate with a world class public blockchain. ',
         ],
       },
     ],
