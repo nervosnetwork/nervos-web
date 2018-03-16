@@ -62,16 +62,18 @@ const footer = {
   socialicon_05: '',
   socialicon_06: '',
   github: '',
+  githubHover: '',
   logo: '',
 }
 
-footer.socialicon_01 = require('../images/footer/socialicon_01.png')
-footer.socialicon_02 = require('../images/footer/socialicon_02.png')
-footer.socialicon_03 = require('../images/footer/socialicon_03.png')
-footer.socialicon_04 = require('../images/footer/socialicon_04.png')
-footer.socialicon_05 = require('../images/footer/socialicon_05.png')
-footer.socialicon_06 = require('../images/footer/socialicon_06.png')
-footer.github = require('../images/footer/github.svg')
+// footer.socialicon_01 = require('../images/footer/socialicon_01.png')
+// footer.socialicon_02 = require('../images/footer/socialicon_02.png')
+// footer.socialicon_03 = require('../images/footer/socialicon_03.png')
+// footer.socialicon_04 = require('../images/footer/socialicon_04.png')
+// footer.socialicon_05 = require('../images/footer/socialicon_05.png')
+// footer.socialicon_06 = require('../images/footer/socialicon_06.png')
+footer.github = require('../images/footer/github.png')
+footer.githubHover = require('../images/footer/githubHover.png')
 footer.logo = require('../images/footer/logo.png')
 
 export { footer, supporters, teams, features, slogan, }

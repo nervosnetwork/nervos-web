@@ -21,33 +21,49 @@
 .left {
   display: inline-block;
   padding-left: 32 * $w;
-  padding-top: 130 * $w;
+  padding-top: 150 * $w;
   vertical-align: top;
   width: 750 * $w;
-
-  .image {
-    width: 120 * $w;
-    padding-bottom: 70 * $w;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .navItem {
-    display: inline-block;
-    margin-bottom: 25 * $w;
-
-    &:hover {
-      color: $cImportant;
-    }
-  }
+  font-size: 28 * $w;
 }
 
 .right {
   display: inline-block;
   text-align: center;
   padding-top: 150 * $w;
+  font-size: 28 * $w;
+}
+
+.logo {
+  .img {
+    height: 136 * $w;
+  }
+  .label {
+    display: inline-block;
+    line-height: 136 * $w;
+    height: 136 * $w;
+    padding-left: 40 * $w;
+    vertical-align: top;
+
+    .link {
+      &:hover {
+        color: $cImportant;
+      }
+    }
+  }
+}
+
+.nav {
+  .navItem {
+    display: inline-block;
+    margin-bottom: 25 * $w;
+    height: 65 * $w;
+    line-height: 65 * $w;
+
+    &:hover {
+      color: $cImportant;
+    }
+  }
 }
 
 .subscribe {
@@ -128,22 +144,33 @@
 
 .socialiconList {
   text-align: left;
-}
 
-.socialiconContainer {
-  padding-top: 100 * $w;
-  display: inline-block;
-
-  .object {
-    position: relative;
+  .socialiconContainer {
     display: inline-block;
-    width: 65 * $w;
-    height: 65 * $w;
-    margin: 0 30 * $w;
-  }
+    .link {
+      display: inline-block;
+      .img {
+        width: 65 * $w;
+        height: 65 * $w;
+        display: inline-block;
+      }
 
-  object.object {
-    position: absolute;
+      .imgHover {
+        width: 65 * $w;
+        height: 65 * $w;
+        display: none;
+      }
+    }
+
+    .link:hover {
+      .imgHover {
+        display: inline-block;
+      }
+
+      .img {
+        display: none;
+      }
+    }
   }
 }
 
@@ -156,6 +183,7 @@
   padding-bottom: 160 * $w;
   // height: 100px;
   width: 100%;
+  font-size: 28 * $w;
 }
 
 @media (max-width: 1080px) {
@@ -166,7 +194,7 @@
 
   .container {
     display: inline-block;
-    text-align: left;
+    text-align: center;
     width: 100%;
     padding: 0 135 * $w;
     font-size: 21 * $w;
@@ -174,41 +202,45 @@
 
   .left {
     display: inline-block;
-    position: relative;
-    margin-top: 130 * $w;
-    margin-bottom: 70 * $w;
-    padding: 0;
+    padding-left: 0 * $w;
+    padding-top: 50 * $w;
+    vertical-align: top;
     width: 750 * $w;
-
-    .image {
-      display: inline-block;
-      width: 120 * $w;
-
-      img {
-        width: 100%;
-      }
-    }
-
-    .nav {
-      display: inline-block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-      .navItem {
-        display: inline-block;
-        margin-bottom: 25 * $w;
-        margin-left: 118 * $w;
-      }
-    }
+    text-align: center;
+    font-size: 28 * $w;
   }
 
   .right {
     display: inline-block;
     text-align: center;
-    // padding-top: 0 * $w;
-    padding-top: 0;
+    padding-top: 50 * $w;
+    font-size: 28 * $w;
+  }
+
+  .logo {
+    .img {
+      height: 136 * $w;
+    }
+    .label {
+      display: inline-block;
+      line-height: 136 * $w;
+      height: 136 * $w;
+      padding-left: 40 * $w;
+      vertical-align: top;
+    }
+  }
+
+  .nav {
+    .navItem {
+      display: inline-block;
+      margin-bottom: 25 * $w;
+      height: 65 * $w;
+      line-height: 65 * $w;
+
+      &:hover {
+        color: $cImportant;
+      }
+    }
   }
 
   .subscribe {
@@ -264,6 +296,9 @@
           background-color: $cImportant;
           text-align: center;
           vertical-align: top;
+          padding: 0;
+          border: 0;
+          color: $cNormalW;
 
           &:hover {
             color: $cButtonHover;
@@ -284,20 +319,43 @@
     }
   }
 
-  .socialiconContainer {
-    padding-top: 100 * $w;
+  .socialiconList {
+    text-align: left;
 
-    .object {
-      width: 65 * $w;
-      height: 65 * $w;
-      margin: 0 30 * $w;
+    .socialiconContainer {
+      display: inline-block;
+      .link {
+        display: inline-block;
+        .img {
+          width: 65 * $w;
+          height: 65 * $w;
+          display: inline-block;
+        }
+
+        .imgHover {
+          width: 65 * $w;
+          height: 65 * $w;
+          display: none;
+        }
+      }
+
+      .link:hover {
+        .imgHover {
+          display: inline-block;
+        }
+
+        .img {
+          display: none;
+        }
+      }
     }
   }
 
   .bottom {
     margin-top: 80 * $w;
     padding-top: 80 * $w;
-    padding-left: 55 * $w;
+    padding-left: 0 * $w;
     padding-bottom: 160 * $w;
+    font-size: 28 * $w;
   }
 }

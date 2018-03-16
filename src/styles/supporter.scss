@@ -22,11 +22,9 @@
     font-size: 60 * $w;
     color: $cImportant;
     position: relative;
-    left: 300 * $w;
+    left: 150 * $w;
     // padding-left: 360 * $w;
     display: inline-block;
-    // transform: translateX(-40%);
-    transform: translateX(-50%);
   }
   .vLine {
     display: block;
@@ -110,7 +108,7 @@
 
     .title {
       font-size: 60 * $w;
-      left: 300 * $w;
+      left: 150 * $w;
     }
     .vLine {
       height: 106 * $w;

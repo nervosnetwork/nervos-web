@@ -17,13 +17,14 @@
   .container {
     display: inline-block;
     position: relative;
-
+    padding: 0 92.5 * $w;
     top: -28 * $w;
   }
 }
 
 .titleContainer {
-  position: relative;
+  position: absolute;
+  left: 0;
 
   .title {
     font-size: 60 * $w;
@@ -35,14 +36,14 @@
 
     .text {
       position: relative;
-      left: -50%;
+      left: -35 * $w;
     }
   }
   .verticalLine {
     width: $wLine;
     height: 53 * $w;
     position: absolute;
-    left: 185 * $w;
+    left: 277.5 * $w;
     bottom: 0;
     background-color: $cImportant;
   }
@@ -52,7 +53,7 @@
   color: $cImportant;
   position: absolute;
   bottom: 80 * $w;
-  left: 275 * $w;
+  left: 367.5 * $w;
   font-family: "myrida";
 
   .line {
@@ -164,7 +165,7 @@
 
     &.bottom2 {
       height: 100 * $w;
-      left: 256 * $w;
+      left: 185 * $w;
       bottom: 0;
       transform: translateY(100%);
     }
@@ -249,6 +250,7 @@
 
     .container {
       top: -28 * $w;
+      padding: 0 40 * $w;
     }
   }
 
@@ -258,18 +260,19 @@
       bottom: 50 * $w;
       left: 185 * $w;
 
-      // .text {
-      // }
+      .text {
+        left: -35 * $w;
+      }
     }
     .verticalLine {
       height: 53 * $w;
-      left: 185 * $w;
+      left: 277.5 * $w;
     }
   }
 
   .subscribe {
     bottom: 80 * $w;
-    left: 275 * $w;
+    left: 315.5 * $w;
 
     .line {
       width: 230 * $w;
@@ -333,7 +336,7 @@
 
       &.bottom2 {
         height: 100 * $w;
-        left: 256 * $w;
+        left: 185 * $w;
       }
     }
   }
