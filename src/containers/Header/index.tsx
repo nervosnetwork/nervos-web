@@ -43,7 +43,7 @@ export default class extends React.Component<HeaderProps, HeaderState> {
         <Header>
           <Logo
             src={LogoImg}
-            alt="NervOS"
+            alt="Nervos"
             onClick={() =>
               props.location.pathname !== '/' && props.history.push('/')
             }

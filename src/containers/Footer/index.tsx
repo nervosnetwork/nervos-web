@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link, } from 'react-router-dom'
 import { createPortal, } from 'react-dom'
 import { I18n, } from 'react-i18next'
-import { Header, Logo, Navs, NavItem, } from '../../styled/Common'
+// import { Header,, Navs, NavItem, } from '../../styled/Common'
 import { log, } from '../../utils'
 import { footer as imgs, } from '../../config/imgMap'
 
@@ -35,6 +35,7 @@ const socialiconList = [
   // },
   {
     img: imgs.github,
+    imgHover: imgs.githubHover,
     href: 'https://github.com/NervosFoundation',
   },
 ]
@@ -58,7 +59,7 @@ export default class extends React.Component {
     const { t, } = this
     const navList = t('navList', { returnObjects: true, })
     return (
-      <div className={css.nav}>
+      <div className={`${css.nav} ${css.left}`}>
         {navList.map((item, i) => {
           const href = navHrefList[i]
           return (
@@ -71,14 +72,27 @@ export default class extends React.Component {
     )
   }
 
-  Left = () => {
-    const { Nav, } = this
+  // Left = () => {
+  //   const { Nav, } = this
+  //   return (
+  //     <div className={css.left}>
+  //       <Nav />
+  //     </div>
+  //   )
+  // }
+
+  Logo = () => {
+    const href = 'https://github.com/NervosFoundation'
     return (
-      <div className={css.left}>
-        <div className={css.image}>
-          <img src={imgs.logo} alt="" />
+      <div className={`${css.logo} ${css.left}`}>
+        <a href={href}>
+          <img className={css.img} src={imgs.logo} alt="" />
+        </a>
+        <div className={css.label}>
+          <a className={css.link} href={href}>
+            Nervos Foundation
+          </a>
         </div>
-        <Nav />
       </div>
     )
   }
@@ -88,7 +102,7 @@ export default class extends React.Component {
     const enterMail = t('enterMail')
     const translations = t('translations:subscribe')
     return (
-      <div className={css.subscribe}>
+      <div className={`${css.subscribe} ${css.right}`}>
         <div className={css.buttonOuter}>
           <form
             className="sc-fBuWsC eeihxG"
@@ -112,46 +126,45 @@ export default class extends React.Component {
   }
 
   SocialiconList = () => (
-    <div className={css.socialiconList}>
+    <div className={`${css.socialiconList} ${css.right}`}>
       {socialiconList.map((item) => (
         <div className={css.socialiconContainer}>
-          <object
-            className={css.object}
-            data={item.img}
-            type="image/svg+xml"
-            aria-label=""
-          />
-          <a href={item.href} className={css.object}>
-            {/* <img className={css.object} src={item.img}  /> */}
+          <a className={css.link} href={item.href}>
+            <img className={css.img} src={item.img} alt='' />
+            <img className={css.imgHover} src={item.imgHover} alt='' />
           </a>
         </div>
       ))}
     </div>
   )
 
-  Right = () => {
-    const { SocialiconList, Subscribe, } = this
-    return (
-      <div className={css.right}>
-        <Subscribe />
-        <SocialiconList />
-      </div>
-    )
-  }
+  // Right = () => {
+  //   const { SocialiconList, Subscribe, } = this
+  //   return (
+  //     <div className={css.right}>
+  //       <Subscribe />
+  //       <SocialiconList />
+  //     </div>
+  //   )
+  // }
 
   Top = () => {
-    const { props, Left, Right, } = this
+    const { Logo, Nav, Subscribe, SocialiconList, } = this
     return (
       <div className={css.top}>
-        {Left()}
-        {Right()}
+        <Logo />
+        <Subscribe />
+        <Nav />
+        <SocialiconList />
       </div>
     )
   }
 
   Bottom = () => (
     <div className={css.bottom}>
-      <div>@ 2018 Nervos All Rights Reserved</div>
+      <div>
+        @ 2018 Nervos is a project of Nervos Foundation. All Rights Reserved
+      </div>
     </div>
   )
 
