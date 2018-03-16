@@ -24,12 +24,14 @@
   padding-top: 150 * $w;
   vertical-align: top;
   width: 750 * $w;
+  font-size: 28 * $w;
 }
 
 .right {
   display: inline-block;
   text-align: center;
   padding-top: 150 * $w;
+  font-size: 28 * $w;
 }
 
 .logo {
@@ -181,6 +183,7 @@
   padding-bottom: 160 * $w;
   // height: 100px;
   width: 100%;
+  font-size: 28 * $w;
 }
 
 @media (max-width: 1080px) {
@@ -204,12 +207,14 @@
     vertical-align: top;
     width: 750 * $w;
     text-align: center;
+    font-size: 28 * $w;
   }
 
   .right {
     display: inline-block;
     text-align: center;
     padding-top: 50 * $w;
+    font-size: 28 * $w;
   }
 
   .logo {
@@ -351,5 +356,6 @@
     padding-top: 80 * $w;
     padding-left: 0 * $w;
     padding-bottom: 160 * $w;
+    font-size: 28 * $w;
   }
 }
