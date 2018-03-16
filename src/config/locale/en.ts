@@ -4,11 +4,11 @@ export default {
   translations: {
     whitepaper: 'White Paper',
     whitepaperHref:
-      'https://github.com/NervosFoundation/nervos-web/raw/master/nervos-ckb-zh-20180315.pdf',
+      'https://github.com/NervosFoundation/binary/raw/master/white_paper/nervos-ckb-zh-cd58bde230db48667152b5ece99f5ea3b9ade56b.pdf',
     subscribe: 'subscribe',
   },
   slogan: {
-    word: 'The Common Knowledge Base for The 7.6 Billion People.',
+    word: 'The Trustware Platform for The 7.6 Billion People.',
     desc: [
       `Nervos is a suite of scalable and interoperable protocols and an open blockchain platform for decentralized applications. It utilizes "Trustware", a new decentralized computing paradigm that goes beyond distributed ledgers and smart contracts, to bring general expression of trust into the context of transactions to meet the demand of today's real world applications. `,
       `In contrast to smart contract platforms, Nervos uses the "Common Knowledge Base", a simpler state machine with uniform state transation semantics for superior scalability,  interoperability and more aligned incentives for all participants of the network.`,
@@ -67,10 +67,10 @@ export default {
     ],
   },
   supporters: {
-    title: 'Technical Team',
+    title: 'Technical Partner',
     supporterList: [
       {
-        name: 'CRYPTAPE',
+        name: '',
         desc: 'Inter-enterprise Trust Automation ',
         href: 'https://www.cryptape.com/#/about/',
       },
