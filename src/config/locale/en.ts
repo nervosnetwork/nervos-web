@@ -8,10 +8,10 @@ export default {
     subscribe: 'subscribe',
   },
   slogan: {
-    word: 'The Trustware Platform for the 7.6 Billion People.',
+    word: 'The Trustware Platform for the 7.6 Billion People',
     desc: [
-      `Nervos is a suite of scalable and interoperable protocols and an open blockchain platform for decentralized applications. It utilizes "Trustware", a new decentralized computing paradigm that goes beyond distributed ledgers and smart contracts, to bring general expression of trust into the context of transactions to meet the demand of today's real world applications. `,
-      `In contrast to smart contract platforms, Nervos uses the "Common Knowledge Base", a simpler state machine with uniform state transation semantics for superior scalability,  interoperability and more aligned incentives for all participants of the network.`,
+      `Nervos is a suite of scalable and interoperable protocols and an open blockchain "Trustware" platform for decentralized applications. Trustware is a new decentralized computing paradigm that goes beyond distributed ledgers and smart contracts, to bring general expression of trust to meet the demand of today's real world applications. `,
+      `In contrast to smart contract platforms, Nervos uses the "Common Knowledge Base", a simpler state machine with uniform state transation semantics for superior scalability, interoperability and better aligned incentives for all participants of the network.`,
     ],
   },
   features: {
@@ -20,19 +20,19 @@ export default {
       {
         title: 'A New Decentralized Computing Paradigm',
         text: [
-          'NERVOS designed a radically decoupled decentralized computing platform to allow multiple paths of scalability, transaction certainty and low local latency, leading to Mobile and Web DApps with superior user experience.',
+          'NERVOS designed a radically decoupled decentralized platform to allow multiple paths of scalability, transaction certainty and low local latency. This brings superior user experience to mobile and web DApps.',
         ],
       },
       {
         title: 'Ready for Real World Applications',
         text: [
-          'Our system comes with built-in identity support that allows flexible trust models, which allows DApps to express real world trust based transaction context.',
+          'Nervos comes with built-in identity support with flexible trust models for DApps to build real world trust based transactions.',
         ],
       },
       {
         title: 'Interoperable with Existing Systems',
         text: [
-          'Our provide a standardized client interface with very limited state transition semantics. Existing systems can keep their programming language, business logic, and engineering best practices intact and seamlessly integrate with a world class public blockchain. ',
+          'Nervos provides a standardized client interface with a small set of state transition semantics. Existing systems don't have to change their programming language, move their business rules, or break their engineering best practices to integrate with a world class public blockchain. ',
         ],
       },
     ],
