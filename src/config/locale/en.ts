@@ -4,7 +4,7 @@ export default {
   translations: {
     whitepaper: 'White Paper',
     whitepaperHref:
-      'https://github.com/NervosFoundation/binary/raw/master/white_paper/nervos-ckb-zh-cd58bde230db48667152b5ece99f5ea3b9ade56b.pdf',
+      'https://github.com/NervosFoundation/binary/tree/master/white_paper',
     subscribe: 'subscribe',
   },
   slogan: {

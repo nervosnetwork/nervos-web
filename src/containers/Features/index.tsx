@@ -27,7 +27,7 @@ export default class extends React.Component {
       <div className={css.subscribe}>
         <div className={`${css.line} ${css.left}`} />
         <div className={css.buttonOuter}>
-          <a href={href}>
+          <a href={href} target="_blank">
             <div className={`${css.buttonInner} fontBold`}>{subscribe}</div>
           </a>
 

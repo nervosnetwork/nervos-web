@@ -1,6 +1,6 @@
 export default {
   translations: {
-    whitepaper: '白皮书',
+    whitepaper: '',
     whitepaperHref: 'z-wp',
     subscribe: '订阅',
   },

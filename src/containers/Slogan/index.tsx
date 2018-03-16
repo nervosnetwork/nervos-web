@@ -72,16 +72,12 @@ export default class extends React.Component {
 
   Header = (props) => {
     const { t, lang, Locale, } = this
-    const subscribe = '白皮书'
     const href = t('translations:whitepaperHref')
     return (
       <div className={css.header}>
         <div className={css.image}>
           <img src={imgs.logo} alt="logo" />
         </div>
-        <a className={`${css.locale} ${css.whitePaper}`} href={href}>
-          {subscribe}
-        </a>
         {/* <Locale /> */}
       </div>
     )
