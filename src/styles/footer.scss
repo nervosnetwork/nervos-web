@@ -16,6 +16,9 @@
   text-align: left;
   width: 100%;
   padding: 0 135 * $w;
+
+  //
+  text-align: center;
 }
 
 .left {
@@ -25,6 +28,11 @@
   vertical-align: top;
   width: 750 * $w;
   font-size: 28 * $w;
+
+  // 临时
+  width: 100%;
+  text-align: center;
+  padding-left: 0;
 }
 
 .right {
