@@ -18,7 +18,7 @@ export default {
     title: 'Features',
     sectionList: [
       {
-        title: 'A New Decentralized Computing Paradigm',
+        title: 'A New Decentralized Application Paradigm',
         text: [
           'NERVOS designed a radically decoupled decentralized platform to allow multiple paths of scalability, transaction certainty and low local latency. This brings superior user experience to mobile and web DApps.',
         ],
