@@ -4,7 +4,7 @@ export default {
   translations: {
     whitepaper: 'White Paper',
     whitepaperHref:
-      'https://github.com/NervosFoundation/binary/tree/master/white_paper',
+      'https://github.com/NervosFoundation/binary/tree/master/whitepaper',
     subscribe: 'subscribe',
   },
   slogan: {
