@@ -38,7 +38,7 @@ yarn install
 yarn run dll
 ```
 
-# Working on Develop Mode
+# Working on Development Mode
 
 ```bash
 yarn start

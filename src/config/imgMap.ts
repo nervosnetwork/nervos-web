@@ -19,7 +19,6 @@ enum Features {
   PR = require('../images/features/pr.png'),
 }
 
-//
 enum Teams {
   PEOPLE1 = require('../images/teams/1.jpg'),
   PEOPLE2 = require('../images/teams/2.jpg'),
@@ -27,12 +26,9 @@ enum Teams {
   PEOPLE4 = require('../images/teams/4.jpg'),
 }
 
-//
 enum Supporters {
   SUPPORTER1 = require('../images/supporter/cryptape.png'),
 }
-
-//
 
 enum Footer {
   GITHUB = require('../images/footer/github.png'),
