@@ -8,6 +8,9 @@ import { Footer as imgs, } from '../../config/imgMap'
 
 const css = require('../../styles/footer')
 
+const font1 = require('../../styles/fonts/Lucida Sans Unicode.ttf')
+const font2 = require('../../styles/fonts/MyriadPro-Bold.otf')
+
 const socialiconList = [
   // {
   //   img: imgs.socialicon_01,
@@ -136,7 +139,7 @@ const SocialiconList = (props) => (
 // }
 
 const Top = (props) => {
-  const {t, } = props
+  const { t, } = props
   // const { Logo, Nav, Subscribe, SocialiconList, } = this
   return (
     <div className={css.top}>
@@ -157,6 +160,25 @@ const Bottom = (props) => (
 )
 
 export default class extends React.Component {
+  componentDidMount () {
+    const template = `<style>
+  @font-face {
+    font-family: "lucdia";
+    src: url(" ${font1}");
+  }
+
+  @font-face {
+    font-family: "myrida";
+    src: url(" ${font2}");
+  }
+</style>`
+    const addFont = () => {
+      document.body.insertAdjacentHTML('beforeend', template)
+    }
+
+    window.onload = addFont
+  }
+
   t = null as any
   lang = null as any
 

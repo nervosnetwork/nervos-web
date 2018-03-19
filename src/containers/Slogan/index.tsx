@@ -115,23 +115,24 @@ const littleImgList = [
 const SloganImg = (props) => {
   const { addLoadedImgNum, } = props
   // const { actionBigImgCss, actionLittleImgCss, } = this.state
-  const { actionBigImgCss, actionLittleImgCss, } = props.state
+  const {
+    actionBigImgCss,
+    actionLittleImgCss,
+    imgSrcList,
+    bigImgSrc,
+  } = props.state
 
-  const littleImgs = littleImgList.map((imgProps) => {
+  const littleImgs = littleImgList.map((imgProps, i) => {
     const prop = {
       className: `${imgProps.className} ${css.little} ${actionLittleImgCss}`,
-      src: `${imgProps.src}`,
+      src: imgSrcList[i],
     }
     return <img {...prop} alt="" />
   })
   return (
     <div className={css.sloganImg}>
       {littleImgs}
-      <img
-        className={`${css.big} ${actionBigImgCss}`}
-        src={`${imgs.SLOGAN}`}
-        alt=""
-      />
+      <img className={`${css.big} ${actionBigImgCss}`} src={bigImgSrc} alt="" />
     </div>
   )
 }
@@ -151,6 +152,12 @@ const SloganImg = (props) => {
 //   )
 // }
 
+const loadImg = (imgSrc, callback) => {
+  const img = document.createElement('img')
+  img.src = imgSrc
+  img.onload = callback
+}
+
 export default class extends React.Component {
   state = {
     loaded: false,
@@ -158,12 +165,55 @@ export default class extends React.Component {
     sloganWordLoaded: false,
     actionLittleImgCss: '',
     actionBigImgCss: '',
-    imgNum: 0,
     imgSrcList: ['', '', '', '', '', '', '', ],
+    bigImgSrc: '',
+    imgSrcBg: imgs.BGLow,
   }
 
   componentWillMount () {
-    const {imgSrcList, } = this.state
+    let { bigImgSrc, imgSrcBg, } = this.state
+    const { imgSrcList, } = this.state
+    const { addLoadedImg, } = this
+    littleImgList.forEach((imgProps, i) => {
+      const img = document.createElement('img')
+      const { src, } = imgProps
+      // img.src = src
+      // img.onload = () => {
+      //   imgSrcList[i] = src
+      //   this.setState({
+      //     imgSrcList,
+      //   })
+      //   addLoadedImg()
+      // }
+      loadImg(src, () => {
+        imgSrcList[i] = src
+        this.setState({
+          imgSrcList,
+        })
+        addLoadedImg()
+      })
+    })
+
+    bigImgSrc = `${imgs.SLOGAN}`
+    loadImg(bigImgSrc, () => {
+      this.setState({
+        bigImgSrc,
+      })
+      addLoadedImg()
+    })
+    // const bigImg = document.createElement('img')
+    // bigImg.src = `${imgs.SLOGAN}`
+    // bigImg.onload = () => {
+    //   bigImgSrc = bigImg.src
+    //   this.setState({
+    //     bigImgSrc,
+    //   })
+    //   addLoadedImg()
+    // }
+    imgSrcBg = imgs.BG
+    loadImg(imgSrcBg, () => {
+      this.setState({imgSrcBg, })
+    })
   }
 
   componentDidMount () {
@@ -171,8 +221,9 @@ export default class extends React.Component {
     setTimeout(() => {
       this.setState(() => ({ loaded: true, }))
     }, 0)
-    window.onload = autoRenderSloganWord
+    // window.onload = autoRenderSloganWord
     // autoRenderSloganWord()
+
     if (lang.language.startsWith('zh')) {
       // lang.changeLanguage('zh')
       lang.changeLanguage('en')
@@ -181,66 +232,83 @@ export default class extends React.Component {
     }
   }
 
+  // componentWillUpdate () {
+  //   const { autoRenderSloganWord, lang, } = this
+  //   const { imgNum, } = this.state
+  //   log('wu', this.state.imgNum)
+  //   if (imgNum >= 8) {
+  //     // autoRenderSloganWord()
+  //   }
+  // }
+
   t = null as any
   lang = {
     language: '',
   } as any
 
+  imgNum = 0
+
   autoRenderSloganWord = () => {
     const { t, } = this
-
-    const promise = new Promise((resolve, reject) => {
-      const word = t('word').split('')
-      const len = word.length
-      const onetime = sloganWordTimeout / len
-      word.forEach((char, i) => {
-        setTimeout(() => {
+    const word = t('word').split('')
+    const len = word.length
+    const onetime = sloganWordTimeout / len
+    word.forEach((char, i) => {
+      setTimeout(() => {
+        this.setState({
+          sloganWord: this.state.sloganWord + char,
+        })
+        if (i === len) {
           this.setState({
-            sloganWord: this.state.sloganWord + char,
+            sloganWordLoaded: true,
           })
-        }, i * onetime)
-      })
-      // const endTime = (t('word').length + 1) * sloganWordTimeout
+        }
+      }, i * onetime)
+    })
+
+    setTimeout(() => {
       this.setState({
         actionBigImgCss: css.actionBefore,
       })
+    }, 100)
+
+    setTimeout(() => {
+      this.setState({
+        actionLittleImgCss: css.actionBefore,
+      })
       setTimeout(() => {
         this.setState({
-          actionLittleImgCss: css.actionBefore,
+          actionLittleImgCss: `${css.actionBefore} ${css.action}`,
         })
-        setTimeout(() => {
-          this.setState({
-            actionLittleImgCss: `${css.actionBefore} ${css.action}`,
-          })
-        }, 100)
-      }, 1200)
-      setTimeout(() => {
-        resolve()
-      }, sloganWordTimeout)
-    })
-    promise.then(() => {
-      this.setState({
-        sloganWordLoaded: true,
-      })
-    })
+      }, 100)
+    }, 1200)
+    // setTimeout(() => {
+    //   resolve()
+    // }, sloganWordTimeout)
+    // log('render')
+    // const promise = new Promise((resolve, reject) => {})
+    // promise.then(() => {})
   }
 
-  addLoadedImgNum = () => {
-    let { imgNum, } = this.state
-    imgNum++
-    this.setState({
-      imgNum,
-    })
+  addLoadedImg = () => {
+    const { imgNum, autoRenderSloganWord, } = this
+    this.imgNum++
+    log(this.imgNum)
+    if (this.imgNum >= 8) {
+      log('run')
+      autoRenderSloganWord()
+    }
   }
 
   render () {
-    const { props, addLoadedImgNum, state, } = this
+    const { props, state, } = this
     const {
       loaded,
       actionBigImgCss,
       actionLittleImgCss,
       sloganWordLoaded,
       sloganWord,
+      imgSrcBg,
     } = this.state
     // const state = this.state
     return (
@@ -256,10 +324,10 @@ export default class extends React.Component {
           return (
             <div
               className={css.slogan}
-              style={{ backgroundImage: `url(${imgs.BG}`, }}
+              style={{ backgroundImage: `url(${imgSrcBg}`, }}
             >
               <Header {...prop} />
-              <SloganImg {...prop} addLoadedImgNum={addLoadedImgNum} />
+              <SloganImg {...prop} />
               <Description {...prop} />
             </div>
           )

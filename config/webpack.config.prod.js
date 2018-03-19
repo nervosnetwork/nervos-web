@@ -67,6 +67,7 @@ const prodConfig = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
+        FONT: JSON.stringify('./fonts'),
       },
     }),
     new UglifyJSPlugin(),
@@ -82,6 +83,10 @@ const prodConfig = {
       {
         from: path.resolve(__dirname, '../lib'),
         to: path.resolve(__dirname, '../dist/lib'),
+      },
+      {
+        from: path.resolve(__dirname, '../src/styles/fonts'),
+        to: path.resolve(__dirname, '../dist/fonts'),
       },
     ]),
     new HtmlPlugin({
