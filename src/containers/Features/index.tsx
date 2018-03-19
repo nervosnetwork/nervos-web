@@ -3,11 +3,11 @@ import { createPortal, } from 'react-dom'
 import { I18n, } from 'react-i18next'
 import { Header, Logo, Navs, NavItem, } from '../../styled/Common'
 import { log, } from '../../utils'
-import { features as imgs, } from '../../config/imgMap'
+import { Features as imgs, } from '../../config/imgMap'
 
 const css = require('../../styles/features')
 
-const sectionImgList = [imgs.auto, imgs.re, imgs.pr, ]
+const sectionImgList = [imgs.AUTO, imgs.RE, imgs.PR, ].map((img) => `${img}`)
 
 export default class extends React.Component {
   state = {
@@ -97,7 +97,6 @@ export default class extends React.Component {
     return (
       <div className={css.sectionList}>
         <div className={`${css.verticalLine} ${css.top1}`} />
-        {/* <div className={`${css.verticalLine} ${css.top2}`} /> */}
         <div className={css.border} />
         {sectionList.map(
           (section, i) =>
@@ -105,9 +104,8 @@ export default class extends React.Component {
               <SectionLImg section={section} index={i} />
             ) : (
               <SectionRImg section={section} index={i} />
-            )
+            ),
         )}
-        {/* <div className={`${css.verticalLine} ${css.bottom1}`} /> */}
         <div className={`${css.verticalLine} ${css.bottom2}`} />
       </div>
     )

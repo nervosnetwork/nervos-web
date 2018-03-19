@@ -4,7 +4,7 @@ import { createPortal, } from 'react-dom'
 import { I18n, } from 'react-i18next'
 // import { Header,, Navs, NavItem, } from '../../styled/Common'
 import { log, } from '../../utils'
-import { footer as imgs, } from '../../config/imgMap'
+import { Footer as imgs, } from '../../config/imgMap'
 
 const css = require('../../styles/footer')
 
@@ -34,8 +34,8 @@ const socialiconList = [
   //   href: 'social',
   // },
   {
-    img: imgs.github,
-    imgHover: imgs.githubHover,
+    img: `${imgs.GITHUB}`,
+    imgHover: `${imgs.GITHUBHOVER}`,
     href: 'https://github.com/NervosFoundation',
   },
 ]
@@ -43,15 +43,6 @@ const socialiconList = [
 const navHrefList = ['/', '/', '/', ]
 
 export default class extends React.Component {
-  // state = {
-  //   loaded: false,
-  // }
-  // componentDidMount () {
-  //   setTimeout(() => {
-  //     this.setState(() => ({ loaded: true, }))
-  //   }, 0)
-  // }
-
   t = null as any
   lang = null as any
 
@@ -86,7 +77,7 @@ export default class extends React.Component {
     return (
       <div className={`${css.logo} ${css.left}`}>
         <a href={href}>
-          <img className={css.img} src={imgs.logo} alt="" />
+          <img className={css.img} src={`${imgs.LOGO}`} alt="" />
         </a>
         <div className={css.label}>
           <a className={css.link} href={href}>
@@ -130,8 +121,8 @@ export default class extends React.Component {
       {socialiconList.map((item) => (
         <div className={css.socialiconContainer}>
           <a className={css.link} href={item.href}>
-            <img className={css.img} src={item.img} alt='' />
-            <img className={css.imgHover} src={item.imgHover} alt='' />
+            <img className={css.img} src={item.img} alt="" />
+            <img className={css.imgHover} src={item.imgHover} alt="" />
           </a>
         </div>
       ))}
@@ -186,7 +177,7 @@ export default class extends React.Component {
           )
         }}
       </I18n>,
-      document.getElementById('footer') as HTMLElement
+      document.getElementById('footer') as HTMLElement,
     )
   }
 }

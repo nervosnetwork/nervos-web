@@ -4,7 +4,7 @@ import { I18n, } from 'react-i18next'
 
 import { Logo, Navs, NavItem, } from '../../styled/Common'
 import { log, } from '../../utils'
-import { slogan as imgs, } from '../../config/imgMap'
+import { Slogan as imgs, } from '../../config/imgMap'
 
 const css = require('../../styles/slogan')
 
@@ -76,7 +76,7 @@ export default class extends React.Component {
     return (
       <div className={css.header}>
         <div className={css.image}>
-          <img src={imgs.logo} alt="logo" />
+          <img src={`${imgs.LOGO}`} alt="logo" />
         </div>
         {/* <Locale /> */}
       </div>
@@ -128,7 +128,7 @@ export default class extends React.Component {
     const { sloganWordLoaded, } = this.state
     return (
       <div className={`${css.sloganWord} fontBold`}>
-        <img src={imgs.quo} alt="quotation mark" />
+        <img src={`${imgs.QUO}`} alt="quotation mark" />
         <span className={sloganWordLoaded ? css.hidden : ''}>
           {this.state.sloganWord}
         </span>
@@ -156,42 +156,42 @@ export default class extends React.Component {
       <div className={css.sloganImg}>
         <img
           className={`${css.n1} ${css.little} ${actionLittleImgCss}`}
-          src={imgs.action1}
+          src={`${imgs.ACTION1}`}
           alt=""
         />
         <img
           className={`${css.n2} ${css.little} ${actionLittleImgCss}`}
-          src={imgs.action2}
+          src={`${imgs.ACTION2}`}
           alt=""
         />
         <img
           className={`${css.n3} ${css.little} ${actionLittleImgCss}`}
-          src={imgs.action3}
+          src={`${imgs.ACTION3}`}
           alt=""
         />
         <img
           className={`${css.n4} ${css.little} ${actionLittleImgCss}`}
-          src={imgs.action4}
+          src={`${imgs.ACTION4}`}
           alt=""
         />
         <img
           className={`${css.n5} ${css.little} ${actionLittleImgCss}`}
-          src={imgs.action5}
+          src={`${imgs.ACTION5}`}
           alt=""
         />
         <img
           className={`${css.n6} ${css.little} ${actionLittleImgCss}`}
-          src={imgs.action6}
+          src={`${imgs.ACTION6}`}
           alt=""
         />
         <img
           className={`${css.n7} ${css.little} ${actionLittleImgCss}`}
-          src={imgs.action7}
+          src={`${imgs.ACTION7}`}
           alt=""
         />
         <img
           className={`${css.big} ${actionBigImgCss}`}
-          src={imgs.slogan}
+          src={`${imgs.SLOGAN}`}
           alt=""
         />
       </div>
@@ -224,7 +224,7 @@ export default class extends React.Component {
           return (
             <div
               className={css.slogan}
-              style={{ backgroundImage: `url(${imgs.bg}`, }}
+              style={{ backgroundImage: `url(${imgs.BG}`, }}
             >
               <Header />
               <SloganImg />

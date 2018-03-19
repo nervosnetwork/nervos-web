@@ -3,11 +3,11 @@ import { createPortal, } from 'react-dom'
 import { I18n, } from 'react-i18next'
 import { Header, Logo, Navs, NavItem, } from '../../styled/Common'
 import { log, } from '../../utils'
-import { supporters as imgs, } from '../../config/imgMap'
+import { Supporters as imgs, } from '../../config/imgMap'
 
 const css = require('../../styles/supporter')
 
-const supporterImgList = [imgs.supporter1, ]
+const supporterImgList = [imgs.SUPPORTER1, ].map((img) => `${img}`)
 
 export default class extends React.Component {
   state = {

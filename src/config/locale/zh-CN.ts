@@ -74,7 +74,7 @@ export default {
     ],
   },
   footer: {
-    // navList: ['中文 ddddd', '中文 ddddd', '中文 ddddd', ],
+    // TODO: add working href
     navList: [
       {
         label: 'Privacy Policy',

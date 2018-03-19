@@ -3,11 +3,16 @@ import { createPortal, } from 'react-dom'
 import { I18n, } from 'react-i18next'
 import { Header, Logo, Navs, NavItem, } from '../../styled/Common'
 import { log, } from '../../utils'
-import {teams as imgs, } from '../../config/imgMap'
+import { Teams as imgs, } from '../../config/imgMap'
 
 const css = require('../../styles/teams')
 
-const peopleImgList = [imgs.people1, imgs.people2, imgs.people3, imgs.people4, ]
+const peopleImgList = [
+  imgs.PEOPLE1,
+  imgs.PEOPLE2,
+  imgs.PEOPLE3,
+  imgs.PEOPLE4,
+].map((img) => `${img}`)
 
 export default class extends React.Component {
   state = {
@@ -33,9 +38,7 @@ export default class extends React.Component {
         </div>
         <div className={css.desc}>
           <div className={css.name}>{name}</div>
-          <div className={css.text}>
-            {desc.map((string) => <p>{string}</p>)}
-          </div>
+          <div className={css.text}>{desc.map(string => <p>{string}</p>)}</div>
         </div>
       </div>
     )

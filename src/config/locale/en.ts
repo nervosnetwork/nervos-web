@@ -1,5 +1,3 @@
-import { footer, } from '../imgMap'
-
 export default {
   translations: {
     whitepaper: 'White Paper',
@@ -32,7 +30,7 @@ export default {
       {
         title: 'Interoperable with Existing Systems',
         text: [
-          'Nervos provides a standardized client interface with a small set of state transition semantics. Existing systems don\'t have to change their programming language, move their business rules, or break their engineering best practices to integrate with a world class public blockchain. ',
+          "Nervos provides a standardized client interface with a small set of state transition semantics. Existing systems don't have to change their programming language, move their business rules, or break their engineering best practices to integrate with a world class public blockchain. ",
         ],
       },
     ],
@@ -77,20 +75,11 @@ export default {
     ],
   },
   footer: {
-    // navList: ['Privacy Policy', 'Contact Us', 'FAQ', ],
     navList: [
-      // {
-      //   label: 'Privacy Policy',
-      //   href: 'pp',
-      // },
       {
         label: 'Contact Us',
         href: 'mailto: hello@nervos.org',
       },
-      // {
-      //   label: 'FAQ',
-      //   href: 'faq',
-      // },
     ],
     enterMail: 'Enter your email address',
   },
