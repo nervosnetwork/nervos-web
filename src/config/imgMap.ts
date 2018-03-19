@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 enum Slogan {
   BG = require('../images/slogan/bg.png'),
+  BGLow = require('../images/slogan/bgLow.jpg'),
   LOGO = require('../images/slogan/logo.png'),
   SLOGAN = require('../images/slogan/slogan.png'),
   QUO = require('../images/slogan/quo.png'),
