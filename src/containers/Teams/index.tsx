@@ -14,6 +14,33 @@ const peopleImgList = [
   imgs.PEOPLE4,
 ].map((img) => `${img}`)
 
+const People = (props) => {
+  const { people, index, } = props
+  const { name, desc, } = people
+  const image = peopleImgList[index]
+  return (
+    <div className={css.people}>
+      <div className={css.image}>
+        <img src={image} alt="" />
+      </div>
+      <div className={css.desc}>
+        <div className={css.name}>{name}</div>
+        <div className={css.text}>{desc.map((string) => <p>{string}</p>)}</div>
+      </div>
+    </div>
+  )
+}
+
+const PeopleList = (props) => {
+  const { t, } = props
+  const peopleList = t('peopleList', { returnObjects: true, })
+  return (
+    <div>
+      {peopleList.map((people, i) => <People people={people} index={i} />)}
+    </div>
+  )
+}
+
 export default class extends React.Component {
   state = {
     loaded: false,
@@ -27,39 +54,17 @@ export default class extends React.Component {
   t = null as any
   lang = null as any
 
-  People = (props) => {
-    const { people, index, } = props
-    const { name, desc, } = people
-    const image = peopleImgList[index]
-    return (
-      <div className={css.people}>
-        <div className={css.image}>
-          <img src={image} alt="" />
-        </div>
-        <div className={css.desc}>
-          <div className={css.name}>{name}</div>
-          <div className={css.text}>{desc.map(string => <p>{string}</p>)}</div>
-        </div>
-      </div>
-    )
-  }
-
-  PeopleList = (props) => {
-    const { People, t, } = this
-    const peopleList = t('peopleList', { returnObjects: true, })
-    return (
-      <div>
-        {peopleList.map((people, i) => <People people={people} index={i} />)}
-      </div>
-    )
-  }
-
   render () {
-    const { props, PeopleList, } = this
+    const { props, state, } = this
     const { loaded, } = this.state
     return (
       <I18n ns="teams">
         {(t, { i18n, }) => {
+          const prop = {
+            t,
+            lang: i18n,
+            state,
+          }
           this.t = t
           this.lang = i18n
           const title = t('title')
@@ -67,7 +72,7 @@ export default class extends React.Component {
             <div className={css.main}>
               <div className={css.container}>
                 <div className={`${css.title} fontBold`}>{title}</div>
-                <PeopleList />
+                <PeopleList {...prop} />
               </div>
             </div>
           )

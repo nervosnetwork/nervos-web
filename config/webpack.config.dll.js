@@ -4,8 +4,8 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 
 module.exports = {
   entry: {
-    react: ['react', 'react-dom', 'react-router-dom'],
-    styledComponents: ['styled-components'],
+    react: ['react', 'react-dom', 'react-router-dom', ],
+    styledComponents: ['styled-components', ],
   },
   output: {
     path: path.resolve(__dirname, '../lib'),
@@ -21,7 +21,7 @@ module.exports = {
     new ManifestPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production'),
+        NODE_ENV: JSON.stringify('development'),
       },
     }),
     new webpack.optimize.UglifyJsPlugin(),
