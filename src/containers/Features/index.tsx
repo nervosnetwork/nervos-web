@@ -10,17 +10,43 @@ const css = require('../../styles/features')
 const sectionImgList = [imgs.AUTO, imgs.RE, imgs.PR, ].map((img) => `${img}`)
 
 const Button = (props) => {
-  const { t, label, href, } = props
+  const { t, label, href, className, } = props
   // const subscribe = t('translations:subscribe')
   return (
-    <div className={css.subscribe}>
+    <div className={css.buttonOuter}>
+      <a href={href} target="_blank">
+        <div className={`${css.buttonInner} fontBold`}>{label}</div>
+      </a>
+      <div className={css.diagonal} />
+    </div>
+  )
+}
+
+const Whitepaper = (props) => {
+  const { t, } = props
+  // const label = t('translations:whitepaper')
+  // const href = t('translations:whitepaperHref')
+  const info = {
+    zh: {
+      label: '白皮书',
+      href:
+        'https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb-7757f8-zh.pdf',
+      className: css.zh,
+      t,
+    },
+    en: {
+      label: 'White Paper',
+      href:
+        'https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb-7757f8.pdf',
+      className: css.en,
+      t,
+    },
+  }
+  return (
+    <div className={`${css.whitepaper}`}>
       <div className={`${css.line} ${css.left}`} />
-      <div className={css.buttonOuter}>
-        <a href={href} target="_blank">
-          <div className={`${css.buttonInner} fontBold`}>{label}</div>
-        </a>
-        <div className={css.diagonal} />
-      </div>
+      <Button {...info.en} />
+      <Button {...info.zh} />
       <div className={`${css.line} ${css.right}`} />
     </div>
   )
@@ -29,12 +55,10 @@ const Button = (props) => {
 const Title = (props) => {
   const { t, } = props
   const title = t('title')
-  const label = t('translations:whitepaper')
-  const href = t('translations:whitepaperHref')
   return (
     <div className={css.titleContainer}>
       <div className={`${css.title} fontBold`}>
-        <Button t={t} label={label} href={href} />
+        <Whitepaper {...props} />
         <div className={`${css.text}`}>{title}</div>
       </div>
     </div>
