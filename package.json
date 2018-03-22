@@ -15,13 +15,12 @@
     "build": "yarn run build:local",
     "build:local":
       "rimraf dist && webpack --config config/webpack.config.prod.js",
-    "build:test":
-      "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
-    "build:prod":
-      "rimraf dist && yarn install && webpack --config config/webpack.config.prod.js",
+    "build:test": "yarn install && yarn run build",
+    "build:prod": "yarn install && yarn run build",
     "dll": "rimraf lib && webpack --config ./config/webpack.config.dll.js",
     "precommit": "lint-staged",
-    "predeploy": "yarn run build",
+    "predeploy":
+      "yarn install && yarn run dll && yarn run build:local && cp ./CNAME ./dist",
     "deploy": "gh-pages -d dist"
   },
   "lint-staged": {
