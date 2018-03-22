@@ -282,12 +282,6 @@ export default class extends React.Component {
         })
       }, 100)
     }, 1200)
-    // setTimeout(() => {
-    //   resolve()
-    // }, sloganWordTimeout)
-    // log('render')
-    // const promise = new Promise((resolve, reject) => {})
-    // promise.then(() => {})
   }
 
   addLoadedImg = () => {
