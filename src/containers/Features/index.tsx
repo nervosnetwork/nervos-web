@@ -35,7 +35,7 @@ const Whitepaper = (props) => {
       t,
     },
     en: {
-      label: 'White Paper',
+      label: 'Whitepaper',
       href:
         'https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb-7757f8.pdf',
       className: css.en,
