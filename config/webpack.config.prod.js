@@ -14,12 +14,12 @@ const baseConfig = require(path.resolve(__dirname, './webpack.config.base'))
 const reactManifest = require(path.resolve(__dirname, '../lib/react_manifest'))
 const styledComponentsManifest = require(path.resolve(
   __dirname,
-  '../lib/styledComponents_manifest'
+  '../lib/styledComponents_manifest',
 ))
 /* eslint-enable import/no-dynamic-require */
 
 const manifest = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '../lib/manifest.json'))
+  fs.readFileSync(path.resolve(__dirname, '../lib/manifest.json')),
 )
 const prodConfig = {
   entry: {
@@ -47,7 +47,7 @@ const prodConfig = {
               options: {
                 ident: 'postcss',
                 sourceMap: false,
-                plugins: () => [AutoprefixerPlugin, ],
+                plugins: () => [AutoprefixerPlugin],
               },
             },
             'resolve-url-loader',
@@ -68,6 +68,7 @@ const prodConfig = {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
         FONT: JSON.stringify('./fonts'),
+        // STATIC_SERVER: JSON.stringify('http://47.97.171.140:8082/pdfs/'),
       },
     }),
     new UglifyJSPlugin(),

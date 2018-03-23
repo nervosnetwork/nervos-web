@@ -14,7 +14,7 @@ const Button = (props) => {
   // const subscribe = t('translations:subscribe')
   return (
     <div className={css.buttonOuter}>
-      <a href={href} target="_blank">
+      <a href={href}>
         <div className={`${css.buttonInner} fontBold`}>{label}</div>
       </a>
       <div className={css.diagonal} />
@@ -29,15 +29,15 @@ const Whitepaper = (props) => {
   const info = {
     zh: {
       label: '白皮书',
-      href:
-        'https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb-7757f8-zh.pdf',
+      href: `/#/pdf/${process.env.WP_ADDR}-zh`,
+      // 'https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb-7757f8-zh.pdf',
       className: css.zh,
       t,
     },
     en: {
-      label: 'White Paper',
-      href:
-        'https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb-7757f8.pdf',
+      label: 'Whitepaper',
+      href: `/#/pdf/${process.env.WP_ADDR}`,
+      // 'https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb-7757f8.pdf',
       className: css.en,
       t,
     },
@@ -118,7 +118,7 @@ const SectionList = (props) => {
             <SectionLImg section={section} index={i} />
           ) : (
             <SectionRImg section={section} index={i} />
-          )
+          ),
       )}
       <div className={`${css.verticalLine} ${css.bottom2}`} />
     </div>
