@@ -1,6 +1,6 @@
 export default {
   translations: {
-    whitepaper: 'White Paper',
+    whitepaper: 'Whitepaper',
     whitepaperHref:
       'https://github.com/NervosFoundation/binary/tree/master/whitepaper',
     subscribe: 'subscribe',
