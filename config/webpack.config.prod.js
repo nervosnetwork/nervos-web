@@ -68,7 +68,6 @@ const prodConfig = {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
         FONT: JSON.stringify('./fonts'),
-        // STATIC_SERVER: JSON.stringify('http://47.97.171.140:8082/pdfs/'),
       },
     }),
     new UglifyJSPlugin(),

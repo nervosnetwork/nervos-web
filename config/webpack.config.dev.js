@@ -60,7 +60,6 @@ const devConfig = {
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
         FONT: JSON.stringify('../styles/fonts'),
-        // STATIC_SERVER: JSON.stringify('http://47.97.171.140:8082/pdfs/'),
       },
     }),
     new DashboardPlugin(),
