@@ -1,26 +1,24 @@
 # Sys
 .DS_Store
-.vscode
 
 # Logs
 *.log
 
 # Dependency Directories
-node_modules
+node_modules/*
 
 # DLL
 dll
 lib/*
 
 # Build
-dist
+dist/*
 
 # Optional npm cache directory
 .npm
 
 # Optional yarn error log
 yarn-error
-lib/react_manifest.json
 
 # Editor file
 .vscode
