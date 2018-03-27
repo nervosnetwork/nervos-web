@@ -1,10 +1,10 @@
 import * as React from 'react'
-import PDF from 'react-pdf-js-infinite'
+import PDF from 'react-pdf-infinite'
 
 const styles = require('../../styles/pdfpreviewer')
 
-const pdf = 'nervos-ckb-7757f8.pdf'
 const Download = require('../../images/download_btn.svg')
+const loadingImg = require('../../images/loading.gif')
 
 export default (props) => (
   <div className={styles.container}>
@@ -18,6 +18,11 @@ export default (props) => (
     </a>
     <PDF
       file={`${process.env.STATIC_SERVER + props.match.params.version}.pdf`}
+      loading={
+        <div className={styles.loading}>
+          <img src={loadingImg} alt="loading" />
+        </div>
+      }
       scale={3}
       style={{
         textAlign: 'center',

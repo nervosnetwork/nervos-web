@@ -5770,9 +5770,9 @@ react-i18next@^7.3.4:
     html-parse-stringify2 "2.0.1"
     prop-types "^15.6.0"
 
-react-pdf-js-infinite@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/react-pdf-js-infinite/-/react-pdf-js-infinite-1.2.0.tgz#5d615471c92d7a8108e86217027d2724aacf0002"
+react-pdf-infinite@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/react-pdf-infinite/-/react-pdf-infinite-1.0.0.tgz#fb5169e687afbdce766f24d16722c9ec13c619ac"
   dependencies:
     pdfjs-dist "~1.8.0"
     prop-types "~15.5.0"
