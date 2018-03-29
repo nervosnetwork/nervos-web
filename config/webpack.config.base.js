@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   output: {
@@ -22,7 +23,7 @@ module.exports = {
         include: /src/,
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|svg|gif)$/,
         loader: 'url-loader',
         options: {
           limit: 8192,
@@ -31,7 +32,7 @@ module.exports = {
         include: /src/,
       },
       {
-        test: /\.(otf|woff|woff2|ttf|svg)$/,
+        test: /\.(otf|woff|woff2|ttf)$/,
         loader: 'file-loader',
         options: {
           mimetype: 'application/font-woff',
@@ -40,7 +41,15 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        STATIC_SERVER: JSON.stringify('http://47.97.171.140:8082/pdfs/'),
+        WP_ADDR: JSON.stringify('nervos-ckb-7757f8'),
+      },
+    }),
+  ],
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.svg', '.png', '.jpg', ],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.scss', '.svg', '.png', '.jpg'],
   },
 }

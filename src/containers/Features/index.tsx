@@ -11,10 +11,9 @@ const sectionImgList = [imgs.AUTO, imgs.RE, imgs.PR, ].map((img) => `${img}`)
 
 const Button = (props) => {
   const { t, label, href, className, } = props
-  // const subscribe = t('translations:subscribe')
   return (
     <div className={css.buttonOuter}>
-      <a href={href} target="_blank">
+      <a href={href}>
         <div className={`${css.buttonInner} fontBold`}>{label}</div>
       </a>
       <div className={css.diagonal} />
@@ -24,20 +23,16 @@ const Button = (props) => {
 
 const Whitepaper = (props) => {
   const { t, } = props
-  // const label = t('translations:whitepaper')
-  // const href = t('translations:whitepaperHref')
   const info = {
     zh: {
       label: '白皮书',
-      href:
-        'https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb-7757f8-zh.pdf',
+      href: `/#/pdf/${process.env.WP_ADDR}-zh`,
       className: css.zh,
       t,
     },
     en: {
       label: 'Whitepaper',
-      href:
-        'https://github.com/NervosFoundation/binary/raw/master/whitepaper/nervos-ckb-7757f8.pdf',
+      href: `/#/pdf/${process.env.WP_ADDR}`,
       className: css.en,
       t,
     },
@@ -118,7 +113,7 @@ const SectionList = (props) => {
             <SectionLImg section={section} index={i} />
           ) : (
             <SectionRImg section={section} index={i} />
-          )
+          ),
       )}
       <div className={`${css.verticalLine} ${css.bottom2}`} />
     </div>

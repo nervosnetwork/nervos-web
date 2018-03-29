@@ -8,14 +8,14 @@ const DashboardPlugin = require('webpack-dashboard/plugin')
 const baseConfig = require('./webpack.config.base')
 
 const manifest = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, '../lib/manifest.json'))
+  fs.readFileSync(path.resolve(__dirname, '../lib/manifest.json')),
 )
 
 /* eslint-disable import/no-dynamic-require */
 const reactManifest = require(path.resolve(__dirname, '../lib/react_manifest'))
 const styledComponentsManifest = require(path.resolve(
   __dirname,
-  '../lib/styledComponents_manifest'
+  '../lib/styledComponents_manifest',
 ))
 /* eslint-enable import/no-dynamic-require */
 
