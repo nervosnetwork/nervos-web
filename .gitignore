@@ -1,5 +1,6 @@
 # Sys
 .DS_Store
+google*
 
 # Logs
 *.log

@@ -88,9 +88,15 @@ const prodConfig = {
         from: path.resolve(__dirname, '../src/styles/fonts'),
         to: path.resolve(__dirname, '../dist/fonts'),
       },
+      {
+        from: path.resolve(__dirname, '../google415a8fdf7c85d53b.html'),
+        to: path.resolve(__dirname, '../dist/'),
+      },
     ]),
     new HtmlPlugin({
       title: 'Nervos - The Trustware Platform for the 7.6 Billion People',
+      keywords:
+        'blockchain,ethereum,nervos,whitepaper,common knowledge,trusware,decentralize,identity,whitepaper',
       template: path.resolve(__dirname, '../src/templates/index.html'),
       favicon: path.resolve(__dirname, '../src/images/favicon.ico'),
       react: `./lib/${manifest['react.js']}`,
