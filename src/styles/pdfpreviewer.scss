@@ -61,7 +61,9 @@ $mainColor: #36cc92;
   .container {
     canvas {
       transform-origin: top center;
-      transform: scale(2);
+      width: 160vw;
+      margin-left: -30vw;
+      // transform: scale(2);
     }
   }
   .downloadBtn {
@@ -79,7 +81,7 @@ $mainColor: #36cc92;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 120px;
-    height: 75px;
+    width: 240px;
+    height: 150px;
   }
 }
