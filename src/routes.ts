@@ -24,6 +24,7 @@ const routes: IPage[] = [
   // { path: '/', key: 'Teams', module: 'Teams',, exact: true },
   { path: '/', key: 'Supporters', module: 'Supporters', exact: true, },
   { path: '/', key: 'Footer', module: 'Footer', exact: true, },
+  { path: '/', key: 'Font', module: 'Font', exact: true, },
   { path: '/pdf/:version', key: 'PDF', module: 'PDFPreviewer', },
 ]
 

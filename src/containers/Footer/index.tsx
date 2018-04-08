@@ -2,40 +2,12 @@ import * as React from 'react'
 import { Link, } from 'react-router-dom'
 import { createPortal, } from 'react-dom'
 import { I18n, } from 'react-i18next'
-// import { Header,, Navs, NavItem, } from '../../styled/Common'
 import { log, } from '../../utils'
 import { Footer as imgs, } from '../../config/imgMap'
 
 const css = require('../../styles/footer')
 
-const font1 = require('../../styles/fonts/Lucida Sans Unicode.ttf')
-const font2 = require('../../styles/fonts/MyriadPro-Bold.otf')
-
 const socialiconList = [
-  // {
-  //   img: imgs.socialicon_01,
-  //   href: 'social',
-  // },
-  // {
-  //   img: imgs.socialicon_02,
-  //   href: 'social',
-  // },
-  // {
-  //   img: imgs.socialicon_03,
-  //   href: 'social',
-  // },
-  // {
-  //   img: imgs.socialicon_04,
-  //   href: 'social',
-  // },
-  // {
-  //   img: imgs.socialicon_05,
-  //   href: 'social',
-  // },
-  // {
-  //   img: imgs.socialicon_06,
-  //   href: 'social',
-  // },
   {
     img: `${imgs.GITHUB}`,
     imgHover: `${imgs.GITHUBHOVER}`,
@@ -61,15 +33,6 @@ const Nav = (props) => {
     </div>
   )
 }
-
-// Left = () => {
-//   const { Nav, } = this
-//   return (
-//     <div className={css.left}>
-//       <Nav />
-//     </div>
-//   )
-// }
 
 const Logo = (props) => {
   const href = 'https://github.com/NervosFoundation'
@@ -128,19 +91,8 @@ const SocialiconList = (props) => (
   </div>
 )
 
-// Right = () => {
-//   const { SocialiconList, Subscribe, } = this
-//   return (
-//     <div className={css.right}>
-//       <Subscribe />
-//       <SocialiconList />
-//     </div>
-//   )
-// }
-
 const Top = (props) => {
   const { t, } = props
-  // const { Logo, Nav, Subscribe, SocialiconList, } = this
   return (
     <div className={css.top}>
       <Logo t={t} />
@@ -160,31 +112,10 @@ const Bottom = (props) => (
 )
 
 export default class extends React.Component {
-//   componentDidMount () {
-//     const template = `<style>
-//   @font-face {
-//     font-family: "lucdia";
-//     src: url(" ${font1}");
-//   }
-
-//   @font-face {
-//     font-family: "myrida";
-//     src: url(" ${font2}");
-//   }
-// </style>`
-//     const addFont = () => {
-//       document.body.insertAdjacentHTML('beforeend', template)
-//     }
-
-//     window.onload = addFont
-//   }
-
   t = null as any
   lang = null as any
 
   render () {
-    const { props, } = this
-
     return createPortal(
       <I18n ns="footer">
         {(t, { i18n, }) => {

@@ -19,7 +19,6 @@ const localeList = [
   },
 ]
 const localePathList = ['en', 'zh', ]
-// const sloganWord = 'The Common Knowledge Base of the 7.6 Billion People.'
 const sloganWordTimeout = 1500
 
 const Locale = (props) => {
@@ -114,7 +113,6 @@ const littleImgList = [
 
 const SloganImg = (props) => {
   const { addLoadedImgNum, } = props
-  // const { actionBigImgCss, actionLittleImgCss, } = this.state
   const {
     actionBigImgCss,
     actionLittleImgCss,
@@ -136,21 +134,6 @@ const SloganImg = (props) => {
     </div>
   )
 }
-
-// const Subscribe = (props) => {
-//   const { t, lang, } = props
-//   const subscribe = t('translations:subscribe')
-//   return (
-//     <div className={css.subscribe}>
-//       <div className={`${css.line} ${css.left}`} />
-//       <div className={css.buttonOuter}>
-//         <div className={css.buttonInner}>{subscribe}</div>
-//         <div className={css.diagonal} />
-//       </div>
-//       <div className={`${css.line} ${css.right}`} />
-//     </div>
-//   )
-// }
 
 const loadImg = (imgSrc, callback) => {
   const img = document.createElement('img')
@@ -177,14 +160,7 @@ export default class extends React.Component {
     littleImgList.forEach((imgProps, i) => {
       const img = document.createElement('img')
       const { src, } = imgProps
-      // img.src = src
-      // img.onload = () => {
-      //   imgSrcList[i] = src
-      //   this.setState({
-      //     imgSrcList,
-      //   })
-      //   addLoadedImg()
-      // }
+
       loadImg(src, () => {
         imgSrcList[i] = src
         this.setState({
@@ -195,21 +171,14 @@ export default class extends React.Component {
     })
 
     bigImgSrc = `${imgs.SLOGAN}`
+
     loadImg(bigImgSrc, () => {
       this.setState({
         bigImgSrc,
       })
       addLoadedImg()
     })
-    // const bigImg = document.createElement('img')
-    // bigImg.src = `${imgs.SLOGAN}`
-    // bigImg.onload = () => {
-    //   bigImgSrc = bigImg.src
-    //   this.setState({
-    //     bigImgSrc,
-    //   })
-    //   addLoadedImg()
-    // }
+
     imgSrcBg = imgs.BG
     loadImg(imgSrcBg, () => {
       this.setState({imgSrcBg, })
@@ -221,25 +190,13 @@ export default class extends React.Component {
     setTimeout(() => {
       this.setState(() => ({ loaded: true, }))
     }, 0)
-    // window.onload = autoRenderSloganWord
-    // autoRenderSloganWord()
 
     if (lang.language.startsWith('zh')) {
-      // lang.changeLanguage('zh')
       lang.changeLanguage('en')
     } else {
       lang.changeLanguage('en')
     }
   }
-
-  // componentWillUpdate () {
-  //   const { autoRenderSloganWord, lang, } = this
-  //   const { imgNum, } = this.state
-  //   log('wu', this.state.imgNum)
-  //   if (imgNum >= 8) {
-  //     // autoRenderSloganWord()
-  //   }
-  // }
 
   t = null as any
   lang = {
@@ -287,9 +244,7 @@ export default class extends React.Component {
   addLoadedImg = () => {
     const { imgNum, autoRenderSloganWord, } = this
     this.imgNum++
-    log(this.imgNum)
     if (this.imgNum >= 8) {
-      log('run')
       autoRenderSloganWord()
     }
   }
