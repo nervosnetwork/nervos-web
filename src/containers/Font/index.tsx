@@ -3,7 +3,7 @@ import { createPortal, } from 'react-dom'
 import { log, } from '../../utils'
 import Font from '../../components/Font'
 
-const lucida = require('../../styles/fonts/Lucida Sans Unicode.ttf')
+const lucida = require('../../styles/fonts/HelveticaNeue Medium.ttf')
 const myrida = require('../../styles/fonts/MyriadPro-Bold.otf')
 
 export default class extends React.Component {
