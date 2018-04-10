@@ -45,7 +45,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         STATIC_SERVER: JSON.stringify('http://47.97.171.140:8082/pdfs/'),
-        WP_ADDR: JSON.stringify('nervos-ckb-7757f8'),
+        WP_ADDR: JSON.stringify('nervos-ckb'),
       },
     }),
   ],
