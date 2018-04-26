@@ -12,6 +12,6 @@ const log = (...arg) => {
 //   `${dirPath}${name}.${suffix}`
 
 // export { log, pathFile, pathCss, pathImg }
-export { log, }
+export { log }
 
 export default {}
