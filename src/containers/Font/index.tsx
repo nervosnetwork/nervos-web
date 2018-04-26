@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { createPortal, } from 'react-dom'
-import { log, } from '../../utils'
+import { createPortal } from 'react-dom'
+// import { log, } from '../../utils'
 import Font from '../../components/Font'
 
 const lucida = require('../../styles/fonts/HelveticaNeue Medium.ttf')

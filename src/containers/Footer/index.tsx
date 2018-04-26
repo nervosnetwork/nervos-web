@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { Link, } from 'react-router-dom'
-import { createPortal, } from 'react-dom'
-import { I18n, } from 'react-i18next'
-import { log, } from '../../utils'
-import { Footer as imgs, } from '../../config/imgMap'
+// import { Link, } from 'react-router-dom'
+import { createPortal } from 'react-dom'
+import { I18n } from 'react-i18next'
+// import { log, } from '../../utils'
+import { Footer as imgs } from '../../config/imgMap'
 
 const css = require('../../styles/footer')
 
@@ -15,11 +15,11 @@ const socialiconList = [
   },
 ]
 
-const navHrefList = ['/', '/', '/', ]
+const navHrefList = ['/', '/', '/' ]
 
 const Nav = (props) => {
-  const { t, } = props
-  const navList = t('navList', { returnObjects: true, })
+  const { t } = props
+  const navList = t('navList', { returnObjects: true })
   return (
     <div className={`${css.nav} ${css.left}`}>
       {navList.map((item, i) => {
@@ -51,7 +51,7 @@ const Logo = (props) => {
 }
 
 const Subscribe = (props) => {
-  const { t, } = props
+  const { t } = props
   const enterMail = t('enterMail')
   const translations = t('translations:subscribe')
   return (
@@ -92,7 +92,7 @@ const SocialiconList = (props) => (
 )
 
 const Top = (props) => {
-  const { t, } = props
+  const { t } = props
   return (
     <div className={css.top}>
       <Logo t={t} />
@@ -118,7 +118,7 @@ export default class extends React.Component {
   render () {
     return createPortal(
       <I18n ns="footer">
-        {(t, { i18n, }) => {
+        {(t, { i18n }) => {
           this.t = t
           this.lang = i18n
           return (
