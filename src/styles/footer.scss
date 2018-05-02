@@ -1,5 +1,5 @@
-@import "color.scss";
-@import "size.scss";
+@import 'color.scss';
+@import 'size.scss';
 
 #footer {
   background-color: $cBgBlack;
@@ -68,6 +68,8 @@
     height: 65 * $w;
     line-height: 65 * $w;
 
+    text-decoration: underline;
+
     &:hover {
       color: $cImportant;
     }
@@ -97,7 +99,7 @@
       width: 690 * $w;
       height: 70 * $w;
       text-align: right;
-      font-family: "lucdia";
+      font-family: 'lucdia';
 
       input {
         width: 64.2%;
@@ -274,7 +276,7 @@
         width: 690 * $w;
         height: 70 * $w;
         text-align: right;
-        font-family: "lucdia";
+        font-family: 'lucdia';
 
         input {
           width: 64.2%;
