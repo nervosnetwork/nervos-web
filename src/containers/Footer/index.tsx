@@ -3,6 +3,7 @@ import * as React from 'react'
 import { createPortal } from 'react-dom'
 import { I18n } from 'react-i18next'
 // import { log, } from '../../utils'
+import ContactUs from '../../components/ContactUs'
 import { Footer as imgs } from '../../config/imgMap'
 
 const css = require('../../styles/footer')
@@ -15,7 +16,7 @@ const socialiconList = [
   },
 ]
 
-const navHrefList = ['/', '/', '/' ]
+const navHrefList = ['/', '/', '/']
 
 const Nav = (props) => {
   const { t } = props
@@ -26,7 +27,8 @@ const Nav = (props) => {
         const href = navHrefList[i]
         return (
           <a className={css.navItem} href={item.href}>
-            {item.label}
+            {/* {item.label} */}
+            <ContactUs />
           </a>
         )
       })}
@@ -98,6 +100,7 @@ const Top = (props) => {
       <Logo t={t} />
       <Subscribe t={t} />
       <Nav t={t} />
+
       <SocialiconList t={t} />
     </div>
   )

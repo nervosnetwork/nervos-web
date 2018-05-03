@@ -194,6 +194,10 @@
   font-size: 28 * $w;
 }
 
+.contactUs {
+  display: block;
+}
+
 @media (max-width: 1080px) {
   $w: (1vw / 10.8);
   .main {
@@ -365,5 +369,9 @@
     padding-left: 0 * $w;
     padding-bottom: 160 * $w;
     font-size: 28 * $w;
+  }
+
+  .contactUs {
+    display: block;
   }
 }

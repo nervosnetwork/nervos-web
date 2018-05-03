@@ -36,6 +36,11 @@ enum Footer {
   GITHUBHOVER = require('../images/footer/githubHover.png'),
   LOGO = require('../images/footer/logo.png'),
 }
+
+enum Common {
+  EMAIL = require('../images/common/email.png'),
+  EMAILHOVER = require('../images/common/email_hover.png'),
+}
 /* eslint-enable global-require */
 
-export { Footer, Supporters, Teams, Features, Slogan, }
+export { Footer, Supporters, Teams, Features, Slogan, Common}

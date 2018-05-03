@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { createPortal, } from 'react-dom'
-import { I18n, } from 'react-i18next'
-
-import { Logo, Navs, NavItem, } from '../../styled/Common'
-import { log, } from '../../utils'
-import { Slogan as imgs, } from '../../config/imgMap'
+import { createPortal } from 'react-dom'
+import { I18n } from 'react-i18next'
+import ContactUs from '../../components/ContactUs'
+import { Logo, Navs, NavItem } from '../../styled/Common'
+import { log } from '../../utils'
+import { Slogan as imgs } from '../../config/imgMap'
 
 const css = require('../../styles/slogan')
 
@@ -18,15 +18,15 @@ const localeList = [
     path: 'zh',
   },
 ]
-const localePathList = ['en', 'zh', ]
+const localePathList = ['en', 'zh']
 const sloganWordTimeout = 1500
 
 const Locale = (props) => {
-  const { t, lang, } = props
+  const { t, lang } = props
   return (
     <div className={css.locale}>
       {localeList.map((item) => {
-        const { path, label, } = item
+        const { path, label } = item
         return (
           <div
             className={lang.language === path ? css.active : ''}
@@ -42,21 +42,22 @@ const Locale = (props) => {
 }
 
 const Header = (props) => {
-  const { t, lang, } = props
+  const { t, lang } = props
   const href = t('translations:whitepaperHref')
   return (
     <div className={css.header}>
       <div className={css.image}>
         <img src={`${imgs.LOGO}`} alt="logo" />
       </div>
+      <ContactUs className={css.contactUs} />
       {/* <Locale /> */}
     </div>
   )
 }
 
 const SloganWord = (props) => {
-  const { t, } = props
-  const { sloganWordLoaded, sloganWord, } = props.state
+  const { t } = props
+  const { sloganWordLoaded, sloganWord } = props.state
   return (
     <div className={`${css.sloganWord} fontBold`}>
       <img src={`${imgs.QUO}`} alt="quotation mark" />
@@ -67,11 +68,11 @@ const SloganWord = (props) => {
 }
 
 const Description = (props) => {
-  const { t, lang, } = props
+  const { t, lang } = props
   return (
     <div className={css.description}>
       <SloganWord {...props} />
-      {t('desc', { returnObjects: true, }).map((desc, i) => (
+      {t('desc', { returnObjects: true }).map((desc, i) => (
         <div className={css.text} key={desc}>
           {desc}
         </div>
@@ -112,7 +113,7 @@ const littleImgList = [
 ]
 
 const SloganImg = (props) => {
-  const { addLoadedImgNum, } = props
+  const { addLoadedImgNum } = props
   const {
     actionBigImgCss,
     actionLittleImgCss,
@@ -148,18 +149,18 @@ export default class extends React.Component {
     sloganWordLoaded: false,
     actionLittleImgCss: '',
     actionBigImgCss: '',
-    imgSrcList: ['', '', '', '', '', '', '', ],
+    imgSrcList: ['', '', '', '', '', '', ''],
     bigImgSrc: '',
     imgSrcBg: imgs.BGLow,
   }
 
   componentWillMount () {
-    let { bigImgSrc, imgSrcBg, } = this.state
-    const { imgSrcList, } = this.state
-    const { addLoadedImg, } = this
+    let { bigImgSrc, imgSrcBg } = this.state
+    const { imgSrcList } = this.state
+    const { addLoadedImg } = this
     littleImgList.forEach((imgProps, i) => {
       const img = document.createElement('img')
-      const { src, } = imgProps
+      const { src } = imgProps
 
       loadImg(src, () => {
         imgSrcList[i] = src
@@ -181,14 +182,14 @@ export default class extends React.Component {
 
     imgSrcBg = imgs.BG
     loadImg(imgSrcBg, () => {
-      this.setState({imgSrcBg, })
+      this.setState({ imgSrcBg })
     })
   }
 
   componentDidMount () {
-    const { autoRenderSloganWord, lang, } = this
+    const { autoRenderSloganWord, lang } = this
     setTimeout(() => {
-      this.setState(() => ({ loaded: true, }))
+      this.setState(() => ({ loaded: true }))
     }, 0)
 
     if (lang.language.startsWith('zh')) {
@@ -206,7 +207,7 @@ export default class extends React.Component {
   imgNum = 0
 
   autoRenderSloganWord = () => {
-    const { t, } = this
+    const { t } = this
     const word = t('word').split('')
     const len = word.length
     const onetime = sloganWordTimeout / len
@@ -242,7 +243,7 @@ export default class extends React.Component {
   }
 
   addLoadedImg = () => {
-    const { imgNum, autoRenderSloganWord, } = this
+    const { imgNum, autoRenderSloganWord } = this
     this.imgNum++
     if (this.imgNum >= 8) {
       autoRenderSloganWord()
@@ -250,7 +251,7 @@ export default class extends React.Component {
   }
 
   render () {
-    const { props, state, } = this
+    const { props, state } = this
     const {
       loaded,
       actionBigImgCss,
@@ -262,7 +263,7 @@ export default class extends React.Component {
     // const state = this.state
     return (
       <I18n ns="slogan">
-        {(t, { i18n, }) => {
+        {(t, { i18n }) => {
           const prop = {
             t,
             lang: i18n,
@@ -273,7 +274,7 @@ export default class extends React.Component {
           return (
             <div
               className={css.slogan}
-              style={{ backgroundImage: `url(${imgSrcBg}`, }}
+              style={{ backgroundImage: `url(${imgSrcBg}` }}
             >
               <Header {...prop} />
               <SloganImg {...prop} />
