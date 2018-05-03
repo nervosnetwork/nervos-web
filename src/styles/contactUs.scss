@@ -4,6 +4,8 @@
 .container {
   display: inline-block;
   cursor: pointer;
+  display:flex;
+  align-items:center;
 
   .hoverRender {
     display: none;
