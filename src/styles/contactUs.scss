@@ -1,0 +1,63 @@
+@import "color.scss";
+@import "size.scss";
+
+.container {
+  display: inline-block;
+  cursor: pointer;
+
+  .hoverRender {
+    display: none;
+  }
+  .label {
+    padding-left: 15 * $w;
+    font-size: 24 * $w;
+    color: $cNormalW;
+  }
+  .img {
+    height: 22 * $w;
+  }
+}
+
+.container:hover {
+  .hoverRender {
+    display: inline-block;
+  }
+  .unhoverRender {
+    display: none;
+  }
+  .label {
+    color: $cImportant;
+  }
+}
+
+@media (max-width: 1080px) {
+  $w: (1vw / 10.8);
+  .container {
+    display: inline-block;
+    cursor: pointer;
+
+    .hoverRender {
+      display: none;
+    }
+    .label {
+      padding-left: 15 * $w;
+      font-size: 24 * $w;
+      color: $cNormalW;
+    }
+    .img {
+      height: 22 * $w;
+    }
+  }
+
+  .container:hover {
+    .hoverRender {
+      display: inline-block;
+    }
+    .unhoverRender {
+      display: none;
+    }
+    .label {
+      color: $cImportant;
+    }
+  }
+}

@@ -1,5 +1,8 @@
-const log = console.log.bind(console, '>>>')
-
+const log = (...arg) => {
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('>>>', ...arg)
+  }
+}
 // const pathFile = (name, suffix, dirPath) => `${dirPath + name}.${suffix}`
 
 // const pathCss = (name, suffix, dirPath = '../../styles/') =>
@@ -9,6 +12,6 @@ const log = console.log.bind(console, '>>>')
 //   `${dirPath}${name}.${suffix}`
 
 // export { log, pathFile, pathCss, pathImg }
-export { log, }
+export { log }
 
 export default {}

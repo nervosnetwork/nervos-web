@@ -19,12 +19,13 @@ export interface RouterProps {
 
 const routes: IPage[] = [
   // { path: '/', key: 'Header', module: 'Header', exact: true },
-  { path: '/', key: 'Slogan', module: 'Slogan', exact: true, },
-  { path: '/', key: 'Features', module: 'Features', exact: true, },
+  { path: '/', key: 'Slogan', module: 'Slogan', exact: true },
+  { path: '/', key: 'Features', module: 'Features', exact: true },
   // { path: '/', key: 'Teams', module: 'Teams',, exact: true },
-  { path: '/', key: 'Supporters', module: 'Supporters', exact: true, },
-  { path: '/', key: 'Footer', module: 'Footer', exact: true, },
-  { path: '/pdf/:version', key: 'PDF', module: 'PDFPreviewer', },
+  { path: '/', key: 'Supporters', module: 'Supporters', exact: true },
+  { path: '/', key: 'Footer', module: 'Footer', exact: true },
+  { path: '/', key: 'Font', module: 'Font', exact: true },
+  { path: '/pdf/:version', key: 'PDF', module: 'PDFPreviewer' },
 ]
 
 export default routes

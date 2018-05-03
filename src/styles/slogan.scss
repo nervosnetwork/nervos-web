@@ -9,10 +9,19 @@
   position: relative;
 }
 
+.contactUs {
+  position: absolute;
+  top: 65 * $w;
+  right: 165 * $w;
+}
+
 .header {
+  z-index: 110;
+  position: relative;
   .image {
     padding-top: 80 * $w;
     padding-left: 340 * $w;
+    display: inline-block;
 
     img {
       width: 449 * $w;

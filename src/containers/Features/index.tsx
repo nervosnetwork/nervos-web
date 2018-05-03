@@ -120,30 +120,24 @@ const SectionList = (props) => {
   )
 }
 
-export default class extends React.Component {
-  state = {
-    loaded: false,
-  }
-  componentDidMount () {}
+export default (props) => (
+  <I18n ns="features">
+    {(t, { i18n, }) => (
+      <div className={css.main}>
+        <div className={css.container}>
+          <Title t={t} />
+          <SectionList t={t} lang={i18n} />
+        </div>
+      </div>
+    )}
+  </I18n>
+)
 
-  // t = null as any
-  // lang = null as any
+// export default class extends React.Component {
 
-  render () {
-    const { loaded, } = this.state
-    return (
-      <I18n ns="features">
-        {(t, { i18n, }) => (
-          // this.t = t
-          // this.lang = i18n
-          <div className={css.main}>
-            <div className={css.container}>
-              <Title t={t} />
-              <SectionList t={t} lang={i18n} />
-            </div>
-          </div>
-        )}
-      </I18n>
-    )
-  }
-}
+//   render () {
+//     return (
+
+//     )
+//   }
+// }
