@@ -4,7 +4,8 @@ import { Common as imgs } from '../config/imgMap'
 const css = require('../styles/contactUs.scss')
 
 export default (props) => {
-  const { className } = props
+  let { className } = props
+  className = className === undefined ? '' : className
   const label = 'Contact Us'
   const img = imgs.EMAIL
   const imgH = imgs.EMAILHOVER
