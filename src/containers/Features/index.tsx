@@ -1,16 +1,15 @@
 import * as React from 'react'
-import { createPortal, } from 'react-dom'
-import { I18n, } from 'react-i18next'
-import { Header, Logo, Navs, NavItem, } from '../../styled/Common'
-import { log, } from '../../utils'
-import { Features as imgs, } from '../../config/imgMap'
+import { I18n } from 'react-i18next'
+import { Header, Logo, Navs, NavItem } from '../../styled/Common'
+import { log } from '../../utils'
+import { Features as imgs } from '../../config/imgMap'
 
 const css = require('../../styles/features')
 
-const sectionImgList = [imgs.AUTO, imgs.RE, imgs.PR, ].map((img) => `${img}`)
+const sectionImgList = [imgs.AUTO, imgs.RE, imgs.PR].map((img) => `${img}`)
 
 const Button = (props) => {
-  const { t, label, href, className, } = props
+  const { t, label, href, className } = props
   return (
     <div className={css.buttonOuter}>
       <a href={href}>
@@ -22,7 +21,7 @@ const Button = (props) => {
 }
 
 const Whitepaper = (props) => {
-  const { t, } = props
+  const { t } = props
   const info = {
     zh: {
       label: '白皮书',
@@ -48,7 +47,7 @@ const Whitepaper = (props) => {
 }
 
 const Title = (props) => {
-  const { t, } = props
+  const { t } = props
   const title = t('title')
   return (
     <div className={css.titleContainer}>
@@ -61,8 +60,8 @@ const Title = (props) => {
 }
 
 const SectionLImg = (props) => {
-  const { section, index, } = props
-  const { title, text, } = section
+  const { section, index } = props
+  const { title, text } = section
   const image = sectionImgList[index]
   let className
   if (index === 0) {
@@ -84,8 +83,8 @@ const SectionLImg = (props) => {
 }
 
 const SectionRImg = (props) => {
-  const { section, index, } = props
-  const { title, text, } = section
+  const { section, index } = props
+  const { title, text } = section
   const image = sectionImgList[index]
   return (
     <section className={`${css.section} ${css.rimg}`}>
@@ -101,8 +100,8 @@ const SectionRImg = (props) => {
 }
 
 const SectionList = (props) => {
-  const { t, } = props
-  const sectionList = t('sectionList', { returnObjects: true, })
+  const { t } = props
+  const sectionList = t('sectionList', { returnObjects: true })
   return (
     <div className={css.sectionList}>
       <div className={`${css.verticalLine} ${css.top1}`} />
@@ -122,7 +121,7 @@ const SectionList = (props) => {
 
 export default (props) => (
   <I18n ns="features">
-    {(t, { i18n, }) => (
+    {(t, { i18n }) => (
       <div className={css.main}>
         <div className={css.container}>
           <Title t={t} />

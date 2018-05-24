@@ -1,4 +1,8 @@
 export default {
+  global: {
+    warning: `SOLEMNLY DECLARE: Recently, the Nervos Foundation found that some organizations have publicly or privately raised funds on the basis that they have obtained or have the ability to obtain CKB. The Nervos Foundation hereby solemnly declares that none of these activities have been allowed by the Nervos foundation and have nothing to do with the Nervos foundation! All friends of the community should pay attention to the official website information, beware of fraud!`,
+    confirm: 'OK',
+  },
   translations: {
     whitepaper: 'Whitepaper',
     whitepaperHref:

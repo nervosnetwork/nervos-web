@@ -1,0 +1,28 @@
+.warning {
+  font-size: 1rem;
+  background-color: #DD2C00;
+  color: #FFF;
+  padding: 1rem 3rem;
+  line-height: 2;
+  font-weight: 100 !important;
+  align-items: center;
+  @media (max-width: 800px) {
+    flex-direction: column;
+    padding: 10px;
+    line-height: 1.2;
+    font-size: 0.5rem;
+  }
+}
+
+.confirm {
+  cursor: pointer;
+  padding: 1rem;
+  transition: background 0.3s linear;
+  border-radius: 3px;
+  &:hover {
+    background-color: #c62a03;
+  }
+  @media (max-width: 800px) {
+    padding: 5px 0 0 0;
+  }
+}

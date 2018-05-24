@@ -1,4 +1,8 @@
 export default {
+  global: {
+    warning: `公告：市场上所有 Nervos CKB 代币公开销售行为都是欺诈行为，目前 Nervos 没有向公众销售的计划，也不会通过非官方渠道向私人销售或募资。请各位用户提高警惕，不要被骗。`,
+    confirm: '已了解',
+  },
   translations: {
     whitepaper: '',
     whitepaperHref: 'z-wp',

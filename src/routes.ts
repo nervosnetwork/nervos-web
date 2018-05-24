@@ -18,6 +18,7 @@ export interface RouterProps {
 /* eslint-enable no-use-before-define */
 
 const routes: IPage[] = [
+  { path: '/', key: 'Warning', module: 'Warning', exact: true },
   // { path: '/', key: 'Header', module: 'Header', exact: true },
   { path: '/', key: 'Slogan', module: 'Slogan', exact: true },
   { path: '/', key: 'Features', module: 'Features', exact: true },
