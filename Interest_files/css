@@ -1,4 +1,7 @@
 /* vietnamese */
+.w-webflow-badge{
+  display:none;
+}
 @font-face {
   font-family: 'Inconsolata';
   font-style: normal;
