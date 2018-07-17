@@ -1,5 +1,5 @@
 var newImgsrc = function (name) {
-  var path = './Investors_files/imgs/'
+  var path = './Investors/imgs/'
   var src = path + name + '.png'
   return src
 }
