@@ -102,11 +102,11 @@ var g_ImgListInvestors = [
     src: newImgsrc('spark'),
   },
   {
-    href: '',
+    href: 'https://www.ipaynow.cn/',
     src: newImgsrc('xianzai'),
   },
   {
-    href: '',
+    href: 'https://zk.capital/',
     src: newImgsrc('zk'),
   },
 ]
