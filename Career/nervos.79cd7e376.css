@@ -130,6 +130,7 @@
 .core-feature.contact {
   margin-top: 50px;
   margin-bottom: 70px;
+  min-height: 33vh;
 }
 
 .heading-section {

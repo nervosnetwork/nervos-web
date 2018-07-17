@@ -1,10 +1,18 @@
 var newImgsrc = function (name) {
-  var path = './Investors_files/imgs/'
+  var path = './Investors/imgs/'
   var src = path + name + '.png'
   return src
 }
 
 var g_ImgListInvestors = [
+  {
+    href: 'https://www.1confirmation.com/',
+    src: newImgsrc('1confirmation'),
+  },
+  {
+    href: 'http://1kx.network/',
+    src: newImgsrc('1kx'),
+  },
   {
     href: '',
     src: newImgsrc('alternity'),
@@ -55,6 +63,10 @@ var g_ImgListInvestors = [
   },
   {
     href: '',
+    src: newImgsrc('imtoken'),
+  },
+  {
+    href: '',
     src: newImgsrc('sequoia'),
   },
   {
@@ -63,19 +75,11 @@ var g_ImgListInvestors = [
   },
   {
     href: '',
-    src: newImgsrc('martix'),
+    src: newImgsrc('matrix'),
   },
   {
     href: '',
     src: newImgsrc('multi'),
-  },
-  {
-    href: '',
-    src: newImgsrc('1confirmation'),
-  },
-  {
-    href: '',
-    src: newImgsrc('1kx'),
   },
   {
     href: '',

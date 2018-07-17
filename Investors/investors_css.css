@@ -34,22 +34,22 @@
 #id-investors-imgs {
     text-align: center;
     max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #id-investors-imgs .investor {
-    width: 234px;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     text-align: center;
     position: relative;
-    height: 234px;
-    /*opacity: 0;*/
-    /*transform: translate(100%);*/
+    padding: 26px 25px;
+    height: 80px;
+    box-sizing: content-box;
 }
 
 #id-investors-imgs .investorImg {
-    max-width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    max-height: 100%;
 }

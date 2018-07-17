@@ -23,6 +23,7 @@ var __investors = function () {
     var min = 0
     var cls = e.className
     e.className = 'fadeinupBefore animation ' + cls
+
     var func = function () {
       var position = e.getBoundingClientRect()
       var top = position.top
@@ -37,7 +38,11 @@ var __investors = function () {
 
   var newInvestor = function (params) {
     var link = newElement('a')
-    link.href = params.href
+    var href = params.href
+    if (href !== '' && href) {
+      link.href = href
+      link.target = '_blank'
+    }
     link.className = 'investor'
 
     var img = newElement('img')
