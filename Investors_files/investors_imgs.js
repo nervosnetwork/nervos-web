@@ -7,6 +7,14 @@ var newImgsrc = function (name) {
 var g_ImgListInvestors = [
   {
     href: '',
+    src: newImgsrc('1confirmation'),
+  },
+  {
+    href: '',
+    src: newImgsrc('1kx'),
+  },
+  {
+    href: '',
     src: newImgsrc('alternity'),
   },
   {
@@ -68,14 +76,6 @@ var g_ImgListInvestors = [
   {
     href: '',
     src: newImgsrc('multi'),
-  },
-  {
-    href: '',
-    src: newImgsrc('1confirmation'),
-  },
-  {
-    href: '',
-    src: newImgsrc('1kx'),
   },
   {
     href: '',
