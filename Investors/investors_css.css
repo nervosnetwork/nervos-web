@@ -45,6 +45,11 @@
     align-items: center;
     text-align: center;
     position: relative;
-    margin: 12px 25px;
-    min-height: 100px;
+    padding: 26px 25px;
+    height: 80px;
+    box-sizing: content-box;
+}
+
+#id-investors-imgs .investorImg {
+    max-height: 100%;
 }

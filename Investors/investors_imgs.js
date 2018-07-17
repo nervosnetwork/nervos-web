@@ -6,11 +6,11 @@ var newImgsrc = function (name) {
 
 var g_ImgListInvestors = [
   {
-    href: '',
+    href: 'https://www.1confirmation.com/',
     src: newImgsrc('1confirmation'),
   },
   {
-    href: '',
+    href: 'http://1kx.network/',
     src: newImgsrc('1kx'),
   },
   {
@@ -63,6 +63,10 @@ var g_ImgListInvestors = [
   },
   {
     href: '',
+    src: newImgsrc('imtoken'),
+  },
+  {
+    href: '',
     src: newImgsrc('sequoia'),
   },
   {
@@ -71,7 +75,7 @@ var g_ImgListInvestors = [
   },
   {
     href: '',
-    src: newImgsrc('martix'),
+    src: newImgsrc('matrix'),
   },
   {
     href: '',
