@@ -74,7 +74,7 @@ var g_ImgListInvestors = [
     src: newImgsrc('imtoken'),
   },
   {
-    href: 'https://www.sequoiacap.com/',
+    href: 'https://www.sequoiacap.com/china/en/',
     src: newImgsrc('sequoia'),
   },
   {
