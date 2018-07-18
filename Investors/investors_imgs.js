@@ -14,8 +14,16 @@ var g_ImgListInvestors = [
     src: newImgsrc('1kx'),
   },
   {
+    href: 'https://500.co',
+    src: newImgsrc('500'),
+  },
+  {
     href: 'http://alternityadvisors.com/',
     src: newImgsrc('alternity'),
+  },
+  {
+    href: 'https://www.amberaigroup.com/',
+    src: newImgsrc('amber'),
   },
   {
     href: 'http://blockchain.capital/',
@@ -46,7 +54,7 @@ var g_ImgListInvestors = [
     src: newImgsrc('distributed'),
   },
   {
-    href: '',
+    href: 'https://www.ddc.fund/',
     src: newImgsrc('ddc'),
   },
   {
@@ -58,7 +66,7 @@ var g_ImgListInvestors = [
     src: newImgsrc('ff'),
   },
   {
-    href: 'https://www.huobi.pro/',
+    href: 'https://www.huobi.com/',
     src: newImgsrc('huobi'),
   },
   {
@@ -74,7 +82,7 @@ var g_ImgListInvestors = [
     src: newImgsrc('unity'),
   },
   {
-    href: 'https://matrix.org/',
+    href: 'https://www.matrixpartners.com.cn/index.php/zh/',
     src: newImgsrc('matrix'),
   },
   {
@@ -88,6 +96,10 @@ var g_ImgListInvestors = [
   {
     href: 'https://polychain.capital/',
     src: newImgsrc('polychain'),
+  },
+  {
+    // href: 'https://polychain.capital/',
+    src: newImgsrc('ques'),
   },
   {
     href: 'http://www.vycapital.com/',
