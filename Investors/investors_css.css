@@ -25,6 +25,8 @@
 
 #id-investors {
     max-width: 100%;
+    padding-top: 30px;
+    padding-bottom: 70px;
 }
 
 #id-investors .inner-container {
@@ -46,7 +48,7 @@
     text-align: center;
     position: relative;
     padding: 26px 25px;
-    height: 80px;
+    height: 100px;
     box-sizing: content-box;
 }
 

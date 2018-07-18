@@ -14,15 +14,15 @@ var g_ImgListInvestors = [
     src: newImgsrc('1kx'),
   },
   {
-    href: '',
+    href: 'http://alternityadvisors.com/',
     src: newImgsrc('alternity'),
   },
   {
-    href: '',
+    href: 'http://blockchain.capital/',
     src: newImgsrc('blockchain'),
   },
   {
-    href: '',
+    href: 'https://breyercapital.com/',
     src: newImgsrc('breyer'),
   },
   // {
@@ -30,19 +30,19 @@ var g_ImgListInvestors = [
   //   src: newImgsrc('bihu'),
   // },
   {
-    href: '',
+    href: 'https://bixin.com/',
     src: newImgsrc('bixin'),
   },
   {
-    href: '',
+    href: 'http://www.ceyuan.com/',
     src: newImgsrc('ceyuan'),
   },
   {
-    href: '',
+    href: 'https://dekrypt.capital/',
     src: newImgsrc('dekrypt'),
   },
   {
-    href: '',
+    href: 'http://www.distributedglobal.com/',
     src: newImgsrc('distributed'),
   },
   {
@@ -50,63 +50,63 @@ var g_ImgListInvestors = [
     src: newImgsrc('ddc'),
   },
   {
-    href: '',
+    href: 'https://www.fbg.capital/',
     src: newImgsrc('fbg'),
   },
   {
-    href: '',
+    href: 'https://www.freesvc.com/',
     src: newImgsrc('ff'),
   },
   {
-    href: '',
+    href: 'https://www.huobi.pro/',
     src: newImgsrc('huobi'),
   },
   {
-    href: '',
+    href: 'https://token.im/',
     src: newImgsrc('imtoken'),
   },
   {
-    href: '',
+    href: 'https://www.sequoiacap.com/',
     src: newImgsrc('sequoia'),
   },
   {
-    href: '',
+    href: 'http://www.unityvc.com/',
     src: newImgsrc('unity'),
   },
   {
-    href: '',
+    href: 'https://matrix.org/',
     src: newImgsrc('matrix'),
   },
   {
-    href: '',
+    href: 'https://multicoin.capital/',
     src: newImgsrc('multi'),
   },
   {
-    href: '',
+    href: 'https://www.passportcapital.com/',
     src: newImgsrc('passport'),
   },
   {
-    href: '',
+    href: 'https://polychain.capital/',
     src: newImgsrc('polychain'),
   },
   {
-    href: '',
+    href: 'http://www.vycapital.com/',
     src: newImgsrc('vy'),
   },
   {
-    href: '',
+    href: 'http://www.wxblockchain.com/',
     src: newImgsrc('wanxiang'),
   },
   {
-    href: '',
+    href: 'https://eth.sparkpool.com/',
     src: newImgsrc('spark'),
   },
   {
-    href: '',
+    href: 'https://www.ipaynow.cn/',
     src: newImgsrc('xianzai'),
   },
   {
-    href: '',
+    href: 'https://zk.capital/',
     src: newImgsrc('zk'),
   },
 ]
