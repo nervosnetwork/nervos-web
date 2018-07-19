@@ -929,3 +929,7 @@
   font-weight: 700;
   font-style: normal;
 }
+
+.w-webflow-badge {
+  display: none!important;
+}
