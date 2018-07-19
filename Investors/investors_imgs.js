@@ -13,12 +13,12 @@ var g_ImgListInvestors = [
     href: 'http://1kx.network/',
     src: newImgsrc('1kx'),
   },
+  // {
+  //   href: 'https://500.co',
+  //   src: newImgsrc('500'),
+  // },
   {
-    href: 'https://500.co',
-    src: newImgsrc('500'),
-  },
-  {
-    href: 'http://alternityadvisors.com/',
+    href: '',
     src: newImgsrc('alternity'),
   },
   {
@@ -72,6 +72,10 @@ var g_ImgListInvestors = [
   {
     href: 'https://token.im/',
     src: newImgsrc('imtoken'),
+  },
+  {
+    href: '',
+    src: newImgsrc('kindred'),
   },
   {
     href: 'https://www.sequoiacap.com/china/en/',
