@@ -18,7 +18,7 @@ var g_ImgListInvestors = [
   //   src: newImgsrc('500'),
   // },
   {
-    href: '',
+    href: 'https://kindredvc.com/',
     src: newImgsrc('alternity'),
   },
   {
