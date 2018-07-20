@@ -18,7 +18,7 @@ var g_ImgListInvestors = [
   //   src: newImgsrc('500'),
   // },
   {
-    href: 'https://kindredvc.com/',
+    href: '',
     src: newImgsrc('alternity'),
   },
   {
@@ -74,7 +74,7 @@ var g_ImgListInvestors = [
     src: newImgsrc('imtoken'),
   },
   {
-    href: '',
+    href: 'https://kindredvc.com/',
     src: newImgsrc('kindred'),
   },
   {
